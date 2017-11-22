@@ -9,14 +9,16 @@ import {
 } from 'react-router-dom';
 
 import NavbarContainer from '../components/session/navbar_container';
-
+import SignUpPage from '../components/session/signup_page';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <h1>"rendered in app.jsx by root.jsx"</h1>
-    <NavbarContainer />
-    <h1> navbar container rendered above</h1>
+    <switch>
+      <Route exact path='/signup' component={SignUpPage} />
+      <Route exact path='/' component={NavbarContainer} />
+    </switch>
+
   </div>
 );
 

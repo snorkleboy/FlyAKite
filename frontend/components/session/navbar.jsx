@@ -69,7 +69,7 @@ const LoggedOutOptions = ({login}) =>{
                 <ul>
                     <li><button> login</button>
                     <LoginDropDown login={login} /></li>
-                    <li><Link to='/'> SignUp</Link></li>
+                <li><Link to='/signUp'> SignUp</Link></li>
                 </ul>
         );
     } else{
