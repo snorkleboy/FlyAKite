@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {}
 class SignUpPage extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +11,7 @@ class SignUpPage extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
         if (nextProps.loggedIn) {
             this.props.history.push('/');
         }
@@ -26,20 +26,13 @@ class SignUpPage extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = this.state;
-        this.props.processForm({ user });
-    }
-
-    navLink() {
-        if (this.props.formType === 'login') {
-            return <Link to="/signup">sign up instead</Link>;
-        } else {
-            return <Link to="/login">log in instead</Link>;
-        }
+        this.props.signup({ user });
     }
 
     renderErrors() {
+        console.log(this.props.errors)
         return (
-            <ul>
+            <ul className='error-list'>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -51,36 +44,38 @@ class SignUpPage extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to BenchBnB!
-          <br />
-                    Please {this.props.formType} or {this.navLink()}
-                    {this.renderErrors()}
-                    <div className="login-form">
+            <main className='signup-page'>
+                <div className="signup-form-container">
+                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                        <h1>FlyAKite</h1>
                         <br />
-                        <label>Username:
-              <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <label>Password:
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input type="submit" value="Submit" />
-                    </div>
-                </form>
-            </div>
+                       <h3> Sign up</h3>
+                        {this.renderErrors()}
+                        <div className="login-form">
+                            <br />
+                            <label>Username:
+                                <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className="login-input"
+                                />
+                            </label>
+                            <br />
+                            <label>Password:
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="login-input"
+                                />
+                            </label>
+                            <br />
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </main>
         );
     }
 }
 
-export default withRouter(SessionForm);
+export default (SignUpPage);
