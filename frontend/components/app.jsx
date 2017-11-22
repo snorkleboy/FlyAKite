@@ -8,11 +8,15 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import NavbarContainer from '../components/session/navbar_container';
+
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    "rendered in app.jsx by root.jsx"
+    <h1>"rendered in app.jsx by root.jsx"</h1>
+    <NavbarContainer />
+    <h1> navbar container rendered above</h1>
   </div>
 );
 

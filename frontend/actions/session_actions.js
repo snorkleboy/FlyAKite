@@ -19,7 +19,7 @@ export const login = (user) => dispatch => SessionAPI.login(user)
 .then(
     (success)=> dispatch(receiveCurrentUser(success)),
     ((failure)=> dispatch(receiveErrors(failure)))
-    )
+    );
 
 export const logout = (uer) => dispatch => SessionAPI.logout()
     .then(
