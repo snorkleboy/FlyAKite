@@ -6,13 +6,14 @@ import LoginDropDown from './login_drop_down';
 class Navbar extends React.Component{
     constructor(props){
         super(props);
-        console.log(`navbar recieved: `);
-        console.log(props);
 
-        this.login=this.props.login.bind(this);
-        this.logout=this.props.logout.bind(this);
-        this.State={showForm: true, showProfile: true};
+
+
+        this.toggleProfile = this.toggleProfile.bind(this);
+        this.toggleLogin = this.toggleLogin.bind(this);
+        this.state={showForm: false, showProfile: false};
     }
+
 
     render(){
         if (this.props.currentUser){
@@ -21,6 +22,8 @@ class Navbar extends React.Component{
                   Hello ,{this.props.currentUser.username}!
                   <LoggedInOptions
                    logout={this.props.logout}
+                   showProfile={this.state.showProfile}
+                    toggleProfile={this.toggleProfile}
                    />
                 </div>
           );
@@ -29,7 +32,9 @@ class Navbar extends React.Component{
                 <div>
                     <LoggedOutOptions
                         login={this.props.login}
-                        showForm={true}
+                        showForm={this.state.showForm}
+                        toggleLogin={this.toggleLogin}
+
                      />
                 </div>
             ); 
@@ -37,18 +42,30 @@ class Navbar extends React.Component{
       
     }
 
+    toggleProfile(){
+        let newState= Object.assign({}, this.state);
+        newState.showProfile = !newState.showProfile;
+        this.setState(newState);
+    }
+    toggleLogin(){
+        let newState = Object.assign({}, this.state);
+        newState.showForm = !newState.showForm  ;
+        console.log(newState);
+        this.setState(newState);
+        this.forceUpdate();
+        console.log(this.state);
+    }
 }
 
 export default Navbar;
 
-const LoggedInOptions = ({logout}) => {
+const LoggedInOptions = ({ logout, toggleProfile, showProfile}) => {
 
-    let showProfile=true;
     if (showProfile === true){
         return(
             <ul>
                 <li><button onClick={logout}>logout</button></li>
-                <li><button> Profile</button>
+                <li><button onClick={toggleProfile}> Profile</button>
                 <ProfileDropDown /></li>
             </ul>
         );
@@ -56,18 +73,18 @@ const LoggedInOptions = ({logout}) => {
         return (
             <ul>
                 <li><button onClick={logout}>logout</button></li>
-                    <li><button> Profile</button></li>
+                    <li><button onClick={toggleProfile}> Profile</button></li>
             </ul>
         );
     }
 };
 
-const LoggedOutOptions = ({login}) =>{
-    let showForm = true;
+const LoggedOutOptions = ({ login, toggleLogin, showForm}) =>{
+    
     if (showForm === true){
         return(
                 <ul>
-                    <li><button> login</button>
+                <li><button onClick={toggleLogin}> login</button>
                     <LoginDropDown login={login} /></li>
                 <li><Link to='/signUp'> SignUp</Link></li>
                 </ul>
@@ -75,7 +92,7 @@ const LoggedOutOptions = ({login}) =>{
     } else{
         return (
             <ul>
-                <li><button> login</button></li>
+                <li><button onClick={toggleLogin}> login</button></li>
                 <li><Link to='/signUp'> SignUp</Link></li>
             </ul>
         );

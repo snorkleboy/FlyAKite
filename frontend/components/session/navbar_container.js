@@ -4,11 +4,15 @@ import Navbar from './navbar';
 
 const mapStateToProps = (state, ownProps)=>({
     currentUser: state.session.currentUser,
+    //showform
+    //showprofile
 });
 
 const mapDispatchToProps = (dispatch, ownProps)=> ({
     logout: ()=>dispatch(logout()),
     login: (user)=> dispatch(login(user))
+    //toggleprofile
+    //toggleform
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

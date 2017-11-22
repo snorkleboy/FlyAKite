@@ -4,8 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class LoginDropDown extends React.Component {
     constructor(props) {
         super(props);
-        console.log(`dropdown received:`);
-        console.log(props)
+
         this.state = {
             username: '',
             password: ''
