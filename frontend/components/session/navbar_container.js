@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout, login } from '../../actions/session_actions';
+import { logout, login, clearSessionErrors } from '../../actions/session_actions';
 import Navbar from './navbar';
 import { toggleProfile, toggleLoginForm} from '../../actions/navbar_ui_actions';
 const mapStateToProps = (state, ownProps)=>({
@@ -13,7 +13,8 @@ const mapDispatchToProps = (dispatch, ownProps)=> ({
     logout: ()=>dispatch(logout()),
     login: (user)=> dispatch(login(user)),
     toggleProfile: () => dispatch(toggleProfile()),
-    toggleForm: () => dispatch(toggleLoginForm())
+    toggleForm: () => dispatch(toggleLoginForm()),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

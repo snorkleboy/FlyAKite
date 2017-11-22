@@ -1,0 +1,10 @@
+.signup-splash-img{
+    position: absolute;
+    z-index: 0;
+    top: 0%;
+    bottom:50%;
+    margin:-10px;
+}
+
+.signup-page{}
+

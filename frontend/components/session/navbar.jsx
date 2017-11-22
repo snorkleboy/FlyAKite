@@ -30,6 +30,7 @@ class Navbar extends React.Component{
                         showForm={this.props.showLogin}
                         toggleLogin={this.props.toggleForm}
                         errors={this.props.errors}
+                        clearSessionErrors={this.props.clearSessionErrors}
 
                      />
                 </div>
@@ -63,13 +64,12 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile }) => {
     }
 };
 
-const LoggedOutOptions = ({ login, toggleLogin, showForm, errors }) => {
-    console.log(showForm);
+const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionErrors }) => {
     if (showForm === true) {
         return (
             <ul>
                 <li><button onClick={toggleLogin}> login</button>
-                    <LoginDropDown login={login} errors={errors}/></li>
+                    <LoginDropDown login={login} errors={errors} clearSessionErrors={clearSessionErrors}/></li>
                 <li><Link to='/signUp'> SignUp</Link></li>
             </ul>
         );

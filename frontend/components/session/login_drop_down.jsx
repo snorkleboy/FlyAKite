@@ -43,7 +43,9 @@ class LoginDropDown extends React.Component {
             );
         }
     }
-
+    componentWillMount(){
+        this.props.clearSessionErrors();
+    }
     render() {
         return (
             <div className="login-form-container login-modal">

@@ -43,15 +43,19 @@ class SignUpPage extends React.Component {
         }
     }
 
-
+    componentWillMount() {
+        this.props.clearSessionErrors();
+    }
     render() {
         return (
-            <main className='signup-page'>
+            
+            <main className='signup-page'>  
+                <img className='signup-splash-img' src='https://www.goodfreephotos.com/albums/other-photos/kite-in-the-blue-sky.jpg' alt='woopsie doopsie' />
                 <div className="signup-form-container">
                     <form onSubmit={this.handleSubmit} className="login-form-box">
                         <h1>FlyAKite</h1>
                         <br />
-                       <h3> Sign up</h3>
+                       <h3> Sign up</h3> or <Link to='/'> back to browsing</Link>
                         {this.renderErrors()}
                         <div className="login-form">
                             <br />
