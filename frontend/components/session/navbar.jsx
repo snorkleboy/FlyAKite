@@ -1,83 +1,84 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfileDropDown from './profile_drop_down';
+import LoginDropDown from './login_drop_down';
 
 class Navbar extends React.Component{
     constructor(props){
         super(props);
+        console.log(`navbar recieved: `);
+        console.log(props);
 
+        this.login=this.props.login.bind(this);
+        this.logout=this.props.logout.bind(this);
+        this.State={showForm: true, showProfile: true};
     }
 
     render(){
         if (this.props.currentUser){
-          var username = this.props.currentUser.username;
+            return (
+                <div>
+                  Hello ,{this.props.currentUser.username}!
+                  <LoggedInOptions
+                   logout={this.props.logout}
+                   />
+                </div>
+          );
         }else{
-             username = "not logged in";
+            return (
+                <div>
+                    <LoggedOutOptions
+                        login={this.props.login}
+                        showForm={true}
+                     />
+                </div>
+            ); 
         }
-       return(
-            <div>
-               {username}
-            </div>       
-       );
+      
     }
 
 }
 
 export default Navbar;
 
-const LoggedInOptions = () => (
-    <div>
-        <button onClick={this.props.login}>logout</button>
-        <button >ProfileDropDown</button>
-    </div>
-);
+const LoggedInOptions = ({logout}) => {
 
-const LoggedOutOptions = () =>{
-    <div>
-        <button onClick={this.props.logout}>login</button>
-        <button >ProfileDropDown</button>
-    </div>
-};
-// if logged in display a logout button and profile button
-// if not logged in display a login button and a signup link
-/*  <NavLink
-    to="/faq"
-    activeClassName="selected"
->FAQs</NavLink> 
-
-
-
-class FlavorForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { value: 'coconut' };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
-
-    handleSubmit(event) {
-        alert('Your favorite flavor is: ' + this.state.value);
-        event.preventDefault();
-    }
-
-    render() {
+    let showProfile=true;
+    if (showProfile === true){
+        return(
+            <ul>
+                <li><button onClick={logout}>logout</button></li>
+                <li><button> Profile</button>
+                <ProfileDropDown /></li>
+            </ul>
+        );
+    } else {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Pick your favorite La Croix flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
-                    </select>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <ul>
+                <li><button onClick={logout}>logout</button></li>
+                    <li><button> Profile</button></li>
+            </ul>
         );
     }
-} */
+};
+
+const LoggedOutOptions = ({login}) =>{
+    let showForm = true;
+    if (showForm === true){
+        return(
+                <ul>
+                    <li><button> login</button>
+                    <LoginDropDown login={login} /></li>
+                    <li><Link to='/'> SignUp</Link></li>
+                </ul>
+        );
+    } else{
+        return (
+            <ul>
+                <li><button> login</button></li>
+                <li><Link to='/signUp'> SignUp</Link></li>
+            </ul>
+        );
+    }
+    
+};
