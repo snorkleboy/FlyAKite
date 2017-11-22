@@ -29,13 +29,27 @@ class LoginDropDown extends React.Component {
         const user = this.state;
         this.props.login({ user });
     }
+    renderErrors() {
 
+        if (this.props.errors.length > 0) {
+            return (
+                <ul className='error-list'>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error.slice(2, error.length - 2)}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+    }
 
     render() {
         return (
             <div className="login-form-container login-modal">
                 <form onSubmit={this.handleSubmit}>
                     <div className="login-form">
+                        {this.renderErrors()}
                         <label>Username:
                             <input type="text"
                                 value={this.state.username}

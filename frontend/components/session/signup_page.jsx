@@ -11,7 +11,6 @@ class SignUpPage extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         if (nextProps.loggedIn) {
             this.props.history.push('/');
         }
@@ -29,18 +28,21 @@ class SignUpPage extends React.Component {
         this.props.signup({ user });
     }
 
-    renderErrors() {
-        console.log(this.props.errors)
-        return (
-            <ul className='error-list'>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+    renderErrors(){
+
+        if (this.props.errors.length > 0){
+            return (
+                <ul className='error-list'>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error.slice(2,error.length-2)}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
     }
+
 
     render() {
         return (
@@ -79,3 +81,11 @@ class SignUpPage extends React.Component {
 }
 
 export default (SignUpPage);
+
+
+
+// renderErrors() {
+//     return (
+
+//     );
+// }

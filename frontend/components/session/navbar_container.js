@@ -5,7 +5,8 @@ import { toggleProfile, toggleLoginForm} from '../../actions/navbar_ui_actions';
 const mapStateToProps = (state, ownProps)=>({
     currentUser: state.session.currentUser,
     showLogin: state.ui.showLogin,
-    showProfile: state.ui.showProfile
+    showProfile: state.ui.showProfile,
+    errors: state.errors.session,
 });
 
 const mapDispatchToProps = (dispatch, ownProps)=> ({

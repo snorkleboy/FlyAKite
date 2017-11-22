@@ -3,7 +3,7 @@ import {
     TOGGLE_PROFILE,
 } from '../actions/navbar_ui_actions';
 import merge from 'lodash/merge';
-const _navbarUI = {showLogin: true, showProfile: false};
+const _navbarUI = {showLogin: false, showProfile: false};
 export default (state = _navbarUI, action) => {
     Object.freeze(state);
     let newState = merge({},state);
