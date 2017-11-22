@@ -51,11 +51,17 @@ class SignUpPage extends React.Component {
             
             <main className='signup-page'>  
                 <img className='signup-splash-img' src='https://www.goodfreephotos.com/albums/other-photos/kite-in-the-blue-sky.jpg' alt='woopsie doopsie' />
+
                 <div className="signup-form-container">
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <div className='splash-text'>
+                        <h2> make friends</h2>
+                        <h2> get outdoors</h2>
                         <h1>FlyAKite</h1>
+                    </div>
+                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                        
                         <br />
-                       <h3> Sign up</h3> or <Link to='/'> back to browsing</Link>
+                       <h3> Sign up</h3> 
                         {this.renderErrors()}
                         <div className="login-form">
                             <br />
@@ -75,7 +81,7 @@ class SignUpPage extends React.Component {
                                 />
                             </label>
                             <br />
-                            <input type="submit" value="Submit" />
+                            <Link className='exit-modal' to='/'>cancel   </Link>     <input className='signup-submit' type="submit" value="Signup" />
                         </div>
                     </form>
                 </div>
