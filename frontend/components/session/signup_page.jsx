@@ -60,7 +60,7 @@ class SignUpPage extends React.Component {
                         
                         <br />
                        
-                        {this.renderErrors()}
+                        
                         <div className="signup-form">
                             <h3 className='getstarted'>Get Started</h3> 
                             <label className='signup-label'>Username
@@ -86,6 +86,7 @@ class SignUpPage extends React.Component {
                                 <input className='signup-text signup-button' type="submit" value="Signup" />
                             </div>
                         </div>
+                        {this.renderErrors()}
                     </form>
                 </div>
             </main>

@@ -47,7 +47,7 @@ class LoginDropDown extends React.Component {
             <div className="login-form-container login-modal">
                 <form className= 'login-form' onSubmit={this.handleSubmit}>
                     <div className="login-form">
-                        {this.renderErrors()}
+                        
                         <label>Username:
                             <input type="text"
                                 value={this.state.username}
@@ -65,6 +65,7 @@ class LoginDropDown extends React.Component {
                         </label>
                         <br />
                         <input className='login-submit' type="submit" value="Submit" />
+                        {this.renderErrors()}
                     </div>
                 </form>
             </div>
