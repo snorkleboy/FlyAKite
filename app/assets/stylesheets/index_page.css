@@ -41,9 +41,9 @@
 .login-input{
     padding: 5px;
     margin: 2px;
-    width: 140px;
+    width: 125px;
     font-size: 15px;
-    background-color: rgba(255, 238, 220, 0.4);
+    background-color: rgba(145, 250, 255, 0.26);
     text-align: left;
     font-weight: 200;
     border-bottom: 1px solid lightblue;
@@ -60,7 +60,7 @@
     position: absolute;
     top: 60px;
     right: 5%;
-    width: 125px;
+    width: 140px;
     height: 250px;
     background-color: white;
     color: #45494E; 
@@ -69,7 +69,7 @@
     padding: 5px 0 2px 0px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     padding: 15px 0 15px 0;
 
 }
@@ -89,9 +89,9 @@
     
 }
 .login-submit{
+        width: 120; 
         transition: .6s background-color, 1s border-radius;
-    
-        background-color: rgba(145, 248, 255, 0.342); 
+        background-color:  rgb(182, 255, 250);
         padding:10px;
         border-radius: 3px;
         border: 1px 0px 1px 0px solid lightgray;
