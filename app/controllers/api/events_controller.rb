@@ -1,5 +1,6 @@
 class Api::EventsController < ApplicationController
   def index
+    @events = Event.all
   end
 
   def show
@@ -18,5 +19,11 @@ class Api::EventsController < ApplicationController
   end
 
   def delete
+  end
+
+    private 
+  
+  def event_params
+    params.require(:event).permit(:use, :password)
   end
 end

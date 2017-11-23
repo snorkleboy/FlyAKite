@@ -3,7 +3,7 @@
 // logout: should make an AJAX request that deletes the current session.
 
 export const signup = (user) =>$.ajax({
-    url: "/api/user",
+    url: "/api/users",
     method: "POST",
     data: user
 });

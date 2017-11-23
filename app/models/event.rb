@@ -20,8 +20,9 @@ class Event < ApplicationRecord
     # location and end date are optional
     validates :name, :startDate, :endDate, :header, :description, presence: true
 
-    belongs_to :author, dependent: :destroy
+    belongs_to :author,
     primary_key: :id,
     foreign_key: :userId,
-    class_name: :User
+    class_name: :User,
+    dependent: :destroy
 end
