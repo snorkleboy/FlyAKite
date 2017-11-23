@@ -54,34 +54,39 @@ class SignUpPage extends React.Component {
 
                 <div className="signup-form-container">
                     <div className='splash-text'>
-                        <h2> make friends</h2>
-                        <h2> get outdoors</h2>
+                        <h2>make friends</h2>
+                        <h2>get outdoors</h2>
                         <h1>FlyAKite</h1>
                     </div>
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <form onSubmit={this.handleSubmit} className="signup-form-box">
                         
                         <br />
-                       <h3> Sign up</h3> 
+                       
                         {this.renderErrors()}
-                        <div className="login-form">
+                        <div className="signup-form">
+                            <h3>Get Started</h3> 
                             <br />
-                            <label>Username:
+                            <label className='signup-text'>Username:
+                            <br />
                                 <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
-                                    className="login-input"
+                                    className="signup-input"
                                 />
                             </label>
                             <br />
-                            <label>Password:
+                            <label className='signup-text'>Password:
+                            <br />
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
-                                    className="login-input"
+                                    className="signup-input"
                                 />
                             </label>
                             <br />
-                            <Link className='exit-modal' to='/'>cancel   </Link>     <input className='signup-submit' type="submit" value="Signup" />
+                            <div className='button-holder'>
+                                <Link className='signup-button signup-text' to='/'>Cancel   </Link>     <input className='login-text signup-button' type="submit" value="Signup" />
+                            </div>
                         </div>
                     </form>
                 </div>

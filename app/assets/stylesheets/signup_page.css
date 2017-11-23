@@ -1,75 +1,92 @@
 
+    .signup-page{
 
-.signup-form-container{
-    z-index: 1;
-    position: relative;
-    width:200px;
-    top: 60%                                                                                                                                                                                                                                                                                                                                                                      0%;
-    bottom: 50%;
-    left: 40%;
-    right: 50%;
-    /* background-color: rgba(255, 255, 255, .7); */
-    padding: 20px;
-    /* border: 1px solid black;
-    border-radius: 5px; */
+        text-align: center;
+        align-items: center;
+        vertical-align: center; 
+    }
+    .signup-form-container{
+        z-index: 1;
 
-    text-align: center;
-    align-items: center;
-    vertical-align: center;
+        /* background-color: rgba(255, 255, 255, .7); */
+        padding: 20px;
+        /* border: 1px solid black;
+        border-radius: 5px; */
 
-    color: #2a2d30;
-    font-weight: 200;
-    letter-spacing: -.1px;
-    font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+        /* text-align: center;
+        align-items: center;
+        vertical-align: center; */
 
-}
-.splash-text{
-    position: relative;
-    top: 45%                                                                                                                                                                                                                                                                                                                                                                      0%;
-    bottom: 40%;
-    left: -50%;
-    width: 500px;
-    text-align: center;
-    align-items: center;
-    vertical-align: center;
+        position: absolute;
+        top: 20%;
+        right: 40%;
+ 
 
+        color: #2a2d30;
+        font-weight: 200;
+        letter-spacing: -.1px;
+        font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
 
-    color: #2a2d30;
-    font-weight: 700;
-    letter-spacing: -.1px;
-    font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
-}
-.splash-text > h1{
-    font-size: 100px;
-}
-.splash-text > h2{
-    font-size: 40px;
-    color: #2a2d30;
-}
+    }
 
-.signup-splash-img{
+    .splash-text{
+        position: relative;
+        left: 18px;
+        text-align: center;
+        align-items: center;
+        vertical-align: center;
+        color: #2a2d30;
+        font-weight: 700;
+        letter-spacing: -.1px;
+        font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+    }
+    .splash-text > h1{
+        font-size: 100px;
+    }
+    .splash-text > h2{
+        font-size: 40px;
+        color: #43484d;
+    }
+ 
+
+    .signup-splash-img{
+        position: absolute;
+        z-index: -100;
+        top: 0%;
+        bottom:50%;
+        margin:-10px;
+
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+
     position: absolute;
-    z-index: -100;
-    top: 0%;
-    bottom:50%;
-    margin:-10px;
+    top: 0;
+    left: 0;
+    }
 
-  min-height: 100%;
-  min-width: 1024px;
-	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
+    .signup-input, .signup-text,.signup-form-container > label {
+        padding: 5px;
+        background-color: rgba(11, 1, 1, 0);
+        margin:5px;
+        border-radius: 25px; 
+            font-weight: 600;
+            
 
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+        
+    }
+    .button-holder{
+        display: inline-flex;
+        justify-content: space-around;
+        width: 200px;
+    }
 
-.login-input{
-    background-color: rgba(11, 1, 1, 0)
-}
+    .error-list{
+        color: rgb(233, 68, 68)
+    }
 
-.error-list{
-    color: rgb(233, 68, 68)
-}
+    .signup-button{
+        padding-left: 20px;
+        padding-right: 20px;
+    }

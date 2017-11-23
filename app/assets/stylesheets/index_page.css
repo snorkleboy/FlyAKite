@@ -1,0 +1,77 @@
+
+.nav-buttons{
+    display: inline-flex;
+
+}
+
+.navbar-options{
+
+}
+
+
+
+.navbar{
+
+    width: 100%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.nav-buttons > li{
+    background-color: white;
+    transition: .3s background-color ease;
+
+    border-left: 1px solid #EFF2F5;
+    padding: 20px 30px 20px 30px;
+    letter-spacing: 0.5px;
+    border-radius: 0px;
+    color: #45494E;
+}
+.nav-buttons > li:hover{
+    background-color: rgba(62, 184, 255, 0.8);
+}
+.login-input{
+    padding: 2px;
+    margin: 1px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgba(255, 238, 220, 0.4)
+}
+
+
+.login-modal{
+    display:block;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    right: 8%;
+    top: 9%;
+    width: 100px;
+    height: 135px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: rgba(248, 143, 24, 1); 
+}
+
+.navbar >h1{
+    color: rgba(248, 143, 24, 1); 
+    font-weight: 1400;
+    border-right: 2px solid #EFF2F5;
+
+
+    background-color: white;
+    padding: 20px;
+    letter-spacing: 0.5px;
+    border-radius: 0px;
+    font-family: Helvetica
+}
+
+.navbar-img-container{
+    width: 120%;
+    height: 300px;
+    overflow: hidden;
+}

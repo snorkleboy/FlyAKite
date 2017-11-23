@@ -14,7 +14,7 @@ class LoginDropDown extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
-            
+            this.props.toggleLogin();
         }
     }
 
@@ -49,7 +49,7 @@ class LoginDropDown extends React.Component {
     render() {
         return (
             <div className="login-form-container login-modal">
-                <form onSubmit={this.handleSubmit}>
+                <form className= 'login-form' onSubmit={this.handleSubmit}>
                     <div className="login-form">
                         {this.renderErrors()}
                         <label>Username:
