@@ -71,7 +71,7 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
     return (
             <ul className='nav-buttons'>
             {/* <li className='current-user-greet'><h1> Hello ,{username}!</h1></li> */}
-            <li><button className='navbar-button' onClick={logout}>logout</button></li>
+            <li><button className='navbar-button' onClick={logout}>Logout</button></li>
             <li><button className='navbar-button' onClick={toggleProfile}> Profile</button></li>
                 {modal}
             </ul>
