@@ -48,21 +48,21 @@ class LoginDropDown extends React.Component {
                 <form className= 'login-form' onSubmit={this.handleSubmit}>
                     <div className="login-form">
                         
-                        <label>Username:
+                        Username
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
-                        </label>
+                        
                         <br />
-                        <label>Password:
+                        Password
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
-                        </label>
+                        
                         <br />
                         <input className='login-submit' type="submit" value="Submit" />
                         {this.renderErrors()}
