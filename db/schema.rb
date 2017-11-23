@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 20171123192924) do
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "location"
+    t.string "city"
+    t.integer "areaCode", null: false
+    t.string "state"
     t.index ["userId"], name: "index_events_on_userId"
   end
 
