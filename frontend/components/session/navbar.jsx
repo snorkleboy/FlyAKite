@@ -70,9 +70,9 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
     let modal = showProfile === true ? <ProfileDropDown /> : null;   
     return (
             <ul className='nav-buttons'>
-            {/* <li className='current-user-greet'><h1> Hello ,{username}!</h1></li> */}
-            <li><button className='navbar-button' onClick={logout}>Logout</button></li>
-            <li><button className='navbar-button' onClick={toggleProfile}> Profile</button></li>
+                <li className='current-user-greet' >Welcome, {username}!</li>
+                <li><button className='navbar-button' onClick={logout}>Logout</button></li>
+                <li><button className='navbar-button' onClick={toggleProfile}> Profile</button></li>
                 {modal}
             </ul>
         );

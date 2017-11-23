@@ -8,6 +8,7 @@ class SignUpPage extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -26,6 +27,13 @@ class SignUpPage extends React.Component {
         e.preventDefault();
         const user = this.state;
         this.props.signup({ user });
+    }
+    handleDemoLogin(e){
+        e.preventDefault();
+        this.props.loginGuest();
+        console.log("demo login function");
+        console.log(this.props.loginGuest);
+        this.props.history.push('/');
     }
 
     renderErrors(){
@@ -84,6 +92,7 @@ class SignUpPage extends React.Component {
                             <div className='button-holder'>
                                 <Link className='signup-button signup-text' to='/'>Cancel   </Link>
                                 <input className='signup-text signup-button' type="submit" value="Signup" />
+                                <button className='signup-button signup-text' onClick={this.handleDemoLogin}>Guest</button>
                             </div>
                         </div>
                         {this.renderErrors()}
