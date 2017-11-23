@@ -31,8 +31,6 @@ class SignUpPage extends React.Component {
     handleDemoLogin(e){
         e.preventDefault();
         this.props.loginGuest();
-        console.log("demo login function");
-        console.log(this.props.loginGuest);
         this.props.history.push('/');
     }
 

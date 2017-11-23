@@ -1,19 +1,23 @@
 import React from 'react';
+
+import ClearSessionErrors from '../../actions/session_actions.js';
 import { Link } from 'react-router-dom';
 import ProfileDropDown from './profile_drop_down';
 import LoginDropDown from './login_drop_down';
 
-class Navbar extends React.Component{
-    constructor(props){
+class Navbar extends React.Component
+{    constructor(props){
         super(props);
-        console.log(props);
+    if (this.props.showLogin) {
+        this.props.toggleForm();
+    }
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         if (nextProps.currentUser && nextProps.showLogin) {
             this.props.toggleForm();
         }
     }
+    
     render(){
         
         return(
@@ -30,11 +34,12 @@ class Navbar extends React.Component{
             </main>
         );
     }
+    componentDidMount() {
+    }
     renderOptions(){
         if (this.props.currentUser){
             return (
                 <div>
-                    
                   <LoggedInOptions
                    logout={this.props.logout}
                    showProfile={this.props.showProfile}

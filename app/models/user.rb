@@ -17,6 +17,10 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    has_many :events,
+    primary_key: :id,
+    foreign_key: :userId,
+    class_name: :Event
 
     attr_reader :password
     def ensure_session_token
