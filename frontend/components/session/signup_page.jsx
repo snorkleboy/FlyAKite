@@ -66,7 +66,7 @@ class SignUpPage extends React.Component {
                         <div className="signup-form">
                             <h3>Get Started</h3> 
                             <br />
-                            <label className='signup-text'>Username:
+                            <label className='signup-label'>Username:
                             <br />
                                 <input type="text"
                                     value={this.state.username}
@@ -75,7 +75,7 @@ class SignUpPage extends React.Component {
                                 />
                             </label>
                             <br />
-                            <label className='signup-text'>Password:
+                            <label className='signup-label'>Password:
                             <br />
                                 <input type="password"
                                     value={this.state.password}
@@ -85,7 +85,8 @@ class SignUpPage extends React.Component {
                             </label>
                             <br />
                             <div className='button-holder'>
-                                <Link className='signup-button signup-text' to='/'>Cancel   </Link>     <input className='login-text signup-button' type="submit" value="Signup" />
+                                <Link className='signup-button signup-text' to='/'>Cancel   </Link>
+                                <input className='signup-text signup-button' type="submit" value="Signup" />
                             </div>
                         </div>
                     </form>

@@ -12,11 +12,7 @@ class LoginDropDown extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.loggedIn) {
-            this.props.toggleLogin();
-        }
-    }
+
 
     update(field) {
         return e => this.setState({

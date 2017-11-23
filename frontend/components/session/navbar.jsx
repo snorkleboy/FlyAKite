@@ -8,7 +8,12 @@ class Navbar extends React.Component{
         super(props);
         console.log(props);
     }
-
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        if (nextProps.currentUser && nextProps.showLogin) {
+            this.props.toggleForm();
+        }
+    }
     render(){
         
         return(

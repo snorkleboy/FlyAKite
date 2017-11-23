@@ -66,12 +66,12 @@
     left: 0;
     }
 
-    .signup-input, .signup-text,.signup-form-container > label {
+    .signup-input, .signup-text,.signup-label {
         padding: 5px;
         background-color: rgba(11, 1, 1, 0);
         margin:5px;
         border-radius: 25px; 
-            font-weight: 600;
+        font-weight: 300;
             
 
         
@@ -89,4 +89,21 @@
     .signup-button{
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .signup-text{
+        font-weight: 700;
+        transition: .3s background-color;
+        /* transition: .5s color; */
+        background-color: transparent;
+        font-weight: 300;
+        color: #43484d;
+
+
+    }
+
+    .signup-text:hover{
+        background-color: rgba(90, 248, 151, 0.753);
+        color: #684b63;
+
     }
