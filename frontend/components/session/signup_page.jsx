@@ -54,9 +54,7 @@ class SignUpPage extends React.Component {
 
                 <div className="signup-form-container">
                     <div className='splash-text'>
-                        <h2>make friends</h2>
-                        <h2>get outdoors</h2>
-                        <h1>FlyAKite</h1>
+                        <h1>FlyaKite</h1>
                     </div>
                     <form onSubmit={this.handleSubmit} className="signup-form-box">
                         
@@ -64,9 +62,8 @@ class SignUpPage extends React.Component {
                        
                         {this.renderErrors()}
                         <div className="signup-form">
-                            <h3>Get Started</h3> 
-                            <br />
-                            <label className='signup-label'>Username:
+                            <h3 className='getstarted'>Get Started</h3> 
+                            <label className='signup-label'>Username
                             <br />
                                 <input type="text"
                                     value={this.state.username}
@@ -75,7 +72,7 @@ class SignUpPage extends React.Component {
                                 />
                             </label>
                             <br />
-                            <label className='signup-label'>Password:
+                            <label className='signup-label'>Password
                             <br />
                                 <input type="password"
                                     value={this.state.password}
@@ -98,10 +95,3 @@ class SignUpPage extends React.Component {
 
 export default (SignUpPage);
 
-
-
-// renderErrors() {
-//     return (
-
-//     );
-// }

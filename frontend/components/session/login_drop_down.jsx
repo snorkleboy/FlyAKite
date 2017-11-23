@@ -64,7 +64,7 @@ class LoginDropDown extends React.Component {
                             />
                         </label>
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input className='login-submit' type="submit" value="Submit" />
                     </div>
                 </form>
             </div>

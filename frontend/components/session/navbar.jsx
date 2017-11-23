@@ -90,9 +90,10 @@ const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionEr
     let modal = showForm === true ? poppedUp : PoppedOut;
         return (
             <ul className='nav-buttons'>
-                <li><button onClick={toggleLogin}> login</button></li>
                 {modal()}
-                <li><Link to='/signUp'> SignUp</Link></li>
+                <li><button className='navbar-button' onClick={toggleLogin}> login</button></li>
+                
+                <li><Link to='/signUp' className='navbar-button annoying'> SignUp</Link></li>
             </ul>
         );
 };
