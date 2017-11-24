@@ -12,4 +12,4 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     receiveAllEvents: ()=> dispatch(receiveAllEvents())
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Eventlist)
+export default connect(mapStateToProps, mapDispatchToProps)(Eventlist);

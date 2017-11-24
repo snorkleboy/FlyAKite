@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171123192924) do
     t.datetime "endDate"
     t.text "header", null: false
     t.text "description", null: false
+    t.text "imgURL", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
