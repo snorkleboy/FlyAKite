@@ -57,45 +57,50 @@ class SignUpPage extends React.Component {
             
             <main className='signup-page'>  
                 <img className='signup-splash-img' src='https://www.goodfreephotos.com/albums/other-photos/kite-in-the-blue-sky.jpg' alt='woopsie doopsie' />
-
+               
                 <div className="signup-form-container">
                     <div className='splash-text'>
                         <h1>FlyaKite</h1>
+                        <div className="signup-line2"></div>
+
+                        <div className="signup-line3"></div>
+
                     </div>
-                    <form onSubmit={this.handleSubmit} className="signup-form-box">
+                    
+                        <form onSubmit={this.handleSubmit} className="signup-form-box">
+                            
+                            <br />
                         
-                        <br />
-                       
-                        
-                        <div className="signup-form">
-                            <h3 className='getstarted'>Get Started</h3> 
-                            <label className='signup-label'>Username
-                            <br />
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    className="signup-input"
-                                />
-                            </label>
-                            <br />
-                            <label className='signup-label'>Password
-                            <br />
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    className="signup-input"
-                                />
-                            </label>
-                            <br />
-                            <div className='button-holder'>
-                                <input className='signup-text signup-button' type="submit" value="Signup" />
-                                <button className='signup-button signup-text' onClick={this.handleDemoLogin}>Guest</button>
-                                <Link className='signup-button signup-text' to='/'>Cancel   </Link>                                
-                                
+                            
+                            <div className="signup-form">
+                                <h3 className='getstarted'>Get Started</h3> 
+                                <label className='signup-label'>Username
+                                <br />
+                                    <input type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        className="signup-input"
+                                    />
+                                </label>
+                                <br />
+                                <label className='signup-label'>Password
+                                <br />
+                                    <input type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        className="signup-input"
+                                    />
+                                </label>
+                                <br />
+                                <div className='button-holder'>
+                                    <input className='signup-text signup-button' type="submit" value="Signup" />
+                                    <button className='signup-button signup-text' onClick={this.handleDemoLogin}>Guest</button>
+                                    <Link className='signup-button signup-text' to='/'>Cancel   </Link>                                
+                                    
+                                </div>
                             </div>
-                        </div>
-                        {this.renderErrors()}
-                    </form>
+                            {this.renderErrors()}
+                        </form>
                 </div>
             </main>
         );
