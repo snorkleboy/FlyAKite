@@ -14,14 +14,17 @@ import {
 
 import NavbarContainer from '../components/session/navbar_container';
 import SignUpPageContainer from '../components/session/signup_container';
+import EventListContainer from './events/eventlist_container';
 
 const App = () => (
-  <div>
+  <div className="Router-level-div">
     <switch>
       <AuthRoute exact path='/signup' component={SignUpPageContainer} />
       <Route exact path='/' component={NavbarContainer} />
     </switch>
-
+    <switch>
+      <Route exact path='/' component={EventListContainer} />
+    </switch>
   </div>
 );
 

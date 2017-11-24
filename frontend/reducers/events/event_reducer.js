@@ -5,17 +5,6 @@ import {
 
 
 import merge from 'lodash/merge';
-// sample
-// const events = {
-//     "byIDs":{
-//                 1:{...}
-//                 2:{...}"
-//                 ...
-//             }
-//     "order":[1,4,3,5,6]
-// };
-
-
 
 const _events = {
     "byIDs": {},
@@ -26,11 +15,8 @@ export default (state = _events, action) => {
     switch (action.type) {
         case RECEIVE_ALL_EVENTS:
             return merge({}, state, action.payload);
-
         default:
             return state;
     }
-
-
 };
 
