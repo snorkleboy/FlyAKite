@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 //Components
  import Root from './components/root';
 import configureStore from './store/store';
-
 // testing:
-// import * as SessionAPI from './util/sessionAPI';
+import * as EventActions from './actions/event_actions';
 import * as SessionActions from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -19,7 +18,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     } else {
         store = configureStore();
     }
+    console.log(EventActions);
 
+    window.GetAllEvents = EventActions.GetAllEvents;
     window.signup = SessionActions.signup;
     window.login = SessionActions.login;
     window.logout = SessionActions.logout;

@@ -4,7 +4,9 @@
 }
 
 .navbar{
+    
     width: 100%;
+    margin:0 auto;
     background-color:rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
@@ -14,6 +16,7 @@
 }
 
 .nav-buttons > li{
+    line-height: 1  ;
     display: flex;
     background-color: white;
     transition: .3s background-color ease;
@@ -22,20 +25,22 @@
     letter-spacing: 0.5px;
     border-radius: 0px;
     color: #45494E;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
+    height: 60px;
 
     align-content: center;
     vertical-align: center;
 }
+.login-button{
+    border-right: 1px solid #EFF2F5;
 
-/* .annoying{
-    position: relative;
-    top: 5px;
-    display:flex;
-} */
+}
+
+
 .nav-buttons > li:hover{
     background-color: rgba(62, 184, 255, 0.8);
+    color: rgb(145, 82, 14)
 }
 
 .login-input{
@@ -51,26 +56,32 @@
 .navbar-button{
     font-size: 14px;
     padding: 25px;
+        position: relative;
+
 
 }
 .login-modal{
+    border-top: 1px solid lightgray;
+    margin: auto;
     text-align: center;
     align-items: center;
-    overflow: hidden;
+    overflow: wrap;
     position: absolute;
+    right: 74px; 
     top: 60px;
-    right: 5%;
     width: 140px;
     height: 250px;
-    background-color: white;
+    background-color: white !important;
     color: #45494E; 
     border: 0px 1px 1px 1px solid lightgrey;
-    border-radius: 0px 0px 4px 4    px;   
+    border-radius: 0px 0px 2px 2px;   
     padding: 5px 0 2px 0px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     padding: 15px 0 15px 0;
+    box-shadow: 2px 1px 1px rgb(1, 36, 25);
+
+    z-index: 1000
 
 }
 .error-list{
@@ -109,17 +120,18 @@
 
 /* logo */
 .navbar >h1{
-    position: relative;
-    top :0px;
+    line-height: 0;
     color: rgba(248, 143, 24, 1); 
     font-weight: 700;
-    border-right: 2px solid #EFF2F5;
+    border-right: 1px solid #EFF2F5;
+    border-left: 1px solid #EFF2F5;
     background-color: white;
     padding: 25px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     border-radius: 0px;
-    font-size: 22px;
+    font-size: 30px;
     padding-bottom: 30px;
+
 }
 
 .navbar-img-container{
@@ -136,8 +148,3 @@
     flex-direction: column;
     justify-content: space-around;
 }
-/* .nav-bar-page{
-    display: flex;
-    flex-direction: column;
-
-} */

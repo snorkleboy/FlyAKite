@@ -58,11 +58,12 @@
 }
     .signup-input, .signup-text {
         padding: 5px;
-        background-color:white;
+        background-color:rgba(255, 255, 255, 0.945);
         margin:5px;
         border-radius: 3px; 
         font-weight: 300;
         text-align: left;      
+        border-bottom: 1px solid lightblue;
     }
     .button-holder{
         display: inline-flex;
@@ -81,9 +82,9 @@
     .signup-text{
         display: block;
         font-weight: 700;
-        transition: .3s background-color;
+        transition: .6s background-color, .3s border-radius;
         /* transition: .5s color; */
-        background-color: rgb(255, 255, 255); 
+        background-color: rgba(255, 255, 255,.92); 
         font-weight: 300;
         color: #2a2d30;
         border-radius: 0px;
@@ -93,5 +94,6 @@
     }
 
     .signup-text:hover{
+        border-radius: 8px;
         background-color: rgba(248, 143, 24, 1); 
     }

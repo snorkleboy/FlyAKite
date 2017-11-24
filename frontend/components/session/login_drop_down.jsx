@@ -45,7 +45,7 @@ class LoginDropDown extends React.Component {
     render() {
         return (
             <div className="login-form-container login-modal">
-                <form className= 'login-form' onSubmit={this.handleSubmit}>
+                <form id="loginForm" className='login-form' onSubmit={this.handleSubmit}>
                     <div className="login-form">
                         
                         Username

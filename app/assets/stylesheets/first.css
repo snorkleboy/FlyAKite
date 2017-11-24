@@ -48,3 +48,7 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px rgba(255, 255, 255, 0.959);
+}
