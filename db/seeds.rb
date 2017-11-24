@@ -25,7 +25,7 @@ event1 = Event.create!(
     header: "Kite Surfing with the stars",
     description:" late night kite surfing for the bold and the adventurous. Must sign liability forms in duplicate. We will meet up at point reyes at the start time and head out to a secret beach location to get some sweet winds",
     areaCode: 925,
-    imgURL: "https://goo.gl/images/7tzCSh"
+    imgURL: "https://cdn.pixabay.com/photo/2013/07/12/17/59/kites-152760_960_720.png"
     )
 
 event2 = Event.create!(
@@ -38,7 +38,7 @@ event2 = Event.create!(
     areaCode: 530,
     city: "oakland",
     state: "CA",
-    imgURL: "https://goo.gl/images/ffTioo"
+    imgURL: "http://www.star2.com/wp-content/uploads/2017/05/amkiteman_annmarie_2-1170x779.jpg"
 
  )
 

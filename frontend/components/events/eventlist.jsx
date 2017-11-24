@@ -1,5 +1,5 @@
 import React from 'react';
-import {link, withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import EventListItem from './event_list_item.jsx';
 
 class EventList extends React.Component{
@@ -20,13 +20,14 @@ class EventList extends React.Component{
     render(){
         return(
             <div className="eventList-container">
-            <h1> something</h1>
                 <div className="eventListItem-container"> 
-                    <ul>
+                    <ul className='event-list-ul'>
                     {this.props.events.order.map((eventID, index) => {
                         let event = this.props.events.byIDs[eventID]
                         return (                        
-                            <EventListItem key={index + eventID} event={event}/>
+                         <Link to={`/events/${eventID}`} > 
+                             <EventListItem key={index + eventID} event={event}/>
+                         </Link>
                         );
                     })}
                     </ul>

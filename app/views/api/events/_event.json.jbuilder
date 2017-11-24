@@ -1,4 +1,4 @@
-json.extract! event, :id,  :userId, :name, :startDate, :endDate, :header, :description
+json.extract! event, :id,  :userId, :name, :startDate, :endDate, :header, :description, :imgURL
 
 
 json.set! :location do
