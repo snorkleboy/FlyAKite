@@ -34,8 +34,7 @@ class Navbar extends React.Component
             </main>
         );
     }
-    componentDidMount() {
-    }
+ 
     renderOptions(){
         if (this.props.currentUser){
             return (

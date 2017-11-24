@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { logout, login, clearSessionErrors } from '../../actions/session_actions';
 import Navbar from './navbar';
 import { toggleProfile, toggleLoginForm} from '../../actions/navbar_ui_actions';
+
+
 const mapStateToProps = (state, ownProps)=>({
     currentUser: state.session.currentUser,
     showLogin: state.ui.showLogin,

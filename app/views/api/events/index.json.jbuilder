@@ -6,7 +6,7 @@ json.byIDs do
     end
 end
 
-
-json.order @events, :id, :created_at
-
+json.order do
+    json.array! @events.map{|event| event.id}
+end
 
