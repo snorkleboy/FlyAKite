@@ -44,11 +44,11 @@
 }
 
 .login-input{
-    padding: 5px;
-    margin: 2px;
-    width: 125px;
+    padding: 7px;
+    margin: 3px;
+    width: 120px;
     font-size: 15px;
-    background-color: rgba(145, 250, 255, 0.26);
+    /* background-color: rgba(145, 250, 255, 0.26); */
     text-align: left;
     font-weight: 200;
     border-bottom: 1px solid lightblue;
@@ -67,15 +67,15 @@
     align-items: center;
     overflow: wrap;
     position: absolute;
-    right: 74px; 
+    right: 64px; 
     top: 60px;
-    width: 140px;
+    width: 160px;
     height: 250px;
     background-color: white !important;
     color: #45494E; 
     border: 0px 1px 1px 1px solid lightgrey;
     border-radius: 0px 0px 2px 2px;   
-    padding: 5px 0 2px 0px;
+    padding: 8px 3 4px 3px;
     display: flex;
     flex-direction: column;
     padding: 15px 0 15px 0;
@@ -100,7 +100,8 @@
     
 }
 .login-submit{
-        width: 120; 
+
+        width: 80px; 
         transition: .6s background-color, 1s border-radius;
         background-color:  rgb(182, 255, 250);
         padding:10px;
@@ -108,7 +109,9 @@
         border: 1px 0px 1px 0px solid lightgray;
         padding: 10px 4px 8px 4px;   
         margin-top: 8px;
-        margin-bottom: 15px;
+        
+            margin: auto;
+            margin-bottom: 15px;
         
 }
 
