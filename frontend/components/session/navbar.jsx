@@ -23,7 +23,7 @@ class Navbar extends React.Component
         return(
             <main>
                 <div className='navbar'>
-                    <h1 className="logo"> FlyAKite</h1>
+                    <h1 className="logo"> FlyaKite</h1>
                     <div className="navbar-options">{this.renderOptions()}</div>
                 </div>
                 <div className='navbar-img-container'>

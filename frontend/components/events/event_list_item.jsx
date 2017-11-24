@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const eventListItem = ( {event}) =>{
-    console.log('hello?');
+const EventListItem = ( {event}) =>{
+    // debugger;
+    console.log(Object.values(event));
     return(
-        <li>{event.map((prop, index) => <h1 key={index}> {prop}</h1> )}</li>
+        <li>{event.name }</li>
     );
 };
 
-export default eventListItem;
+export default EventListItem;

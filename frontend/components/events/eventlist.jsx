@@ -1,10 +1,11 @@
 import React from 'react';
 import {link, withRouter} from 'react-router-dom';
-import eventListItem from './event_list_item.jsx';
+import EventListItem from './event_list_item.jsx';
 
 class EventList extends React.Component{
     constructor(props){
         super(props);
+
     }
 
     // componentWillReceiveProps(nextProps) {
@@ -23,16 +24,9 @@ class EventList extends React.Component{
                 <div className="eventListItem-container"> 
                     <ul>
                     {this.props.events.order.map((eventID, index) => {
-                        let event = this.props.events.byIDs[eventID];
-                        const eventName=event.name;
-                        console.log(this.props.events.byIDs);
-                        console.log(eventID);
-                        console.log(event);
-                        console.log("____");
-                        return (
-                            
-                            <eventListItem key={index + eventID} event={event}/>
-                            
+                        let event = this.props.events.byIDs[eventID]
+                        return (                        
+                            <EventListItem key={index + eventID} event={event}/>
                         );
                     })}
                     </ul>
