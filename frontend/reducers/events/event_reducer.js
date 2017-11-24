@@ -25,14 +25,7 @@ export default (state = _events, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_EVENTS:
-            let newEvents = action.payload.map((event) => { event.id : }
-
-
-
-
-            )
-
-            return merge({}, state, newEvents);
+            return merge({}, state, action.payload);
 
         default:
             return state;

@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     } else {
         store = configureStore();
     }
-    console.log(EventActions);
 
     window.GetAllEvents = EventActions.GetAllEvents;
     window.signup = SessionActions.signup;
