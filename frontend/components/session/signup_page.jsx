@@ -93,9 +93,9 @@ class SignUpPage extends React.Component {
                                 </label>
                                 <br />
                                 <div className='button-holder'>
-                                    <input className='signup-text signup-button' type="submit" value="Signup" />
-                                    <button className='signup-button signup-text' onClick={this.handleDemoLogin}>Guest</button>
-                                    <Link className='signup-button signup-text' to='/'>Cancel   </Link>                                
+                                    <input className='signup-button' type="submit" value="Signup" />
+                                    <button className='signup-button' onClick={this.handleDemoLogin}>Guest</button>
+                                    <Link className='signup-button' to='/'>Cancel   </Link>                                
                                     
                                 </div>
                             </div>
