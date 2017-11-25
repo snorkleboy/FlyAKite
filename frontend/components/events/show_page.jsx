@@ -6,8 +6,7 @@ class ShowPage extends React.Component {
 
     constructor(props){
         super(props);
-        // console.log(props);
-        // this.props.GetEvent();
+ 
     }
 
     render(){
@@ -22,10 +21,10 @@ class ShowPage extends React.Component {
 
 
     componentDidMount() {
-        // if (!event){
+         if (!event){
             console.log(this.props.getEvent);
             this.props.getEvent(this.props.match.params.eventId);
-        // }    
+         }    
     }
 }
 
