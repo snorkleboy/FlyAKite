@@ -2,16 +2,31 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-class EventList extends React.Component {
+class ShowPage extends React.Component {
 
     constructor(props){
         super(props);
+        // console.log(props);
+        // this.props.GetEvent();
     }
 
     render(){
-       return( <h1>hello</h1>);
+        // console.log(this.props);
+       return( 
+       <ul>
+       event
+            {this.props.event ? this.props.event.name : null}
+       </ul>)
     }
 
+
+
+    componentDidMount() {
+        // if (!event){
+            console.log(this.props.getEvent);
+            this.props.getEvent(this.props.match.params.eventId);
+        // }    
+    }
 }
 
-export default EventList;
+export default ShowPage;

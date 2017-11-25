@@ -5,6 +5,7 @@ export const SelectEventsInOrder = (events) => {
         events.order.forEach( (Id) => {eventslist.push(events.byIDs[Id] );} );
     return (eventslist);
 };
+
 // {
 //     this.props.events.order.map((eventID, index) => {
 //         let event = this.props.events.byIDs[eventID];
