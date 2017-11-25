@@ -12,10 +12,13 @@ class ShowPage extends React.Component {
     render(){
         // console.log(this.props);
        return( 
-       <ul>
+       <main>
+
+
+
        event
             {this.props.event ? this.props.event.name : null}
-       </ul>)
+       </main>)
     }
 
 

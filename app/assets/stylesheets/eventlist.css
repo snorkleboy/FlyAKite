@@ -71,13 +71,27 @@
 
 .event-list-item-image-c{
     border-top: 7px solid rgb(167, 177, 176);
-    
+        position: relative;
     width:100%;
     height: 100%;
     padding: 1;
     border-radius: 0px 0px 40px 40px ;
     box-shadow: 1px 1px 3px  rgb(125, 161, 179);
+
+        transition: all .5s ;
+    transform: scale(1);   
 }
+
+.event-list-item-image-c:hover
+{
+    box-shadow: 10px 10px 60px rgb(125, 161, 179);
+    z-index: 10000;
+
+    transform: scale(1.15);
+}
+
+
+
 .event-list-item-header-c{
     width: 100%;
     height: 100%;
