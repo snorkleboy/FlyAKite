@@ -4,6 +4,7 @@
 .eventList-container{
 
     margin: 0 auto;
+    margin-top: 300px;
     display: flex;
     align-content: center;
     align-items: center;
@@ -13,10 +14,16 @@
 
 }
 
+.parallax { 
+
+}
+
+
+
 
 .event-item-anchor{
     display: flex;
-    margin: 40px;
+    margin: 35px;
 
 }
 .eventListItem-container{
@@ -41,7 +48,6 @@
 }
 
 .event-list-item-li{
-    padding: 40px;
     background-color: rgb(197, 234, 255);
     align-content: center;
     align-items: center;
@@ -51,12 +57,10 @@
     flex-direction: column;
     margin-bottom: 10px;
     transition: .6s background-color;
+    box-shadow: 3px 3px 6px  rgb(101, 120, 129);
 
 }
-.event-image-container:hover{
-    
-    background-color: rgb(241, 250, 255);
-}
+
 
 .event-image-container{
 

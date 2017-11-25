@@ -21,7 +21,7 @@ class EventList extends React.Component{
         return(
             <div className="eventList-container">
                 <div className="eventListItem-container"> 
-                    <ul className='event-list-ul'>
+                    <ul className='event-list-ul parallax'>
                     {this.props.events.order.map((eventID, index) => {
                         let event = this.props.events.byIDs[eventID]
                         return (                        

@@ -59,7 +59,7 @@ class SignUpPage extends React.Component {
               
                
                 <div className="signup-form-container">
-                    <Link className='signup-close' to='/'>X </Link>
+                    <Link className='signup-close' to='/'>&#x274c; </Link>
 
                     <div className='splash-text'>
                         <h1>FlyaKite</h1>
