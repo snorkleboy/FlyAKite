@@ -12,9 +12,10 @@ import {
   ProtectedRoute
 } from '../util/route_util.jsx';
 
-import NavbarContainer from '../components/session/navbar_container';
-import SignUpPageContainer from '../components/session/signup_container';
+import NavbarContainer from './session/navbar_container';
+import SignUpPageContainer from './session/signup_container';
 import EventListContainer from './events/eventlist_container';
+import ShowPageContainer from './events/show_container';
 
 const App = () => (
   <div className="Router-level-div">
@@ -23,9 +24,11 @@ const App = () => (
       <Route exact path='/' component={NavbarContainer} />
     </switch>
     <switch>
+      <Route exact path="/events/:eventId" component={ShowPageContainer} />
       <Route exact path='/' component={EventListContainer} />
     </switch>
   </div>
 );
 
 export default App;
+
