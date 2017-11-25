@@ -7,32 +7,16 @@
     
     width: 100%;
     margin:0 auto;
-    background-color:rgb(255, 255, 255);
+    background-color:#fbfbfb;
     display: flex;
     justify-content: space-between;
     height: 60px;
     max-height: 60px;  
     min-height: 60px;
-    box-shadow: 3px 3px 5px black;  
+    box-shadow: 3px 3px 5px rgb(111, 209, 196);  
 }
 
-.nav-buttons > li{
-    line-height: 1  ;
-    display: flex;
-    background-color: white;
-    transition: .3s background-color ease;
-    height: inherit;
-    border-left: 1px solid #EFF2F5;
-    letter-spacing: 0.5px;
-    border-radius: 0px;
-    color: #45494E;
-    font-size: 24px;
-    font-weight: 400;
-    height: 60px;
 
-    align-content: center;
-    vertical-align: center;
-}
 .login-button{
     border-right: 1px solid #EFF2F5;
 
@@ -42,23 +26,43 @@
 .login-input{
     padding: 7px;
     margin: 3px;
-    width: 120px;
+    width: 200px;
     font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.26);
+    background-color: #fbfbfb;
     text-align: left;
     font-weight: 200;
     border-bottom: 1px solid lightblue;
 }
 
 .navbar-button{
+    box-sizing: border-box;
+    height: 60px;
     background-color: white;
-    font-size: 14px;
+    /* font-size: 14px; */
     padding: 25px;
     position: relative;
     transition: .5s background-color;
 }
 .navbar-button:hover{
     background-color: #24b2ffb0;
+}
+
+.nav-buttons > li{
+    line-height: 1  ;
+    display: flex;
+    background-color: #fbfbfb;
+    transition: .3s background-color ease;
+    height: inherit;
+    border-left: 1px solid #EFF2F5;
+    letter-spacing: 0.5px;
+    border-radius: 0px;
+    color: #45494E;
+    /* font-size: 24px; */
+    font-weight: 400;
+    height: 60px;
+
+    align-content: center;
+    vertical-align: center;
 }
 .login-modal{
     border-top: 1px solid lightgray;
@@ -67,11 +71,11 @@
     align-items: center;
     overflow: wrap;
     position: absolute;
-    right: 64px; 
+    right: 0px; 
     top: 60px;
-    width: 160px;
+    width: 360px;
     height: 250px;
-    background-color: white !important;
+    background-color: #fbfbfb;
     color: #45494E; 
     border: 0px 1px 1px 1px solid lightgrey;
     border-radius: 0px 0px 2px 2px;   
@@ -92,18 +96,19 @@
     display: flex;
     flex-direction: column;
     margin: 6px 0px 5px 0px;
+      /* width: 400px; */
     
 }
 .login-form > label{
   margin: 4px 0px 2px 0px; 
-  width: inherit;
+
     
 }
 .login-submit{
 
         width: 80px; 
         transition: .6s background-color, 1s border-radius;
-        background-color:  rgb(182, 255, 250);
+        background-color:  #38deff;
         padding:10px;
         border-radius: 3px;
         border: 1px 0px 1px 0px solid lightgray;
@@ -116,7 +121,7 @@
 }
 
 .login-submit:hover{
-    background-color: #f54800;
+    background-color: #24afff;
     border-radius: 5px;
 
 }
@@ -124,7 +129,7 @@
 /* logo */
 .navbar >h1{
     line-height: 0;
-    color: #ff9838;
+    color: #24afff;
     font-weight: 700;
     border-right: 1px solid #EFF2F5;
     border-left: 1px solid #EFF2F5;
@@ -146,16 +151,16 @@
     z-index: -100;
 
 
-    background-attachment: fixed;
+    /* background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .current-user-greet {
-    /* font-weight: 200; */
-    /* font-size: 18px ; */
-    /* padding: 20px; */
-    /* height: 60px ; */
+    /* font-weight: 200; 
+    font-size: 18px ;
+     padding: 20px; 
+     height: 60px ; */
 
 }

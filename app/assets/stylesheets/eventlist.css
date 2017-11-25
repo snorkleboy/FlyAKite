@@ -42,7 +42,7 @@
 }
 
 .event-list-item-li{
-    background-color: rgb(197, 234, 255);
+    background-color: rgba(248, 248, 248, 1);
     align-content: center;
     align-items: center;
     width: 500px;

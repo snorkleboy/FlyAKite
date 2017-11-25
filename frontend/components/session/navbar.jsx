@@ -73,9 +73,9 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
     let modal = showProfile === true ? <ProfileDropDown /> : null;   
     return (
             <ul className='nav-buttons'>
-                <li className='current-user-greet' >Welcome, {username}!</li>
-                <li><button className='navbar-button' onClick={logout}>Logout</button></li>
-                <li><button className='navbar-button' onClick={toggleProfile}> Profile</button></li>
+            <li className='navbar-button' >Welcome, {username}!</li>
+                <li><button className='navbar-button' onClick={logout}>LOGOUT</button></li>
+                <li><button className='navbar-button' onClick={toggleProfile}> PROFILE</button></li>
                 {modal}
             </ul>
         );
@@ -94,9 +94,9 @@ const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionEr
         return (
             <ul className='nav-buttons'>
                 {modal()}
-                <li><button className='navbar-button' onClick={toggleLogin}> Login</button></li>
+                <li><button className='navbar-button' onClick={toggleLogin}> LOGIN</button></li>
                 
-                <li><Link to='/signUp' className='navbar-button annoying'> SignUp</Link></li>
+                <li><Link to='/signUp' className='navbar-button annoying'> SIGNUP</Link></li>
             </ul>
         );
 };

@@ -118,7 +118,7 @@
         font-weight: 700;
         transition: .6s background-color, .3s border-radius;
 
-        background-color:  #ff9838;
+        background-color:  #38deff;
         font-weight: 300;
         color: #2a2d30;
         border-radius: 0px;
@@ -130,5 +130,5 @@
 
     .signup-button:hover{
         border-radius: 3px;
-        background-color:  #f54800; 
+        background-color:  #24afff;
     }
