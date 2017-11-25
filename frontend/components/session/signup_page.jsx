@@ -56,7 +56,7 @@ class SignUpPage extends React.Component {
         return (
             
             <main className='signup-page'>  
-                <img className='signup-splash-img' src='https://www.goodfreephotos.com/albums/other-photos/kite-in-the-blue-sky.jpg' alt='woopsie doopsie' />
+              
                
                 <div className="signup-form-container">
                     <Link className='signup-close' to='/'>X </Link>
@@ -100,8 +100,9 @@ class SignUpPage extends React.Component {
                                                                     
                                     
                                 </div>
+                                
                             </div>
-                            {this.renderErrors()}
+                        {this.renderErrors()}
                         </form>
                 </div>
             </main>

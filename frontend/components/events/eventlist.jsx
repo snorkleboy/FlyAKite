@@ -25,9 +25,10 @@ class EventList extends React.Component{
                     {this.props.events.order.map((eventID, index) => {
                         let event = this.props.events.byIDs[eventID]
                         return (                        
-                         <Link className='event-item-anchor' to={`/events/${eventID}`} > 
+                            <div className='event-item-anchor'>
                              <EventListItem key={index + eventID} event={event}/>
-                         </Link>
+                   
+                            </div>
                         );
                     })}
                     </ul>
