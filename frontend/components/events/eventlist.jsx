@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import EventListItem from './event_list_item.jsx';
+import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
+
 
 class EventList extends React.Component{
     constructor(props){
@@ -18,19 +20,20 @@ class EventList extends React.Component{
         this.props.GetAllEvents();
     }
     render(){
+
+        const orderedEvents = SelectEventsInOrder(this.props.events)
         return(
             <div className="eventList-container">
                 <div className="eventListItem-container"> 
                     <ul className='event-list-ul'>
-                    {this.props.events.order.map((eventID, index) => {
-                        let event = this.props.events.byIDs[eventID];
-                        return (                        
+                        {orderedEvents.map ( (event, index) => (
+                      
                             <div className='event-item-anchor'>
-                             <EventListItem key={index + eventID} event={event}/>
+                                <EventListItem key={index*event.id} event={event}/>
                    
                             </div>
-                        );
-                    })}
+
+                    ))}
                     </ul>
                 </div>
 

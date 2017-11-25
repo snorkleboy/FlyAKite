@@ -9,7 +9,7 @@ class EventList extends React.Component {
     }
 
     render(){
-       return( <h1>hello</h1>)
+       return( <h1>hello</h1>);
     }
 
 }
