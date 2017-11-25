@@ -23,7 +23,13 @@ class EventList extends React.Component{
 
         const orderedEvents = SelectEventsInOrder(this.props.events)
         return(
+            <main>
+            <div className='navbar-img-container'>
+                {/* <img className='navbar-img'
+                    alt='woopsie doopsie' /> */}
+            </div>
             <div className="eventList-container">
+
                 <div className="eventListItem-container"> 
                     <ul className='event-list-ul'>
                         {orderedEvents.map ( (event, index) => (
@@ -39,6 +45,7 @@ class EventList extends React.Component{
 
             
             </div>
+            </main>
         );
     }
 

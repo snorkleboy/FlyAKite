@@ -26,10 +26,7 @@ class Navbar extends React.Component
                     <h1 className="logo"> FlyaKite</h1>
                     <div className="navbar-options">{this.renderOptions()}</div>
                 </div>
-                <div className='navbar-img-container'>
-                    {/* <img className='navbar-img'
-                    alt='woopsie doopsie' /> */}
-                </div>
+
             </main>
         );
     }
