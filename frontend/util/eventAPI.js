@@ -22,5 +22,5 @@ export const fetchAllEvents = () => $.ajax({
     url: '/api/events'
 });
 export const fetchEvent = (eventId) => $.ajax({
-    url: '/api/events'
+    url: '/api/events/${eventId}'
 });

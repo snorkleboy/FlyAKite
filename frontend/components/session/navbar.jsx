@@ -27,9 +27,8 @@ class Navbar extends React.Component
                     <div className="navbar-options">{this.renderOptions()}</div>
                 </div>
                 <div className='navbar-img-container'>
-                    <img className='navbar-img'
-                            src='https://prismkites.com/wp-content/uploads/2016/03/prism-kites-stowaway-diamond-p1-flying-sky.jpg'
-                    alt='woopsie doopsie' />
+                    {/* <img className='navbar-img'
+                    alt='woopsie doopsie' /> */}
                 </div>
             </main>
         );

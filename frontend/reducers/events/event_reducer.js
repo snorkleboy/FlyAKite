@@ -1,6 +1,7 @@
 import {
     RECEIVE_ALL_EVENTS,
     RECEIVE_EVENTS_ERROR,
+    RECEIVE_EVENT
 } from '../../actions/event_actions';
 
 
@@ -14,7 +15,9 @@ export default (state = _events, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_EVENTS:
+        case RECEIVE_EVENT:
             return merge({}, state, action.payload);
+
         default:
             return state;
     }

@@ -40,6 +40,7 @@ class LoginDropDown extends React.Component {
         }
     }
     componentWillMount(){
+        if (this.props.errors.length > 1)
         this.props.clearSessionErrors();
     }
     render() {

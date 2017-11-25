@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 
     window.GetAllEvents = EventActions.GetAllEvents;
+    window.getevent = EventActions.GetEvent;
     window.signup = SessionActions.signup;
     window.login = SessionActions.login;
     window.logout = SessionActions.logout;

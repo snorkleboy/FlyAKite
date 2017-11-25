@@ -4,7 +4,7 @@
 .eventList-container{
 
     margin: 0 auto;
-    margin-top: 300px;
+    margin-top: -150px;
     display: flex;
     align-content: center;
     align-items: center;
@@ -13,12 +13,6 @@
     width:80%;
 
 }
-
-.parallax { 
-
-}
-
-
 
 
 .event-item-anchor{
