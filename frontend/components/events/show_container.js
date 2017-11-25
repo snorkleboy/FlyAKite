@@ -4,10 +4,10 @@ import { GetEvent } from '../../actions/event_actions';
 
 const mapStatetoProps = (state, ownProps) =>{
 
-    console.log(state.events.byIDs[ownProps.match.params.eventId]);
+    const currentusersevent = state.session.currentUser ? Boolean(ownProps.match.params.eventId === state.session.currentUser.id) : null;
     return ({
-        // currentUsersEvent: Boolean(ownProps.match.params.eventId === state.session.currentUser.id),
-        event: state.events.byIDs[ownProps.match.params.eventId]
+        currentUsersEvent: currentusersevent,
+        event: state.events.byIDs[ownProps.match.params.eventId] || null
     });
 };
 

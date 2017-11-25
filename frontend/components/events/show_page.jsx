@@ -6,30 +6,46 @@ class ShowPage extends React.Component {
 
     constructor(props){
         super(props);
+        console.log(props);
  
     }
     componentDidMount() {
-        if (!event) {
-            console.log(this.props.getEvent);
+        console.log("didmount")
+        console.log(this.props)
+        console.log("--")
+        if (this.props.event === null) {
             this.props.getEvent(this.props.match.params.eventId);
         }
     }
+
+    componentWillReceiveProps(newProps)
+    {
+
+    }
     render() {
-        // console.log(this.props);
-        return (
-            <main>
-                <div>
-                    <ShowPageComponents.EventImage/> <ShowPageComponents.EventHeader/>
+        console.log(this.props.event);
+        if (this.props.event !== null){
+            return (
+                <div className='wrapper'>
+                test
+                    <main> 
+                        <h1> sidebar</h1>
+                    </main>
+                    <main>
+                        <div>
+                            <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
 
+                        </div>
+                        <div>
+                            <ShowPageComponents.EventDiscription description={this.props.event.description}/>
+                        </div>
+
+
+                    </main>;
                 </div>
-                <div>
-                    <ShowPageComponents.EventDiscription/>
-                </div>
-
-
-                event
-            {this.props.event ? this.props.event.name : null}
-            </main>);
+            );
+        }else { return null;}
+    
     }
 
 
