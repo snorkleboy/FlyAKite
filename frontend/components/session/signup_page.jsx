@@ -59,6 +59,8 @@ class SignUpPage extends React.Component {
                 <img className='signup-splash-img' src='https://www.goodfreephotos.com/albums/other-photos/kite-in-the-blue-sky.jpg' alt='woopsie doopsie' />
                
                 <div className="signup-form-container">
+                    <Link className='signup-close' to='/'>X </Link>
+
                     <div className='splash-text'>
                         <h1>FlyaKite</h1>
                         <div className="signup-line2"></div>
@@ -68,7 +70,7 @@ class SignUpPage extends React.Component {
                     </div>
                     
                         <form onSubmit={this.handleSubmit} className="signup-form-box">
-                            
+
                             <br />
                         
                             
@@ -95,7 +97,7 @@ class SignUpPage extends React.Component {
                                 <div className='button-holder'>
                                     <input className='signup-button' type="submit" value="Signup" />
                                     <button className='signup-button' onClick={this.handleDemoLogin}>Guest</button>
-                                    <Link className='signup-button' to='/'>Cancel   </Link>                                
+                                                                    
                                     
                                 </div>
                             </div>

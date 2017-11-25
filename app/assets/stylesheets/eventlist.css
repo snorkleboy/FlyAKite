@@ -16,7 +16,7 @@
 
 .event-item-anchor{
     display: flex;
-    padding: 40px;
+    margin: 40px;
 
 }
 .eventListItem-container{
@@ -42,7 +42,7 @@
 
 .event-list-item-li{
     padding: 40px;
-    background-color: aliceblue;
+    background-color: rgb(197, 234, 255);
     align-content: center;
     align-items: center;
     width: 500px;
