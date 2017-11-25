@@ -110,10 +110,12 @@
         transition: .6s background-color, 1s border-radius;
         background-color:  #38deff;
         padding:10px;
-        border-radius: 3px;
+        border-radius: 0px;
         border: 1px 0px 1px 0px solid lightgray;
         padding: 10px 4px 8px 4px;   
         margin-top: 8px;
+        font-weight: 700;
+        color:  white;
         
             margin: auto;
             margin-bottom: 15px;
