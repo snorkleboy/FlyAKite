@@ -7,10 +7,14 @@ class SignUpPage extends React.Component {
             username: '',
             password: ''
         };
+        console.log(this.props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
-
+    componentDidMount(){
+        console.log(this.props);
+        this.props.closeAll();
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
             this.props.history.push('/');

@@ -22,7 +22,7 @@ const App = () => (
   <div className="Router-level-div">
     <switch>
       <AuthRoute exact path='/signup' component={SignUpPageContainer} />
-      <Route path='/' component={NavbarContainer} />
+      <Route exact path='/' component={NavbarContainer} />
     </switch>
     <switch>
       <Route exact path="/events/:eventId" component={ShowPageContainer} />

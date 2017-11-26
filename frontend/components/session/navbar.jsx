@@ -17,6 +17,10 @@ class Navbar extends React.Component
             this.props.toggleForm();
         }
     }
+    componentWillUnmount(){
+        // console.log("he!!!!!!!!!!!!!!!!!!!!!!!!!!!re");
+        this.props.closeAll();
+    }
     
     render(){
         

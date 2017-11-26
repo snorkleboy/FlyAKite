@@ -1,13 +1,14 @@
 import {
     TOGGLE_LOGIN_FORM,
     TOGGLE_PROFILE,
+    CLOSE_ALL
 } from '../actions/navbar_ui_actions';
 
 import merge from 'lodash/merge';
 
 
 
-const _navbarUI = {showLogin: false, showProfile: false};
+const _navbarUI = {dropdown:null};
 
 export default (state = _navbarUI, action) => {
     Object.freeze(state);
@@ -17,8 +18,10 @@ export default (state = _navbarUI, action) => {
             newState.showLogin = !newState.showLogin;
             return newState;
         case TOGGLE_PROFILE:
-            newState.showProfile = !newState.showProfile;
+            newState.showProfile = !newState.showProfile || true;
             return newState;
+        case CLOSE_ALL:
+            return _navbarUI;
         default:
             return state;
     }
