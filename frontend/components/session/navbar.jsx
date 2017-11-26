@@ -24,8 +24,10 @@ class Navbar extends React.Component
             <main>
                 <div className='navbar'>
                     <Link to='/' ><h1 className="logo"> FlyaKite</h1></Link>
-                    <div className="navbar-options">{this.renderOptions()}</div>
-                    <Link to='/events/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
+                    <div className="navbar-options">
+                        <div >{this.renderOptions()}</div>
+                        <Link to='/events/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
+                    </div>
                 </div>
 
             </main>
