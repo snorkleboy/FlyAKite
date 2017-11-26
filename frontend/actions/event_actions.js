@@ -1,9 +1,11 @@
 import * as EventAPI from '../util/eventAPI';
 
-export const CLEAR_EVENT_ERRORS = "CLEAR_EVENT_ERRORS";
+
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
+export const RECEIVE_CREATED_EVENT = 'RECEIVE_CREATED_EVENT';
 export const RECEIVE_EVENTS_ERROR = 'RECEIVE_EVENT_ERROR';
+export const CLEAR_EVENT_ERRORS = "CLEAR_EVENT_ERRORS";
 
 export const clearEventErrors = () => ({
     type: CLEAR_EVENT_ERRORS
@@ -12,6 +14,9 @@ export const receiveEventsErrors = (errors) => ({
     type: RECEIVE_EVENTS_ERROR,
     payload: errors
 });
+
+
+
 
 
 export const receiveAllEvents = (events)=>({
@@ -23,7 +28,10 @@ export const receiveEvent = (event) => ({
     payload: event
 });
 
-
+export const receiveCreatedEvent = (event) => ({
+    type: RECEIVE_CREATED_EVENT,
+    payload: event
+});
 export const CreateEvent = (event) => dispatch => EventAPI.createEvent(event)
     .then((success) => dispatch(receiveEvent(event)),
         (fail) => dispatch(receiveEventsErrors(fail) ));

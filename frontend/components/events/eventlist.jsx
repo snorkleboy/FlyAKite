@@ -35,7 +35,7 @@ class EventList extends React.Component{
                             {orderedEvents.map ( (event, index) => (
                         
                                 <div className='event-item-anchor'>
-                                    <EventListItem key={index*event.id} event={event}/>
+                                    <EventListItem key={`eventlistitem-${index}`} event={event}/>
                     
                                 </div>
 

@@ -102,9 +102,9 @@ class SignUpPage extends React.Component {
                                                                     
                                     
                                 </div>
-                                
+                            {this.renderErrors()}
                             </div>
-                        {this.renderErrors()}
+                        
                         </form>
                 </div>
             </main>

@@ -34,12 +34,18 @@ class CreateEventComp extends React.Component {
             areaCode:415,
             state:"CA",
             city:"San Fransisco",
-            endDate:""
+            endDate:"",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount(){
+        this.props.clearEventErrors();
+    }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.loggedIn) {
+        console.log(nextProps)
+        if (nextProps.errors[0] === "success") {
+            // setTimeout({....}, 1s)
+            this.props.clearEventErrors();
             this.props.history.push('/');
         }
     }
@@ -56,14 +62,172 @@ class CreateEventComp extends React.Component {
         this.props.createEvent({ event });
         
     }
-  
+    renderErrors() {
+
+        if (this.props.errors.length > 0) {
+            return (
+                <ul className='error-list'>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error.slice(2, error.length - 2)}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+    }
 
     render(){
 
-        return(   
-                <h1>hello</h1>
+        return (
+
+            <main className='createEvent-page'>
+            {this.renderHeader()}
+            {this.renderForm()}
+
+            </main>
         );
     }
+    renderHeader(){
+        return(
+            <div>
+                <h1>this is a header</h1>
+                <h1>create event</h1>
+            </div>
+        );
+    }
+    renderForm(){
+        return(
+            <form onSubmit={this.handleSubmit} className="EventForm">
+                
+                <div className="signup-form">
+                    <h3 className='getstarted'>Get Started</h3>
+                    {this.renderErrors()}
 
+                    <label className='signup-label'>name
+                                <br />
+                        <input type="text"
+                            value={this.state.name}
+                            onChange={this.update('name')}
+                            className="signup-input"
+                            required
+                        />
+                    </label>
+                    <label className='signup-label'>cloudinary widget
+                                <br />
+                        <input type="file"
+                            value={this.state.imgURL}
+                            onChange={this.update('imgURL')}
+                            className="signup-input"
+                            required
+                        />
+                    </label>
+
+                    <br />
+                    <label className='signup-label'>start time
+                                <br />
+                        <input type="datetime"
+                            value={this.state.startDate}
+                            onChange={this.update('startDate')}
+                            className="signup-input"
+                            required
+                        />
+
+
+                    </label>
+                    <label className='signup-label'>end time (optional)
+                                <br />
+                        <input type="datetime"
+                            value={this.state.endDate}
+                            onChange={this.update('endDate')}
+                            className="signup-input"
+                        />
+
+
+                    </label>
+                    
+                    <br />
+
+                    <label className='signup-label'>header
+                                <br />
+                        <textarea
+                            value={this.state.header}
+                            onChange={this.update('header')}
+                            className="signup-input"
+                            required
+                        />
+                    </label>
+
+                    <br />
+
+
+                    <label className='signup-label'>description
+                                <br />
+                        <textarea
+                            value={this.state.description}
+                            onChange={this.update('description')}
+                            className="signup-input"
+                            required
+                        />
+                    </label>
+
+                    <br />
+
+                    <label className='signup-label'>Location
+                                <br />
+                        <label> area code
+                            <input type="text"
+                                value={this.state.areaCode}
+                                onChange={this.update('areaCode')}
+                                className="signup-input"
+                                maxlength='3'
+                                required
+                            />
+                        </label>
+                        <label> city (optional)
+                            <input type="text"
+                                value={this.state.city}
+                                onChange={this.update('city')}
+                                className="signup-input"
+                            />
+                        </label>
+
+                        <label> state (optional)
+                            <input type="text"
+                                value={this.state.state}
+                                onChange={this.update('state')}
+                                className="signup-input"
+                                maxlength='2'
+                            />
+                        </label>
+
+
+
+
+                    </label>
+
+                    
+
+
+                    <div className='button-holder'>
+                        <input className='signup-button' type="submit" value="Signup" />
+                    </div>
+                </div>
+                
+            </form>
+        );
+    }
 }
 export default CreateEventComp;
+
+        // this.state = {
+        //     name: '',
+        //     startDate: '',
+        //     header:"",
+        //     description:"",
+        //     imgURL:"",
+        //     areaCode:415,
+        //     state:"CA",
+        //     city:"San Fransisco",
+        //     endDate:"",
+        // };
