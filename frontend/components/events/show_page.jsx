@@ -23,6 +23,12 @@ class ShowPage extends React.Component {
         
         console.log(this.props.event);
         if (this.props.event !== null){
+            // this.setBackground(this.props);
+
+
+
+
+
             return (
                 <div className='wrapper'>
                     <main className='sideBar'> 
@@ -30,13 +36,13 @@ class ShowPage extends React.Component {
                             <h1>sidebar</h1>
                         </div>
                     </main>
-                    <main className='showpage'>
-                        <div className='showpageImage' id='showpageImage'>
+                    <main  className='showpage'>
+                        <div className='showpageImage' style={{backgroundImage: `url(${this.props.event.imgURL})`}}>
                         </div>
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
 
-                        </div>
+                        </div>  
                         <div>
                             <ShowPageComponents.EventDiscription description={this.props.event.description}/>
                         </div>
@@ -50,14 +56,21 @@ class ShowPage extends React.Component {
     }
 
 
-    setBackground(props){
-        if(props.event !== null) {
-            console.log("event not null")
-            const background = document.getElementById('showpageImage');
-            console.log(background)
-            background.style.backgroundImage = `url(${props.event.imgURL})`;
-        }
-    }
+    // setBackground(props){
+    //     if(props.event !== null) {
+    //         console.log("event not null");
+    //         const background = document.getElementById('showpageImage');
+    //         console.log(background);
+    //         background.style.backgroundImage = `url(${props.event.imgURL})`;
+    //     }
+    // }
+
+    // const img = document.createElement("p");
+    // const background = document.getElementById('showpageImage-target');
+
+    // background.style.backgroundImage = `url(${this.props.event.imgURL})`;
+    // background.classList.add('showpageImage');
+    // img.appendChild(background);
 
 }
 
