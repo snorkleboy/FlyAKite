@@ -33,7 +33,7 @@ export const receiveCreatedEvent = (event) => ({
     payload: event
 });
 export const CreateEvent = (event) => dispatch => EventAPI.createEvent(event)
-    .then((success) => dispatch(receiveEvent(event)),
+    .then((success) => dispatch(receiveCreatedEvent(success)),
         (fail) => dispatch(receiveEventsErrors(fail) ));
 
 export const GetAllEvents = ()=> dispatch => EventAPI.fetchAllEvents()

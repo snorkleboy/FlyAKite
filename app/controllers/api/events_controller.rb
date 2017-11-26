@@ -23,7 +23,7 @@ class Api::EventsController < ApplicationController
 # // t.datetime "endDate"
   def create
     @event = Event.new(event_params)
-    if (@event.save!)
+    if (@event.save)
       render "api/events/show"
     else
       render json: ["invalid params"], status: 401

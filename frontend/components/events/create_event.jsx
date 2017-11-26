@@ -38,10 +38,10 @@ const _nullUser = {
 const _user = {
     userId: 1,
     name: 'asdasd',
-    startDate: '1234-12-1212-30',
+    startDate: '2015-01-02T11:42',
     header: "asdasdsasada",
     description: "asdasadas",
-    imgURL: "asdasddsaasdads",
+    imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
     areaCode: 415,
     state: "CA",
     city: "San Fransisco",
@@ -54,14 +54,14 @@ class CreateEventComp extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
-        this.props.clearEventErrors();
+        if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
         console.log(nextProps)
         if (nextProps.errors[0] === "success") {
             // setTimeout({....}, 1s)
             this.props.clearEventErrors();
-            this.props.history.push('/');
+            this.props.history.push(`/events/${nextProps.errors[1]}`);
         }
     }
 
