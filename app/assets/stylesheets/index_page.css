@@ -51,7 +51,7 @@
     line-height: 1  ;
     display: flex;
     background-color: #fbfbfb;
-    transition: .3s background-color ease;
+    transition: .3s background-color ease-in;
     height: inherit;
     border-left: 1px solid #EFF2F5;
     letter-spacing: 0.5px;
@@ -169,7 +169,7 @@
     font-weight: 700;
     background-color:#fbfbfb;
     border-left:1px solid #EFF2F5;
-    transition: 1s color ease;
+    transition: 1s color;
 }
 .create-event-nb:hover{
     background-color:#fbfbfb;

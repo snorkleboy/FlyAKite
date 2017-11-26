@@ -36,24 +36,24 @@ class EventList extends React.Component {
             city:"San Fransisco",
             endDate:""
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleDemo = this.handleDemo.bind(this);
     }
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-    }
+    // update(field) {
+    //     return e => this.setState({
+    //         [field]: e.currentTarget.value
+    //     });
+    // }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const event = this.state;
-        this.props.createEvent({ event });
-    }
-    handleDemoLogin(e){
-        e.preventDefault();
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     const event = this.state;
+    //     // this.props.createEvent({ event });
+    // }
+    // handleDemoLogin(e){
+    //     e.preventDefault();
         
-    }
+    // }
 
     render(){
 
