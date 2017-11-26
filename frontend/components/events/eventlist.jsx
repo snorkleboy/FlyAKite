@@ -24,7 +24,7 @@ class EventList extends React.Component{
 
         const orderedEvents = SelectEventsInOrder(this.props.events)
         return(
-            <main>
+            <main className='eventlist'>
                 <div className='navbar-img-container'>
                     {/* <img className='navbar-img'
                         alt='woopsie doopsie' /> */}

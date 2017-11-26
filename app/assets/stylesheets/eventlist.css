@@ -1,7 +1,11 @@
 
+.eventlist{
+    background-color: rgb(235, 235, 235);
 
+}
 
 .eventList-container{
+    background-color: rgb(241, 241, 241);
 
     margin: 0 auto;
     margin-top: -150px;
@@ -20,16 +24,7 @@
     margin: 35px;
 
 }
-.eventListItem-container{
-    
-    
-  /* background-size: 100%; */
-    
-    
-    /* margin: 50px; */
-    /* border: 1px solid black; */
-    /* width: 1024px; */
-}
+
 .event-list-ul{
     width:1200px;
     display: flex;
