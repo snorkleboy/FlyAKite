@@ -2,31 +2,66 @@
 .wrapper{
     display: flex;
     flex-direction: row;
+    
+
 
 }
 .sideBar{
+    position: relative;
+    left: 2%;
     z-index: 999999;
     flex-shrink: 0;
     box-sizing: border-box;
-    background-color: #fbfbfb9f;
+    background-color: #fdfdfd;
     height: 100vh;
     width: 167px;
     border-right: 1px solid #EFF2F5;
-    box-shadow: inset 0 0 10px rgb(111, 209, 196);
 }
 
 .showpageImage{
-    //     background-attachment: fixed;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover; 
-    background-color: red;
-    width :300px;
-    height :300px; 
+    position: absolute;
+    left: -50px;
+    z-index: -99;
+
+    background-size: cover; 
+    filter: blur(12px);
+    width :110vw;
+    height :67vh; 
+    overflow: hidden;
 }
 .showpage{
+    
+    align-items: center;
     width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+
+
+.imgheader{
+    margin-top: 30px;
+    background-color: #f8f8f8;
+    width: 67vw;
         display: flex;
-    flex-direction: row;
+        flex-direction: row;
+        border-bottom: lightgrey;
+        
+    }
+    .description{
+        background-color: #f8f8f8;
+        width: 67vw;
+        height: 500px;
+    }
+    .buttonsStrip{
+        background-color: #f8f8f8;
+
+        box-sizing: border-box;
+        padding: 15px;
+        width: 100%;
+        height:55px;
+         width: 67vw;
+
+    }
 }
 

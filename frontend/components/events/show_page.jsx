@@ -43,7 +43,11 @@ class ShowPage extends React.Component {
                             <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
 
                         </div>  
-                        <div>
+                        <div className='buttonsStrip'>
+                            &X &X &X
+
+                        </div>
+                        <div className='description'>
                             <ShowPageComponents.EventDiscription description={this.props.event.description}/>
                         </div>
 
