@@ -20,15 +20,15 @@ import CreateEventContainer from './events/create_container';
 
 const App = () => (
   <div className="Router-level-div">
-    <switch>
+    <Switch>
       <AuthRoute exact path='/signup' component={SignUpPageContainer} />
-      <Route exact path='/' component={NavbarContainer} />
-    </switch>
-    <switch>
+      <Route path='/' component={NavbarContainer} />
+    </Switch>
+    <Switch>
       <Route exact path="/events/:eventId" component={ShowPageContainer} />
       <ProtectedRoute exact path="/create" component={CreateEventContainer } />
       <Route exact path='/' component={EventListContainer} />
-    </switch>
+    </Switch>
   </div>
 );
 
