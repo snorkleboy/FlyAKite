@@ -5,6 +5,7 @@ import { CreateEvent, clearEventErrors} from '../../actions/event_actions';
 
 const mapStatetoProps = (state, ownProps) => ({
     errors: state.errors.events,
+    userId: state.session.currentUser.id
 
     
 });

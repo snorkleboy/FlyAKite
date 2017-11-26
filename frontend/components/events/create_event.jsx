@@ -21,11 +21,8 @@ import { Link, withRouter } from 'react-router-dom';
 // t.datetime "created_at", null: false
 // t.datetime "updated_at", null: false
 ////
-
-class CreateEventComp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const _nullUser = {
+            // userId: this.props.userId,
             name: '',
             startDate: '',
             header:"",
@@ -36,6 +33,22 @@ class CreateEventComp extends React.Component {
             city:"San Fransisco",
             endDate:"",
         };
+const _user = {
+    userId: 1,
+    name: 'asdasd',
+    startDate: '123123213',
+    header: "asdasdsasada",
+    description: "asdasadas",
+    imgURL: "asdasddsaasdads",
+    areaCode: 415,
+    state: "CA",
+    city: "San Fransisco",
+    endDate: "1123213213",
+};
+class CreateEventComp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = _user;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
@@ -65,6 +78,7 @@ class CreateEventComp extends React.Component {
     renderErrors() {
 
         if (this.props.errors.length > 0) {
+            console.log(this.props.errors);
             return (
                 <ul className='error-list'>
                     {this.props.errors.map((error, i) => (
@@ -100,7 +114,7 @@ class CreateEventComp extends React.Component {
         return(
             <form onSubmit={this.handleSubmit} className="EventForm">
                 
-                <div className="signup-form">
+                <div className="create-form">
                     <h3 className='getstarted'>Get Started</h3>
                     {this.renderErrors()}
 
@@ -111,33 +125,38 @@ class CreateEventComp extends React.Component {
                             onChange={this.update('name')}
                             className="signup-input"
                             required
+                            
                         />
                     </label>
+                    <br />
                     <label className='signup-label'>cloudinary widget
                                 <br />
-                        <input type="file"
+                        <input type="text"
                             value={this.state.imgURL}
                             onChange={this.update('imgURL')}
                             className="signup-input"
                             required
+                            
                         />
                     </label>
 
                     <br />
                     <label className='signup-label'>start time
                                 <br />
-                        <input type="datetime"
+                        <input type="datetime-local"
                             value={this.state.startDate}
                             onChange={this.update('startDate')}
                             className="signup-input"
                             required
+                            
                         />
 
 
                     </label>
+                    <br />
                     <label className='signup-label'>end time (optional)
                                 <br />
-                        <input type="datetime"
+                        <input type="datetime-local"
                             value={this.state.endDate}
                             onChange={this.update('endDate')}
                             className="signup-input"
@@ -155,6 +174,7 @@ class CreateEventComp extends React.Component {
                             onChange={this.update('header')}
                             className="signup-input"
                             required
+                            
                         />
                     </label>
 
@@ -168,6 +188,7 @@ class CreateEventComp extends React.Component {
                             onChange={this.update('description')}
                             className="signup-input"
                             required
+                            
                         />
                     </label>
 
@@ -180,8 +201,9 @@ class CreateEventComp extends React.Component {
                                 value={this.state.areaCode}
                                 onChange={this.update('areaCode')}
                                 className="signup-input"
-                                maxlength='3'
+                                maxLength='3'
                                 required
+                                
                             />
                         </label>
                         <label> city (optional)
@@ -197,7 +219,7 @@ class CreateEventComp extends React.Component {
                                 value={this.state.state}
                                 onChange={this.update('state')}
                                 className="signup-input"
-                                maxlength='2'
+                                maxLength='2'
                             />
                         </label>
 
