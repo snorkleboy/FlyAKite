@@ -9,8 +9,25 @@ class Api::EventsController < ApplicationController
 
   def new
   end
-
+# ///t.integer "userId", null: false
+# ///
+# // t.string "name", null: false
+# // t.datetime "startDate", null: false
+# // t.text "header", null: false
+# // t.text "description", null: false
+# // t.text "imgURL", null: false
+# // t.integer "areaCode", null: false
+# //////optional
+# // t.string "state"
+# // t.string "city"
+# // t.datetime "endDate"
   def create
+    @event = Event.new(params)
+    if (event.save)
+      render "api/users/show"
+    else
+      render json: ["Invalid username/password combination"], status: 401
+    end
   end
 
   def edit
@@ -25,6 +42,15 @@ class Api::EventsController < ApplicationController
     private 
   
   def event_params
-    params.require(:event).permit(:use, :password)
+    params.require(:event).permit(
+      :name,
+      :startDate,
+      :header,
+      :imgURL,
+      :areaCode,
+      :state,
+      :endDate,
+      :description, 
+    )
   end
 end

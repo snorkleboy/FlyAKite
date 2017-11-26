@@ -16,6 +16,7 @@ import NavbarContainer from './session/navbar_container';
 import SignUpPageContainer from './session/signup_container';
 import EventListContainer from './events/eventlist_container';
 import ShowPageContainer from './events/show_container';
+import CreateEventContainer from './events/create_container';
 
 const App = () => (
   <div className="Router-level-div">
@@ -25,6 +26,7 @@ const App = () => (
     </switch>
     <switch>
       <Route exact path="/events/:eventId" component={ShowPageContainer} />
+      <ProtectedRoute exact path="/events/create" component={CreateEventContainer } />
       <Route exact path='/' component={EventListContainer} />
     </switch>
   </div>

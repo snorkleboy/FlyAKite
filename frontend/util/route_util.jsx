@@ -24,5 +24,19 @@ const Protected = ({ component: Component, path, loggedIn }) => (
     />
 );
 
+const Authors = ({ component: Component, path, match, session, events, loggedIn}) => {
+    
+    return(
+        <Route
+            path={path}
+            render={props => (
+                loggedIn && events.byIDs[match.params.id].userId === session.currentUser.id?
+                    <Component {...props} /> 
+                 : 
+                    <Redirect to="/signup" />
+            )}
+        />
+    );
+};
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, undefined)(Protected));

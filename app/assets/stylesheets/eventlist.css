@@ -41,9 +41,7 @@
    align-content: center;
 }
 
-.event-list-item-li:hover{
-    
-}
+
 
 .event-list-item-li{
     background-color: rgba(248, 248, 248, 1);
@@ -78,13 +76,13 @@
     border-radius: 0px 0px 40px 40px ;
     box-shadow: 1px 1px 3px  rgb(125, 161, 179);
 
-        transition: all .5s ;
+    transition: all 1s ease;
     transform: scale(1);   
 }
 
 .event-list-item-image-c:hover
 {
-    box-shadow: 10px 10px 60px rgb(125, 161, 179);
+    box-shadow: 4px 2px 2   0px rgb(125, 161, 179);
     z-index: 10000;
 
     transform: scale(1.15);

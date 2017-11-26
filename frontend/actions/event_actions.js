@@ -1,8 +1,9 @@
 import * as EventAPI from '../util/eventAPI';
 
-export const RECEIVE_EVENT = 'RECEIVE_EVENT'
+export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
-export const RECEIVE_EVENTS_ERROR = 'RECEIVE_EVENT_ERROR'
+export const RECEIVE_EVENTS_ERROR = 'RECEIVE_EVENT_ERROR';
+export const CREATE_EVENT = 'CREATE_EVENT';
 
 
 export const receiveEventsErrors = (events) => ({
@@ -21,11 +22,15 @@ export const receiveEvent = (event) => ({
 });
 
 
+export const CreateEvent = (event)=> dispatch => EventAPI.createEvent(event)
+    .then((success) => dispatch(receiveEvent(event)),
+        (fail) => dispatch(receiveEventsErrors(fail) ));
+
 export const GetAllEvents = ()=> dispatch => EventAPI.fetchAllEvents()
     .then((success) => dispatch(receiveAllEvents(success)),
             (fail) => dispatch(receiveEventsErrors(fail)));
 
 
 export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
-    .then((success) => dispatch(receiveEvent(success)),
-    (fail) => dispatch(receiveEventsErrors(fail)));
+    .then((success) => dispatch(receiveEvent(success) ),
+    (fail) => dispatch(receiveEventsErrors(fail) ) );

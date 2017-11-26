@@ -32,33 +32,25 @@ class Navbar extends React.Component
     }
  
     renderOptions(){
-        if (this.props.currentUser){
-            return (
-                <div>
-                  <LoggedInOptions
-                   logout={this.props.logout}
-                   showProfile={this.props.showProfile}
-                    toggleProfile={this.props.toggleProfile}
-                    username={this.props.currentUser.username}
-                   />
-                </div>
-          );
-        }else{
-            return (
-                <div>
-                    <LoggedOutOptions
-                        login={this.props.login}
-                        showForm={this.props.showLogin}
-                        toggleLogin={this.props.toggleForm}
-                        errors={this.props.errors}
-                        clearSessionErrors={this.props.clearSessionErrors}
+        const options = this.props.currentUser ? 
+            (<LoggedInOptions
+                logout={this.props.logout}
+                showProfile={this.props.showProfile}
+                toggleProfile={this.props.toggleProfile}
+                username={this.props.currentUser.username}
+            />) :
+            (<LoggedOutOptions
+                login={this.props.login}
+                showForm={this.props.showLogin}
+                toggleLogin={this.props.toggleForm}
+                errors={this.props.errors}
+                clearSessionErrors={this.props.clearSessionErrors}
 
-                     />
-                </div>
-            ); 
+            />);
+            return (
+                options
+          );
         }
-      
-    }
 
 }
 
