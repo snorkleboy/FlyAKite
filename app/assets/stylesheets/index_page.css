@@ -130,7 +130,9 @@
 
 /* logo */
 .navbar >h1{
+    box-sizing: border-box;
     line-height: 0;
+    width: 167px;
     color: #24afff;
     font-weight: 700;
     border-right: 1px solid #EFF2F5;
@@ -159,10 +161,4 @@
     background-size: cover; */
 }
 
-.current-user-greet {
-    /* font-weight: 200; 
-    font-size: 18px ;
-     padding: 20px; 
-     height: 60px ; */
 
-}

@@ -7,32 +7,33 @@ class ShowPage extends React.Component {
     constructor(props){
         super(props);
         console.log(props);
+
  
     }
     componentDidMount() {
-        console.log("didmount")
-        console.log(this.props)
-        console.log("--")
         if (this.props.event === null) {
             this.props.getEvent(this.props.match.params.eventId);
         }
+
+    
     }
 
-    componentWillReceiveProps(newProps)
-    {
 
-    }
     render() {
+        
         console.log(this.props.event);
         if (this.props.event !== null){
             return (
                 <div className='wrapper'>
-                test
-                    <main> 
-                        <h1> sidebar</h1>
-                    </main>
-                    <main>
+                    <main className='sideBar'> 
                         <div>
+                            <h1>sidebar</h1>
+                        </div>
+                    </main>
+                    <main className='showpage'>
+                        <div className='showpageImage' id='showpageImage'>
+                        </div>
+                        <div className='imgheader'>
                             <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
 
                         </div>
@@ -41,7 +42,7 @@ class ShowPage extends React.Component {
                         </div>
 
 
-                    </main>;
+                    </main>
                 </div>
             );
         }else { return null;}
@@ -49,8 +50,14 @@ class ShowPage extends React.Component {
     }
 
 
-
-
+    setBackground(props){
+        if(props.event !== null) {
+            console.log("event not null")
+            const background = document.getElementById('showpageImage');
+            console.log(background)
+            background.style.backgroundImage = `url(${props.event.imgURL})`;
+        }
+    }
 
 }
 

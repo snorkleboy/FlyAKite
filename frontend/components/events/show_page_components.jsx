@@ -6,18 +6,27 @@ import { Link, withRouter } from 'react-router-dom';
 export const EventImage = ({image}) => {
     console.log(image);
     return (
-        <h1>{image}</h1>
+        <div className='showImage'>
+            <img src={image} alt='no image loaded' />  
+        </div>
     );
 };
 
 export const EventHeader = ({header}) => {
     console.log(header);
     return (
-        <h1>{header}</h1>
+        <div className='showHeader'>
+            {header}
+        </div>
+
+        
     );
 };
 export const EventDiscription = ({description}) => {
     return (
-        <h1>{description}</h1>
+        <div className='description'>
+            <h1>{description}</h1>
+        </div>
+        
     );
 };
