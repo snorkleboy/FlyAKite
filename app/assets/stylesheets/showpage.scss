@@ -24,22 +24,26 @@
 
 .showpageImage{
 
-    background-attachment: fixed;
-
-
+    // background-attachment: fixed;
+    // background-position: center;
+    box-sizing: border-box;
+    overflow: hidden;
     position: absolute;
-
-    top: -50%;
-    left: -0%;
+    // height: 90%;
+    width :150vw;
+    top: -0%;
+    left: 0%;
     z-index: -99;
 //  zoom: 150%;    
-    background-size: cover; 
+    background-size: initial; 
     filter: blur(16px);
-    width :150vw;
-    height :100%;
+    
+    height :80vh;
+
 }
 .showpage{
-    
+    z-index: -99;
+    background-color:  #f3f3f3f8;
     align-items: center;
     width:100%;
     height: 100%;
@@ -60,7 +64,8 @@
     }
     .showImage{
         box-sizing: border-box;
-        width: 100%;
+        width: 41vw;
+        height: 400px;
     }
     .showHeader{
         background-color:  #f7f7f7;
