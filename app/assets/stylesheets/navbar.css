@@ -132,16 +132,16 @@
 .logo{
     box-sizing: border-box;
     line-height: 0;
-    width: 167px;
+    /* width: 167px; */
     color: #24afff;
     font-weight: 700;
-    border-right: 1px solid #EFF2F5;
+    /* border-right: 1px solid #EFF2F5; */
     border-left: 1px solid #EFF2F5;
     background-color:#fbfbfb;
-    padding: 35px 20px 20px 20px;
+    padding: 35px 20px 20px 48px;
     letter-spacing: 0.2px;
     border-radius: 0px;
-    font-size: 30px;
+    font-size: 38px;
 
 
 }
@@ -165,15 +165,15 @@
 }
 
 .create-event-nb{
-    color: rgb(255, 187, 85);
+    color: rgb(255, 166, 0);
     font-weight: 700;
     background-color:#fbfbfb;
     border-left:1px solid #EFF2F5;
-    transition: 1s color;
+    transition: .5s color;
 }
 .create-event-nb:hover{
     background-color:#fbfbfb;
-    color:#45494E;
+    color:rgb(77, 60, 40);
     z-index: 99999999;
     
 }
