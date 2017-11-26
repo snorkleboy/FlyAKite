@@ -47,7 +47,7 @@ class ShowPage extends React.Component {
                             &X &X &X
 
                         </div>
-                        <div className='description'>
+                        <div>
                             <ShowPageComponents.EventDiscription description={this.props.event.description}/>
                         </div>
 

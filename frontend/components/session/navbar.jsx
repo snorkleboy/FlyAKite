@@ -23,7 +23,7 @@ class Navbar extends React.Component
         return(
             <main>
                 <div className='navbar'>
-                    <h1 className="logo"> FlyaKite</h1>
+                    <Link to='/' ><h1 className="logo"> FlyaKite</h1></Link>
                     <div className="navbar-options">{this.renderOptions()}</div>
                 </div>
 

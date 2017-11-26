@@ -25,7 +25,11 @@ export const EventHeader = ({header}) => {
 export const EventDiscription = ({description}) => {
     return (
         <div className='description'>
-            <h1>{description}</h1>
+            <p>{description}</p>
+            <div className='datelocation'>
+                <h2>date</h2>
+                <h2>location</h2>
+            </div>
         </div>
         
     );
