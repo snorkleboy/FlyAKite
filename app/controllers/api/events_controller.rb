@@ -24,9 +24,9 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if (@event.save!)
-      render "api/users/show"
+      render "api/events/show"
     else
-      render json: ["Invalid username/password combination"], status: 401
+      render json: ["invalid params"], status: 401
     end
   end
 

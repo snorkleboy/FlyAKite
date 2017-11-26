@@ -21,6 +21,8 @@ import { Link, withRouter } from 'react-router-dom';
 // t.datetime "created_at", null: false
 // t.datetime "updated_at", null: false
 ////
+
+// yyyy - MM - ddThh: mm
 const _nullUser = {
             // userId: this.props.userId,
             name: '',
@@ -36,14 +38,14 @@ const _nullUser = {
 const _user = {
     userId: 1,
     name: 'asdasd',
-    startDate: '123123213',
+    startDate: '1234-12-1212-30',
     header: "asdasdsasada",
     description: "asdasadas",
     imgURL: "asdasddsaasdads",
     areaCode: 415,
     state: "CA",
     city: "San Fransisco",
-    endDate: "1123213213",
+    // endDate: "1123213213",
 };
 class CreateEventComp extends React.Component {
     constructor(props) {
