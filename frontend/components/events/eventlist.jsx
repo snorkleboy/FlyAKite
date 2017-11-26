@@ -17,6 +17,7 @@ class EventList extends React.Component{
     // }
 
     componentDidMount() {
+              window.scrollTo(0, 0);
         if (!this.props.events.indexLoaded) this.props.GetAllEvents();
     }
     render(){

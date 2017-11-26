@@ -11,6 +11,7 @@ class ShowPage extends React.Component {
  
     }
     componentDidMount() {
+        window.scrollTo(0, 0);
         if (this.props.event === null) {
             this.props.getEvent(this.props.match.params.eventId);
         }

@@ -27,18 +27,21 @@
     // background-attachment: fixed;
     // background-position: center;
     box-sizing: border-box;
+       background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     position: absolute;
     // height: 90%;
-    width :150vw;
-    top: -0%;
-    left: 0%;
+        height :50vh;
+    min-width :110vw;
+    top: -10vh;
+    // left: -2vw;
     z-index: -99;
-//  zoom: 150%;    
+    zoom: 150%;    
     background-size: initial; 
     filter: blur(16px);
     
-    height :80vh;
+
 
 }
 .showpage{
