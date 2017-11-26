@@ -1,6 +1,5 @@
 import {
     RECEIVE_ALL_EVENTS,
-    RECEIVE_EVENTS_ERROR,
     RECEIVE_EVENT
 } from '../../actions/event_actions';
 

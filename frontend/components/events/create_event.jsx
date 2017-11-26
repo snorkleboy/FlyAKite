@@ -22,7 +22,7 @@ import { Link, withRouter } from 'react-router-dom';
 // t.datetime "updated_at", null: false
 ////
 
-class EventList extends React.Component {
+class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,24 +36,27 @@ class EventList extends React.Component {
             city:"San Fransisco",
             endDate:""
         };
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleDemo = this.handleDemo.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // update(field) {
-    //     return e => this.setState({
-    //         [field]: e.currentTarget.value
-    //     });
-    // }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.loggedIn) {
+            this.props.history.push('/');
+        }
+    }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     const event = this.state;
-    //     // this.props.createEvent({ event });
-    // }
-    // handleDemoLogin(e){
-    //     e.preventDefault();
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const event = this.state;
+        this.props.createEvent({ event });
         
-    // }
+    }
+  
 
     render(){
 
@@ -63,4 +66,4 @@ class EventList extends React.Component {
     }
 
 }
-export default EventList;
+export default CreateEventComp;

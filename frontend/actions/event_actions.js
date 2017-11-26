@@ -1,13 +1,16 @@
 import * as EventAPI from '../util/eventAPI';
 
+export const CLEAR_EVENT_ERRORS = "CLEAR_EVENT_ERRORS";
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
 export const RECEIVE_EVENTS_ERROR = 'RECEIVE_EVENT_ERROR';
 
-
-export const receiveEventsErrors = (events) => ({
+export const clearEventErrors = () => ({
+    type: CLEAR_EVENT_ERRORS
+});
+export const receiveEventsErrors = (errors) => ({
     type: RECEIVE_EVENTS_ERROR,
-    payload: events
+    payload: errors
 });
 
 
