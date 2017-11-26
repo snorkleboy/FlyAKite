@@ -25,6 +25,7 @@ class Navbar extends React.Component
                 <div className='navbar'>
                     <Link to='/' ><h1 className="logo"> FlyaKite</h1></Link>
                     <div className="navbar-options">{this.renderOptions()}</div>
+                    <Link to='/events/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
                 </div>
 
             </main>
@@ -32,25 +33,24 @@ class Navbar extends React.Component
     }
  
     renderOptions(){
-        const options = this.props.currentUser ? 
-            (<LoggedInOptions
-                logout={this.props.logout}
-                showProfile={this.props.showProfile}
-                toggleProfile={this.props.toggleProfile}
-                username={this.props.currentUser.username}
-            />) :
-            (<LoggedOutOptions
-                login={this.props.login}
-                showForm={this.props.showLogin}
-                toggleLogin={this.props.toggleForm}
-                errors={this.props.errors}
-                clearSessionErrors={this.props.clearSessionErrors}
+        return (this.props.currentUser ? 
+                <LoggedInOptions
+                    logout={this.props.logout}
+                    showProfile={this.props.showProfile}
+                    toggleProfile={this.props.toggleProfile}
+                    username={this.props.currentUser.username}
+                />
+            :
+                <LoggedOutOptions
+                    login={this.props.login}
+                    showForm={this.props.showLogin}
+                    toggleLogin={this.props.toggleForm}
+                    errors={this.props.errors}
+                    clearSessionErrors={this.props.clearSessionErrors}
 
-            />);
-            return (
-                options
-          );
-        }
+                />
+        );
+    }
 
 }
 
@@ -85,7 +85,7 @@ const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionEr
                 {modal()}
                 <li><button className='navbar-button' onClick={toggleLogin}> LOGIN</button></li>
                 
-                <li><Link to='/signUp' className='navbar-button annoying'> SIGNUP</Link></li>
+                <li><Link to='/signUp' className='navbar-button'> SIGNUP</Link></li>
             </ul>
         );
 };
