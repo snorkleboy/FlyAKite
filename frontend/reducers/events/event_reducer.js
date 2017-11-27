@@ -24,7 +24,7 @@ export default (state = _events, action) => {
         case RECEIVE_CREATED_EVENT:
         case RECEIVE_EVENT:
             newstate = merge({}, state, action.payload);
-            newstate.order.push(Object.keys(action.payload.byIDs)[0]);
+            newstate.order.push(parseInt(Object.keys(action.payload.byIDs)[0]));
 
             return newstate;
 
