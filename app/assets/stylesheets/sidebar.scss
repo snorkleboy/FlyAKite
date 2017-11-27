@@ -15,12 +15,14 @@
     height: 100vh;
     width: 240px;
     border-right: 1px solid #EFF2F5;
-    display: flex;
+
+}
+.SideBar-button-list {
+        display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items:center;
 }
-
 .sidebar-button{
     text-align: center;
     width: 50%;

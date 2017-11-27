@@ -11,12 +11,11 @@ class SideBar extends React.Component{
 
     }
     render(){
-        const cats = (SelectEntityInOrder(this.props.categories))
+        const cats = (SelectEntityInOrder(this.props.categories));
             return(
             <main className='sideBar'>
                 <div className='SideBar-buttons-list'>
-       
-                        {cats.map((category, i) => <button className='sidebar-button' key={`side-bar-button-${i}`}> {`${category.name}`} </button> )}
+                     {cats.map((category, i) => <button className='sidebar-button' key={`side-bar-button-${i}`}> {`${category.name}`} </button> )}
                 </div>
             </main>
         );

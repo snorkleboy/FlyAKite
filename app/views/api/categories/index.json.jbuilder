@@ -16,6 +16,7 @@
         @cats.each do |category|
             json.set! category.id do
                json.name category.name
+               json.id category.id
             end
         end
     end
