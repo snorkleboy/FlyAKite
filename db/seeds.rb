@@ -14,7 +14,13 @@ seeduser2 = User.create(username:"john smith", password:"123123")
 seeduser3 = User.create(username:"john bender", password:"32132131")
 seeduser4 = User.create(username:"chris rock", password:"32a13213a1")
 
-
+category1= Category.create(name:"INDOOR")
+category2= Category.create(name:"SPORT")
+category3= Category.create(name:"SOCIAL")
+category4= Category.create(name:"CASUAL")
+category5= Category.create(name:"NIGHT LIFE")
+category6= Category.create(name:"AQUATIC")
+category7= Category.create(name:"OUDOOR")
 
 
 event1 = Event.create!(
@@ -25,10 +31,12 @@ event1 = Event.create!(
     header: "Kite Surfing with the stars",
     description:" late night kite surfing for the bold and the adventurous. Must sign liability forms in duplicate. We will meet up at point reyes at the start time and head out to a secret beach location to get some sweet winds",
     areaCode: 925,
+    categoryId: category1.id,
     imgURL: "https://cdn.pixabay.com/photo/2013/07/12/17/59/kites-152760_960_720.png"
     )
 
 event2 = Event.create!(
+    categoryId: category1.id,
     userId: User.first.id,
     name: "Kite Hike",
     startDate: DateTime.new(2017,9,18,7,30 ),
@@ -43,6 +51,7 @@ event2 = Event.create!(
  )
 
  event3 = Event.create!(
+     categoryId: category7.id,
     userId: User.all[3].id,
     name: "kite fight",
     startDate: DateTime.new(2017,9,18,7,30 ),
@@ -57,6 +66,7 @@ event2 = Event.create!(
  )
 
  event3 = Event.create!(
+     categoryId: category6.id,
     userId: User.all[2].id,
     name: "Kite Hike",
     startDate: DateTime.new(2017,9,18,7,30 ),
@@ -76,6 +86,7 @@ event2 = Event.create!(
 ##############coppies:
 
 event1 = Event.create!(
+    categoryId: category5.id,
     userId: User.first.id,
     name: "Kite Surfing",
     startDate: DateTime.new(2017,11,18,7,30 ),
@@ -87,6 +98,7 @@ event1 = Event.create!(
     )
 
 event2 = Event.create!(
+    categoryId: category4.id,
     userId: User.first.id,
     name: "Kite Hike",
     startDate: DateTime.new(2017,9,18,7,30 ),
@@ -101,6 +113,7 @@ event2 = Event.create!(
  )
 
  event3 = Event.create!(
+     categoryId: category3.id,
     userId: User.all[3].id,
     name: "kite fight",
     startDate: DateTime.new(2017,9,18,7,30 ),
@@ -115,6 +128,7 @@ event2 = Event.create!(
  )
 
  event3 = Event.create!(
+     categoryId: category2.id,
     userId: User.all[2].id,
     name: "Kite Hike",
     startDate: DateTime.new(2017,9,18,7,30 ),

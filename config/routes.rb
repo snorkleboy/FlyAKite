@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
+
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :update, :index]
     resource :session, only: [:create, :destroy, :show]
