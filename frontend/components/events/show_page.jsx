@@ -18,23 +18,20 @@ class ShowPage extends React.Component {
 
     
     }
-
-
+    conditionalEdit(){
+        return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
+    }
+    
     render() {
         
-        console.log(this.props.event);
+        console.log(this.props);
         if (this.props.event !== null){
-            // this.setBackground(this.props);
-
-
-
-
-
             return (
                 <div className='wrapper'>
                     <main className='sideBar'> 
                         <div>
                             <h1>sidebar</h1>
+                            {this.conditionalEdit()}
                         </div>
                     </main>
                     <main  className='showpage'>
@@ -45,7 +42,8 @@ class ShowPage extends React.Component {
 
                         </div>  
                         <div className='buttonsStrip'>
-                            &X &X &X
+                            <h1>&X &X &X</h1>
+                            <div>{this.conditionalEdit()}</div> 
 
                         </div>
                         <div>

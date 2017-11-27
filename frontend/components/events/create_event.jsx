@@ -23,34 +23,12 @@ import { Link, withRouter } from 'react-router-dom';
 ////
 
 // yyyy - MM - ddThh: mm
-const _nullUser = {
-            // userId: this.props.userId,
-            name: '',
-            startDate: '',
-            header:"",
-            description:"",
-            imgURL:"",
-            areaCode:415,
-            state:"CA",
-            city:"San Fransisco",
-            endDate:"",
-        };
-const _user = {
-    userId: 1,
-    name: 'asdasd',
-    startDate: '2015-01-02T11:42',
-    header: "asdasdsasada",
-    description: "asdasadas",
-    imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
-    areaCode: 415,
-    state: "CA",
-    city: "San Fransisco",
-    // endDate: "1123213213",
-};
+
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
-        this.state = _user;
+        console.log(props);
+        this.state = props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){

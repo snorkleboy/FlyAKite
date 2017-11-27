@@ -1,16 +1,23 @@
 import { connect } from 'react-redux';
 import ShowPage from './show_page';
 import { GetEvent } from '../../actions/event_actions';
-
-const mapStatetoProps = (state, ownProps) =>({
-
-        currentUsersEvent: state.session.currentUser ?
-                Boolean(ownProps.match.params.eventId === state.session.currentUser.id) 
-            : 
-                null,
-
-        event: state.events.byIDs[ownProps.match.params.eventId] || null
-});
+import { Link, withRouter } from 'react-router-dom';
+const mapStatetoProps = (state, ownProps) =>{
+        console.log(state);
+        const event = state.events.byIDs[ownProps.match.params.eventId] ;
+        console.log(event);
+        const currUsers = state.session.currentUser && event?
+                Boolean(event.userId === state.session.currentUser.id)
+                :
+                        null
+                ;
+        console.log(currUsers);
+        console.log("______");
+        return({
+                currentUsersEvent: currUsers,
+                event: event || null
+        });
+};
 
 
 const mapDispatchtoProps = (dispatch, ownProps) =>({
@@ -21,4 +28,4 @@ const mapDispatchtoProps = (dispatch, ownProps) =>({
 
     });
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(ShowPage);
+export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(ShowPage));

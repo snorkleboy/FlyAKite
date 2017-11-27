@@ -31,11 +31,11 @@ class Api::EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:eventId])
   end
 
   def update
-    @event = current_user.events.find(params[:id])
+    @event = current_user.events.find(event_params[:id])
     if @event.update_attributes(event_params)
       render "api/events/show"
     else
@@ -50,6 +50,7 @@ class Api::EventsController < ApplicationController
   
   def event_params
     params.require(:event).permit(
+      :id,
       :userId,
       :name,
       :startDate,

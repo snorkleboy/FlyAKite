@@ -26,6 +26,7 @@ const App = () => (
     </Switch>
     <Switch>
       <Route exact path="/events/:eventId" component={ShowPageContainer} />
+      <Route exact path="/events/:eventId/edit" component={CreateEventContainer} />
       <ProtectedRoute exact path="/create" component={CreateEventContainer } />
       <Route exact path='/' component={EventListContainer} />
     </Switch>
