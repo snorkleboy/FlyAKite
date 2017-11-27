@@ -37,7 +37,7 @@ export const CreateEvent = (event) => dispatch => EventAPI.createEvent(event)
         (fail) => dispatch(receiveEventsErrors(fail) ));
 
 export const UpdateEvent = (event) => dispatch => EventAPI.updateEvent(event)
-    .then((success) => dispatch(receiveCreatedEvent(success)),
+    .then((success) => dispatch(receiveCreatedEvent(success) ),
     (fail) => dispatch(receiveEventsErrors(fail)));
 
 
