@@ -1,4 +1,4 @@
 
 export const fetchIndex = () => $.ajax({
-    url: "/api/session"
+    url: "/api/categories"
 });

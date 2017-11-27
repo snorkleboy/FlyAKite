@@ -27,22 +27,32 @@ import { Link, withRouter } from 'react-router-dom';
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
+        if (this.props.formType === 'edit' && this.props.event.name === '') {
+            this.props.GetEvent(this.props.match.params.eventId);
+        }
+        window.scrollTo(0, 0);
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
+
+        if( nextProps.event){
+            const event = nextProps.event;
+            event.startDate = event.startDate.slice(0, -2);
+            event.endDate = event.startDate.slice(0, -2);
+            this.setState(event);
+        }
         if (nextProps.errors[0] === "success") {
             // setTimeout({....}, 1s)
             this.props.clearEventErrors();
             this.props.history.push(`/events/${nextProps.errors[1]}`);
         }
     }
-
+    componentWillUpdate(){
+    }
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -58,7 +68,6 @@ class CreateEventComp extends React.Component {
     renderErrors() {
 
         if (this.props.errors.length > 0) {
-            console.log(this.props.errors);
             return (
                 <ul className='error-list'>
                     {this.props.errors.map((error, i) => (
@@ -72,7 +81,6 @@ class CreateEventComp extends React.Component {
     }
 
     render(){
-
         return (
 
             <main className='createEvent-page'>
@@ -91,6 +99,7 @@ class CreateEventComp extends React.Component {
         );
     }
     renderForm(){
+        
         return(
             <form onSubmit={this.handleSubmit} className="EventForm">
                 
@@ -221,7 +230,30 @@ class CreateEventComp extends React.Component {
     }
 }
 export default CreateEventComp;
-
+const _nullEvent = {
+    // userId: this.props.userId,
+    name: '',
+    startDate: '',
+    header: "",
+    description: "",
+    imgURL: "",
+    areaCode: "415",
+    state: "CA",
+    city: "San Fransisco",
+    endDate: "",
+};
+const _event = {
+    // userId: 1,
+    name: 'asdasd',
+    startDate: '2015-01-02T11:42:00',
+    header: "asdasdsasada",
+    description: "asdasadas",
+    imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
+    areaCode: "415",
+    state: "CA",
+    city: "San Fransisco",
+    // endDate: "1123213213",
+};
         // this.state = {
         //     name: '',
         //     startDate: '',

@@ -7,16 +7,14 @@ export const RECEIVE_INDEX = 'RECEIVE_INDEX';
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
 
 export const receiveCategories = (categories) =>({
-    action: RECEIVE_CATEGORIES,
+    type: RECEIVE_CATEGORIES,
     payload: categories
 });
 
 export const getIndex = () => (dispatch) => categoryApi.fetchIndex()
-    .then((success) => dispatchIndex(dispatch, success) );
-
-
-
-const dispatchIndex = (dispatch, success) => {
-        dispatch(receiveAllEvents(success.events));
+    .then((success) => {
         dispatch(receiveCategories(success.categories));
-};
+        dispatch(receiveAllEvents(success.events));
+        
+    } );
+

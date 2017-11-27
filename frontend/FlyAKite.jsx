@@ -6,7 +6,7 @@ import configureStore from './store/store';
 // testing:
 import * as EventActions from './actions/event_actions';
 import * as SessionActions from './actions/session_actions';
-
+import { getIndex} from './actions/category_actions';
 document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById('root');
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     } else {
         store = configureStore();
     }
-
+    window.getIndex = getIndex;
     window.GetAllEvents = EventActions.GetAllEvents;
     window.getevent = EventActions.GetEvent;
     window.signup = SessionActions.signup;

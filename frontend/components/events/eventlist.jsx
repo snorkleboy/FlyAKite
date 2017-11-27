@@ -17,12 +17,11 @@ class EventList extends React.Component{
     // }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
-        if (!this.props.events.indexLoaded) this.props.GetAllEvents();
+        if (!this.props.events.indexLoaded) this.props.getIndex();
     }
     render(){
 
-        const orderedEvents = SelectEventsInOrder(this.props.events)
+        const orderedEvents = SelectEventsInOrder(this.props.events);
         return(
             <main className='eventlist'>
                 <div className='navbar-img-container'>

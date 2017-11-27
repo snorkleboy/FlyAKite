@@ -9,5 +9,5 @@ export default combineReducers({
     session: sessionReducer,
     errors: errorReducer,
     ui: navbarUIReducer,
-    categories:categoryReducer,
+    categories: categoryReducer,
 });

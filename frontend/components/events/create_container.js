@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CreateEventComp from './create_event';
 
-import { CreateEvent, clearEventErrors, UpdateEvent} from '../../actions/event_actions';
+import { CreateEvent, clearEventErrors, UpdateEvent, GetEvent } from '../../actions/event_actions';
 
 const mapStatetoProps = (state, ownProps) => {
     let type = 'create';
@@ -10,7 +10,10 @@ const mapStatetoProps = (state, ownProps) => {
     if (ownProps.match.path === '/events/:eventId/edit'){
         type =  "edit";
         if (state.events.byIDs[ownProps.match.params.eventId]){
+            console.log("should be hit")
             event = state.events.byIDs[ownProps.match.params.eventId];
+        }else {
+            event = _nullEvent;
         }
     }
     return ({
@@ -31,6 +34,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     return(
         {
+            GetEvent: (id) => dispatch(GetEvent(id)),
             actionType: (event) => dispatch(actionType(event)),
             clearEventErrors: () => dispatch(clearEventErrors()),
         }
