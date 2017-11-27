@@ -7,7 +7,7 @@ import LoginDropDown from './login_drop_down';
 import EventListContainer from '../events/eventlist_container';
 import ShowPageContainer from '../events/show_container';
 import CreateEventContainer from '../events/create_container';
-import SideBarContainer from '/home/snorkeboy/Desktop/FlyAKite/frontend/components/side_bar/sidebar_container.js';
+import SideBarContainer from '../side_bar/sidebar_container';
 
 import {
   Route,

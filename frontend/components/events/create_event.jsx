@@ -41,6 +41,7 @@ class CreateEventComp extends React.Component {
 
         if( nextProps.event){
             const event = nextProps.event;
+            //convert from database datetime to this datetime-local
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
             this.setState(event);
