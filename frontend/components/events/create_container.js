@@ -20,7 +20,8 @@ const mapStatetoProps = (state, ownProps) => {
         errors: state.errors.events,
         userId: state.session.currentUser.id,
         formType: type,
-        event: event
+        event: event,
+        categories: state.categories
     });
 };
 
@@ -47,6 +48,7 @@ export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
 
 const _nullEvent = {
     // userId: this.props.userId,
+    categoryId:1,
     name: '',
     startDate: '',
     header: "",
@@ -59,6 +61,7 @@ const _nullEvent = {
 };
 const _event = {
     // userId: 1,
+    categoryId: 1,
     name: 'asdasd',
     startDate: '2015-01-02T11:42:00',
     header: "asdasdsasada",

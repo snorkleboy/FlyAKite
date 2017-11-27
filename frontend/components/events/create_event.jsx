@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
 ////
 
 //from state: 
@@ -27,6 +28,9 @@ import { Link, withRouter } from 'react-router-dom';
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
+
+        console.log(props);
+
         this.state = props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -63,7 +67,9 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        this.props.actionType({ event });
+        console.log("handle submit");
+        console.log(event);
+        this.props.actionType({ event }).then();
         
     }
     renderErrors() {
@@ -100,7 +106,28 @@ class CreateEventComp extends React.Component {
         );
     }
     renderForm(){
+
         
+        const cats = SelectEntityInOrder(this.props.categories);
+        const catOptions = [];
+
+        for (let i = 0; i < cats.length;i++){
+
+            catOptions.push(
+                <option 
+                    key={`${cats[i].id}-categoryselect`} 
+                    value={`${cats[i].id}`}
+                > 
+                    {cats[i].name} 
+                </option>
+            )
+
+        }
+            
+        console.log(this.state);
+
+
+
         return(
             <form onSubmit={this.handleSubmit} className="EventForm">
                 
@@ -114,8 +141,7 @@ class CreateEventComp extends React.Component {
                             value={this.state.name}
                             onChange={this.update('name')}
                             className="signup-input"
-                            required
-                            
+                            required                            
                         />
                     </label>
                     <br />
@@ -155,6 +181,14 @@ class CreateEventComp extends React.Component {
 
                     </label>
                     
+                    <label className='signup-label'>category
+                                <br />
+
+                        <select value={this.state.categoryId} onChange={this.update('categoryId')} className="signup-input" required>
+                            {catOptions}
+                        </select>
+
+                    </label>
                     <br />
 
                     <label className='signup-label'>header
@@ -231,11 +265,13 @@ class CreateEventComp extends React.Component {
     }
 }
 export default CreateEventComp;
+
 const _nullEvent = {
     // userId: this.props.userId,
     name: '',
     startDate: '',
     header: "",
+    categoryId:1,
     description: "",
     imgURL: "",
     areaCode: "415",
@@ -245,6 +281,7 @@ const _nullEvent = {
 };
 const _event = {
     // userId: 1,
+    categoryId:1,
     name: 'asdasd',
     startDate: '2015-01-02T11:42:00',
     header: "asdasdsasada",
@@ -253,16 +290,5 @@ const _event = {
     areaCode: "415",
     state: "CA",
     city: "San Fransisco",
-    // endDate: "1123213213",
+    endDate: "",
 };
-        // this.state = {
-        //     name: '',
-        //     startDate: '',
-        //     header:"",
-        //     description:"",
-        //     imgURL:"",
-        //     areaCode:415,
-        //     state:"CA",
-        //     city:"San Fransisco",
-        //     endDate:"",
-        // };
