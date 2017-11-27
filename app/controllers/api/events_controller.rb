@@ -1,6 +1,6 @@
 class Api::EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.all   #.where("id NOT IN (?)", params[:eventList])
   end
 
   def show

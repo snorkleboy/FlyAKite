@@ -10,14 +10,20 @@ class EventList extends React.Component{
 
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if () {
-    //         ;
-    //     }
-    // }
 
+    arrToObj(arr){
+        return arr.reduce(function (result, item, index, array) {
+            result[index] = item; 
+            return result;
+        }, {});
+    }
     componentDidMount() {
+
+        // const categoryList = this.arrToObj(this.props.categories.order);
+        // const eventList = this.arrToObj(this.props.events.order);
+        // if (!this.props.events.indexLoaded) this.props.getIndexDiff({categoryList: [1,2,3], eventList: [2,3,4]});
         if (!this.props.events.indexLoaded) this.props.getIndex();
+
     }
     render(){
 

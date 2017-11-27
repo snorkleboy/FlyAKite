@@ -11,10 +11,24 @@ export const receiveCategories = (categories) =>({
     payload: categories
 });
 
+export const getAllCatgories = () => dispatch => categoryApi.getAllCatgories()
+    .then((success) => dispatch(receiveCategories(success.categories)));
+
 export const getIndex = () => (dispatch) => categoryApi.fetchIndex()
     .then((success) => {
         dispatch(receiveCategories(success.categories));
         dispatch(receiveAllEvents(success.events));
         
     } );
+
+export const getIndexDiff = (lists) => (dispatch) => categoryApi.fetchIndexDiff(lists)
+    .then((success) => {
+        console.log('action diff');
+        console.log(lists);
+        console.log(success);
+        dispatch(receiveCategories(success.categories));
+        dispatch(receiveAllEvents(success.events));
+
+
+    });
 

@@ -5,7 +5,11 @@ class SideBar extends React.Component{
     constructor(props){
         super(props);
     }
+    componentDidMount() {
 
+        if (!this.props.events.indexLoaded) this.props.getIndex();
+
+    }
     render(){
             return(
             <main className='sideBar'>

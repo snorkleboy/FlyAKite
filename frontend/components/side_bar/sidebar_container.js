@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SideBar from './side_bar';
 // import { GetEvent } from '../../actions/event_actions';
+// import {}
 import { Link, withRouter } from 'react-router-dom';
 
 
@@ -10,6 +11,7 @@ import { Link, withRouter } from 'react-router-dom';
 const mapStatetoProps = (state, ownProps) => {
 
     return ({
+        categories: state.categories,
     });
 };
 
