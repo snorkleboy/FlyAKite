@@ -37,7 +37,7 @@
 .navbar-button{
     box-sizing: border-box;
     height: 60px;
-    background-color: white;
+    background-color: rgb(252, 252, 252);
     /* font-size: 14px; */
     padding: 25px;
     position: relative;

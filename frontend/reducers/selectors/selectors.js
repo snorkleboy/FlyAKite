@@ -6,6 +6,13 @@ export const SelectEventsInOrder = (events) => {
     return (eventslist);
 };
 
+
+export const SelectEntityInOrder = (EntityObject) => {
+    let list = [];
+    EntityObject.order.forEach((Id) => { list.push(EntityObject.byIDs[Id]); });
+    return (list);
+};
+
 // {
 //     this.props.events.order.map((eventID, index) => {
 //         let event = this.props.events.byIDs[eventID];

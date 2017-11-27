@@ -17,6 +17,24 @@
     border-right: 1px solid #EFF2F5;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
+}
+
+.sidebar-button{
+    text-align: center;
+    width: 50%;
+    height: 100px;
+    background-color: #fbfbfb;
+    transition: 1s background-color;
+}
+
+.SideBar-buttons-list >.sidebar-button:nth-child(3n+1){
+
+    width: 100%;
+}
+
+.sidebar-button:hover{
+
+    background-color: #ff8534;
 }

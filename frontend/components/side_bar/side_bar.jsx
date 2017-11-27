@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import { SelectEntityInOrder} from '../../reducers/selectors/selectors';
 class SideBar extends React.Component{
     constructor(props){
         super(props);
@@ -11,10 +11,12 @@ class SideBar extends React.Component{
 
     }
     render(){
+        const cats = (SelectEntityInOrder(this.props.categories))
             return(
             <main className='sideBar'>
-                <div>
-                    <h1>sidebar</h1>
+                <div className='SideBar-buttons-list'>
+       
+                        {cats.map((category, i) => <button className='sidebar-button' key={`side-bar-button-${i}`}> {`${category.name}`} </button> )}
                 </div>
             </main>
         );
