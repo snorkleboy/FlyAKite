@@ -1,9 +1,28 @@
 import React from 'react';
 
 import ClearSessionErrors from '../../actions/session_actions.js';
-import { Link } from 'react-router-dom';
 import ProfileDropDown from './profile_drop_down';
 import LoginDropDown from './login_drop_down';
+
+import EventListContainer from '../events/eventlist_container';
+import ShowPageContainer from '../events/show_container';
+import CreateEventContainer from '../events/create_container';
+import SideBarContainer from '/home/snorkeboy/Desktop/FlyAKite/frontend/components/side_bar/sidebar_container.js';
+
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
+import {
+  AuthRoute,
+  ProtectedRoute,
+    AuthorsRoute
+} from '../../util/route_util.jsx';
+
+
 
 class Navbar extends React.Component
 {    constructor(props){
@@ -33,7 +52,15 @@ class Navbar extends React.Component
                         <Link to='/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
                     </div>
                 </div>
-
+                <div className="wrapper">
+                    <SideBarContainer />
+                    <Switch>
+                        <Route exact path="/events/:eventId" component={ShowPageContainer} />
+                        <Route exact path="/events/:eventId/edit" component={CreateEventContainer} />
+                        <ProtectedRoute exact path="/create" component={CreateEventContainer } />
+                        <Route exact path='/' component={EventListContainer} />
+                    </Switch>
+                </div>
             </main>
         );
     }

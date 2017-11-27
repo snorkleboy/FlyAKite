@@ -5,7 +5,10 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 const mapStateToProps = state => ({
     loggedIn: Boolean(state.session.currentUser),
 });
-
+const mapAuthorStateToProps = state =>({
+    loggedIn: Boolean(state.session.currentUser),
+    events: state.events
+});
 const Auth = ({ component: Component, path, loggedIn }) => (
     <Route
         path={path}
@@ -25,7 +28,8 @@ const Protected = ({ component: Component, path, loggedIn }) => (
 );
 
 const Authors = ({ component: Component, path, match, session, events, loggedIn}) => {
-    
+    console.log(events);
+    console.log(match);
     return(
         <Route
             path={path}
@@ -38,5 +42,7 @@ const Authors = ({ component: Component, path, match, session, events, loggedIn}
         />
     );
 };
+
+export const AuthorsRoute = withRouter(connect(mapAuthorStateToProps)(Authors));
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, undefined)(Protected));

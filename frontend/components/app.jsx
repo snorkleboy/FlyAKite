@@ -15,13 +15,10 @@ import {
 
 import NavbarContainer from './session/navbar_container';
 import SignUpPageContainer from './session/signup_container';
-import EventListContainer from './events/eventlist_container';
-import ShowPageContainer from './events/show_container';
-import CreateEventContainer from './events/create_container';
 
 class App extends React.Component {
 
-    //start up
+      
 
     render(){
       return(
@@ -30,15 +27,13 @@ class App extends React.Component {
           <AuthRoute exact path='/signup' component={SignUpPageContainer} />
           <Route path='/' component={NavbarContainer} />
         </Switch>
-        <Switch>
-          <Route exact path="/events/:eventId" component={ShowPageContainer} />
-          <Route exact path="/events/:eventId/edit" component={CreateEventContainer} />
-          <ProtectedRoute exact path="/create" component={CreateEventContainer } />
-          <Route exact path='/' component={EventListContainer} />
-        </Switch>
+
       </div>
     );
   }
 }
-export default connect(null, null)(App);
+
+
+
+export default App;
 

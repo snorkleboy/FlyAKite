@@ -6,7 +6,6 @@ class ShowPage extends React.Component {
 
     constructor(props){
         super(props);
-        console.log(props);
 
  
     }
@@ -23,27 +22,19 @@ class ShowPage extends React.Component {
     }
     
     render() {
-        
-        console.log(this.props);
         if (this.props.event !== null){
             return (
-                <div className='wrapper'>
-                    <main className='sideBar'> 
-                        <div>
-                            <h1>sidebar</h1>
-                            {this.conditionalEdit()}
-                        </div>
-                    </main>
+
                     <main  className='showpage'>
-                        <div className='showpageImage' style={{backgroundImage: `url(${this.props.event.imgURL})`}}>
+                        <div className='showpageImage' style={{ backgroundImage: `url(${this.props.event.imgURL})` }}>
+                            
                         </div>
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
 
                         </div>  
                         <div className='buttonsStrip'>
-                            <h1>&X &X &X</h1>
-                            <div>{this.conditionalEdit()}</div> 
+                            &X &X &X{this.conditionalEdit()}
 
                         </div>
                         <div>
@@ -52,13 +43,12 @@ class ShowPage extends React.Component {
 
 
                     </main>
-                </div>
             );
         }else { return null;}
     
     }
-
-
+// <img className='showpageImage' src={this.props.event.imgURL} /> 
+    // 
     // setBackground(props){
     //     if(props.event !== null) {
     //         console.log("event not null");

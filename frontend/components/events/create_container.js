@@ -9,7 +9,9 @@ const mapStatetoProps = (state, ownProps) => {
     event.userId = state.session.currentUser.id;
     if (ownProps.match.path === '/events/:eventId/edit'){
         type =  "edit";
-        event = state.events.byIDs[ownProps.match.params.eventId];
+        if (state.events.byIDs[ownProps.match.params.eventId]){
+            event = state.events.byIDs[ownProps.match.params.eventId];
+        }
     }
     return ({
         errors: state.errors.events,
