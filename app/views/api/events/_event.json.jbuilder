@@ -1,4 +1,4 @@
-json.extract! event, :id, :categoryID  :userId, :name, :startDate, :endDate, :header, :description, :imgURL
+json.extract! event, :id, :categoryId , :userId, :name, :startDate, :endDate, :header, :description, :imgURL
 
 
 json.set! :location do
@@ -7,4 +7,3 @@ json.set! :location do
     json.city event.city
 end
 
-#heroku run pg:reset
