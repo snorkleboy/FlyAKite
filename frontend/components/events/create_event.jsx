@@ -74,7 +74,7 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        this.props.createEvent({ event });
+        this.props.actionType({ event });
         
     }
     renderErrors() {

@@ -30,3 +30,9 @@ export const createEvent = (event) =>  $.ajax({
     method:"POST",
     data: event
 });
+
+export const updateEvent = (event) => $.ajax({
+    url: `/api/events/${event.id}`,
+    method:"PATCH",
+    data: event
+});

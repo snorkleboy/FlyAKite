@@ -31,9 +31,16 @@ class Api::EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = current_user.events.find(params[:id])
+    if @event.update_attributes(event_params)
+      render "api/events/show"
+    else
+      render json: ["invalid params"], status: 401
+    end
   end
 
   def delete
@@ -56,3 +63,4 @@ class Api::EventsController < ApplicationController
     )
   end
 end
+
