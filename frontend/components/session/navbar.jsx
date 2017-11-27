@@ -27,9 +27,9 @@ import {
 class Navbar extends React.Component
 {    constructor(props){
         super(props);
-    if (this.props.showLogin) {
-        this.props.toggleForm();
-    }
+        if (this.props.showLogin) {
+            this.props.toggleForm();
+        }
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser && nextProps.showLogin) {
@@ -37,7 +37,6 @@ class Navbar extends React.Component
         }
     }
     componentWillUnmount(){
-        // console.log("he!!!!!!!!!!!!!!!!!!!!!!!!!!!re");
         this.props.closeAll();
     }
     
@@ -58,7 +57,7 @@ class Navbar extends React.Component
                         <Route exact path="/events/:eventId" component={ShowPageContainer} />
                         <ProtectedRoute exact path="/events/:eventId/edit" component={CreateEventContainer} />
                         <ProtectedRoute exact path="/create" component={CreateEventContainer } />
-                        <Route exact path='/' component={EventListContainer} />
+                        <Route path='/' component={EventListContainer} />
                     </Switch>
                 </div>
             </main>
