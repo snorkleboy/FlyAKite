@@ -5,9 +5,9 @@ class SideBar extends React.Component{
     constructor(props){
         super(props);
     }
-    componentDidMount() {
-
-        if (!this.props.events.indexLoaded) this.props.getIndex();
+    componentDidMount(){
+        if (!this.props.categories.indexLoaded) this.props.getAllCatgories();
+        
 
     }
     render(){

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SideBar from './side_bar';
-// import { GetEvent } from '../../actions/event_actions';
+import { getAllCatgories } from '../../actions/category_actions';
 // import {}
 import { Link, withRouter } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const mapStatetoProps = (state, ownProps) => {
 
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({
-
+    getAllCatgories: () => dispatch(getAllCatgories())
 });
 
-export default withRouter(connect(null, null)(SideBar));
+export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(SideBar));

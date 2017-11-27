@@ -22,7 +22,7 @@ class EventList extends React.Component{
         // const categoryList = this.arrToObj(this.props.categories.order);
         // const eventList = this.arrToObj(this.props.events.order);
         // if (!this.props.events.indexLoaded) this.props.getIndexDiff({categoryList: [1,2,3], eventList: [2,3,4]});
-        if (!this.props.events.indexLoaded) this.props.getIndex();
+        if (!this.props.events.indexLoaded) this.props.GetAllEvents();
 
     }
     render(){

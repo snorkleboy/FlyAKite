@@ -11,6 +11,7 @@
 #     end
 # end
 # json.categories do
+    
     json.byIDs do 
         @cats.each do |category|
             json.set! category.id do
@@ -21,7 +22,6 @@
     json.order do
         json.array! @cats.map{|category| category.id}
     end
-end
 
 
 # json.events do

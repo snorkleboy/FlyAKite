@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     GetAllEvents: (eventList) => dispatch(GetAllEvents(eventList)),
-    getIndex: () => dispatch(getIndex()),
-    getIndexDiff: (lists) => dispatch(getIndexDiff(lists))
+    // getIndex: () => dispatch(getIndex()),
+    // getIndexDiff: (lists) => dispatch(getIndexDiff(lists))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Eventlist);
