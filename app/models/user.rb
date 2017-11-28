@@ -23,6 +23,17 @@ class User < ApplicationRecord
     foreign_key: :userId,
     class_name: :Event
 
+
+     has_many :registrations,
+    primary_key: :id,
+    foreign_key: :userId,
+    class_name: :Registration
+
+    has_many :registered_events,
+    through: :registrations,
+    source: :event
+
+
     attr_reader :password
     def ensure_session_token
         self.session_token ||= generate_session_token()

@@ -9,9 +9,13 @@
 #  endDate     :datetime
 #  header      :text             not null
 #  description :text             not null
+#  imgURL      :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  location    :string
+#  city        :string
+#  areaCode    :integer          not null
+#  state       :string
+#  categoryId  :integer          not null
 #
 
 require 'test_helper'

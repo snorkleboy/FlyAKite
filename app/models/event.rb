@@ -9,10 +9,15 @@
 #  endDate     :datetime
 #  header      :text             not null
 #  description :text             not null
+#  imgURL      :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  location    :string
+#  city        :string
+#  areaCode    :integer          not null
+#  state       :string
+#  categoryId  :integer          not null
 #
+
         CONST_STATELIST = {
     "AL"=> "Alabama",
     "AK"=> "Alaska",
@@ -93,5 +98,14 @@ class Event < ApplicationRecord
     foreign_key: :categoryId,
     class_name: :Category
 
+
+    has_many :registrations,
+    primary_key: :id,
+    foreign_key: :eventId,
+    class_name: :Registration
+
+    has_many :registered_users,
+    through: :registrations,
+    source: :user
 
 end
