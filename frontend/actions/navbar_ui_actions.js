@@ -7,7 +7,7 @@ export const UNREDIRECT = 'UNREDIRECT';
 
 export const redirected = (url) =>({
     type: REDIRECT,
-    data: url
+    payload: url
 });
 
 export const unredirect = () =>({

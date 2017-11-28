@@ -13,7 +13,7 @@ import merge from 'lodash/merge';
 const _default = {
     showLogin: false,
     showProfile:false,
-    redirectFrom:""
+    redirectFrom:null
 };
 
 export default (state = _default, action) => {
@@ -27,12 +27,14 @@ export default (state = _default, action) => {
             newState.showProfile = !newState.showProfile;
             return newState;
         case CLOSE_ALL:
-            return _default;
+            newState.showLogin = false;
+            newState.showProfile = false;
+            return newState;
         case REDIRECT:
             newState.redirectFrom = action.payload;
             return newState;
         case UNREDIRECT:
-            newState.redirectFrom = "";
+            newState.redirectFrom = null;
             return newState;
         default:
             return state;

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { login, signup, clearSessionErrors } from '../../actions/session_actions';
 import SignupPage from './signup_page';
 import {unredirect,closeAll} from '../../actions/navbar_ui_actions.js';
-import {redirected} from '../../actions/navbar_ui_actions'
+import {redirected} from '../../actions/navbar_ui_actions';
 
 const demoUser={user:{username:"guest", password:"password"}};
 
@@ -10,7 +10,7 @@ const demoUser={user:{username:"guest", password:"password"}};
 const mapStateToProps = (state, ownProps)=>({
     errors: state.errors.session,
     loggedIn: Boolean(state.session.currentUser),
-    redirectedFrom: state.ui.redirectedFrom
+    redirectedFrom: state.ui.redirectFrom
 });
 
 const mapDispatchToProps = (dispatch, ownProps)=> ({

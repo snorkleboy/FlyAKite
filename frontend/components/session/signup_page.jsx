@@ -10,12 +10,16 @@ class SignUpPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
-    componentDidMount(){
-        this.props.closeAll();
-    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
-            this.props.history.push('/');
+            if (this.props.redirectedFrom === null){
+                this.props.history.push('/');
+            }else{
+                
+                this.props.unredirect();    
+                this.props.history.push(this.props.redirectedFrom);
+            }
         }
     }
 
@@ -34,7 +38,6 @@ class SignUpPage extends React.Component {
     handleDemoLogin(e){
         e.preventDefault();
         this.props.loginGuest();
-        this.props.history.push('/');
     }
 
     renderErrors(){
@@ -53,7 +56,8 @@ class SignUpPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.clearSessionErrors();
+        if(this.props.errors.length>0)  this.props.clearSessionErrors();
+        this.props.closeAll();
     }
     render() {
         return (

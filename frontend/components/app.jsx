@@ -24,7 +24,7 @@ class App extends React.Component {
       return(
       <div className="Router-level-div">
         <Switch>
-          <AuthRoute exact path='/signup' component={SignUpPageContainer} />
+          <Route exact path='/signup' component={SignUpPageContainer} />
           <Route path='/' component={NavbarContainer} />
         </Switch>
 
