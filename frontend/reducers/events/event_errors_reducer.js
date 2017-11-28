@@ -14,7 +14,7 @@ export default (state = [], action) => {
         case RECEIVE_EVENTS_ERROR:
             return ([action.payload]);
         case RECEIVE_CREATED_EVENT:
-            return (["success", Object.keys(action.payload.byIDs)[0]]);
+            // return (["success", Object.keys(action.payload.byIDs)[0]]);
         case RECEIVE_EVENT:
         case CLEAR_EVENT_ERRORS:
             return [];

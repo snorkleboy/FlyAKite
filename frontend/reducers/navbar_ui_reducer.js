@@ -1,16 +1,22 @@
 import {
     TOGGLE_LOGIN_FORM,
     TOGGLE_PROFILE,
-    CLOSE_ALL
+    CLOSE_ALL,
+    REDIRECT,
+    UNREDIRECT
 } from '../actions/navbar_ui_actions';
 
 import merge from 'lodash/merge';
 
 
 
-const _navbarUI = { showLogin: false, showProfile:false };
+const _default = {
+    showLogin: false,
+    showProfile:false,
+    redirectFrom:""
+};
 
-export default (state = _navbarUI, action) => {
+export default (state = _default, action) => {
     Object.freeze(state);
     let newState = merge({},state);
     switch (action.type) {        
@@ -21,7 +27,13 @@ export default (state = _navbarUI, action) => {
             newState.showProfile = !newState.showProfile;
             return newState;
         case CLOSE_ALL:
-            return _navbarUI;
+            return _default;
+        case REDIRECT:
+            newState.redirectFrom = action.payload;
+            return newState;
+        case UNREDIRECT:
+            newState.redirectFrom = "";
+            return newState;
         default:
             return state;
     }

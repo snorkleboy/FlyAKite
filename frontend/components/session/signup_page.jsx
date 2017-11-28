@@ -24,7 +24,8 @@ class SignUpPage extends React.Component {
             [field]: e.currentTarget.value
         });
     }
-
+//unredirect
+//redirectedFrom
     handleSubmit(e) {
         e.preventDefault();
         const user = this.state;

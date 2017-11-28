@@ -7,6 +7,7 @@ const mapStatetoProps = (state, ownProps) => {
     let type = 'create';
     let event = _event;
     event.userId = state.session.currentUser.id;
+
     if (ownProps.match.path === '/events/:eventId/edit'){
         type =  "edit";
         if (state.events.byIDs[ownProps.match.params.eventId]){
@@ -16,6 +17,7 @@ const mapStatetoProps = (state, ownProps) => {
             event = _nullEvent;
         }
     }
+
     return ({
         errors: state.errors.events,
         userId: state.session.currentUser.id,
@@ -36,7 +38,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return(
         {
             GetEvent: (id) => dispatch(GetEvent(id)),
-            actionType: (event) => dispatch(actionType(event)),
+            actionType: (event, callback) => dispatch(actionType(event, callback)),
             clearEventErrors: () => dispatch(clearEventErrors()),
         }
     );

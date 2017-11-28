@@ -50,11 +50,11 @@ class CreateEventComp extends React.Component {
             event.endDate = event.startDate.slice(0, -2);
             this.setState(event);
         }
-        if (nextProps.errors[0] === "success") {
-            // setTimeout({....}, 1s)
-            this.props.clearEventErrors();
-            this.props.history.push(`/events/${nextProps.errors[1]}`);
-        }
+        // if (nextProps.errors[0] === "success") {
+        //     // setTimeout({....}, 1s)
+        //     this.props.clearEventErrors();
+        //     this.props.history.push(`/events/${nextProps.errors[1]}`);
+        // }
     }
     componentWillUpdate(){
     }
@@ -67,10 +67,23 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        console.log("handle submit");
-        console.log(event);
-        this.props.actionType({ event }).then();
-        
+        this.props.clearEventErrors();
+
+
+
+
+
+
+
+        let successCB = (success) => {
+            console.log("SCB", success);
+            // 
+            this.props.history.push(`/events/${success.id}`);
+        };
+
+        successCB = successCB.bind(this);
+        this.props.actionType({ event }, successCB);
+
     }
     renderErrors() {
 

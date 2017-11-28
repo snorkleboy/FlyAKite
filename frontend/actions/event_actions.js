@@ -23,6 +23,7 @@ export const receiveAllEvents = (events)=>({
     type: RECEIVE_ALL_EVENTS,
     payload: events
 });
+
 export const receiveEvent = (event) => ({
     type: RECEIVE_EVENT,
     payload: event
@@ -32,12 +33,20 @@ export const receiveCreatedEvent = (event) => ({
     type: RECEIVE_CREATED_EVENT,
     payload: event
 });
-export const CreateEvent = (event) => dispatch => EventAPI.createEvent(event)
-    .then((success) => dispatch(receiveCreatedEvent(success)),
-        (fail) => dispatch(receiveEventsErrors(fail) ));
 
-export const UpdateEvent = (event) => dispatch => EventAPI.updateEvent(event)
-    .then((success) => dispatch(receiveCreatedEvent(success) ),
+export const CreateEvent = (event, sCB) => dispatch => EventAPI.createEvent(event)
+    .then((success) => {
+        console.log("create", success);
+        sCB(success);
+        return dispatch(receiveCreatedEvent(success));
+    },
+    (fail) => dispatch(receiveEventsErrors(fail)));
+
+export const UpdateEvent = (event, sCB) => dispatch => EventAPI.updateEvent(event)
+    .then((success) => {
+        sCB(success);
+        return dispatch(receiveCreatedEvent(success) );
+    },
     (fail) => dispatch(receiveEventsErrors(fail)));
 
 
