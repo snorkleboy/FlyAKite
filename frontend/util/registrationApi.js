@@ -5,6 +5,5 @@ export const createRegistration = (eventId, userId) => $.ajax({
 
 export const deleteRegistration = (regId) => $.ajax({
     url: `api/registration/${regId}`,
-    method: "PATCH",
-    data: event
+    method: "DELETE"
 });
