@@ -1,20 +1,26 @@
 import { connect } from 'react-redux';
 import React from 'react';
-
+//actions
 import * as EventActions from '../../actions/event_actions';
 import Eventlist from './eventlist';
 import { GetAllEvents } from '../../actions/event_actions';
 import { getIndex, getIndexDiff} from '../../actions/category_actions';
-import * as Sorts from '../../reducers/selectors/sorts';
+import { sortEvents } from '../../actions/sort_actions';
 
-import { sortEvents} from '../../actions/sort_actions';
+//selectors
+import * as Selectors from '../../reducers/selectors/selectors';
+
+
+
+
 //i need to get this to check props and either pass down all events or a subset depending on the path
 
 const mapStateToProps = (state, ownProps) => {
     console.log("eventlist container");
-    console.log(state);
+    console.log(state);     
     console.log(ownProps);
         return ({
+        eventsList: Selectors.SelectEntityInOrder(state.events),
         events: state.events,
         categories: state.categories,
         // sortType: state.events.sortType

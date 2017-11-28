@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import EventListItem from './event_list_item.jsx';
-import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
-import * as Sorts from '../../reducers/selectors/sorts';
+// import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
+// import * as Sorts from '../../reducers/selectors/sorts';
 
 
 class EventList extends React.Component{
@@ -20,7 +20,7 @@ class EventList extends React.Component{
         if (this.props.events.sortType !== nextProps.events.sortType){
             // console.log(nextProps.location);
             // console.log(nextProps.match);
-            // console.log("sortType change");
+            console.log("sortType change");
         }
 
     }
@@ -29,7 +29,7 @@ class EventList extends React.Component{
     render(){
 
         // const orderedEvents = Sorts.sortByCategory(this.props.events, 1);
-        const orderedEvents = SelectEventsInOrder(this.props.events);
+        // const orderedEvents = this.props.eventList;
         return(
             <main className='eventlist'>
                 <div className='navbar-img-container'>
@@ -51,7 +51,7 @@ class EventList extends React.Component{
 
 
                         <ul className='event-list-ul'>
-                            {orderedEvents.map ( (event, index) => (
+                            {this.props.eventsList.map ( (event, index) => (
                         
                                 <div key={`eventlistitemdiv-${index}`} className='event-item-anchor'>
                                     <EventListItem key={`eventlistitem-${index}`} event={event}/>
