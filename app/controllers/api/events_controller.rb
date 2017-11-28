@@ -11,7 +11,7 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    unless(event)
+    unless(@event)
       render json: ["couldnt find that event"]
     end
   end
