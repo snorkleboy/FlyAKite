@@ -13,11 +13,11 @@ class EventList extends React.Component{
 
 
     componentDidMount() {
-        if (!this.props.events.indexLoaded) this.props.GetAllEvents() //.then(()=> sort);
+        if (!this.props.indexLoaded) this.props.GetAllEvents() //.then(()=> sort);
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.events.sortType !== nextProps.events.sortType){
+        if (this.props.sortType !== nextProps.sortType){
             // console.log(nextProps.location);
             // console.log(nextProps.match);
             console.log("sortType change");
@@ -43,7 +43,7 @@ class EventList extends React.Component{
 
 
 
-                    <h1> {this.props.events.sortType}</h1>
+                    <h1> {this.props.sortType}</h1>
 
 
 

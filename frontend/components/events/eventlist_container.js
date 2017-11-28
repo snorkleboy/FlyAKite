@@ -21,9 +21,8 @@ const mapStateToProps = (state, ownProps) => {
     console.log(ownProps);
         return ({
         eventsList: Selectors.SelectEntityInOrder(state.events),
-        events: state.events,
-        categories: state.categories,
-        // sortType: state.events.sortType
+        indexLoaded: state.events.indexLoaded,
+        sortType: state.events.sortType
     });
 };
 
