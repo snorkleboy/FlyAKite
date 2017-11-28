@@ -1,5 +1,5 @@
 export const createRegistration = (eventId, userId) => $.ajax({
-    url: `api/registration/${eventId}/:${userId}`,
+    url: `api/registration/${eventId}/${userId}`,
     method: "POST"
 });
 

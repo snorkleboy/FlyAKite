@@ -7,6 +7,10 @@ import configureStore from './store/store';
 import * as EventActions from './actions/event_actions';
 import * as SessionActions from './actions/session_actions';
 import { getIndex} from './actions/category_actions';
+import * as RegistrationActions from './actions/registration_actions';
+
+
+
 document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById('root');
 
@@ -18,6 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     } else {
         store = configureStore();
     }
+    window.makeRegistration = RegistrationActions.makeRegistration;
     window.getIndex = getIndex;
     window.GetAllEvents = EventActions.GetAllEvents;
     window.getevent = EventActions.GetEvent;
