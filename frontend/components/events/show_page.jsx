@@ -2,6 +2,21 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as ShowPageComponents from './show_page_components.jsx';
 
+// t.integer "userId", null: false
+
+// t.string "name", null: false
+// t.datetime "startDate", null: false
+// t.datetime "endDate"
+// t.text "header", null: false
+// t.text "description", null: false
+// t.text "imgURL", null: false
+// t.datetime "created_at", null: false
+// t.datetime "updated_at", null: false
+// t.string "city"
+// t.integer "areaCode", null: false
+// t.string "state"
+// t.integer "categoryId", null: false
+// t.index["userId"], name: "index_events_on_userId"
 class ShowPage extends React.Component {
 
     constructor(props){
@@ -50,7 +65,7 @@ class ShowPage extends React.Component {
 
                         </div>  
                         <div className='buttonsStrip'>
-                            &X &X &X{this.conditionalEdit()}{this.conditionalRegister()}
+                           {this.conditionalEdit()}   {this.conditionalRegister()}
 
                         </div>
                         <div>

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     var store ={};
     if (window.currentUser) {
-        const preloadedState = { session: { currentUser: window.currentUser, registrations: [] }  };
+        const preloadedState = { session: { currentUser: window.bootStrap.currentUser, registrations: [] }  };
         store = configureStore(preloadedState);
         delete window.currentUser;
     } else {

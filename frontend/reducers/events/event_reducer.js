@@ -11,7 +11,8 @@ const _events = {
     "byIDs": {},
     "order": [],
     "sortType":"all",
-    "indexLoaded":false
+    "indexLoaded":false,
+    "Registered":false
 };
 export default (state = _events, action) => {
     Object.freeze(state);
@@ -33,7 +34,6 @@ export default (state = _events, action) => {
             console.log(state);
             newstate.sortType = action.payload;
             return newstate;
-
         default:
             return state;
     }
