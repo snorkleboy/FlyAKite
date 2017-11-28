@@ -9,10 +9,4 @@ class Registration < ApplicationRecord
     foreign_key: :userId,
     class_name: :User
 
-
-
-
-class CourseStudent < ActiveRecord::Base
-  
-end
 end
