@@ -7,11 +7,29 @@ export const SelectEventsInOrder = (events) => {
 };
 
 
+
 export const SelectEntityInOrder = (EntityObject) => {
     let list = [];
     EntityObject.order.forEach((Id) => { list.push(EntityObject.byIDs[Id]); });
     return (list);
 };
+
+export const sortByCategory = (events, catId) => {
+    let catEventList = [];
+    Object.values(events.byIDs).forEach( (event) => {
+
+        if ( event.categoryId === catId ) catEventList.push(event);
+    });
+
+    return catEventList;
+};
+
+export const GetAll = (events) =>{
+    let eventlist = [];
+    return Object.keys(events.byIDs);
+};
+
+
 
 // {
 //     this.props.events.order.map((eventID, index) => {

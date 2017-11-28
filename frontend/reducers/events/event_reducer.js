@@ -4,12 +4,13 @@ import {
     RECEIVE_CREATED_EVENT
 } from '../../actions/event_actions';
 
-
+import { SET_SORT} from '../../actions/sort_actions'
 import merge from 'lodash/merge';
 
 const _events = {
     "byIDs": {},
     "order": [],
+    "sortType":"all",
     "indexLoaded":false
 };
 export default (state = _events, action) => {
@@ -25,7 +26,12 @@ export default (state = _events, action) => {
         case RECEIVE_EVENT:
             newstate = merge({}, state, action.payload);
             newstate.order.push(parseInt(Object.keys(action.payload.byIDs)[0]));
-
+            return newstate;
+        case SET_SORT:
+            newstate = merge({}, state);
+            console.log(action);
+            console.log(state);
+            newstate.sortType = action.payload;
             return newstate;
 
         default:

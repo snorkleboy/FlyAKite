@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import EventListItem from './event_list_item.jsx';
 import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
+import * as Sorts from '../../reducers/selectors/sorts';
 
 
 class EventList extends React.Component{
@@ -11,22 +12,23 @@ class EventList extends React.Component{
     }
 
 
-    arrToObj(arr){
-        return arr.reduce(function (result, item, index, array) {
-            result[index] = item; 
-            return result;
-        }, {});
-    }
     componentDidMount() {
+        if (!this.props.events.indexLoaded) this.props.GetAllEvents() //.then(()=> sort);
+    }
 
-        // const categoryList = this.arrToObj(this.props.categories.order);
-        // const eventList = this.arrToObj(this.props.events.order);
-        // if (!this.props.events.indexLoaded) this.props.getIndexDiff({categoryList: [1,2,3], eventList: [2,3,4]});
-        if (!this.props.events.indexLoaded) this.props.GetAllEvents();
+    componentWillReceiveProps(nextProps) {
+        if (this.props.events.sortType !== nextProps.events.sortType){
+            // console.log(nextProps.location);
+            // console.log(nextProps.match);
+            // console.log("sortType change");
+        }
 
     }
+
+
     render(){
 
+        // const orderedEvents = Sorts.sortByCategory(this.props.events, 1);
         const orderedEvents = SelectEventsInOrder(this.props.events);
         return(
             <main className='eventlist'>
@@ -37,6 +39,17 @@ class EventList extends React.Component{
                 <div className="eventList-container">
 
                     <div className="eventListItem-container"> 
+
+
+
+
+                    <h1> {this.props.events.sortType}</h1>
+
+
+
+
+
+
                         <ul className='event-list-ul'>
                             {orderedEvents.map ( (event, index) => (
                         
