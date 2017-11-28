@@ -10,8 +10,15 @@ class Api::UsersController < ApplicationController
     end
 
   end
-
-
+#/////////////////////////////
+    def show
+      if (params[:id] === current_user.id)
+        @user = current_user
+        @registered_events = @user.registered_events
+        render "api/users/show"
+      end
+    end
+#//////////////////////////////
   def update
     @user = User.new(user_params)
     if (@user.save)      

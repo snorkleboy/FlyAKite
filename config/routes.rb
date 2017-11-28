@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :all, :create]
-    resources :users, only: [:create, :update, :index]
+    resources :users, only: [:show, :create, :update, :index]
     resource :session, only: [:create, :destroy, :show]
     resources :events
     match 'registration/:eventId/:userId', to: 'registrations#create', via: [:post]

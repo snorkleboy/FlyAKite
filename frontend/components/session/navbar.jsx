@@ -24,13 +24,19 @@ import {
 
 
 
-class Navbar extends React.Component
-{    constructor(props){
+class Navbar extends React.Component{
+    constructor(props){
         super(props);
-        if (this.props.showLogin) {
-            this.props.toggleForm();
-        }
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
+
+    handleDemoLogin(e) {
+        e.preventDefault();
+        console.log("handleDemoLOGIN from navbar", this.props);
+        this.props.loginGuest();
+    }
+
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser && nextProps.showLogin) {
             this.props.toggleForm();
@@ -51,6 +57,8 @@ class Navbar extends React.Component
                         <Link to='/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
                     </div>
                 </div>
+
+
                 <div className="wrapper">
                     <SideBarContainer />
                     <Switch>
@@ -80,6 +88,7 @@ class Navbar extends React.Component
                     toggleLogin={this.props.toggleForm}
                     errors={this.props.errors}
                     clearSessionErrors={this.props.clearSessionErrors}
+                handleDemoLogin={this.handleDemoLogin}
 
                 />
         );
@@ -104,7 +113,7 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
 
 };
 
-const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionErrors }) => {
+const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionErrors, handleDemoLogin    }) => {
     
     const poppedUp = ()=>(
         <LoginDropDown login={login} toggleLogin={toggleLogin} errors={errors} clearSessionErrors={clearSessionErrors} />
@@ -117,7 +126,7 @@ const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionEr
             <ul className='nav-buttons'>
                 {modal()}
                 <li><button className='navbar-button' onClick={toggleLogin}> LOGIN</button></li>
-                
+                <li><button className='navbar-button' onClick={handleDemoLogin} >Demo Login</button></li>
                 <li><Link to='/signUp' className='navbar-button'> SIGNUP</Link></li>
             </ul>
         );

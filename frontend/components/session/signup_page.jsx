@@ -35,6 +35,7 @@ class SignUpPage extends React.Component {
         const user = this.state;
         this.props.signup({ user });
     }
+    
     handleDemoLogin(e){
         e.preventDefault();
         this.props.loginGuest();
