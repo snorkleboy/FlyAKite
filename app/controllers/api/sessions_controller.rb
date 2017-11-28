@@ -1,7 +1,9 @@
 class Api::SessionsController < ApplicationController
   def create
-    @user = User.find_by_cred(params[:user][:username],params[:user][:password] )
+    @user = User.find_by_cred(params[:user][:username],params[:user][:password] ) #.includes(:registered_events)
+    
     if (@user)
+      @registered_events = @user.registered_events
       login(@user)
       render "api/users/show"
     else
@@ -12,7 +14,7 @@ class Api::SessionsController < ApplicationController
   def destroy
       @user= current_user
       logout
-      render "api/users/show"
+      render json: ["logged out"]
   
   end
 

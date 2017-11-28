@@ -19,7 +19,9 @@ const sessionReducer = (state = _nullUser, action) =>{
             newState.registrations.push(action.payload);
             return newState;
         case RECEIVE_CURRENT_USER:
-            newState.currentUser = action.payload;
+        // console.log("sess reducer", state, action.payload);
+            newState.currentUser = action.payload.current_user;
+            newState.registrations = action.payload.registrations;
             return newState;
         default:
             return state;

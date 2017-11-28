@@ -24,10 +24,13 @@ export const login = (user) => dispatch => SessionAPI.login(user)
     (success)=> dispatch(receiveCurrentUser(success)),
     ((failure)=> dispatch(receiveErrors(failure)))
     );
-
+const _nullUser = Object.freeze({
+    currentUser: null,
+    registrations: []
+});
 export const logout = (uer) => dispatch => SessionAPI.logout()
     .then(
-    (success) => dispatch(receiveCurrentUser(null)),
+    (success) => dispatch(receiveCurrentUser(_nullUser)),
     ((failure) => dispatch(receiveErrors(failure)))
     )
 
