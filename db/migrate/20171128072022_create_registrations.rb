@@ -6,5 +6,7 @@ class CreateRegistrations < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    add_index :registrations, [ :userId, :eventId ], unique: true
   end
 end
