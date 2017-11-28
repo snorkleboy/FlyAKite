@@ -16,11 +16,15 @@ import * as Selectors from '../../reducers/selectors/selectors';
 //i need to get this to check props and either pass down all events or a subset depending on the path
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("eventlist container");
-    console.log(state);     
-    console.log(ownProps);
+    // console.log("eventlist container");
+    // console.log(state);     
+    // console.log(ownProps);
+    let catId = ownProps.match.params.categoryId? parseInt(ownProps.match.params.categoryId) : 0;
+    let eventList = Selectors.SelectByCategory(state.events, catId);
+    // console.log('catId', catId);
+    // console.log("eventlist", eventList);
         return ({
-        eventsList: Selectors.SelectEntityInOrder(state.events),
+        eventsList: eventList , 
         indexLoaded: state.events.indexLoaded,
         sortType: state.events.sortType
     });

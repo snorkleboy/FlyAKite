@@ -8,12 +8,12 @@ import EventListItem from './event_list_item.jsx';
 class EventList extends React.Component{
     constructor(props){
         super(props);
-
     }
 
 
     componentDidMount() {
-        if (!this.props.indexLoaded) this.props.GetAllEvents() //.then(()=> sort);
+        console.log('eventlist props', this.props);
+        if (!this.props.indexLoaded) this.props.GetAllEvents(); //.then(()=> sort);
     }
 
     componentWillReceiveProps(nextProps) {
