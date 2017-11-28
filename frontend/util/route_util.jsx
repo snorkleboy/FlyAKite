@@ -42,9 +42,10 @@ const Auth = ({ component: Component, path, loggedIn }) => (
 // );
 
 
-const Protected = ({ component: Component, path, loggedIn, saveRedirected }) => {
-
-
+const Protected = ({ component: Component, path,location, match, loggedIn, saveRedirected }) => {
+    console.log("match",match)
+    console.log("location", location)
+    console.log("ROUTE UTIL-path", path)
     const renderAction = (props) => {
         if (loggedIn) {
             return (<Component {...props} />);

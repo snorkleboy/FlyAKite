@@ -11,7 +11,6 @@ const mapStatetoProps = (state, ownProps) => {
     if (ownProps.match.path === '/events/:eventId/edit'){
         type =  "edit";
         if (state.events.byIDs[ownProps.match.params.eventId]){
-            console.log("should be hit")
             event = state.events.byIDs[ownProps.match.params.eventId];
         }else {
             event = _nullEvent;

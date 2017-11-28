@@ -35,6 +35,7 @@ class CreateEventComp extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
+        console.log("Createevent mount", this.props)
         if (this.props.formType === 'edit' && this.props.event.name === '') {
             this.props.GetEvent(this.props.match.params.eventId);
         }
@@ -50,13 +51,7 @@ class CreateEventComp extends React.Component {
             event.endDate = event.startDate.slice(0, -2);
             this.setState(event);
         }
-        // if (nextProps.errors[0] === "success") {
-        //     // setTimeout({....}, 1s)
-        //     this.props.clearEventErrors();
-        //     this.props.history.push(`/events/${nextProps.errors[1]}`);
-        // }
-    }
-    componentWillUpdate(){
+
     }
     update(field) {
         return e => this.setState({
@@ -68,12 +63,6 @@ class CreateEventComp extends React.Component {
         e.preventDefault();
         const event = this.state;
         this.props.clearEventErrors();
-
-
-
-
-
-
 
         let successCB = (success) => {
             console.log("SCB", success);

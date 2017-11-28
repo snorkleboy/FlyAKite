@@ -16,7 +16,7 @@ class SignUpPage extends React.Component {
             if (this.props.redirectedFrom === null){
                 this.props.history.push('/');
             }else{
-                
+                console.log("signup unredirect", this.props.redirectedFrom);
                 this.props.unredirect();    
                 this.props.history.push(this.props.redirectedFrom);
             }

@@ -12,7 +12,7 @@ export const clearEventErrors = () => ({
 });
 export const receiveEventsErrors = (errors) => ({
     type: RECEIVE_EVENTS_ERROR,
-    payload: errors.responseText
+    payload: errors
 });
 
 

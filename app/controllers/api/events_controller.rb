@@ -1,10 +1,19 @@
 class Api::EventsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  
+  def render_404
+    render json: [@event.errors.full_messages], status: 404
+  end
+
   def index
     @events = Event.all   #.where("id NOT IN (?)", params[:eventList])
   end
 
   def show
     @event = Event.find(params[:id])
+    unless(event)
+      render json: ["couldnt find that event"]
+    end
   end
 
   def new
@@ -15,7 +24,7 @@ class Api::EventsController < ApplicationController
     if (@event.save)
       render "api/events/show"
     else
-      render json: [@event.errors.full_messages], status: 401
+      render json: [@event.errors.full_messages], status: 404
     end
   end
 
@@ -28,7 +37,7 @@ class Api::EventsController < ApplicationController
     if @event.update_attributes(event_params)
       render "api/events/show"
     else
-      render json: ["event update error"], status: 401
+      render json: ["event update error"], status: 404
     end
   end
 
