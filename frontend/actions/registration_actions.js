@@ -12,3 +12,5 @@ export const receiveRegistration = (registration) =>({
 
 export const makeRegistration = (eventId, userId) => dispatch => RegActions.createRegistration(eventId, userId)
     .then((success) => dispatch(receiveRegistration(success)) ); 
+
+// export const deleteRegistration = 

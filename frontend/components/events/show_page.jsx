@@ -8,6 +8,7 @@ class ShowPage extends React.Component {
         super(props);
         console.log("show props", props);
         this.handleRegister = this.handleRegister.bind(this);
+        this.conditionalRegister = this.conditionalRegister.bind(this);
     }
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -20,15 +21,20 @@ class ShowPage extends React.Component {
 
     handleRegister(e){
         e.preventDefault();
-        
-        this.props.makeRegistration(userId, this.props.match.params.eventId);
+        console.log("handle register", this.props.currentUser, this.props.match.params.eventId );
+        this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
     }
     conditionalRegister(){
-        console.log("registered", this.props.registered);
-        return (this.props.registered && this.props.currentUser ? <button onClick={this.handleRegister}>unregister</button> : <button>register</button>);
+        console.log("registered", this.props);
+        if (this.props.currentUser){
+            return (this.props.registered  ? <button >unregister</button> : <button onClick={this.handleRegister}>register</button>);
+        }
     }
     conditionalEdit(){
         return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
+    }
+    componentWillReceiveProps(newProps){
+        console.log("newprops", newProps);
     }
     
     render() {

@@ -9,14 +9,7 @@ const mapStatetoProps = (state, ownProps) =>{
         console.log("showcontainerstate", state);
         const event = state.events.byIDs[ownProps.match.params.eventId] ;
 
-
-
-
         const registered = event? Boolean( state.session.registrations.includes(event.id) ): false;
-
-
-
-
 
         const currUsers = state.session.currentUser && event?
                         Boolean(event.userId === state.session.currentUser.id)
@@ -27,7 +20,7 @@ const mapStatetoProps = (state, ownProps) =>{
                 registered: registered,
                 currentUsersEvent: currUsers,
                 event: event || null,
-                currentUser: state.currentUser ? state.currentUser.id : null
+                currentUser: state.session.currentUser ? state.session.currentUser.id : null
         });
 };
 
