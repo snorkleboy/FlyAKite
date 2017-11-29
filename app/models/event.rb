@@ -108,4 +108,17 @@ class Event < ApplicationRecord
     through: :registrations,
     source: :user
 
+
+
+    has_many :book_markings,
+    primary_key: :id,
+    foreign_key: :eventId,
+    class_name: :Bookmark
+
+    has_many :bookmarked_users,
+    through: :book_markings,
+    source: :user
+
+
+
 end

@@ -5,8 +5,10 @@
       user: current_user
     ).html_safe %>
     <% else %>
-    window.currentUser = null;
-    window.registrations = null;
+    window.bootStrap = {};
+    window.bootStrap.currentUser = null;
+    window.bootStrap.registrations = [];
+    window.bootStrap.bookmarks = [];
   <% end %>
 
 </script>

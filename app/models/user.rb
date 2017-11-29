@@ -34,6 +34,16 @@ class User < ApplicationRecord
     source: :event
 
 
+
+    has_many :bookmarks,
+    primary_key: :id,
+    foreign_key: :userId,
+    class_name: :Bookmark
+
+    has_many :registered_events,
+    through: :registrations,
+    source: :event
+
     attr_reader :password
     def ensure_session_token
         self.session_token ||= generate_session_token()
