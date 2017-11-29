@@ -36,7 +36,6 @@ export const receiveCreatedEvent = (event) => ({
 
 export const CreateEvent = (event, sCB) => dispatch => EventAPI.createEvent(event)
     .then((success) => {
-        console.log("create", success);
         sCB(success);
         return dispatch(receiveCreatedEvent(success));
     },

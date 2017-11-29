@@ -53,7 +53,6 @@ const Protected = ({history , component: Component, path,location, match, logged
         if (loggedIn) {
             return (<Component {...props} />);
         } else {
-            console.log("protected redirect");
             saveRedirected(path);
             return (<Redirect to="/signup" />);
         }

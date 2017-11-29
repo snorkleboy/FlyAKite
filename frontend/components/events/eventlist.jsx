@@ -12,35 +12,42 @@ class EventList extends React.Component{
         this.registrationHandler = this.registrationHandler.bind(this);
         // this.handleUnregister = this.handleUnregister.bind(this);
     }
+
+
+
     registrationHandler(id) {
-        // console.log(this.props);
-
-
-        const handleUnregister = (e)=>{
+        // console.log(id, this.props);
+        const redirect = (e) => {
             e.preventDefault();
-            this.props.deleteRegistration(id);
+            this.props.history.push('/signup');
         };
+        if (this.props.loggedIn ){
 
-        const handleRegister = (e)=> {
-            e.preventDefault();
-            // console.log("handle register", this.props.currentUser, this.props.match.params.eventId);
-            this.props.makeRegistration(id, this.props.currentUser);
-        };
+            const handleUnregister = (e)=>{
+                e.preventDefault();
+                this.props.deleteRegistration(id) 
+            };
 
-        let registrationhandler = this.props.RegisteredEventIds.includes(id) ? handleUnregister : handleRegister;
-        return (registrationhandler.bind(this));
+            const handleRegister = (e)=> {
+                e.preventDefault();
+                this.props.makeRegistration(id, this.props.currentUser) 
+            };
+
+            let registrationhandler = this.props.RegisteredEventIds.includes(id) ? handleUnregister : handleRegister;
+
+            return (registrationhandler.bind(this));
+        }
+        return redirect;
     }
 
 
 
     componentDidMount() {
-        console.log('eventlist props', this.props);
         if (!this.props.indexLoaded) this.props.GetAllEvents(); 
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.sortType !== nextProps.sortType){
-            console.log("sortType change");
         }
 
     }

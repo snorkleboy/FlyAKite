@@ -33,7 +33,6 @@ class Navbar extends React.Component{
 
     handleDemoLogin(e) {
         e.preventDefault();
-        console.log("handleDemoLOGIN from navbar", this.props);
         this.props.loginGuest();
     }
 

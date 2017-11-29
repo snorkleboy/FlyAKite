@@ -15,10 +15,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById('root');
 
     var store ={};
-    console.log("bootstrap here", window.bootStrap);
     if (window.bootStrap) {
         const preloadedState = { session: { currentUser: window.bootStrap.currentUser, registrations: window.bootStrap.registrations }  };
-        console.log(preloadedState);
+
         store = configureStore(preloadedState);
         delete window.currentUser;
     } else {

@@ -35,8 +35,7 @@ export default (state = _events, action) => {
             return newstate;
         case SET_SORT:
             newstate = merge({}, state);
-            console.log(action);
-            console.log(state);
+
             newstate.sortType = action.payload;
             return newstate;
 

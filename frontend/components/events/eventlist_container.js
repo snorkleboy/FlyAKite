@@ -15,7 +15,6 @@ import * as Selectors from '../../reducers/selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("evcontainer", state);
     let catId = ownProps.match.params.categoryId? parseInt(ownProps.match.params.categoryId) : 0;
     let eventList = Selectors.SelectByCategory(state.events, catId);
 
@@ -23,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
         eventsList: eventList , 
         indexLoaded: state.events.indexLoaded,
         sortType: state.events.sortType,
-        RegisteredEventIds: state.session.registrations
+        RegisteredEventIds: state.session.registrations,
+        loggedIn: state.session.currentUser
     });
 };
 

@@ -19,9 +19,7 @@ export const SelectByCategory = (events, catId) => {
     if ( catId === 0){
         return catEventList;
     }
-    console.log("catEventList", catEventList);
      let a = catEventList.filter ( ( event )=> event.categoryId === catId)
-    console.log("catEventList filtere", a);
     return a;
 };
 
