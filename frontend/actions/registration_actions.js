@@ -2,7 +2,7 @@ import * as RegActions from '../util/registrationApi';
 
 
 export const RECEIVE_REGISTRATION = "RECEIVE_REGISTRATION";
-export const DELETE_REGISTRATION = 'RECEIVE_REGISTRATION';
+export const DELETE_REGISTRATION = 'DELETE_REGISTRATION';
 
 export const receiveRegistration = (registration) =>({
     type: RECEIVE_REGISTRATION,
