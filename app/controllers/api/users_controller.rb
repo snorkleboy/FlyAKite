@@ -3,7 +3,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if (@user.save)   
-      @registered_events = @user.registered_events
+      @registrations = @user.registrations
+      @bookmarks = @user.bookmarks
       login(@user)   
       render "api/users/show"
     else
