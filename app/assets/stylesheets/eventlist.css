@@ -31,7 +31,10 @@
    align-content: center;
 }
 
-
+.registrationButton{
+    width: 100px;
+    height: 100px;
+}
 
 .event-item-anchor{
     display: flex;

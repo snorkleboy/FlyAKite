@@ -1,7 +1,7 @@
 class Api::RegistrationsController < ApplicationController
 
     def create
-        @registration = Registration.new( userId: params[:userId] , eventId: params[:eventId] )
+        @registration = Registration.new( userId:current_user().id , eventId: params[:eventId] )
         if (@registration.save!)
             render json: params[:eventId], status: 200
         else
