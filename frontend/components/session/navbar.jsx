@@ -17,6 +17,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import {
+    AAProtectedRoute,
   AuthRoute,
   ProtectedRoute,
     AuthorsRoute
@@ -63,7 +64,7 @@ class Navbar extends React.Component{
                     <SideBarContainer />
                     <Switch>
                         <Route exact path="/events/:eventId" component={ShowPageContainer} />
-                        <ProtectedRoute exact path="/events/:eventId/edit" component={CreateEventContainer} />
+                        <AAProtectedRoute exact path="/events/:eventId/edit" component={CreateEventContainer} />
                         <ProtectedRoute exact path="/create" component={CreateEventContainer } />
                         <Route path='/:categoryId' component={EventListContainer} />
                         <Route path='/' component={EventListContainer} />

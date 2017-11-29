@@ -32,14 +32,14 @@ const Auth = ({ component: Component, path, loggedIn }) => (
     />
 );
 
-// const Protected = ({ component: Component, path, loggedIn }) => (
-//     <Route
-//         path={path}
-//         render={props => (
-//             loggedIn ? <Component {...props} /> : <Redirect to="/signup" />
-//         )}
-//     />
-// );
+const AAProtected = ({ component: Component, path, loggedIn }) => (
+    <Route
+        path={path}
+        render={props => (
+            loggedIn ? <Component {...props} /> : <Redirect to="/signup" />
+        )}
+    />
+);
 
 
 const Protected = ({history , component: Component, path,location, match, loggedIn, saveRedirected }) => {
@@ -87,7 +87,7 @@ const Authors = ({ component: Component, path, match, session, events, loggedIn}
         />
     );
 };
-
+export const AAProtectedRoute = withRouter(connect(mapStateToProps, mapDispatchToProps)(AAProtected));
 export const AuthorsRoute = withRouter(connect(mapAuthorStateToProps)(Authors));
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, mapDispatchToProps)(Protected));
