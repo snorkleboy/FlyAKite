@@ -22,9 +22,11 @@ const mapStateToProps = (state, ownProps) => {
     const matchParam = ownProps.match.params.categoryId;
     console.log("ev container", state, ownProps, matchParam);
     if ( matchParam ){
-        if (matchParam === 'registered' || 'bookmarked'){
+        if (matchParam === 'registered' || matchParam === 'bookmarked'){
+            console.log("about to go to selectUserEvents", matchParam)
             eventList = Selectors.selectUserEvents(state.events, matchParam==='registered'? state.session.registrations : state.session.bookmarks  );
         }  else{
+            console.log("about to go to selectbyCategory", matchParam)
             catId = parseInt(ownProps.match.params.categoryId);
             eventList = Selectors.SelectByCategory(state.events, catId);
         }
