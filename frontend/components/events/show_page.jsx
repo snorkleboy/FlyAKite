@@ -55,7 +55,7 @@ class ShowPage extends React.Component {
         return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
     }
 
-    
+
     handleUnbookmark(e) {
         e.preventDefault();
         this.props.deleteBookmark(this.props.event.id);
@@ -71,7 +71,7 @@ class ShowPage extends React.Component {
         
     }
     componentWillReceiveProps(newProps){
-        console.log("showpage recieveing props", newProps);
+        // console.log("showpage recieveing props", newProps);
     }
     
     render() {

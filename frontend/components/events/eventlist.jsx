@@ -8,10 +8,47 @@ import EventListItem from './event_list_item.jsx';
 class EventList extends React.Component{
     constructor(props){
         super(props);
-        // this.handleRegister = this.handleRegister.bind(this);
         this.registrationHandler = this.registrationHandler.bind(this);
-        // this.handleUnregister = this.handleUnregister.bind(this);
+        this.bookmarkHandler = this.bookmarkHandler.bind(this);
     }
+
+
+    // conditionalBookmark() {
+    //     if (this.props.currentUser) {
+    //         return (this.props.bookmarked ? <button onClick={this.handleUnbookmark}>unbookmark</button> : <button onClick={this.handleBookmark}>bookmark</button>)
+    //     }
+
+    // }
+
+    bookmarkHandler(id) {
+        const redirect = (e) => {
+            e.preventDefault();
+            this.props.history.push('/signup');
+        };
+        if (this.props.loggedIn) {
+
+            const handleUnbookmark = (e) => {
+                e.preventDefault();
+                this.props.deleteBookmark(id);
+            };
+
+            const handleBookmark = (e) => {
+                e.preventDefault();
+                this.props.createBookmark(id);
+            };
+
+            let BookmarkHandler = this.props.BookmarkedEventIds.includes(id) ? handleUnbookmark : handleBookmark;
+
+            return (BookmarkHandler.bind(this));
+        }
+        return redirect;
+    }
+
+
+
+
+
+
 
 
 
@@ -25,12 +62,12 @@ class EventList extends React.Component{
 
             const handleUnregister = (e)=>{
                 e.preventDefault();
-                this.props.deleteRegistration(id) 
+                this.props.deleteRegistration(id) ;
             };
 
             const handleRegister = (e)=> {
                 e.preventDefault();
-                this.props.makeRegistration(id, this.props.currentUser) 
+                this.props.makeRegistration(id, this.props.currentUser);
             };
 
             let registrationhandler = this.props.RegisteredEventIds.includes(id) ? handleUnregister : handleRegister;
@@ -40,15 +77,13 @@ class EventList extends React.Component{
         return redirect;
     }
 
-
-
     componentDidMount() {
         if (!this.props.indexLoaded) this.props.GetAllEvents(); 
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.sortType !== nextProps.sortType){
-        }
+        // if (this.props.sortType !== nextProps.sortType){
+        // }
 
     }
 
@@ -69,14 +104,23 @@ class EventList extends React.Component{
                         <ul className='event-list-ul'>
                             {this.props.eventsList.map ( (event, index) => {
                                 let registered = this.props.RegisteredEventIds.includes(event.id);
+                                let bookmarked = this.props.BookmarkedEventIds.includes(event.id);
                             return(
                         
-                                <div key={`eventlistitemdiv-${index}`} className='event-item-anchor'>
-                                    <EventListItem key={`eventlistitem-${index}`} event={event} registered={registered} registrationHandler={this.registrationHandler(event.id)}/>
+                                <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>
+                                    
+                                    <EventListItem
+                                        key={`eventlistitem-${index}`}
+                                        event={event}
+                                        registered={registered}
+                                        bookmarked={bookmarked}
+                                        bookmarkHandler={this.bookmarkHandler(event.id)}
+                                        registrationHandler={this.registrationHandler(event.id)}
+                                      />
                     
                                 </div>
 
-                            )}
+                            );}
                         )}
                         </ul>
                     </div>

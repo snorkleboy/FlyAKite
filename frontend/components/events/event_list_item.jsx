@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const EventListItem = ({ event, registrationHandler, registered}) =>{
+const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler, bookmarked}) =>{
     return(
         <li className='event-list-item-li'> 
             <div className='event-image-container'>
@@ -10,7 +10,10 @@ const EventListItem = ({ event, registrationHandler, registered}) =>{
             
             </Link>
             </div>
-            <span className='image-buttons-holder'> <button className='registrationButton' onClick={registrationHandler}> {registered ? "unregister" : "register"} </button></span>
+            <span className='image-buttons-holder'>
+                <button className='registrationButton' onClick={registrationHandler}> {registered ? "unregister" : "register"} </button>
+                <button className='bookmarksButton' onClick={bookmarkHandler}>{bookmarked? "unbookmark" : "bookmark"}  </button>
+            </span>
             <div className='event-list-item-header-c'>
                
                 {event.name}

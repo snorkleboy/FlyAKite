@@ -26,7 +26,8 @@ export const login = (user) => dispatch => SessionAPI.login(user)
     );
 const _nullUser = Object.freeze({
     currentUser: null,
-    registrations: []
+    registrations: [],
+    bookmarks:[]
 });
 export const logout = (uer) => dispatch => SessionAPI.logout()
     .then(

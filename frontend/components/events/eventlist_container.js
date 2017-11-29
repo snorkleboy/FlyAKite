@@ -7,6 +7,7 @@ import { GetAllEvents } from '../../actions/event_actions';
 import { getIndex, getIndexDiff} from '../../actions/category_actions';
 import { sortEvents } from '../../actions/sort_actions';
 import { makeRegistration,deleteRegistration} from '../../actions/registration_actions';
+import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
 //selectors
 import * as Selectors from '../../reducers/selectors/selectors';
 
@@ -23,6 +24,7 @@ const mapStateToProps = (state, ownProps) => {
         indexLoaded: state.events.indexLoaded,
         sortType: state.events.sortType,
         RegisteredEventIds: state.session.registrations,
+        BookmarkedEventIds: state.session.bookmarks,
         loggedIn: state.session.currentUser
     });
 };
@@ -30,10 +32,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
     GetAllEvents: (eventList) => dispatch(GetAllEvents(eventList)),
     makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),
-    deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId))
+    deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId)),
+    createBookmark: (eventId) => dispatch(createBookmark(eventId)),
+    deleteBookmark: (eventId) => dispatch(deleteBookmark(eventId))
 
-    // sortEvents: () => dispatch(sortEvents())
-    // getIndex: () => dispatch(getIndex()),
-    // getIndexDiff: (lists) => dispatch(getIndexDiff(lists))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Eventlist);

@@ -36,7 +36,7 @@ const sessionReducer = (state = _nullUser, action) =>{
             return newState;
         case RECEIVE_CURRENT_USER:
             newState = merge({}, state);
-        // console.log("sess reducer", state, action.payload);
+        console.log("sess reducer", state, action.payload);
             newState.currentUser = action.payload.current_user;
             newState.registrations = action.payload.registrations;
             newState.bookmarks = action.payload.bookmarks;
