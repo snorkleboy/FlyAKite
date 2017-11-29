@@ -12,7 +12,7 @@ const mapStatetoProps = (state, ownProps) => {
 
     return ({
         categories: state.categories,
-        
+        loggedIn: state.session.currentUser
     });
 };
 

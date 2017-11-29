@@ -13,6 +13,15 @@ export const SelectEntityInOrder = (EntityObject) => {
     EntityObject.order.forEach((Id) => { list.push(EntityObject.byIDs[Id]); });
     return (list);
 };
+export const selectUserEvents = (events, arrayOfEventIds) =>{
+    let list = SelectEventsInOrder(events);
+    console.log("selectUserEvents events:array", events, arrayOfEventIds);
+    list = list.filter((event) => arrayOfEventIds.includes(event.id));
+    console.log("selectUserEvents return list", list);
+    return list;
+
+};
+
 
 export const SelectByCategory = (events, catId) => {
     let catEventList = SelectEventsInOrder(events);

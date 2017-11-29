@@ -16,9 +16,25 @@ import * as Selectors from '../../reducers/selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-    let catId = ownProps.match.params.categoryId? parseInt(ownProps.match.params.categoryId) : 0;
-    let eventList = Selectors.SelectByCategory(state.events, catId);
+    
+    let catId = 0;
+    let eventList = [];
+    const matchParam = ownProps.match.params.categoryId;
+    console.log("ev container", state, ownProps, matchParam);
+    if ( matchParam ){
+        if (matchParam === 'registered' || 'bookmarked'){
+            eventList = Selectors.selectUserEvents(state.events, matchParam==='registered'? state.session.registrations : state.session.bookmarks  );
+        }  else{
+            catId = parseInt(ownProps.match.params.categoryId);
+            eventList = Selectors.SelectByCategory(state.events, catId);
+        }
 
+    } else{
+        eventList = Selectors.SelectByCategory(state.events, catId);
+    }
+
+
+    
         return ({
         eventsList: eventList , 
         indexLoaded: state.events.indexLoaded,

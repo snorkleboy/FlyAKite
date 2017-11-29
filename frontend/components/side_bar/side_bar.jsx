@@ -12,7 +12,7 @@ class SideBar extends React.Component{
 
     newHandle(id){
         return (e) => {
-            this.props.setSort(e.target.innerText);
+            // this.props.setSort(e.target.innerText);  
             this.props.history.push(`/${id}`);
         };
     }
@@ -21,6 +21,12 @@ class SideBar extends React.Component{
 
         const cats = (SelectEntityInOrder(this.props.categories));
         cats.push({name:"all", id:0});
+        if (this.props.loggedIn){
+            cats.unshift({name:"My Registered Events", id:"registered" });
+            cats.unshift({name: "My bookmarked Events", id: "bookmarked" });
+
+        }
+        
             return(
                 <main id='category-holder' className='sideBar'>
                         <div  className='SideBar-buttons-list'>
