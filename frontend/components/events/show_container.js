@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import ShowPage from './show_page';
 import { GetEvent } from '../../actions/event_actions';
 import { Link, withRouter } from 'react-router-dom';
-import { makeRegistration} from '../../actions/registration_actions';
+import { makeRegistration, deleteRegistration} from '../../actions/registration_actions';
+
 
 
 const mapStatetoProps = (state, ownProps) =>{
@@ -27,7 +28,8 @@ const mapStatetoProps = (state, ownProps) =>{
 
 const mapDispatchtoProps = (dispatch, ownProps) =>({
         getEvent: (id) => dispatch(GetEvent(id) ),
-        makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId))
+        makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),
+        deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId))
     });
 
 export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(ShowPage));

@@ -24,6 +24,8 @@ class ShowPage extends React.Component {
         console.log("show props", props);
         this.handleRegister = this.handleRegister.bind(this);
         this.conditionalRegister = this.conditionalRegister.bind(this);
+        this.handleUnregister = this.handleUnregister.bind(this);
+        
     }
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -33,7 +35,10 @@ class ShowPage extends React.Component {
 
     
     }
-
+    handleUnregister(e){
+        e.preventDefault();
+        this.props.deleteRegistration(this.props.event.id);
+    }
     handleRegister(e){
         e.preventDefault();
         console.log("handle register", this.props.currentUser, this.props.match.params.eventId );
@@ -42,7 +47,7 @@ class ShowPage extends React.Component {
     conditionalRegister(){
         console.log("registered", this.props);
         if (this.props.currentUser){
-            return (this.props.registered  ? <button >unregister</button> : <button onClick={this.handleRegister}>register</button>);
+            return (this.props.registered ? <button onClick={this.handleUnregister}>unregister</button> : <button onClick={this.handleRegister}>register</button>);
         }
     }
     conditionalEdit(){

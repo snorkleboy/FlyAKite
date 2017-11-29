@@ -30,15 +30,9 @@ const sessionReducer = (state = _nullUser, action) =>{
             return newState;
         case DELETE_REGISTRATION:
             newState = merge({}, state);
-            console.log("DELETE_REGISTRATION", action.payload);
-            console.log("newState", newState.registrations);
-
             const index = newState.registrations.indexOf(action.payload);
             newState.registrations.splice(index, 1);
 
-            console.log("DELETE_REGISTRATION", action.payload);
-            console.log("newState", newState);
-            console.log("return----");
             return newState;
         default:
             return state;
