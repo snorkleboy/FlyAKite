@@ -14,9 +14,13 @@ const _nullUser = Object.freeze({
 
 const sessionReducer = (state = _nullUser, action) =>{
     Object.freeze(state);
-    let newState = {}
+    let newState = {};
     switch(action.type){
-
+        case DELETE_BOOKMARKS:
+            newState = merge({}, state);
+            const indexx = newState.bookmarks.indexOf(action.payload);
+            newState.bookmarks.splice(indexx, 1);
+            return newState;
         case RECEIVE_BOOKMARKS:
             newState = merge({}, state);
             newState.bookmarks.push(action.payload);
@@ -35,6 +39,7 @@ const sessionReducer = (state = _nullUser, action) =>{
         // console.log("sess reducer", state, action.payload);
             newState.currentUser = action.payload.current_user;
             newState.registrations = action.payload.registrations;
+            newState.bookmarks = action.payload.bookmarks;
             return newState;
         case DELETE_REGISTRATION:
             newState = merge({}, state);

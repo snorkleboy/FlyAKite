@@ -9,7 +9,7 @@ export const receiveBookmark = (bookmark) => ({
     payload: bookmark
 });
 
-export const removeRegistration = (eventId) => ({
+export const removeBookmark = (eventId) => ({
     type: DELETE_BOOKMARKS,
     payload: eventId
 });
@@ -19,4 +19,4 @@ export const createBookmark = (eventId) => dispatch => BookmarkActions.createBoo
     .then((success) => dispatch(receiveBookmark(success)));
 
 export const deleteBookmark = (eventId) => dispatch => BookmarkActions.deleteBookmark(eventId)
-    .then((success) => dispatch(DELETE_BOOKMARKS(eventId))); 
+    .then((success) => dispatch(removeBookmark(eventId))); 

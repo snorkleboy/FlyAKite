@@ -9,7 +9,7 @@ class Api::BookmarksController < ApplicationController
   end
 
   def destroy
-        @bookmark = current_user().Bookmark.find_by(eventId:params[:eventId]) 
+        @bookmark = current_user().bookmarks.find_by(eventId:params[:eventId]) 
         if (@bookmark.destroy!)
             render json: {}, status: 200
         else

@@ -24,6 +24,10 @@ class ShowPage extends React.Component {
         this.handleRegister = this.handleRegister.bind(this);
         this.conditionalRegister = this.conditionalRegister.bind(this);
         this.handleUnregister = this.handleUnregister.bind(this);
+
+        this.conditionalBookmark = this.conditionalBookmark.bind(this);
+        this.handleUnbookmark = this.handleUnbookmark.bind(this);
+        this.handleBookmark = this.handleBookmark.bind(this);
         
     }
     componentDidMount() {
@@ -50,7 +54,24 @@ class ShowPage extends React.Component {
     conditionalEdit(){
         return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
     }
+
+    
+    handleUnbookmark(e) {
+        e.preventDefault();
+        this.props.deleteBookmark(this.props.event.id);
+    }
+    handleBookmark(e) {
+        e.preventDefault();
+        this.props.createBookmark(this.props.match.params.eventId);
+    }
+    conditionalBookmark(){
+        if( this.props.currentUser){
+            return (this.props.bookmarked ? <button onClick={this.handleUnbookmark}>unbookmark</button> : <button onClick={this.handleBookmark}>bookmark</button>)
+        }
+        
+    }
     componentWillReceiveProps(newProps){
+        console.log("showpage recieveing props", newProps);
     }
     
     render() {
@@ -66,7 +87,7 @@ class ShowPage extends React.Component {
 
                         </div>  
                         <div className='buttonsStrip'>
-                           {this.conditionalEdit()}   {this.conditionalRegister()}
+                        {this.conditionalEdit()}   {this.conditionalRegister()} {this.conditionalBookmark()}
 
                         </div>
                         <div>
