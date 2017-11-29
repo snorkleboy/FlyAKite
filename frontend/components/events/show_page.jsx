@@ -21,7 +21,6 @@ class ShowPage extends React.Component {
 
     constructor(props){
         super(props);
-        // console.log("show props", props);
         this.handleRegister = this.handleRegister.bind(this);
         this.conditionalRegister = this.conditionalRegister.bind(this);
     }
@@ -40,7 +39,7 @@ class ShowPage extends React.Component {
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
     }
     conditionalRegister(){
-        // console.log("registered", this.props);
+        console.log("conidtionTEgister render", this.props);
         if (this.props.currentUser){
             return (this.props.registered  ? <button >unregister</button> : <button onClick={this.handleRegister}>register</button>);
         }
@@ -49,7 +48,7 @@ class ShowPage extends React.Component {
         return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
     }
     componentWillReceiveProps(newProps){
-        // console.log("newprops", newProps);
+        console.log("newprops", newProps);
     }
     
     render() {

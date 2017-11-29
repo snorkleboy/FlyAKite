@@ -6,10 +6,19 @@ import { makeRegistration} from '../../actions/registration_actions';
 
 
 const mapStatetoProps = (state, ownProps) =>{
-        // console.log("showcontainerstate", state);
+        console.log("showcontainerstate", state);
         const event = state.events.byIDs[ownProps.match.params.eventId] ;
+        console.log( Object.keys(state.session.registrations));
+        console.log("eventId", event ? event.id : null);
 
-        const registered = event? Boolean( state.session.registrations.includes(event.id) ): false;
+        const registered = event ? Object.keys(state.session.registrations).includes(`${event.id}`) : false;
+
+
+        console.log("showcontainerstate registered", Object.keys(state.session.registrations));
+        console.log(event? true:false);
+        console.log("registered", registered);
+
+
 
         const currUsers = state.session.currentUser && event?
                         Boolean(event.userId === state.session.currentUser.id)

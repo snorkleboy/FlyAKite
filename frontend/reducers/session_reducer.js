@@ -8,7 +8,7 @@ import { RECEIVE_REGISTRATION, DELETE_REGISTRATION} from '../actions/registratio
 
 const _nullUser = Object.freeze({
     currentUser: null,
-    registrations: []
+    registrations: {}
 });
 
 const sessionReducer = (state = _nullUser, action) =>{
@@ -16,7 +16,7 @@ const sessionReducer = (state = _nullUser, action) =>{
     let newState = merge ({}, state);
     switch(action.type){
         case RECEIVE_REGISTRATION:
-            newState.registrations.push(action.payload);
+            newState= merge ({}, state, action.payload.registrations);
             return newState;
         case RECEIVE_CURRENT_USER:
         // console.log("sess reducer", state, action.payload);
