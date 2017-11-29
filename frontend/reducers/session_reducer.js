@@ -4,19 +4,27 @@ import {
     RECEIVE_CURRENT_USER,
 } from '../actions/session_actions';
 import { RECEIVE_REGISTRATION, DELETE_REGISTRATION} from '../actions/registration_actions';
-
+import { RECEIVE_BOOKMARKS, DELETE_BOOKMARKS } from '../actions/bookmark_actions';
 
 const _nullUser = Object.freeze({
     currentUser: null,
-    registrations: []
+    registrations: [],
+    bookmarks:[]
 });
 
 const sessionReducer = (state = _nullUser, action) =>{
     Object.freeze(state);
-    let newState = merge({}, state);
+    let newState = {}
     switch(action.type){
 
+        case RECEIVE_BOOKMARKS:
+            newState = merge({}, state);
+            newState.bookmarks.push(action.payload);
+            console.log("RECEIVE_BOOKMARKS ", action, state);
+            return newState;
+
         case RECEIVE_REGISTRATION:
+
             newState = merge({}, state);
             // console.log("newState", newState);
             newState.registrations.push(action.payload);

@@ -8,7 +8,7 @@ import * as EventActions from './actions/event_actions';
 import * as SessionActions from './actions/session_actions';
 import { getIndex} from './actions/category_actions';
 import * as RegistrationActions from './actions/registration_actions';
-
+import * as BookmarkActions from './actions/bookmark_actions';
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -16,13 +16,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     var store ={};
     if (window.bootStrap) {
-        const preloadedState = { session: { currentUser: window.bootStrap.currentUser, registrations: window.bootStrap.registrations }  };
+        const preloadedState = { 
+            session: { 
+                 currentUser: window.bootStrap.currentUser,
+                 registrations: window.bootStrap.registrations ,
+                 bookmarks: window.bootStrap.bookmarks
+                }  
+            };
 
         store = configureStore(preloadedState);
         delete window.currentUser;
     } else {
         store = configureStore();
     }
+
+
+    window.deleteBookmark = BookmarkActions.deleteBookmark;
+    window.createBookmark = BookmarkActions.createBookmark;
     window.deleteregistration = RegistrationActions.deleteRegistration;
     window.makeRegistration = RegistrationActions.makeRegistration;
     window.getIndex = getIndex;
