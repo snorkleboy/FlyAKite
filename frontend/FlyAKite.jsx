@@ -15,12 +15,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById('root');
 
     var store ={};
-    console.log("windowboot", window.bootStrap);
+    // console.log("windowboot", window.bootStrap);
     if (window.bootStrap) {
         
 
-        const preloadedState = { session: { currentUser: window.bootStrap.current_user, registrations: window.bootStrap.registrations}  };
-        console.log("preloadedState", preloadedState);
+        const preloadedState = { 
+            session:{ 
+            currentUser: window.bootStrap.current_user,
+            registrations: window.bootStrap.registrations
+            }
+        };
+        // console.log("preloadedState", preloadedState);
         store = configureStore(preloadedState);
         delete window.bootStrap;
     } else {

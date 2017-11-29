@@ -6,7 +6,7 @@ import { makeRegistration} from '../../actions/registration_actions';
 
 
 const mapStatetoProps = (state, ownProps) =>{
-        console.log("showcontainerstate", state);
+        // console.log("showcontainerstate", state);
         const event = state.events.byIDs[ownProps.match.params.eventId] ;
 
         const registered = event? Boolean( state.session.registrations.includes(event.id) ): false;

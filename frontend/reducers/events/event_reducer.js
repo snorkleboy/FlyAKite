@@ -11,9 +11,14 @@ const _events = {
     "byIDs": {},
     "order": [],
     "sortType":"all",
-    "indexLoaded":false,
-    "Registered":false
+    "indexLoaded":false
 };
+
+// Object.values(action.payload.byIDs).forEach((event) => {
+//     if (newstate.session.registrations.includes(event.id)) {
+//         event.registered = true;
+//     };
+// }
 export default (state = _events, action) => {
     Object.freeze(state);
     var newstate={};
@@ -34,6 +39,7 @@ export default (state = _events, action) => {
             console.log(state);
             newstate.sortType = action.payload;
             return newstate;
+
         default:
             return state;
     }
