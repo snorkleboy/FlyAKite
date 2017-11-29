@@ -46,15 +46,34 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
     }
+
     conditionalRegister(){
         if (this.props.currentUser){
-            return (this.props.registered ? <button onClick={this.handleUnregister}>unregister</button> : <button onClick={this.handleRegister}>register</button>);
+            return (this.props.registered ? 
+                <button className="unregister-button" onClick={this.handleUnregister}>unregister</button> 
+            :
+                <button className="register-button" onClick={this.handleRegister}>register</button>);
         }
     }
+
     conditionalEdit(){
-        return (this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> : null);
+        return (this.props.currentUsersEvent ?
+                <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> 
+            :
+                 null
+            );
     }
 
+    conditionalBookmark() {
+        if (this.props.currentUser) {
+            return (this.props.bookmarked ?
+                <button className="unbookmark-button" onClick={this.handleUnbookmark}>unbookmark</button> 
+            : 
+                <button className="bookmark-button" onClick={this.handleBookmark}>bookmark</button>
+            );
+        }
+
+    }
 
     handleUnbookmark(e) {
         e.preventDefault();
@@ -64,12 +83,7 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.createBookmark(this.props.match.params.eventId);
     }
-    conditionalBookmark(){
-        if( this.props.currentUser){
-            return (this.props.bookmarked ? <button onClick={this.handleUnbookmark}>unbookmark</button> : <button onClick={this.handleBookmark}>bookmark</button>)
-        }
-        
-    }
+
     componentWillReceiveProps(newProps){
         // console.log("showpage recieveing props", newProps);
     }
@@ -100,24 +114,6 @@ class ShowPage extends React.Component {
         }else { return null;}
     
     }
-// <img className='showpageImage' src={this.props.event.imgURL} /> 
-    // 
-    // setBackground(props){
-    //     if(props.event !== null) {
-    //         console.log("event not null");
-    //         const background = document.getElementById('showpageImage');
-    //         console.log(background);
-    //         background.style.backgroundImage = `url(${props.event.imgURL})`;
-    //     }
-    // }
-
-    // const img = document.createElement("p");
-    // const background = document.getElementById('showpageImage-target');
-
-    // background.style.backgroundImage = `url(${this.props.event.imgURL})`;
-    // background.classList.add('showpageImage');
-    // img.appendChild(background);
-
 }
 
 export default ShowPage;

@@ -11,8 +11,8 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
             </Link>
             </div>
             <span className='image-buttons-holder'>
-                <button className='registrationButton' onClick={registrationHandler}> {registered ? "unregister" : "register"} </button>
-                <button className='bookmarksButton' onClick={bookmarkHandler}>{bookmarked? "unbookmark" : "bookmark"}  </button>
+                <button className={registered ? 'un' : "" + `register-button`} onClick={registrationHandler}> {registered ? "unregister" : "register"} </button>
+                <button className={bookmarked ? 'un' : '' +'bookmark-button'} onClick={bookmarkHandler}>{bookmarked? "unbookmark" : "bookmark"}  </button>
             </span>
             <div className='event-list-item-header-c'>
                
