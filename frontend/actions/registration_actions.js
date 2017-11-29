@@ -9,8 +9,16 @@ export const receiveRegistration = (registration) =>({
     payload: registration
 });
 
+export const removeRegistration = (eventId) =>({
+    type: DELETE_REGISTRATION,
+    payload: eventId
+});
+
 
 export const makeRegistration = (eventId, userId) => dispatch => RegActions.createRegistration(eventId, userId)
     .then((success) => dispatch(receiveRegistration(success)) ); 
+
+export const deleteRegistration = (eventId) => dispatch => RegActions.deleteRegistration(eventId)
+    .then((success) => dispatch(removeRegistration(eventId))); 
 
 // export const deleteRegistration = 

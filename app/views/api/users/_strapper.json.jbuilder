@@ -1,13 +1,9 @@
-json.current_user do
+json.currentUser do
     json.extract! user, :id, :username
 end
 
-registrations = user.registrations
+registered_events = user.registered_events
 
 json.registrations do
-    registrations.each do |registration|
-        json.set! registration.eventId do
-            json.extract! registration, :eventId, :id
-        end
-    end                         #.map{|registered_event| registered_event.id}
+    json.array! registered_events.map{|registered_event| registered_event.id}
 end

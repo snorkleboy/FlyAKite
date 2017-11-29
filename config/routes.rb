@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :events
     match 'registration/:eventId/:userId', to: 'registrations#create', via: [:post]
-    match 'registration/:registrationId', to: 'registrations#destroy', via: [:delete]
+    match 'registration/:eventId', to: 'registrations#destroy', via: [:delete]
   end
 
   #/events/:eventID/user/User.id

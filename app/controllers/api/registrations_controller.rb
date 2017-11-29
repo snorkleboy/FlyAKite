@@ -10,7 +10,7 @@ class Api::RegistrationsController < ApplicationController
     end
 
     def destroy
-        @registration = Registration.find(params[:registrationId]) 
+        @registration = current_user().registrations.find_by(eventId:params[:eventId]) 
         if (@registration.destroy!)
             render json: {}, status: 200
         else

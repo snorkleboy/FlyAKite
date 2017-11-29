@@ -3,7 +3,7 @@ export const createRegistration = (eventId, userId) => $.ajax({
     method: "POST"
 });
 
-export const deleteRegistration = (regId) => $.ajax({
-    url: `api/registration/${regId}`,
+export const deleteRegistration = (eventId) => $.ajax({
+    url: `api/registration/${eventId}`,
     method: "DELETE"
 });

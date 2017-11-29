@@ -66,8 +66,8 @@ class CreateEventComp extends React.Component {
 
         let successCB = (success) => {
             console.log("SCB", success);
-            // 
-            this.props.history.push(`/events/${success.id}`);
+            let key = Object.keys(success.byIDs)[0];
+            this.props.history.push(`/events/${key}`);
         };
 
         successCB = successCB.bind(this);

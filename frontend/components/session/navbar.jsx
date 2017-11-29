@@ -65,7 +65,7 @@ class Navbar extends React.Component{
                     <Switch>
                         <Route exact path="/events/:eventId" component={ShowPageContainer} />
                         <AAProtectedRoute exact path="/events/:eventId/edit" component={CreateEventContainer} />
-                        <ProtectedRoute exact path="/create" component={CreateEventContainer } />
+                        <AAProtectedRoute exact path="/create" component={CreateEventContainer } />
                         <Route path='/:categoryId' component={EventListContainer} />
                         <Route path='/' component={EventListContainer} />
                     </Switch>
