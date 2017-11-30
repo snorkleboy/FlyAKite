@@ -34,10 +34,10 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = current_user.events.find(event_params[:id])
-    if @event.update_attributes(event_params)
+    if @event.update_attributes!(event_params)
       render "api/events/show"
     else
-      render json: ["event update error"], status: 404
+      render json: [event.errors.full_messages], status: 404
     end
   end
 

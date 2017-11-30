@@ -6,7 +6,7 @@ import { CreateEvent, clearEventErrors, UpdateEvent, GetEvent } from '../../acti
 const mapStatetoProps = (state, ownProps) => {
     let type = 'create';
     let event = _nullEvent;
-    event.userId = state.session.currentUser.id;
+    
 
     if (ownProps.match.path === '/events/:eventId/edit'){
         type =  "edit";
@@ -16,6 +16,7 @@ const mapStatetoProps = (state, ownProps) => {
             event = _nullEvent;
         }
     }
+    event.userId = state.session.currentUser.id;
 
     return ({
         errors: state.errors.events,
@@ -49,27 +50,16 @@ export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
 
 const _nullEvent = {
     // userId: this.props.userId,
+    location: {
+        areaCode: "415",
+        state: "CA",
+        city: "San Fransisco",
+    },
     categoryId:1,
     name: '',
     startDate: '',
     header: "",
     description: "",
     imgURL: "",
-    areaCode: "415",
-    state: "CA",
-    city: "San Fransisco",
     endDate: "",
 };
-// const _event = {
-//     // userId: 1,
-//     categoryId: 1,
-//     name: 'asdasd',
-//     startDate: '2015-01-02T11:42:00',
-//     header: "asdasdsasada",
-//     description: "asdasadas",
-//     imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
-//     areaCode: "415",
-//     state: "CA",
-//     city: "San Fransisco",
-//     // endDate: "1123213213",
-// };

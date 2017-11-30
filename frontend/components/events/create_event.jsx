@@ -30,10 +30,18 @@ import merge from 'lodash/merge';
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
+        console.log("craete eventCON props",props);
         const event = props.event;
-        console.log("props");
+        console.log("craete eventCON event", event);
+        if (!event.location){
+        event.areaCode = event.location.areaCode || '' ;
+        event.city = event.location.city || '';
+        event.state= event.location.state || '';
+        delete event.location;
+        }
+        console.log("craete eventCON after", event);
         // renderForm
-        this.state = props.event;
+        this.state = event  ;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
@@ -45,10 +53,18 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log("event nexrprops", nextProps);
+        console.log("event willrecieve", nextProps);
         if( nextProps.event){
             const event = nextProps.event;
+            console.log("nexrprops", nextProps.event);
+            if (!event.location){
+                event.areaCode = event.location.areaCode || '';
+                event.city = event.location.city || '';
+                event.state = event.location.state || '';
             
+            delete event.location;
+            }
+            console.log("nexrprops", nextProps.event);
             //convert from database datetime to this datetime-local
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
@@ -72,9 +88,9 @@ class CreateEventComp extends React.Component {
             let key = Object.keys(success.byIDs)[0];
             this.props.history.push(`/events/${key}`);
         };
-
+        event.state && event.state.toUpperCase();
         successCB = successCB.bind(this);
-        this.props.actionType({ event }, successCB);
+        this.props.actionType(event , successCB);
 
     }
     renderErrors() {
@@ -129,7 +145,7 @@ class CreateEventComp extends React.Component {
             )
 
         }
-            
+        location
         // console.log(this.state);
 
 
@@ -272,30 +288,3 @@ class CreateEventComp extends React.Component {
     }
 }
 export default CreateEventComp;
-
-const _event = {
-    // userId: this.props.userId,
-    name: '',
-    startDate: '',
-    header: "",
-    categoryId:1,
-    description: "",
-    imgURL: "",
-    areaCode: "415",
-    state: "CA",
-    city: "San Fransisco",
-    endDate: "",
-};
-const _eeevent = {
-    // userId: 1,
-    categoryId:1,
-    name: 'asdasd',
-    startDate: '2015-01-02T11:42:00',
-    header: "asdasdsasada",
-    description: "asdasadas",
-    imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
-    areaCode: "415",
-    state: "CA",
-    city: "San Fransisco",
-    endDate: "",
-};
