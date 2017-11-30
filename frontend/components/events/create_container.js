@@ -5,7 +5,7 @@ import { CreateEvent, clearEventErrors, UpdateEvent, GetEvent } from '../../acti
 
 const mapStatetoProps = (state, ownProps) => {
     let type = 'create';
-    let event = _event;
+    let event = _nullEvent;
     event.userId = state.session.currentUser.id;
 
     if (ownProps.match.path === '/events/:eventId/edit'){
@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
 
 
-const _event = {
+const _nullEvent = {
     // userId: this.props.userId,
     categoryId:1,
     name: '',

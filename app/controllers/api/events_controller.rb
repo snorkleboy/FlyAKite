@@ -29,7 +29,7 @@ class Api::EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:eventId])
+    @event = current_user.events.find(params[:eventId])
   end
 
   def update

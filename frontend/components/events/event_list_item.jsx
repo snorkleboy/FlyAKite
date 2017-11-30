@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler, bookmarked}) =>{
-    console.log("eventlistItem", event);
+    // console.log("eventlistItem", event);
     return(
         <li className='event-list-item-li'> 
             <div className='event-image-container'>

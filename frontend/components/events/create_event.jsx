@@ -78,7 +78,7 @@ class CreateEventComp extends React.Component {
                 <ul className='error-list'>
                     {this.props.errors.map((error, i) => (
                         <li key={`error-${i}`}>
-                            {error.slice(2, error.length - 2)}
+                            {error.slice}
                         </li>
                     ))}
                 </ul>
@@ -131,7 +131,7 @@ class CreateEventComp extends React.Component {
             <form onSubmit={this.handleSubmit} className="EventForm">
                 
                 <div className="create-form">
-                    <h3 className='getstarted'>Get Started</h3>
+                    <h3 className='getstarted'>{this.props.formType}</h3>
                     {this.renderErrors()}
 
                     <label className='signup-label'>name
