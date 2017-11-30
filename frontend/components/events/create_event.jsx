@@ -37,14 +37,15 @@ class CreateEventComp extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
-        if (this.props.formType === 'edit' && this.props.event.name === '') {
+        console.log("didmount",this.props);
+        if (this.props.formType === 'edit') {
             this.props.GetEvent(this.props.match.params.eventId);
         }
         window.scrollTo(0, 0);
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log("event nexrprops", event);
+        console.log("event nexrprops", nextProps);
         if( nextProps.event){
             const event = nextProps.event;
             
@@ -65,7 +66,7 @@ class CreateEventComp extends React.Component {
         e.preventDefault();
         const event = this.state;
         this.props.clearEventErrors();
-        console.log("event", event);
+        console.log("handle submit event&state", event, this.state);
 
         let successCB = (success) => {
             let key = Object.keys(success.byIDs)[0];
