@@ -1,23 +1,23 @@
 
 .bookmark-button{
-    font-size: 22px;
+    font-size: 100%;
     background-color: inherit;
-    color: rgb(227, 255, 100);
+    color: rgb(255, 139, 62);
 }
 .register-button{
-    font-size: 20px;
+    font-size: 100%;
     background-color: inherit;
-    color: rgb(227, 255, 100);
+    color: rgb(255, 139, 62);
 }
 
 .unbookmark-button{
-    font-size: 22px;
+    font-size: 100%;
     background-color: inherit;
-    color: rgb(255, 139, 62);
+    color: rgb(160, 180, 60);
 }
 
 .unregister-button{
-    font-size: 22px;
+   font-size: 100%;
     background-color: inherit;
-    color: rgb(255, 139, 62);
+    color: rgb(160, 180, 60);
 }

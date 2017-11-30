@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler, bookmarked}) =>{
+    console.log("eventlistItem", event);
     return(
         <li className='event-list-item-li'> 
             <div className='event-image-container'>
@@ -11,12 +12,15 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
             </Link>
             </div> 
             <span className='image-buttons-holder'>
-                <button className={(registered ? 'un' : "") + `register-button`} onClick={registrationHandler}><i className={"fa fa-caret-square-o" + (registered ? '-down' : '-up')}></i> </button>
-                <button className={(bookmarked ? 'un' : '') + 'bookmark-button'} onClick={bookmarkHandler}><i className={"fa fa-bookmark" + (bookmarked ? '-o' : '') }></i>  </button>
+                <button className={(registered ? 'un' : "") + `register-button`} onClick={registrationHandler}>Register<i className={"fa fa-caret-square-o" + (registered ? '-down' : '-up')}></i> </button>
+                <button className={(bookmarked ? 'un' : '') + 'bookmark-button'} onClick={bookmarkHandler}>Bookmark<i className={"fa fa-bookmark" + (bookmarked ? '-o' : '') }></i>  </button>
             </span>
             <div className='event-list-item-header-c'>
                
-                {event.name}
+                <span className='header-name'>{event.name}</span> 
+                <span className='header-header'>{event.header}</span> 
+                <span>{event.startDate.slice(0,10)}</span> 
+                <span>{event.city}</span>
             </div>
         </li>
     );

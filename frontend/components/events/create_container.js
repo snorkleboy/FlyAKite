@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
 
 
-const _nullEvent = {
+const _event = {
     // userId: this.props.userId,
     categoryId:1,
     name: '',
@@ -60,16 +60,16 @@ const _nullEvent = {
     city: "San Fransisco",
     endDate: "",
 };
-const _event = {
-    // userId: 1,
-    categoryId: 1,
-    name: 'asdasd',
-    startDate: '2015-01-02T11:42:00',
-    header: "asdasdsasada",
-    description: "asdasadas",
-    imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
-    areaCode: "415",
-    state: "CA",
-    city: "San Fransisco",
-    // endDate: "1123213213",
-};
+// const _event = {
+//     // userId: 1,
+//     categoryId: 1,
+//     name: 'asdasd',
+//     startDate: '2015-01-02T11:42:00',
+//     header: "asdasdsasada",
+//     description: "asdasadas",
+//     imgURL: "https://previews.123rf.com/images/ayzek/ayzek1105/ayzek110500057/9549034-Bridge-to-the-sucess--Stock-Photo.jpg",
+//     areaCode: "415",
+//     state: "CA",
+//     city: "San Fransisco",
+//     // endDate: "1123213213",
+// };

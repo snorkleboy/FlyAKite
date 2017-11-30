@@ -96,8 +96,12 @@ class EventList extends React.Component{
         return(
             <main className='eventlist'>
                 <div className='navbar-img-container'>
-    
+
                 </div>
+                <div className="indexbar">
+
+                
+                </div> 
                 <div className="eventList-container">
                     <div className="eventListItem-container"> 
                         <ul className='event-list-ul'>
@@ -133,5 +137,6 @@ class EventList extends React.Component{
 
 // let registrationHandler = this.props.RegisteredEventIds.includes(event.id) ? this.handleUnregister : this.handleRegister;
 // console.log("event", registrationHandler, "event", event)
-
+/* <h1>Find Your Next experience</h1>
+    <h1>{this.props.formType}</h1> */
 export default EventList;

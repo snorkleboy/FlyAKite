@@ -12,7 +12,7 @@ class SideBar extends React.Component{
 
     newHandle(id){
         return (e) => {
-            // this.props.setSort(e.target.innerText);  
+            this.props.setSort(e.target.innerText);  
             this.props.history.push(`/${id}`);
         };
     }

@@ -6,6 +6,8 @@
 
 
 .sideBar{
+
+    padding-top: 150px;
     position: relative;
     left: 0px;
     // z-index: 999999;
@@ -17,18 +19,23 @@
     border-right: 1px solid #EFF2F5;
 
 }
-.SideBar-button-list {
-        display: flex;
+
+.SideBar-buttons-list {
+    
+    
+
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items:center;
 }
 .sidebar-button{
+    color: #3d3e41;
     text-align: center;
     width: 100%;
     height: 60px;
     background-color: #fbfbfb;
-    transition: 1s background-color;
+    transition: 1s background-color, 1.2s color;
 }
 
 .SideBar-buttons-list >.sidebar-button:nth-child(3n+1){
@@ -36,11 +43,11 @@
 }
 
 .sidebar-button:hover{
-
+color: white;
     background-color: #ff8534;
 }
 
 .sidebar-button-active{
-
+    color: white;
     background-color: #ff8534;
 }

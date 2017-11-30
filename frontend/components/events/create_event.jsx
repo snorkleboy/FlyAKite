@@ -265,7 +265,7 @@ class CreateEventComp extends React.Component {
 }
 export default CreateEventComp;
 
-const _nullEvent = {
+const _event = {
     // userId: this.props.userId,
     name: '',
     startDate: '',
@@ -278,7 +278,7 @@ const _nullEvent = {
     city: "San Fransisco",
     endDate: "",
 };
-const _event = {
+const _eeevent = {
     // userId: 1,
     categoryId:1,
     name: 'asdasd',
