@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
+import merge from 'lodash/merge';
+
 ////
 
 //from state: 
@@ -28,7 +30,8 @@ import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
-
+        const event = props.event;
+        console.log("props");
         // renderForm
         this.state = props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,9 +44,10 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-
+        console.log("event nexrprops", event);
         if( nextProps.event){
             const event = nextProps.event;
+            
             //convert from database datetime to this datetime-local
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
@@ -61,6 +65,7 @@ class CreateEventComp extends React.Component {
         e.preventDefault();
         const event = this.state;
         this.props.clearEventErrors();
+        console.log("event", event);
 
         let successCB = (success) => {
             let key = Object.keys(success.byIDs)[0];

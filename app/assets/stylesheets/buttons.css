@@ -1,14 +1,14 @@
 
 .bookmark-button{
     /* padding: 0px; */
-    font-size: 100%;
+    font-size: x-large;
     font-weight: 700;
     background-color: inherit;
     color: rgb(255, 166, 0);
     transition: .2s background-color, .2s color;
 }
 .register-button{
-    font-size: 100%;
+    font-size: x-large;
     background-color: inherit;
     color: rgb(255, 166, 0);
     font-weight: 700;
@@ -22,7 +22,7 @@
 
 .unbookmark-button{
     transition: .2s background-color, .2s color;
-    font-size: 100%;
+    font-size: x-large;
     background-color: inherit;
     color: rgb(160, 180, 60);
     font-weight: 700;
@@ -30,7 +30,7 @@
 
 .unregister-button{
     transition: .2s background-color, .2s color;
-   font-size: 100%;
+   font-size: x-large;
     background-color: inherit;
     color: rgb(160, 180, 60);
     font-weight: 700;

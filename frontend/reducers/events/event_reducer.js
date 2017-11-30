@@ -29,7 +29,9 @@ export default (state = _events, action) => {
             newstate.indexLoaded = true;
             return newstate;
         case RECEIVE_CREATED_EVENT:
+            console.log("RECEIVE_CREATED_EVENT")
         case RECEIVE_EVENT:
+            console.log("RECEIVE_EVENT")
             newstate = merge({}, state, action.payload);
             newstate.order.push(parseInt(Object.keys(action.payload.byIDs)[0]));
             return newstate;

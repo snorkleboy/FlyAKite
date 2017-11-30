@@ -50,6 +50,7 @@ class Api::EventsController < ApplicationController
     params.require(:event).permit(
       :categoryId,
       :id,
+      :location,
       :userId,
       :name,
       :startDate,

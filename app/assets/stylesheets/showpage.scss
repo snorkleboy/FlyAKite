@@ -104,7 +104,7 @@ color: #3d3e41;
     }
     .buttonsStrip{
         // z-index: 1;
-        background-color: #fbfbfb;
+        background-color: #ebebeb;
         display: flex;
         justify-content: flex-end;
         box-sizing: border-box;
@@ -113,9 +113,8 @@ color: #3d3e41;
         height:55px;
          width: 67vw;
 
-        border: 1px solid rgba(172, 172, 172, 0.616);
-        border-left: none;
-        border-right: none;
+        border: 1px solid rgba(197, 197, 197, 0.726)
+
 
     }
     .buttonsStrip > button{

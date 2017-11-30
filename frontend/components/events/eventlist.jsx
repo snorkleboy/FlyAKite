@@ -113,7 +113,7 @@ class EventList extends React.Component{
                                 <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>
                                     
                                     <EventListItem
-                                        key={`eventlistitem-${index}`}
+                                        key={`eventlistitem-${event}`}
                                         event={event}
                                         registered={registered}
                                         bookmarked={bookmarked}
