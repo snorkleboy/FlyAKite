@@ -1,9 +1,26 @@
+.createEvent-page{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 100px;
+}
 .create-form{
 
         display: flex;
     flex-direction: column;
     align-items: center;
     align-content: left;
+}
+.formpage-header{
+    width: 80vw
+}
+.formpage-header > h1{
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    font-size: 40px;
 }
 // .create-form >input :optional {
 //   background-color: #ffffff;
