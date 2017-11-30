@@ -72,8 +72,7 @@ const Protected = ({history , component: Component, path,location, match, logged
 //match is being weird
 //need to get params out of path?
 const Authors = ({ component: Component, path, match, session, events, loggedIn}) => {
-    console.log(events);
-    console.log(match);
+
     return(
         <Route
             path={path}

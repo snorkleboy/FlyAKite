@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, NavLink } from 'react-router-dom';
 import { SelectEntityInOrder} from '../../reducers/selectors/selectors';
 class SideBar extends React.Component{
     constructor(props){
@@ -20,17 +20,21 @@ class SideBar extends React.Component{
     render(){
 
         const cats = (SelectEntityInOrder(this.props.categories));
-        cats.push({name:"all", id:0});
+        
         if (this.props.loggedIn){
-            cats.unshift({name:"My Registered Events", id:"registered" });
-            cats.unshift({name: "My bookmarked Events", id: "bookmarked" });
+            cats.unshift({name:"MY REGISTERED EVENTS", id:"registered" });
+            cats.unshift({name: "MY BOOKMARKED EVENTS", id: "bookmarked" });    
 
         }
+        cats.unshift({name:"ALL", id:0});
         
             return(
                 <main id='category-holder' className='sideBar'>
                         <div  className='SideBar-buttons-list'>
-                            {cats.map((category, i) => <button className='sidebar-button' onClick={this.newHandle(category.id)} id={category.id} key={`${category.id}side-bar-button`}><h1> {`${category.name}`} </h1></button> )}
+                        {cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
+                                                    className='sidebar-button' 
+                                                    to={`/${category.id}`} 
+                                                    key={`${category.id}side-bar-button`}>{category.name} </NavLink> )}
                     </div>
                 </main>
         );

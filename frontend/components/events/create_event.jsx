@@ -123,7 +123,7 @@ class CreateEventComp extends React.Component {
 
         }
             
-        console.log(this.state);
+        // console.log(this.state);
 
 
 

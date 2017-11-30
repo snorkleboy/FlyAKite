@@ -100,7 +100,6 @@ class EventList extends React.Component{
                 </div>
                 <div className="eventList-container">
                     <div className="eventListItem-container"> 
-                    <h1> {this.props.sortType}</h1>
                         <ul className='event-list-ul'>
                             {this.props.eventsList.map ( (event, index) => {
                                 let registered = this.props.RegisteredEventIds.includes(event.id);

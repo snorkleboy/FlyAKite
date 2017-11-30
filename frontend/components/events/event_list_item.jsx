@@ -9,10 +9,10 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
                 <img className='event-list-item-image-c' src={event.imgURL} />
             
             </Link>
-            </div>
+            </div> 
             <span className='image-buttons-holder'>
-                <button className={registered ? 'un' : "" + `register-button`} onClick={registrationHandler}> {registered ? "unregister" : "register"} </button>
-                <button className={bookmarked ? 'un' : '' +'bookmark-button'} onClick={bookmarkHandler}>{bookmarked? "unbookmark" : "bookmark"}  </button>
+                <button className={(registered ? 'un' : "") + `register-button`} onClick={registrationHandler}><i className={"fa fa-caret-square-o" + (registered ? '-down' : '-up')}></i> </button>
+                <button className={(bookmarked ? 'un' : '') + 'bookmark-button'} onClick={bookmarkHandler}><i className={"fa fa-bookmark" + (bookmarked ? '-o' : '') }></i>  </button>
             </span>
             <div className='event-list-item-header-c'>
                

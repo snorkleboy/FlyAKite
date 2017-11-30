@@ -101,13 +101,12 @@ export default Navbar;
 
 const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
 
-    let modal = showProfile === true ? <ProfileDropDown /> : null;   
+    let modal = showProfile === true ? null: null;   
     return (
             <ul className='nav-buttons'>
             <li className='navbar-button' >Welcome, {username}!</li>
                 <li><button className='navbar-button' onClick={logout}>LOGOUT</button></li>
-                <li><button className='navbar-button' onClick={toggleProfile}> PROFILE</button></li>
-                {modal}
+        
             </ul>
         );
 
