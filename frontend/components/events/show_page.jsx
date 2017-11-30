@@ -28,6 +28,7 @@ class ShowPage extends React.Component {
         this.conditionalBookmark = this.conditionalBookmark.bind(this);
         this.handleUnbookmark = this.handleUnbookmark.bind(this);
         this.handleBookmark = this.handleBookmark.bind(this);
+        this.redirect = this.redirect.bind(this);
         
     }
     componentDidMount() {
@@ -37,6 +38,10 @@ class ShowPage extends React.Component {
         }
 
     
+    }
+    redirect(e){
+        e.preventDefault();
+        this.props.history.push('/signup');
     }
     handleUnregister(e){
         e.preventDefault();
@@ -54,6 +59,8 @@ class ShowPage extends React.Component {
             :
                 <button className="register-button" onClick={this.handleRegister}>register</button>);
         }
+        return (<button className="register-button" onClick={this.redirect}>register</button>)
+        
     }
 
     conditionalEdit(){
@@ -72,6 +79,7 @@ class ShowPage extends React.Component {
                 <button className="bookmark-button" onClick={this.handleBookmark}>bookmark</button>
             );
         }
+        return (<button className="register-button" onClick={this.redirect}>Bookmark</button>);
 
     }
 
@@ -97,7 +105,7 @@ class ShowPage extends React.Component {
                             
                         </div>
                         <div className='imgheader'>
-                            <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader header={this.props.event.header}/>
+                            <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader name={this.props.event.name} header={this.props.event.header}/>
 
                         </div>  
                         <div className='buttonsStrip'>
@@ -105,7 +113,7 @@ class ShowPage extends React.Component {
 
                         </div>
                         <div>
-                            <ShowPageComponents.EventDiscription description={this.props.event.description}/>
+                            <ShowPageComponents.EventDiscription event={this.props.event}/>
                         </div>
 
 

@@ -11,22 +11,40 @@ export const EventImage = ({image}) => {
     );
 };
 
-export const EventHeader = ({header}) => {
+export const EventHeader = ({header, name}) => {
     return (
         <div className='showHeader'>
-            {header}
+            <p>{header}</p>
+            <h1> {name}</h1>
         </div>
 
         
     );
 };
-export const EventDiscription = ({description}) => {
+export const EventDiscription = ({event}) => {
     return (
         <div className='description'>
-            <p>{description}</p>
-            <div className='datelocation'>
-                <h2>date</h2>
-                <h2>location</h2>
+
+            <div className='show-header-desc'>
+            <span className='header-name'>{event.name}</span> 
+            <p>{event.description}</p>
+            </div>
+
+
+            <div className='datelocation'>             
+                
+                <div>
+                    <span>{event.startDate.slice(0,10)}</span> 
+                    <br></br>
+                    <span>{event.endDate.slice(0, 10)}</span> 
+                </div>
+                <div>
+                    <span>{event.location.city}</span>
+                    <br></br>
+                    <span>{event.location.areaCode}</span>
+                    <br></br>
+                    <span>{event.location.state}</span>
+                </div>
             </div>
         </div>
         

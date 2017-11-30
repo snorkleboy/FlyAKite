@@ -24,8 +24,12 @@
 
 
 }
+.show-header-desc{
+    display:flex;
+    flex-direction: column;
+}
 .showpage{
-
+color: #3d3e41;
     // z-index: -2;
     // background-color:  #f3f3f3f8;
     align-items: center;
@@ -65,18 +69,21 @@
         width: 25vw;
     }
     .description{
+        
         // z-index: 1;
         box-sizing: border-box;
         justify-content: space-between;
         background-color: #fbfbfb;
         width: 67vw;
         height: 500px;
-        padding: 25px;
+        padding: 45px;
         display: inline-flex;
+        text-align: center;
+        
     }
     .description >*{
         padding: 45px;
-        width: 45%;
+        // width: 45%;
     }
     .buttonsStrip{
         // z-index: 1;
@@ -94,3 +101,13 @@
 
     }
 
+
+    .description{
+        font-size: 20px;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .header-name{
+        font-size: 35px;
+    }

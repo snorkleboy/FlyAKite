@@ -17,10 +17,11 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
             </span>
             <div className='event-list-item-header-c'>
                
-                <span className='header-name'>{event.name}</span> 
+                <span className='header-name-el'>{event.name}</span> 
                 <span className='header-header'>{event.header}</span> 
                 <span>{event.startDate.slice(0,10)}</span> 
-                <span>{event.city}</span>
+                <span>{event.location.city}</span>
+
             </div>
         </li>
     );
