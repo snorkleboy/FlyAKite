@@ -1,23 +1,43 @@
 
 .bookmark-button{
+    /* padding: 0px; */
     font-size: 100%;
+    font-weight: 700;
     background-color: inherit;
-    color: rgb(255, 139, 62);
+    color: rgb(255, 166, 0);
+    transition: .2s background-color, .2s color;
 }
 .register-button{
     font-size: 100%;
     background-color: inherit;
-    color: rgb(255, 139, 62);
+    color: rgb(255, 166, 0);
+    font-weight: 700;
+    transition: .2s background-color, .2s color;
+}
+.register-button:hover, .bookmark-button:hover{
+    background-color: rgb(255, 166, 0);
+    color: white;
+
 }
 
 .unbookmark-button{
+    transition: .2s background-color, .2s color;
     font-size: 100%;
     background-color: inherit;
     color: rgb(160, 180, 60);
+    font-weight: 700;
 }
 
 .unregister-button{
+    transition: .2s background-color, .2s color;
    font-size: 100%;
     background-color: inherit;
     color: rgb(160, 180, 60);
+    font-weight: 700;
+}
+
+.unregister-button:hover, .unbookmark-button:hover{
+        background-color: rgba(255, 114, 71, 0.863);
+    color: white;
+
 }

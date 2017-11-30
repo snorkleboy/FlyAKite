@@ -19,7 +19,7 @@ import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
 ////
 //uneeded but in schema 
 // t.index["userId"], name: "index_events_on_userId"
-// t.datetime "created_at", null: false
+// t.datetime "created_at", null: falserenderForm
 // t.datetime "updated_at", null: false
 ////
 
@@ -29,7 +29,7 @@ class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
 
-
+        // renderForm
         this.state = props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -99,8 +99,9 @@ class CreateEventComp extends React.Component {
     renderHeader(){
         return(
             <div>
-                <h1>this is a header</h1>
-                <h1>create event</h1>
+                <span className='formpage-header'>
+                    <h1>{this.props.formType} an Event</h1>
+                </span>
             </div>
         );
     }
@@ -131,7 +132,7 @@ class CreateEventComp extends React.Component {
             <form onSubmit={this.handleSubmit} className="EventForm">
                 
                 <div className="create-form">
-                    <h3 className='getstarted'>{this.props.formType}</h3>
+                    <h3 className='getstarted'>Details</h3>
                     {this.renderErrors()}
 
                     <label className='signup-label'>name
@@ -229,11 +230,12 @@ class CreateEventComp extends React.Component {
                                 
                             />
                         </label>
-                        <label> city (optional)
+                        <label> city
                             <input type="text"
                                 value={this.state.city}
                                 onChange={this.update('city')}
                                 className="signup-input"
+                                required
                             />
                         </label>
 
@@ -255,7 +257,7 @@ class CreateEventComp extends React.Component {
 
 
                     <div className='button-holder'>
-                        <input className='signup-button' type="submit" value="Signup" />
+                        <input className='signup-button' type="submit" value={this.props.formType} />
                     </div>
                 </div>
                 

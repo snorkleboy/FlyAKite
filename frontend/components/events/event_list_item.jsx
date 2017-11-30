@@ -12,15 +12,15 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
             </Link>
             </div> 
             <span className='image-buttons-holder'>
-                <button className={(registered ? 'un' : "") + `register-button`} onClick={registrationHandler}>Register<i className={"fa fa-caret-square-o" + (registered ? '-down' : '-up')}></i> </button>
-                <button className={(bookmarked ? 'un' : '') + 'bookmark-button'} onClick={bookmarkHandler}>Bookmark<i className={"fa fa-bookmark" + (bookmarked ? '-o' : '') }></i>  </button>
+                <button className={(registered ? 'un' : "") + `register-button`} onClick={registrationHandler}><i className={"fa fa-caret-square-o" + (registered ? '-down' : '-up')}></i> </button>
+                <button className={(bookmarked ? 'un' : '') + 'bookmark-button'} onClick={bookmarkHandler}><i className={"fa fa-bookmark" + (bookmarked ? '-o' : '') }></i>  </button>
             </span>
             <div className='event-list-item-header-c'>
-               
+                <span className='header-date-el'>{event.startDate.slice(0, 10)}</span> 
                 <span className='header-name-el'>{event.name}</span> 
-                <span className='header-header'>{event.header}</span> 
-                <span>{event.startDate.slice(0,10)}</span> 
-                <span>{event.location.city}</span>
+                <span className='header-location-el'>{event.location.city}</span>
+
+                
 
             </div>
         </li>

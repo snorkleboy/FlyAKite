@@ -55,11 +55,11 @@ class ShowPage extends React.Component {
     conditionalRegister(){
         if (this.props.currentUser){
             return (this.props.registered ? 
-                <button className="unregister-button" onClick={this.handleUnregister}>unregister</button> 
+                <button className="unregister-button" onClick={this.handleUnregister}>REGISTERED</button> 
             :
-                <button className="register-button" onClick={this.handleRegister}>register</button>);
+                <button className="register-button" onClick={this.handleRegister}>REGISTER</button>);
         }
-        return (<button className="register-button" onClick={this.redirect}>register</button>)
+        return (<button className="register-button" onClick={this.redirect}>REGISTER</button>)
         
     }
 
@@ -74,9 +74,9 @@ class ShowPage extends React.Component {
     conditionalBookmark() {
         if (this.props.currentUser) {
             return (this.props.bookmarked ?
-                <button className="unbookmark-button" onClick={this.handleUnbookmark}>unbookmark</button> 
+                <button className="unbookmark-button" onClick={this.handleUnbookmark}>BOOKMARKED</button> 
             : 
-                <button className="bookmark-button" onClick={this.handleBookmark}>bookmark</button>
+                <button className="bookmark-button" onClick={this.handleBookmark}>BOOKMARK</button>
             );
         }
         return (<button className="register-button" onClick={this.redirect}>Bookmark</button>);
@@ -105,7 +105,7 @@ class ShowPage extends React.Component {
                             
                         </div>
                         <div className='imgheader'>
-                            <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader name={this.props.event.name} header={this.props.event.header}/>
+                            <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader name={this.props.event.name} date={this.props.event.startDate}header={this.props.event.header}/>
 
                         </div>  
                         <div className='buttonsStrip'>

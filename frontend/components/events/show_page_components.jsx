@@ -11,11 +11,13 @@ export const EventImage = ({image}) => {
     );
 };
 
-export const EventHeader = ({header, name}) => {
+export const EventHeader = ({date, header, name}) => {
     return (
         <div className='showHeader'>
-            <p>{header}</p>
+            <h2>{date.slice(0,10)}</h2>
             <h1> {name}</h1>
+            <p>{header}</p>
+            
         </div>
 
         
@@ -26,19 +28,19 @@ export const EventDiscription = ({event}) => {
         <div className='description'>
 
             <div className='show-header-desc'>
-            <span className='header-name'>{event.name}</span> 
+            <span className='header-name'>DESCRIPTION</span> 
             <p>{event.description}</p>
             </div>
 
 
             <div className='datelocation'>             
                 
-                <div>
+                <div className='show-date'><h1>DATES</h1>
                     <span>{event.startDate.slice(0,10)}</span> 
                     <br></br>
                     <span>{event.endDate.slice(0, 10)}</span> 
                 </div>
-                <div>
+                <div className='show-location'><h1>LOCATION</h1>
                     <span>{event.location.city}</span>
                     <br></br>
                     <span>{event.location.areaCode}</span>
