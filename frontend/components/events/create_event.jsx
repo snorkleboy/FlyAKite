@@ -159,12 +159,12 @@ class CreateEventComp extends React.Component {
                     
                     {this.renderErrors()}
                     <div className='inputs-holder'>
-                    <label className='signup-label'>name
+                    <label className='signup-label-form'>name
                                 <br />
                         <input type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
-                            className="signup-input"
+                            className="signup-input-form"
                             required                            
                         />
                     </label>
@@ -179,12 +179,12 @@ class CreateEventComp extends React.Component {
                             
 
                     <br />
-                    <label className='signup-label'>start time
+                    <label className='signup-label-form'>start time
                                 <br />
                         <input type="datetime-local"
                             value={this.state.startDate}
                             onChange={this.update('startDate')}
-                            className="signup-input"
+                            className="signup-input-form"
                             required
                             
                         />
@@ -192,33 +192,33 @@ class CreateEventComp extends React.Component {
 
                     </label>
                     <br />
-                    <label className='signup-label'>end time (optional)
+                    <label className='signup-label-form'>end time (optional)
                                 <br />
                         <input type="datetime-local"
                             value={this.state.endDate}
                             onChange={this.update('endDate')}
-                            className="signup-input"
+                            className="signup-input-form"
                         />
 
 
                     </label>
                     
-                    <label className='signup-label'>category
+                    <label className='signup-label-form'>category
                                 <br />
 
-                        <select value={this.state.categoryId} onChange={this.update('categoryId')} className="signup-input" required>
+                        <select value={this.state.categoryId} onChange={this.update('categoryId')} className="signup-input-form" required>
                             {catOptions}
                         </select>
 
                     </label>
                     <br />
 
-                    <label className='signup-label'>header
+                    <label className='signup-label-form'>header
                                 <br />
                         <textarea
                             value={this.state.header}
                             onChange={this.update('header')}
-                            className="signup-input"
+                            className="signup-input-form"
                             required
                             
                         />
@@ -227,12 +227,12 @@ class CreateEventComp extends React.Component {
                     <br />
 
 
-                    <label className='signup-label'>description
+                    <label className='signup-label-form'>description
                                 <br />
                         <textarea
                             value={this.state.description}
                             onChange={this.update('description')}
-                            className="signup-input"
+                            className="signup-input-form"
                             required
                             
                         />
@@ -240,13 +240,13 @@ class CreateEventComp extends React.Component {
 
                     <br />
 
-                    <label className='signup-label location-holder'>Location
+                    <label className='signup-label-form location-holder'>Location
                                 <br />
                         <label> area code
                             <input type="text"
                                 value={this.state.areaCode}
                                 onChange={this.update('areaCode')}
-                                className="signup-input"
+                                className="signup-input-form"
                                 maxLength='3'
                                 required
                                 
@@ -256,7 +256,7 @@ class CreateEventComp extends React.Component {
                             <input type="text"
                                 value={this.state.city}
                                 onChange={this.update('city')}
-                                className="signup-input"
+                                className="signup-input-form"
                                 required
                             />
                         </label>
@@ -265,7 +265,7 @@ class CreateEventComp extends React.Component {
                             <input type="text"
                                 value={this.state.state}
                                 onChange={this.update('state')}
-                                className="signup-input"
+                                className="signup-input-form"
                                 maxLength='2'
                             />
                         </label>
@@ -293,12 +293,12 @@ export default CreateEventComp;
 
 
 {
-    /* <label className='signup-label'>cloudinary widget
+    /* <label className='signup-label-form'>cloudinary widget
                                 <br />
     <input type="text"
         value={this.state.imgURL}
         onChange={this.update('imgURL')}
-        className="signup-input"
+        className="signup-input-form"
         required
 
     />

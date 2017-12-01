@@ -20,17 +20,24 @@ class SideBar extends React.Component{
     render(){
 
         const cats = (SelectEntityInOrder(this.props.categories));
-        
+        let ProfileOptions = ()=>null;
         if (this.props.loggedIn){
-            cats.unshift({name:"MY REGISTERED EVENTS", id:"registered" });
-            cats.unshift({name: "MY BOOKMARKED EVENTS", id: "bookmarked" });    
+            ProfileOptions = () =>(
+                <div className='profile-buttons'>
+                    <NavLink className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/bookmarked'
+                    >BOOKMARKED </NavLink> 
 
-        }
+                    <NavLink className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/registered'
+                    >REGISTERED </NavLink>
+                </div>
+
+            );}
         cats.unshift({name:"ALL", id:0});
         
             return(
                 <main id='category-holder' className='sideBar'>
                         <div  className='SideBar-buttons-list'>
+                        {ProfileOptions()}
                         {cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
                                                     className='sidebar-button' 
                                                     to={`/${category.id}`} 

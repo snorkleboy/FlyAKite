@@ -31,6 +31,14 @@
     // justify-content: space-around;
     align-items:center;
 }
+.profile-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    bottom: 100px;
+}
 .sidebar-button{
     line-height: 60px;
     color: #3d3e41;
@@ -42,6 +50,11 @@
     background-color: #fbfbfb;
     transition: .4s background-color, .6s color;
     // justify-content: center;
+}
+.profile-sidebar{
+
+    text-align: left;
+    padding-left: 15px;
 }
 
 .SideBar-buttons-list >.sidebar-button:nth-child(3n+1){
