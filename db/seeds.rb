@@ -133,7 +133,7 @@ event2 = Event.create!(
     areaCode: 354,
     city: "Piedmont",
     state: "CA",
-    imgURL: "htthttp://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpghttp://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpgp://res.cloudinary.com/flyakite/image/upload/v1512107675/Delhi-KiteFlying_mau2ni.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpgp://res.cloudinary.com/flyakite/image/upload/v1512107675/Delhi-KiteFlying_mau2ni.jpg"
   )
 
         event7 = Event.create!(
@@ -203,7 +203,7 @@ event7 = Event.create!(
     areaCode: 450,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg"
   )
 
   event7 = Event.create!(
@@ -248,6 +248,20 @@ event7 = Event.create!(
     imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg"
   )
   
+event7 = Event.create!(
+     categoryId: 4,
+    userId: User.all[3].id,
+    name: "Tuscan nights Roman Kites",
+    startDate: DateTime.new(2018,6,23,2,30 ),
+    endDate: DateTime.new(2018,7,25,8,30),
+    header: "a gathering for history and kite buggs",
+    description:"While most people know that kites have been the main driving force behind human history, few know that it was also the foundation upon which rome was built. This talk will focus on how Emperor DeNiro used the famous preteorian Eagle Kite to instill fear and wonder in the common folk and will explore both the fearsome and wholesome nature of the ancient Kite",  
+    areaCode: 250,
+    city: "San Fransisco",
+    state: "CA",
+    imgURL: "https://cloudinary.com/console/media_library#/dialog/image/upload/kites_in_the_sky_of_Tuscany_02_scdrzj"
+  )
+
 
   
   
