@@ -288,19 +288,3 @@ class CreateEventComp extends React.Component {
     }
 }
 export default CreateEventComp;
-//
-
-
-
-{
-    /* <label className='signup-label-form'>cloudinary widget
-                                <br />
-    <input type="text"
-        value={this.state.imgURL}
-        onChange={this.update('imgURL')}
-        className="signup-input-form"
-        required
-
-    />
-</label> */
-}

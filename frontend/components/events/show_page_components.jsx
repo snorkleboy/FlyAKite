@@ -41,11 +41,11 @@ export const EventDiscription = ({event}) => {
                     <span>{event.endDate? event.endDate.slice(0, 10) : ''}</span> 
                 </div>
                 <div className='show-location'><h1>LOCATION</h1>
-                    <span>{event.location.city}</span>
+                    <span>{event.city}</span>
                     <br></br>
-                    <span>{event.location.areaCode}</span>
+                    <span>{event.areaCode}</span>
                     <br></br>
-                    <span>{event.location.state}</span>
+                    <span>{event.state}</span>
                 </div>
             </div>
         </div>
