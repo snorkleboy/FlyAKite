@@ -110,7 +110,7 @@ event1 = Event.create!(
     state: "CA",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
   )
-          {this.state.it
+  
 
       event7 = Event.create!(
      categoryId: 4,
