@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
     let catId = 0;
     let eventList = [];
     const matchParam = ownProps.match.params.categoryId;
-    // console.log("ev container", state, ownProps, matchParam);
+    console.log("ev container", state, ownProps, matchParam);
     if ( matchParam ){
         if (matchParam === 'registered' || matchParam === 'bookmarked'){
             // console.log("about to go to selectUserEvents", matchParam)

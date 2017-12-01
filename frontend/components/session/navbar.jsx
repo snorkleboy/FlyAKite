@@ -125,7 +125,7 @@ const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionEr
             <ul className='nav-buttons'>
                 {modal()}
                 <li><button className='navbar-button' onClick={toggleLogin}> LOGIN</button></li>
-                <li><button className='navbar-button' onClick={handleDemoLogin} >Demo Login</button></li>
+                <li><button className='navbar-button' onClick={handleDemoLogin} >DEMO LOGIN</button></li>
                 <li><Link to='/signUp' className='navbar-button'> SIGNUP</Link></li>
             </ul>
         );
