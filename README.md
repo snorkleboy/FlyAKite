@@ -17,7 +17,7 @@
 
 
 
-### Navigation
+### Clear and Easy Navigation
 ![navigation](http://res.cloudinary.com/flyakite/image/upload/v1512163917/navigationDemo_fbamfq.gif)
 
 ##### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. 
