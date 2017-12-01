@@ -3,49 +3,30 @@ import { Link, withRouter } from 'react-router-dom';
 import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
 import merge from 'lodash/merge';
 
-////
 
-//from state: 
-///t.integer "userId", null: false
-///
-// t.string "name", null: false
-// t.datetime "startDate", null: false
-// t.text "header", null: false
-// t.text "description", null: false
-// t.text "imgURL", null: false
-// t.integer "areaCode", null: false
-//////optional
-// t.string "state"
-// t.string "city"
-// t.datetime "endDate"
-////
-//uneeded but in schema 
-// t.index["userId"], name: "index_events_on_userId"
-// t.datetime "created_at", null: falserenderForm
-// t.datetime "updated_at", null: false
-////
-
-// yyyy - MM - ddThh: mm
 
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
-        console.log("craete eventCON props",props);
+        // console.log("create eventCON props",props);
         const event = props.event;
-        console.log("craete eventCON event", event);
-        if (!event.location){
-        event.areaCode = event.location.areaCode || '' ;
-        event.city = event.location.city || '';
-        event.state= event.location.state || '';
-        delete event.location;
+        console.log("create eventCON event", event);
+        if (event.location){
+            event.areaCode = event.location.areaCode || '' ;
+            event.city = event.location.city || '';
+            event.state= event.location.state || '';
+            delete event.location;
         }
-        console.log("craete eventCON after", event);
+        console.log("create eventCON after", event);
         // renderForm
+
+        this.upload = this.upload.bind(this);
         this.state = event  ;
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
     componentDidMount(){
-        console.log("didmount",this.props);
+        // console.log("didmount",this.props);
         if (this.props.formType === 'edit') {
             this.props.GetEvent(this.props.match.params.eventId);
         }
@@ -53,18 +34,18 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log("event willrecieve", nextProps);
-        if( nextProps.event){
+        console.log("willrecieve",nextProps, this.state);
+        if( nextProps.event && this.props.formType !=="create"){
             const event = nextProps.event;
             console.log("nexrprops", nextProps.event);
-            if (!event.location){
-                event.areaCode = event.location.areaCode || '';
-                event.city = event.location.city || '';
-                event.state = event.location.state || '';
+            if (event.location){
+                event.areaCode = event.location.areaCode ? event.location.areaCode : '';
+                event.city = event.location.city ? event.location.city : '';
+                event.state = event.location.state ? event.location.state : '';
             
             delete event.location;
             }
-            console.log("nexrprops", nextProps.event);
+            // console.log("nexrprops", nextProps.event);
             //convert from database datetime to this datetime-local
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
@@ -72,16 +53,12 @@ class CreateEventComp extends React.Component {
         }
 
     }
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-    }
+
 
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        this.props.clearEventErrors();
+        
         console.log("handle submit event&state", event, this.state);
 
         let successCB = (success) => {
@@ -91,7 +68,7 @@ class CreateEventComp extends React.Component {
         event.state && event.state.toUpperCase();
         successCB = successCB.bind(this);
         this.props.actionType(event , successCB);
-
+        this.props.clearEventErrors();
     }
     renderErrors() {
 
@@ -127,6 +104,30 @@ class CreateEventComp extends React.Component {
             </div>
         );
     }
+
+        update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
+
+    upload(e){
+        console.log("upload button", e, this);
+        e.preventDefault();
+
+        window.cloudinary.openUploadWidget(window.Cloudinary_options, function (error, results) {
+            if (!error) {
+                console.log("CLOUDIANRY RESULT", results, results[0].url);
+                this.setState({ 'imgURL': results[0].url   });
+
+            }
+        }.bind(this) );
+
+    }
+
+    
+
+
     renderForm(){
 
         
@@ -145,7 +146,7 @@ class CreateEventComp extends React.Component {
             )
 
         }
-        location
+        // location
         // console.log(this.state);
 
 
@@ -155,8 +156,9 @@ class CreateEventComp extends React.Component {
                 
                 <div className="create-form">
                     <h3 className='getstarted'>Details</h3>
+                    
                     {this.renderErrors()}
-
+                    <div className='inputs-holder'>
                     <label className='signup-label'>name
                                 <br />
                         <input type="text"
@@ -167,16 +169,14 @@ class CreateEventComp extends React.Component {
                         />
                     </label>
                     <br />
-                    <label className='signup-label'>cloudinary widget
-                                <br />
-                        <input type="text"
-                            value={this.state.imgURL}
-                            onChange={this.update('imgURL')}
-                            className="signup-input"
-                            required
+
+                        <div className="upload-form"      > 
+                           <button onClick={this.upload}    >
+                               
+                                <i className="fa fa-upload" aria-hidden="true"> <h1 className='upload-form-text'>UPLOAD AN IMAGE</h1></i>
+                           </button>
+                            </div>
                             
-                        />
-                    </label>
 
                     <br />
                     <label className='signup-label'>start time
@@ -240,7 +240,7 @@ class CreateEventComp extends React.Component {
 
                     <br />
 
-                    <label className='signup-label'>Location
+                    <label className='signup-label location-holder'>Location
                                 <br />
                         <label> area code
                             <input type="text"
@@ -282,9 +282,25 @@ class CreateEventComp extends React.Component {
                         <input className='signup-button' type="submit" value={this.props.formType} />
                     </div>
                 </div>
-                
+            </div>
             </form>
         );
     }
 }
 export default CreateEventComp;
+//
+
+
+
+{
+    /* <label className='signup-label'>cloudinary widget
+                                <br />
+    <input type="text"
+        value={this.state.imgURL}
+        onChange={this.update('imgURL')}
+        className="signup-input"
+        required
+
+    />
+</label> */
+}
