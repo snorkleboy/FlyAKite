@@ -20,7 +20,7 @@
 ### Navigation
 ![navigation](http://res.cloudinary.com/flyakite/image/upload/v1512163917/navigationDemo_fbamfq.gif)
 
-#### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. 
+##### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. 
 
 
 
@@ -29,12 +29,12 @@
 ### redirecting
 ![redirection](http://res.cloudinary.com/flyakite/image/upload/v1512163922/redirectdemo_irfgjx.gif)
 
-#### I used higher order componets to protect various routes within my site. The main part of the site that is rotected in such a way is the create event page which redirects unsigned in users to the sign up page. I implimented it in such a way that if the user was redirected, after they sign up they are redirected back to the page they were trying to visit in the first place
+##### I used higher order componets to protect various routes within my site. The main part of the site that is rotected in such a way is the create event page which redirects unsigned in users to the sign up page. I implimented it in such a way that if the user was redirected, after they sign up they are redirected back to the page they were trying to visit in the first place
 
 
 ### refreshability
 
-#### I made it so that the site stays stable and consistent if refreshed on any page. This presented some difficulties with keeping a user logged in past a page refresh.  accomplished this by bootstrapping some minimal information about the current user to the window which the front end uses to initialize itself. 
+##### I made it so that the site stays stable and consistent if refreshed on any page. This presented some difficulties with keeping a user logged in past a page refresh.  accomplished this by bootstrapping some minimal information about the current user to the window which the front end uses to initialize itself. 
 
 
 
