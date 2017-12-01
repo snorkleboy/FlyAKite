@@ -120,3 +120,19 @@
     flex-direction: column;
 }
 
+
+.splashlogo{
+    position: relative;
+    bottom: 120px;
+    text-align: center;
+}
+
+.splashlogo >h2{
+    font-size: 32px;
+    color: rgb(160, 158, 158)
+}
+
+.splashlogo >h1{
+    font-size: 65px;
+    color: rgb(77, 77, 77);
+}
