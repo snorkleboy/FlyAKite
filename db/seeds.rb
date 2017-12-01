@@ -23,6 +23,7 @@ AQUATIC= Category.create(name:"AQUATIC")
 OUDOOR= Category.create(name:"OUDOOR")
 
 
+
 event1 = Event.create!(
     userId: User.first.id,
     name: "Kid Towners Presents: a night with kites",
@@ -49,7 +50,7 @@ event1 = Event.create!(
     areaCode: 530,
     city: "Friessland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg"
 
  )
 
@@ -64,7 +65,7 @@ event1 = Event.create!(
     areaCode: 530,
     city: "Burgandy",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg"
 
  )
 
@@ -93,7 +94,7 @@ event1 = Event.create!(
     areaCode: 530,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg"
   )
 
       event6 = Event.create!(
@@ -107,8 +108,9 @@ event1 = Event.create!(
     areaCode: 530,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
   )
+          {this.state.it
 
       event7 = Event.create!(
      categoryId: 4,
@@ -121,7 +123,7 @@ event1 = Event.create!(
     areaCode: 354,
     city: "Piedmont",
     state: "CA",
-    imgURL: 'http://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg'
+    imgURL: 'https://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg'
   )
 
         event7 = Event.create!(
@@ -131,11 +133,11 @@ event1 = Event.create!(
     startDate: DateTime.new(2018,2,28,2,30 ),
     endDate: DateTime.new(2018,3,12,8,30),
     header: "Veterans from around the world will demonstrate the various ways kites have been used in warfare.",
-    description:"Another way that our borhters in arms give backto the community, Elite afghani green berets will demonstrate various kite flying techniques and how they can be used for reconnaissance an crowd control. ",  
+    description:"Another way that our brothers in arms give back to the community, Elite afghani green berets will demonstrate various kite flying techniques and how they can be used for reconnaissance an crowd control. ",  
     areaCode: 354,
     city: "Piedmont",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg"
   )
 
 event7 = Event.create!(
@@ -145,11 +147,11 @@ event7 = Event.create!(
     startDate: DateTime.new(2018,3,28,2,30 ),
     endDate: DateTime.new(2018,4,12,8,30),
     header: "A festival of festivals, the greatest Event ever",
-    description:"A star studded Performer list including everyone from Bon Jovi to Wolfgang Amadeus Mozart. An expected 30 million people will gather at daytona beach for the kite-kick-off ceremony where we will release the kraken kite, which according to Professor DumbleDum will have enough lift to propel the earth towards a better dimension a our star studded perfomers play from inside my ipod mini. Food and concessions will be sold but tickets are free with a 20 dollar donation. ",  
+    description:"A star studded Performer list including everyone from Bon Jovi to Wolfgang Amadeus Mozart. An expected 30 million people will gather at daytona beach for the kite-kick-off ceremony where we will release the kraken kite, which according to Professor DumbleDum will have enough lift to propel the earth towards a better dimension as our star studded perfomers play from inside my ipod mini. Food and concessions will be sold but tickets are free with a 20 dollar donation. ",  
     areaCode: 354,
     city: "San pablo",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg"
   )
 
   event7 = Event.create!(
@@ -163,21 +165,21 @@ event7 = Event.create!(
     areaCode: 354,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg"
   )
 
-   event7 = Event.create!(
+   event22 = Event.create!(
      categoryId: 4,
     userId: User.all[3].id,
     name: "Winnie the Poo: Disney kite",
     startDate: DateTime.new(2018,5,11,2,30 ),
     endDate: DateTime.new(2018,5,12,8,30),
     header: "an annual gathering of disney lovers",
-    description:"Come show your love for any story that has been taken over by disney. Mulan, starwars, winnie the pooh, all are welcome. No ocotpus kites",  
+    description:"Come show your love for any story that has been taken over by disney. Mulan, starwars, winnie the pooh, all are welcome. No ocotopus kites",  
     areaCode: 222,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg"
   )
 
     event7 = Event.create!(
@@ -191,7 +193,7 @@ event7 = Event.create!(
     areaCode: 450,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg"
   )
 
   event7 = Event.create!(
@@ -205,7 +207,7 @@ event7 = Event.create!(
     areaCode: 450,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg"
   )
 
  event7 = Event.create!(
@@ -219,7 +221,7 @@ event7 = Event.create!(
     areaCode: 450,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg"
   )
 
   event7 = Event.create!(
@@ -233,7 +235,7 @@ event7 = Event.create!(
     areaCode: 450,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg"
   )
   
 event7 = Event.create!(
@@ -247,7 +249,7 @@ event7 = Event.create!(
     areaCode: 250,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg"
   )
 
 
@@ -262,12 +264,7 @@ event7 = Event.create!(
     areaCode: 530,
     city: "Sacremento",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
 
  )
-  
-
-
-
-
   
