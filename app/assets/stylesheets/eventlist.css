@@ -13,7 +13,7 @@
     background-color: rgb(241, 241, 241);
 
     margin: 0 auto;
-    margin-top: -250px;
+    margin-top: -150px;
     /* display: flex; */
     /* align-content: center; */
     /* align-items: center; */
@@ -123,16 +123,17 @@
 
 .splashlogo{
     position: relative;
-    bottom: 120px;
+    bottom: 60px;
     text-align: center;
 }
 
 .splashlogo >h2{
-    font-size: 32px;
-    color: rgb(160, 158, 158)
+    font-size: 25px;
+    color: rgb(179, 179, 179)
 }
 
 .splashlogo >h1{
     font-size: 65px;
-    color: rgb(77, 77, 77);
+    font-weight: 700;
+    color: rgb(61, 61, 61);
 }
