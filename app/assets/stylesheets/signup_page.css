@@ -12,6 +12,7 @@
     }
     .signup-form-box{
         display: flex;
+        box-sizing: border-box;
     }
 
     .signup-form-container{
@@ -74,7 +75,7 @@
         color:  #2a2d30;
         position : relative;
         bottom: 42px;
-        left: 152px;
+        left: 168px;
     }
     .getstarted{
     text-align: center;
