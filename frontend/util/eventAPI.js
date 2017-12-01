@@ -33,7 +33,6 @@ export const createEvent = (event) =>  $.ajax({
 
 export const updateEvent = (event) => {
     
-    console.log("update event(api):",event, event.id);
     return $.ajax({
     url: `/api/events/${event.id}`,
     method:"PATCH",

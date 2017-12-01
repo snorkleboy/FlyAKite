@@ -155,7 +155,7 @@ event7 = Event.create!(
     userId: User.all[3].id,
     name: "Scheveningen Kite Festival",
     startDate: DateTime.new(2018,3,28,2,30 ),
-    endDate: Dathttp://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpgeTime.new(2018,4,28,8,30),
+    endDate: DateTime.new(2018,4,12,8,30),
     header: "A festival of festivals, the greatest Event ever",
     description:"A star studded Performer list including everyone from Bon Jovi to Wolfgang Amadeus Mozart. An expected 30 million people will gather at daytona beach for the kite-kick-off ceremony where we will release the kraken kite, which according to Professor DumbleDum will have enough lift to propel the earth towards a better dimension a our star studded perfomers play from inside my ipod mini. Food and concessions will be sold but tickets are free with a 20 dollar donation. ",  
     areaCode: 354,

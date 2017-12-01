@@ -14,22 +14,3 @@ export const receiveCategories = (categories) =>({
 
 export const getAllCatgories = () => dispatch => categoryApi.fetchAllCategories()
     .then((success) => dispatch(receiveCategories(success)));
-
-// export const getIndex = () => (dispatch) => categoryApi.fetchIndex()
-//     .then((success) => {
-//         dispatch(receiveCategories(success.categories));
-//         dispatch(receiveAllEvents(success.events));
-        
-//     } );
-
-// export const getIndexDiff = (lists) => (dispatch) => categoryApi.fetchIndexDiff(lists)
-//     .then((success) => {
-//         console.log('action diff');
-//         console.log(lists);
-//         console.log(success);
-//         dispatch(receiveCategories(success.categories));
-//         dispatch(receiveAllEvents(success.events));
-
-
-//     });
-

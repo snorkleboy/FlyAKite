@@ -93,7 +93,7 @@ class ShowPage extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-        // console.log("showpage recieveing props", newProps);
+
     }
     
     render() {

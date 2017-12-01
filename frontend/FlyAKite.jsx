@@ -23,26 +23,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
                  bookmarks: window.bootStrap.bookmarks
                 }  
             };
-
+        window.bootStrap = null;
         store = configureStore(preloadedState);
-        delete window.bootStrap;
+        
     } else {
         store = configureStore();
     }
 
-
-    window.deleteBookmark = BookmarkActions.deleteBookmark;
-    window.createBookmark = BookmarkActions.createBookmark;
-    window.deleteregistration = RegistrationActions.deleteRegistration;
-    window.makeRegistration = RegistrationActions.makeRegistration;
-    window.getIndex = getIndex;
-    window.GetAllEvents = EventActions.GetAllEvents;
-    window.getevent = EventActions.GetEvent;
-    window.signup = SessionActions.signup;
-    window.login = SessionActions.login;
-    window.logout = SessionActions.logout;
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
 
     
     ReactDOM.render(<Root store={store}/>, root);

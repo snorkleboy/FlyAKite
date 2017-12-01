@@ -53,7 +53,7 @@ class EventList extends React.Component{
 
 
     registrationHandler(id) {
-        // console.log(id, this.props);
+
         const redirect = (e) => {
             e.preventDefault();
             this.props.history.push('/signup');
@@ -138,8 +138,4 @@ class EventList extends React.Component{
 
 }
 
-// let registrationHandler = this.props.RegisteredEventIds.includes(event.id) ? this.handleUnregister : this.handleRegister;
-// console.log("event", registrationHandler, "event", event)
-/* <h1>Find Your Next experience</h1>
-    <h1>{this.props.formType}</h1> */
 export default EventList;
