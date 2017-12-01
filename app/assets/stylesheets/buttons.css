@@ -2,30 +2,26 @@
 .bookmark-button{
     /* padding: 0px; */
     border: 0px 1px 0px 1px solid lightgrey;
-    font-size: x-large;
+    /* font-size: x-large; */
     font-weight: 700;
     background-color: inherit;
-    color: rgb(255, 166, 0);
+    color: rgb(255, 197, 36);
     transition: .2s background-color, .2s color;
 }
 .register-button{
      border: 0px 1px 0px 1px solid lightgrey;
-    font-size: x-large;
+    /* font-size: x-large; */
     background-color: inherit;
-    color: rgb(255, 166, 0);
+    color: rgb(255, 197, 36);
     font-weight: 700;
     transition: .2s background-color, .2s color;
 }
-.register-button:hover, .bookmark-button:hover{
-    background-color: rgba(255, 166, 0, 0.973);
-    color: white;
 
-}
 
 .unbookmark-button{
      border: 0px 1px 0px 1px solid lightgrey;
     transition: .2s background-color, .2s color;
-    font-size: x-large;
+    /* font-size: x-large; */
     background-color: inherit;
     color: rgb(160, 180, 60);
     font-weight: 700;
@@ -34,7 +30,7 @@
 .unregister-button{
      border: 0px 1px 0px 1px solid lightgrey;
     transition: .2s background-color, .2s color;
-   font-size: x-large;
+   /* font-size: x-large; */
     background-color: inherit;
     color: rgb(160, 180, 60);
     font-weight: 700;
@@ -42,6 +38,12 @@
 
 .unregister-button:hover, .unbookmark-button:hover{
     background-color: rgba(255, 114, 71, 0.863);
+    color: white;
+font-weight: 700;
+}
+
+.register-button:hover, .bookmark-button:hover{
+    background-color: rgba(255, 197, 36, 0.678);
     color: white;
 
 }

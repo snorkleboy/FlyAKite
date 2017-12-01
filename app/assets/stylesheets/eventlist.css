@@ -11,7 +11,7 @@
 
 .eventList-container{
     background-color: rgb(241, 241, 241);
-
+    border-radius: 5px;
     margin: 0 auto;
     margin-top: -150px;
     /* display: flex; */
@@ -65,7 +65,7 @@
 }
 .image-buttons-holder{
     display: flex;
-    height: 30px;
+    height: 100%;
     box-sizing: border-box;
     width: 100%;
     /* padding: 2px; */
