@@ -32,6 +32,7 @@ event1 = Event.create!(
     description:" late night kite surfing for the bold and the adventurous. Must sign liability forms in duplicate. We will meet up at point reyes at the start time and head out to a secret beach location to get some sweet winds",
     areaCode: 925,
     categoryId: 1,
+    city: "Sacremento",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107132/4507582475_3b4abbb78c_o_scma4l.jpg"
     )
 
@@ -133,7 +134,7 @@ event2 = Event.create!(
     areaCode: 354,
     city: "Piedmont",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpgp://res.cloudinary.com/flyakite/image/upload/v1512107675/Delhi-KiteFlying_mau2ni.jpg"
+    imgURL: 'http://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg'
   )
 
         event7 = Event.create!(
@@ -143,7 +144,7 @@ event2 = Event.create!(
     startDate: DateTime.new(2018,2,28,2,30 ),
     endDate: DateTime.new(2018,3,12,8,30),
     header: "Veterans from around the world will demonstrate the various ways kites have been used in warfare.",
-    description:"back in 1202 bc Aburghbal the Chainer chainedthe first kites together, starting an irreversble chain reaction which has lead to the modern Kite chain. Come add your kite to the Delhi kite chain and channel the cosmic energy that will come your way",  
+    description:"Another way that our borhters in arms give backto the community, Elite afghani green berets will demonstrate various kite flying techniques and how they can be used for reconnaissance an crowd control. ",  
     areaCode: 354,
     city: "Piedmont",
     state: "CA",
@@ -259,7 +260,7 @@ event7 = Event.create!(
     areaCode: 250,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "https://cloudinary.com/console/media_library#/dialog/image/upload/kites_in_the_sky_of_Tuscany_02_scdrzj"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg"
   )
 
 

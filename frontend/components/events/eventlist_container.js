@@ -33,8 +33,6 @@ const mapStateToProps = (state, ownProps) => {
         eventList = Selectors.SelectByCategory(state.events, catId);
     }
 
-
-    
         return ({
         eventsList: eventList , 
         indexLoaded: state.events.indexLoaded,

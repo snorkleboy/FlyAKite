@@ -101,8 +101,8 @@ class ShowPage extends React.Component {
             return (
 
                     <main  className='showpage'>
-                        <div className='showpageImage' style={{ backgroundImage: `url(${this.props.event.imgURL})` }}>
-                            
+                        <div className='showpageImage'>
+                            <img src={this.props.event.imgURL}/>
                         </div>
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader name={this.props.event.name} date={this.props.event.startDate}header={this.props.event.header}/>
@@ -123,5 +123,7 @@ class ShowPage extends React.Component {
     
     }
 }
-
+{/* <div style={{ backgroundImage: `url(${this.props.event.imgURL})` }}></div> */}
 export default ShowPage;
+
+// 
