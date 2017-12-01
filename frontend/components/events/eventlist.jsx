@@ -113,10 +113,10 @@ class EventList extends React.Component{
                                 let bookmarked = this.props.BookmarkedEventIds.includes(event.id);
                             return(
                         
-                                <div key={`eventlistitemdiv-${event.id * index}`} className='event-item-anchor'>
+                                <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>
                                     
                                     <EventListItem
-                                        key={`eventlistitem-${event.id * index}`}
+                                        key={`eventlistitem-${event.id}`}
                                         event={event}
                                         registered={registered}
                                         bookmarked={bookmarked}
