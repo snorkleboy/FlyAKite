@@ -85,7 +85,6 @@ class Event < ApplicationRecord
 
     # user id validation through assocation with user
     validates :categoryId,:name, :startDate, :header, :description,:areaCode,:imgURL, presence: true
-    validates :state, :inclusion => { :in => CONST_STATELIST.keys},  allow_nil: true
 
     belongs_to :author,
     primary_key: :id,

@@ -71,13 +71,14 @@ class CreateEventComp extends React.Component {
         this.props.clearEventErrors();
     }
     renderErrors() {
-
+        console.log('render error', this.props.errors);
         if (this.props.errors.length > 0) {
+            console.log('render error inside if', this.props.errors);
             return (
                 <ul className='error-list'>
                     {this.props.errors.map((error, i) => (
-                        <li key={`error-${i}`}>
-                            {error.slice}
+                        <li key={`errorevent-${i}`}>
+                            {error.slice(2,-2)}
                         </li>
                     ))}
                 </ul>
@@ -157,7 +158,7 @@ class CreateEventComp extends React.Component {
                 <div className="create-form">
                     <h3 className='getstarted'>Details</h3>
                     
-                    {this.renderErrors()}
+                    
                     <div className='inputs-holder'>
                     <label className='signup-label-form'>name
                                 <br />
@@ -175,7 +176,8 @@ class CreateEventComp extends React.Component {
                                
                                 <i className="fa fa-upload" aria-hidden="true"> <h1 className='upload-form-text'>UPLOAD AN IMAGE</h1></i>
                            </button>
-                            </div>
+                            <img className='preview-img' alt='picture preview' src={this.state.imgURL}></img>
+                        </div>
                             
 
                     <br />
@@ -282,6 +284,7 @@ class CreateEventComp extends React.Component {
                         <input className='signup-button' type="submit" value={this.props.formType} />
                     </div>
                 </div>
+                    {this.renderErrors()}
             </div>
             </form>
         );

@@ -79,5 +79,19 @@
     height: 60px;
     padding: 2px;   
     }
+    .error-list{
+        font-size: 20px;
+        text-align: center;
+    }
+.upload-form{
+    display: flex;
+    flex-direction: column;
+
+}
+    .preview-img{
+        width: 350px;
+        height: auto;
+        padding: 10px;  
+    }
 
 

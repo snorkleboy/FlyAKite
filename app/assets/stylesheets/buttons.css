@@ -5,7 +5,7 @@
     /* font-size: x-large; */
     font-weight: 700;
     background-color: inherit;
-    color: rgb(36, 255, 153);
+    color: rgb(36, 255, 91);
     transition: .2s background-color, .2s color;
     padding: 0px 3px 0px 3px;
 }
@@ -21,6 +21,7 @@
 
 
 .unbookmark-button{
+    padding: 0px 3px 0px 3px;
      border: 0px 1px 0px 1px solid lightgrey;
     transition: .2s background-color, .2s color;
     /* font-size: x-large; */
@@ -49,5 +50,6 @@ font-weight: 700;
 .register-button:hover, .bookmark-button:hover{
     background-color: rgba(219, 255, 57, 0.678);
     color: white;
+    font-weight: 700;
 
 }
