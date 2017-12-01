@@ -24,10 +24,10 @@ class SideBar extends React.Component{
         if (this.props.loggedIn){
             ProfileOptions = () =>(
                 <div className='profile-buttons'>
-                    <NavLink className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/bookmarked'
+                    <NavLink key='329487293847' className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/bookmarked'
                     >BOOKMARKED </NavLink> 
 
-                    <NavLink className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/registered'
+                    <NavLink key='234234234232' className='profile-sidebar sidebar-button' activeClassName="sidebar-button-active" to='/registered'
                     >REGISTERED </NavLink>
                 </div>
 

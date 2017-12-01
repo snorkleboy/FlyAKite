@@ -34,22 +34,9 @@ event1 = Event.create!(
     categoryId: 1,
     city: "Sacremento",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107132/4507582475_3b4abbb78c_o_scma4l.jpg"
-    )
+    )   
 
-event2 = Event.create!(
-    categoryId: 3,
-    userId: User.first.id,
-    name: "Oakley Annual kite-a-thon",
-    startDate: DateTime.new(2017,9,18,7,30 ),
-    endDate: DateTime.new(2017,11,18,8,30),
-    header: 'A community centered event for everyone',
-    description:"the return of the world famous Annual oakley fields comunity kite-a-thon. Bring your kids, bring your wife, no need to to hide. we will have high flying kites and slow cooked ribs. Bring a kite or bring a friend",  
-    areaCode: 530,
-    city: "Sacremento",
-    state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
 
- )
 
  event3 = Event.create!(
      categoryId: 1,
@@ -264,7 +251,20 @@ event7 = Event.create!(
   )
 
 
-  
+  event2 = Event.create!(
+    categoryId: 3,
+    userId: User.first.id,
+    name: "Oakley Annual kite-a-thon",
+    startDate: DateTime.new(2017,9,18,7,30 ),
+    endDate: DateTime.new(2017,11,18,8,30),
+    header: 'A community centered event for everyone',
+    description:"the return of the world famous Annual oakley fields comunity kite-a-thon. Bring your kids, bring your wife, no need to to hide. we will have high flying kites and slow cooked ribs. Bring a kite or bring a friend",  
+    areaCode: 530,
+    city: "Sacremento",
+    state: "CA",
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
+
+ )
   
 
 

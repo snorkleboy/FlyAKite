@@ -8,16 +8,16 @@ import merge from 'lodash/merge';
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);
-        // console.log("create eventCON props",props);
+    
         const event = props.event;
-        console.log("create eventCON event", event);
+        
         if (event.location){
             event.areaCode = event.location.areaCode || '' ;
             event.city = event.location.city || '';
             event.state= event.location.state || '';
             delete event.location;
         }
-        console.log("create eventCON after", event);
+       
         // renderForm
 
         this.upload = this.upload.bind(this);
@@ -26,7 +26,7 @@ class CreateEventComp extends React.Component {
 
     }
     componentDidMount(){
-        // console.log("didmount",this.props);
+        
         if (this.props.formType === 'edit') {
             this.props.GetEvent(this.props.match.params.eventId);
         }
@@ -34,10 +34,10 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log("willrecieve",nextProps, this.state);
+   
         if( nextProps.event && this.props.formType !=="create"){
             const event = nextProps.event;
-            console.log("nexrprops", nextProps.event);
+            
             if (event.location){
                 event.areaCode = event.location.areaCode ? event.location.areaCode : '';
                 event.city = event.location.city ? event.location.city : '';
@@ -45,7 +45,7 @@ class CreateEventComp extends React.Component {
             
             delete event.location;
             }
-            // console.log("nexrprops", nextProps.event);
+            
             //convert from database datetime to this datetime-local
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
@@ -59,7 +59,7 @@ class CreateEventComp extends React.Component {
         e.preventDefault();
         const event = this.state;
         
-        console.log("handle submit event&state", event, this.state);
+        
 
         let successCB = (success) => {
             let key = Object.keys(success.byIDs)[0];
@@ -71,9 +71,9 @@ class CreateEventComp extends React.Component {
         this.props.clearEventErrors();
     }
     renderErrors() {
-        console.log('render error', this.props.errors);
+       
         if (this.props.errors.length > 0) {
-            console.log('render error inside if', this.props.errors);
+            
             return (
                 <ul className='error-list'>
                     {this.props.errors.map((error, i) => (
@@ -113,12 +113,12 @@ class CreateEventComp extends React.Component {
     }
 
     upload(e){
-        console.log("upload button", e, this);
+        
         e.preventDefault();
 
         window.cloudinary.openUploadWidget(window.Cloudinary_options, function (error, results) {
             if (!error) {
-                console.log("CLOUDIANRY RESULT", results, results[0].url);
+          
                 this.setState({ 'imgURL': results[0].url   });
 
             }
@@ -144,11 +144,10 @@ class CreateEventComp extends React.Component {
                 > 
                     {cats[i].name} 
                 </option>
-            )
+            );
 
         }
-        // location
-        // console.log(this.state);
+       
 
 
 

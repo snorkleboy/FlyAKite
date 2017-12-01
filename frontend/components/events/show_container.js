@@ -7,7 +7,7 @@ import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
 
 
 const mapStatetoProps = (state, ownProps) =>{
-        // console.log("showcontainerstate", state);
+        
         const event = state.events.byIDs[ownProps.match.params.eventId] ;
         let registered = false;
         let bookmarked = false;
