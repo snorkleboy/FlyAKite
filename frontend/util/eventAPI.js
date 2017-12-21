@@ -21,9 +21,18 @@
 export const fetchAllEvents = () => $.ajax({
     url: '/api/events'
 });
+export const fetchbyCategory = () => $.ajax({
+    url: '/api/events'
+});
+export const fetchbySearch = () => $.ajax({
+    url: '/api/events'
+});
 export const fetchEvent = (eventId) => $.ajax({
     url: `api/events/${eventId}`
 });
+
+
+
 
 export const createEvent = (event) =>  $.ajax({
     url: '/api/events',

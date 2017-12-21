@@ -6,7 +6,21 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all   #.where("id NOT IN (?)", params[:eventList])
+    p "PARAMS FOLLOW"
+    p params
+
+    if (params[:pattern])
+      if (params[:categoryId] )
+        @events = Event.find_by_category_and_string
+      else
+        @events = Event.find_by_string
+      end
+    elsif (params[:categoryId])
+      @events = Event.where(categoryId: params[:categoryId])
+    else
+      @events = Event.all.limit(params[:limit] || 99).offset(params[:offset] || 0)
+    end
+    
   end
 
   def show
@@ -60,7 +74,9 @@ class Api::EventsController < ApplicationController
       :state,
       :endDate,
       :description, 
-      :city
+      :city,
+      :limit,
+      :offset
     )
   end
 end

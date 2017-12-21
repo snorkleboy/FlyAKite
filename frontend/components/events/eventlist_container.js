@@ -34,8 +34,7 @@ const mapStateToProps = (state, ownProps) => {
     }
     console.log("eventlist", state.events.byIDs, "state", state.events)
         return ({
-        eventsList: Object.values(state.events.byIDs), 
-        indexLoaded: state.events.indexLoaded,
+        eventsList: Object.values(state.events.byIDs),
         sortType: state.events.sortType,
         RegisteredEventIds: state.session.registrations,
         BookmarkedEventIds: state.session.bookmarks,
