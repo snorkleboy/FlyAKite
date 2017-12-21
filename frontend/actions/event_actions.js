@@ -50,7 +50,7 @@ export const UpdateEvent = (event, sCB) => dispatch => EventAPI.updateEvent(even
 
 
 
-export const GetAllEvents = ()=> dispatch => EventAPI.fetchAllEvents()
+export const GetAllEvents = (limit = 99)=> dispatch => EventAPI.fetchAllEvents(limit)
     .then((success) => dispatch(receiveAllEvents(success)),
             (fail) => dispatch(receiveEventsErrors(fail)));
 
@@ -58,3 +58,5 @@ export const GetAllEvents = ()=> dispatch => EventAPI.fetchAllEvents()
 export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
     .then((success) => dispatch(receiveEvent(success) ),
     (fail) => dispatch(receiveEventsErrors(fail) ) );
+
+export const 
