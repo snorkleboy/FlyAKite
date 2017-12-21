@@ -4,6 +4,7 @@ import { getAllCatgories } from '../../actions/category_actions';
 // import {}
 import { Link, withRouter } from 'react-router-dom';
 import { setSort } from '../../actions/sort_actions';
+import { GetAllEvents } from '../../actions/event_actions';
 
 // this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'
 
@@ -19,7 +20,8 @@ const mapStatetoProps = (state, ownProps) => {
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({
     getAllCatgories: () => dispatch(getAllCatgories()),
-    setSort: (type) => dispatch(setSort(type))
+    setSort: (type) => dispatch(setSort(type)),
+    GetAllEvents: (eventList) => dispatch(GetAllEvents(eventList)),
 });
 
 export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(SideBar));

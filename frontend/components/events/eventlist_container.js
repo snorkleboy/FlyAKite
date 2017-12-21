@@ -32,9 +32,9 @@ const mapStateToProps = (state, ownProps) => {
     } else{
         eventList = Selectors.SelectByCategory(state.events, catId);
     }
-
+    console.log("eventlist", state.events.byIDs, "state", state.events)
         return ({
-        eventsList: eventList , 
+        eventsList: Object.values(state.events.byIDs), 
         indexLoaded: state.events.indexLoaded,
         sortType: state.events.sortType,
         RegisteredEventIds: state.session.registrations,
@@ -44,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    GetAllEvents: (eventList) => dispatch(GetAllEvents(eventList)),
+    
     makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),
     deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId)),
     createBookmark: (eventId) => dispatch(createBookmark(eventId)),

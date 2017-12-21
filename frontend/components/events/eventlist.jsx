@@ -11,15 +11,6 @@ class EventList extends React.Component{
         this.registrationHandler = this.registrationHandler.bind(this);
         this.bookmarkHandler = this.bookmarkHandler.bind(this);
     }
-
-
-    // conditionalBookmark() {
-    //     if (this.props.currentUser) {
-    //         return (this.props.bookmarked ? <button onClick={this.handleUnbookmark}>unbookmark</button> : <button onClick={this.handleBookmark}>bookmark</button>)
-    //     }
-
-    // }
-
     bookmarkHandler(id) {
         const redirect = (e) => {
             e.preventDefault();
@@ -31,40 +22,26 @@ class EventList extends React.Component{
                 e.preventDefault();
                 this.props.deleteBookmark(id);
             };
-
             const handleBookmark = (e) => {
                 e.preventDefault();
                 this.props.createBookmark(id);
             };
-
             let BookmarkHandler = this.props.BookmarkedEventIds.includes(id) ? handleUnbookmark : handleBookmark;
 
             return (BookmarkHandler.bind(this));
         }
         return redirect;
     }
-
-
-
-
-
-
-
-
-
     registrationHandler(id) {
-
         const redirect = (e) => {
             e.preventDefault();
             this.props.history.push('/signup');
         };
         if (this.props.loggedIn ){
-
             const handleUnregister = (e)=>{
                 e.preventDefault();
                 this.props.deleteRegistration(id) ;
             };
-
             const handleRegister = (e)=> {
                 e.preventDefault();
                 this.props.makeRegistration(id, this.props.currentUser);
@@ -76,23 +53,9 @@ class EventList extends React.Component{
         }
         return redirect;
     }
-
     componentDidMount() {
-        if (!this.props.indexLoaded) this.props.GetAllEvents(); 
     }
-
-    componentWillReceiveProps(nextProps) {
-        // if (this.props.sortType !== nextProps.sortType){
-        // }
-
-    }
-
-
     render(){
-
-        // {/* <img className='navbar-img'
-        //                 alt='woopsie doopsie' /> */}
-        
         return(
             <main className='eventlist'>
                 <div className='navbar-img-container'>
@@ -111,10 +74,8 @@ class EventList extends React.Component{
                             {this.props.eventsList.map ( (event, index) => {
                                 let registered = this.props.RegisteredEventIds.includes(event.id);
                                 let bookmarked = this.props.BookmarkedEventIds.includes(event.id);
-                            return(
-                        
-                                <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>
-                                    
+                            return(                        
+                                <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>                                    
                                     <EventListItem
                                         key={`eventlistitem-${event.id}`}
                                         event={event}
@@ -123,9 +84,7 @@ class EventList extends React.Component{
                                         bookmarkHandler={this.bookmarkHandler(event.id)}
                                         registrationHandler={this.registrationHandler(event.id)}
                                       />
-                    
                                 </div>
-
                             );}
                         )}
                         </ul>
@@ -134,8 +93,6 @@ class EventList extends React.Component{
             </main>
         );
     }
-
-
 }
 
 export default EventList;
