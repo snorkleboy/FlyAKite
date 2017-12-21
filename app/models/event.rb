@@ -119,5 +119,13 @@ class Event < ApplicationRecord
     source: :user
 
 
+    def self.find_by_string(pattern)
+        Event.where("name LIKE ?", "%#{pattern}%")
+    end
+
+    def self.find_by_category_and_string( categoryId, pattern)
+        Category.find(categoryId).events.where("name LIKE ?", "%#{pattern}%")
+    end
+
 
 end
