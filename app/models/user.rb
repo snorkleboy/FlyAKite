@@ -40,8 +40,8 @@ class User < ApplicationRecord
     foreign_key: :userId,
     class_name: :Bookmark
 
-    has_many :registered_events,
-    through: :registrations,
+    has_many :bookmarked_events,
+    through: :bookmarks,
     source: :event
 
     attr_reader :password

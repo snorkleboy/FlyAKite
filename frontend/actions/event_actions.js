@@ -59,4 +59,3 @@ export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
     .then((success) => dispatch(receiveEvent(success) ),
     (fail) => dispatch(receiveEventsErrors(fail) ) );
 
-export const 
