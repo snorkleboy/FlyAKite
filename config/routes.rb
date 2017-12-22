@@ -17,18 +17,13 @@ Rails.application.routes.draw do
 
 
 
-    match 'mostrecent', to: 'sort#most_recent', via: [:get]
-    match 'bookmarked', to: 'sort#bookmarked', via: [:get]
-    match 'registered', to: 'sort#registered', via: [:get]
-    match 'upcoming', to: 'sort#upcoming', via: [:get]
-    match 'my_events', to: 'sort#registered', via: [:get]
-    match 'search', to: 'sort#search', via: [:get]
-    match 'category', to: 'sort#category', via: [:get]
-
-
-
-
-
+    match 'mostrecent(/:limit/:offset)', to: 'sort#most_recent', via: [:get]
+    match 'bookmarked(/:limit/:offset)', to: 'sort#bookmarked', via: [:get]
+    match 'registered(/:limit/:offset)', to: 'sort#registered', via: [:get]
+    match 'upcoming(/:limit/:offset)', to: 'sort#upcoming', via: [:get]
+    match 'my_events(/:limit/:offset)', to: 'sort#registered', via: [:get]
+    match 'search(/:limit/:offset)', to: 'sort#search', via: [:get]
+    match 'category(/:limit/:offset)', to: 'sort#category', via: [:get]
 
     match 'registration/:eventId/:userId', to: 'registrations#create', via: [:post]
     match 'registration/:eventId', to: 'registrations#destroy', via: [:delete]

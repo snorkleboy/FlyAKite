@@ -13,9 +13,7 @@ class SideBar extends React.Component{
 
     newHandle(id){
         return (e) => {
-
             this.props.GetEventsbyCategory(id)
-            this.props.history.push(`/${id}`);
         };
     }
     
