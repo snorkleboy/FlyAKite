@@ -1,5 +1,5 @@
 import * as SessionAPI from '../util/sessionAPI';
-
+import { GetAllEvents } from './event_actions';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
@@ -21,7 +21,10 @@ export const receiveErrors = (errorArray) => ({
 //thunk //thunk
 export const login = (user) => dispatch => SessionAPI.login(user)
 .then(
-    (success)=> dispatch(receiveCurrentUser(success)),
+    (success)=> {
+        dispatch(receiveCurrentUser(success));
+        dispatch(GetAllEvents());
+    },
     ((failure)=> dispatch(receiveErrors(failure)))
     );
 const _nullUser = Object.freeze({
@@ -29,11 +32,14 @@ const _nullUser = Object.freeze({
     registrations: [],
     bookmarks:[]
 });
-export const logout = (uer) => dispatch => SessionAPI.logout()
+export const logout = () => dispatch => SessionAPI.logout()
     .then(
-    (success) => dispatch(receiveCurrentUser(_nullUser)),
-    ((failure) => dispatch(receiveErrors(failure)))
-    )
+    (success) => {
+        dispatch(receiveCurrentUser(_nullUser));
+        dispatch(GetAllEvents());
+    },
+    (failure) => dispatch(receiveErrors(failure))
+    );
 
 export const signup = (user) => dispatch => SessionAPI.signup(user)
     .then(
