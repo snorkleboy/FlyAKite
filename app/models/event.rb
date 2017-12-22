@@ -120,12 +120,14 @@ class Event < ApplicationRecord
 
 
     def self.find_by_string(pattern)
+        p ' by pattern'
         Event.where("lower(name) LIKE lower(?)", "%#{pattern}%")
     end
 
     def self.find_by_category_and_string( categoryId, pattern)
+        p 'by cat and pattern'
         # Category.find(categoryId).events.where("name LIKE ?", "%#{pattern}%")
-        Event.where(`'categoryId' = ? AND lower(name) LIKE lower(?)`,categoryId,"%#{pattern}%" )
+        Event.where('"categoryId" = ? AND lower(name) LIKE lower(?)',categoryId,"%#{pattern}%" )
     end
 
 

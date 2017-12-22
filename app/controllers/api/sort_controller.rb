@@ -10,7 +10,11 @@ class Api::SortController < ApplicationController
         indexRender
     end
     def search
-        if (params[:categoryId] && params[:categoryId]>0)
+                    p "HERE"
+            p params[:categoryId].to_i
+            p params[:categoryId].to_i>0
+        if (params[:categoryId] && params[:categoryId].to_i>0)
+
             @events = Event.find_by_category_and_string(params[:categoryId],params[:pattern])
             .limit(params[:limit] || 10).offset(params[:offset] || 0)
         else
