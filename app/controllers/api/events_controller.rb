@@ -6,28 +6,9 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    #  search
-    if (params[:pattern])
-      if (params[:categoryId] )
-        @events = Event.find_by_category_and_string(params[:categoryId],params[:pattern])
-        .limit(params[:limit] || 99).offset(params[:offset] || 0)
-      else
-        @events = Event.find_by_string(params[:pattern])
-        .limit(params[:limit] || 99).offset(params[:offset] || 0)
-      end
-    # get category
-    elsif (params[:categoryId])
-      @events = Event.where(categoryId: params[:categoryId])
-      .limit(params[:limit] || 99).offset(params[:offset] || 0)
-    # get with limit
-    else
       @events = Event.all
-      .limit(params[:limit] || 99).offset(params[:offset] || 0)
-    end
-
-  
-    
-  end
+      .limit(params[:limit] || 10).offset(params[:offset] || 0)
+  end    
 
   def show
     @event = Event.find(params[:id])

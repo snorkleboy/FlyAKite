@@ -14,9 +14,24 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create, :update, :index]
     resource :session, only: [:create, :destroy, :show]
     resources :events
+
+
+
+    match 'mostrecent', to: 'sort#most_recent', via: [:get]
+    match 'bookmarked', to: 'sort#bookmarked', via: [:get]
+    match 'registered', to: 'sort#registered', via: [:get]
+    match 'upcoming', to: 'sort#upcoming', via: [:get]
+    match 'my_events', to: 'sort#registered', via: [:get]
+    match 'search', to: 'sort#search', via: [:get]
+    match 'category', to: 'sort#category', via: [:get]
+
+
+
+
+
+
     match 'registration/:eventId/:userId', to: 'registrations#create', via: [:post]
     match 'registration/:eventId', to: 'registrations#destroy', via: [:delete]
-
     match 'bookmarks/:eventId/', to: 'bookmarks#create', via: [:post]
     match 'bookmarks/:eventId', to: 'bookmarks#destroy', via: [:delete]
   end
