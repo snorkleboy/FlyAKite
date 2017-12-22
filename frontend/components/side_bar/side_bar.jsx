@@ -8,7 +8,6 @@ class SideBar extends React.Component{
     }
     componentDidMount(){
         if (!this.props.categories.indexLoaded) this.props.getAllCatgories();
-        this.props.GetAllEvents(); 
     } 
 
     newHandle(id){

@@ -54,7 +54,7 @@ class ShowPage extends React.Component {
 
     conditionalRegister(){
         if (this.props.currentUser){
-            return (this.props.registered ? 
+            return (this.props.event.registered ? 
                 <button className="unregister-button" onClick={this.handleUnregister}>REGISTERED</button> 
             :
                 <button className="register-button" onClick={this.handleRegister}>REGISTER</button>);
@@ -73,7 +73,7 @@ class ShowPage extends React.Component {
 
     conditionalBookmark() {
         if (this.props.currentUser) {
-            return (this.props.bookmarked ?
+            return (this.props.event.bookmarked ?
                 <button className="unbookmark-button" onClick={this.handleUnbookmark}>BOOKMARKED</button> 
             : 
                 <button className="bookmark-button" onClick={this.handleBookmark}>BOOKMARK</button>

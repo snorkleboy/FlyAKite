@@ -7,26 +7,8 @@ import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
 
 
 const mapStatetoProps = (state, ownProps) =>{
-        
-        const event = state.events.byIDs[ownProps.match.params.eventId] ;
-        let registered = false;
-        let bookmarked = false;
-        if (event){
-                registered = state.session.registrations.includes(event.id);
-                bookmarked = state.session.bookmarks.includes(event.id);
-
-        }
-
-        const currUsers = state.session.currentUser && event?
-                        Boolean(event.userId === state.session.currentUser.id)
-                :
-                        null
-                ;
         return({
-                bookmarked: bookmarked,
-                registered: registered,
-                currentUsersEvent: currUsers,
-                event: event || null,
+                event: state.events.byIDs[ownProps.match.params.eventId] || null,
                 currentUser: state.session.currentUser ? state.session.currentUser.id : null
         });
 };
