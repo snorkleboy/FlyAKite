@@ -17,10 +17,8 @@ import * as Selectors from '../../reducers/selectors/selectors';
 
 const mapStateToProps = (state, ownProps) => {
 
-    console.log("eventlist", state.events.byIDs, "state", state.events)
         return ({
         eventsList: Object.values(state.events.byIDs),
-        sortType: state.events.sortType,
         loggedIn: state.session.currentUser
     });
 };

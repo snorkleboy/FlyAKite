@@ -32,7 +32,7 @@ class SideBar extends React.Component{
                 </div>
 
             );}
-        cats.unshift({name:"ALL", id:0});
+        cats.unshift({name:"ALL", id:-1});
         
             return(
                 <main id='category-holder' className='sideBar'>

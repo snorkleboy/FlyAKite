@@ -21,9 +21,13 @@ class Api::SortController < ApplicationController
     end
 
     def category
-        @events = Event.where(categoryId: params[:categoryId])
-        .limit(params[:limit] || 10).offset(params[:offset] || 0)
-        indexRender
+        if (params[:categoryId] == '-1')
+            most_recent
+        else
+            @events = Event.where(categoryId: params[:categoryId])
+            .limit(params[:limit] || 10).offset(params[:offset] || 0)
+            indexRender
+        end
     end
 
     def my_events
