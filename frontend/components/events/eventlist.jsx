@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import EventListItem from './event_list_item.jsx';
+import SearchBar from '../searchbar/searchbarContainer'
 // import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
 // import * as Sorts from '../../reducers/selectors/sorts';
 
@@ -62,6 +63,7 @@ class EventList extends React.Component{
                 <div className='splashlogo'>
                         <h2> Make memories, find friends</h2>
                         <h1> FlyaKite</h1>
+                        <SearchBar/>
                         </div>
                 </div>
                 <div className="indexbar">
