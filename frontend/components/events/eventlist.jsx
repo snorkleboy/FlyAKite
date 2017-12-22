@@ -11,7 +11,7 @@ class EventList extends React.Component{
         this.registrationHandler = this.registrationHandler.bind(this);
         this.bookmarkHandler = this.bookmarkHandler.bind(this);
     }
-    bookmarkHandler(id) {
+    bookmarkHandler(event) {
         const redirect = (e) => {
             e.preventDefault();
             this.props.history.push('/signup');
@@ -20,19 +20,19 @@ class EventList extends React.Component{
 
             const handleUnbookmark = (e) => {
                 e.preventDefault();
-                this.props.deleteBookmark(id);
+                this.props.deleteBookmark(event.id);
             };
             const handleBookmark = (e) => {
                 e.preventDefault();
-                this.props.createBookmark(id);
+                this.props.createBookmark(event.id);
             };
-            let BookmarkHandler = this.props.BookmarkedEventIds.includes(id) ? handleUnbookmark : handleBookmark;
+            let BookmarkHandler = event.bookmarked ? handleUnbookmark : handleBookmark;
 
             return (BookmarkHandler.bind(this));
         }
         return redirect;
     }
-    registrationHandler(id) {
+    registrationHandler(event) {
         const redirect = (e) => {
             e.preventDefault();
             this.props.history.push('/signup');
@@ -40,14 +40,14 @@ class EventList extends React.Component{
         if (this.props.loggedIn ){
             const handleUnregister = (e)=>{
                 e.preventDefault();
-                this.props.deleteRegistration(id) ;
+                this.props.deleteRegistration(event.id) ;
             };
             const handleRegister = (e)=> {
                 e.preventDefault();
-                this.props.makeRegistration(id, this.props.currentUser);
+                this.props.makeRegistration(event.id, this.props.currentUser);
             };
 
-            let registrationhandler = this.props.RegisteredEventIds.includes(id) ? handleUnregister : handleRegister;
+            let registrationhandler = event.registered ? handleUnregister : handleRegister;
 
             return (registrationhandler.bind(this));
         }
@@ -71,21 +71,18 @@ class EventList extends React.Component{
                 <div className="eventList-container">
                     <div className="eventListItem-container"> 
                         <ul className='event-list-ul'>
-                            {this.props.eventsList.map ( (event, index) => {
-                                let registered = this.props.RegisteredEventIds.includes(event.id);
-                                let bookmarked = this.props.BookmarkedEventIds.includes(event.id);
-                            return(                        
+                            {this.props.eventsList.map ( (event, index) => (                        
                                 <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>                                    
                                     <EventListItem
                                         key={`eventlistitem-${event.id}`}
                                         event={event}
-                                        registered={registered}
-                                        bookmarked={bookmarked}
-                                        bookmarkHandler={this.bookmarkHandler(event.id)}
-                                        registrationHandler={this.registrationHandler(event.id)}
+                                        registered={event.registered}
+                                        bookmarked={event.bookmarked}
+                                        bookmarkHandler={this.bookmarkHandler(event)}
+                                        registrationHandler={this.registrationHandler(event)}
                                       />
                                 </div>
-                            );}
+                            )
                         )}
                         </ul>
                     </div>

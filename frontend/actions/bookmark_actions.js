@@ -19,4 +19,4 @@ export const createBookmark = (eventId) => dispatch => BookmarkActions.createBoo
     .then((success) => dispatch(receiveBookmark(success)));
 
 export const deleteBookmark = (eventId) => dispatch => BookmarkActions.deleteBookmark(eventId)
-    .then((success) => dispatch(removeBookmark(eventId))); 
+    .then((success) => dispatch(removeBookmark(success))); 

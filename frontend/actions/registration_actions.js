@@ -19,6 +19,6 @@ export const makeRegistration = (eventId, userId) => dispatch => RegActions.crea
     .then((success) => dispatch(receiveRegistration(success)) ); 
 
 export const deleteRegistration = (eventId) => dispatch => RegActions.deleteRegistration(eventId)
-    .then((success) => dispatch(removeRegistration(eventId))); 
+    .then((success) => dispatch(removeRegistration(success))); 
 
 // export const deleteRegistration = 

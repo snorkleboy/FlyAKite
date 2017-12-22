@@ -16,28 +16,11 @@ import * as Selectors from '../../reducers/selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-    
-    let catId = 0;
-    let eventList = [];
-    const matchParam = ownProps.match.params.categoryId;
-    
-    if ( matchParam ){
-        if (matchParam === 'registered' || matchParam === 'bookmarked'){
-            eventList = Selectors.selectUserEvents(state.events, matchParam==='registered'? state.session.registrations : state.session.bookmarks  );
-        }  else{
-            catId = parseInt(ownProps.match.params.categoryId);
-            eventList = Selectors.SelectByCategory(state.events, catId);
-        }
 
-    } else{
-        eventList = Selectors.SelectByCategory(state.events, catId);
-    }
     console.log("eventlist", state.events.byIDs, "state", state.events)
         return ({
         eventsList: Object.values(state.events.byIDs),
         sortType: state.events.sortType,
-        RegisteredEventIds: state.session.registrations,
-        BookmarkedEventIds: state.session.bookmarks,
         loggedIn: state.session.currentUser
     });
 };

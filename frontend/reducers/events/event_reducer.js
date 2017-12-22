@@ -9,9 +9,7 @@ import merge from 'lodash/merge';
 
 const _events = {
     "byIDs": {},
-    "order": [],
-    "sortType":"all",
-    "indexLoaded":false
+    "order": []
 };
 
 // Object.values(action.payload.byIDs).forEach((event) => {
@@ -25,15 +23,17 @@ export default (state = _events, action) => {
     switch (action.type) {
         
         case RECEIVE_ALL_EVENTS:
-            newstate = merge({}, state, action.payload);
+            newstate =  action.payload;
             newstate.indexLoaded = true;
             return newstate;
+        case 'RECEIVE_BOOKMARKS':
+        case 'RECEIVE_REGISTRATION':
+        case 'DELETE_BOOKMARKS':
+        case 'DELETE_REGISTRATION':
         case RECEIVE_CREATED_EVENT:
-    
         case RECEIVE_EVENT:
-      
             newstate = merge({}, state, action.payload);
-            newstate.order.push(parseInt(Object.keys(action.payload.byIDs)[0]));
+            newstate.order.unshift(parseInt(Object.keys(action.payload.byIDs)[0]));
             return newstate;
         case SET_SORT:
             newstate = merge({}, state);
