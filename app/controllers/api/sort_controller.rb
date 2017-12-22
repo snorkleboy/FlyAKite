@@ -7,8 +7,6 @@ class Api::SortController < ApplicationController
 
     def upcoming
         @events = Event.where('"startDate" > ?',DateTime.now).order('"startDate"').limit(params[:limit] || 10).offset(params[:offset] || 0)
-
-
         indexRender
     end
     def search

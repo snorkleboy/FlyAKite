@@ -13,7 +13,8 @@ class SideBar extends React.Component{
 
     newHandle(id){
         return (e) => {
-            this.props.setSort(e.target.innerText);  
+
+            this.props.GetEventsbyCategory(id)
             this.props.history.push(`/${id}`);
         };
     }
@@ -42,7 +43,11 @@ class SideBar extends React.Component{
                         {cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
                                                     className='sidebar-button' 
                                                     to={`/${category.id}`} 
-                                                    key={`${category.id}side-bar-button`}>{category.name} </NavLink> )}
+                                                    key={`${category.id}side-bar-button`}
+                                                    onClick={this.newHandle(category.id)}
+                                                    >
+                                                    {category.name} 
+                                                    </NavLink> )}
                     </div>
                 </main>
         );

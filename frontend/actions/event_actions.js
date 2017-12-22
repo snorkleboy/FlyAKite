@@ -59,3 +59,5 @@ export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
     .then((success) => dispatch(receiveEvent(success) ),
     (fail) => dispatch(receiveEventsErrors(fail) ) );
 
+export const GetEventsbyCategory = (categoryId, options) => dispatch => EventAPI.fetchbyCategory(categoryId, options)
+    .then((success) => dispatch(receiveAllEvents(success)));

@@ -21,8 +21,9 @@
 export const fetchAllEvents = () => $.ajax({
     url: '/api/events'
 });
-export const fetchbyCategory = () => $.ajax({
-    url: '/api/events'
+export const fetchbyCategory = (id, options) => $.ajax({
+    url: '/api/category',
+    data: { categoryId: id}
 });
 export const fetchbySearch = () => $.ajax({
     url: '/api/events'
