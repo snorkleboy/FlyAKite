@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     match 'bookmarked(/:limit/:offset)', to: 'sort#bookmarked', via: [:get]
     match 'registered(/:limit/:offset)', to: 'sort#registered', via: [:get]
     match 'upcoming(/:limit/:offset)', to: 'sort#upcoming', via: [:get]
-    match 'my_events(/:limit/:offset)', to: 'sort#registered', via: [:get]
+    match 'myevents(/:limit/:offset)', to: 'sort#registered', via: [:get]
     match 'search(/:limit/:offset)', to: 'sort#search', via: [:get]
     match 'category(/:limit/:offset)', to: 'sort#category', via: [:get]
 

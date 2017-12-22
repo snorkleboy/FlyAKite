@@ -61,3 +61,12 @@ export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
 
 export const GetEventsbyCategory = (categoryId, options) => dispatch => EventAPI.fetchbyCategory(categoryId, options)
     .then((success) => dispatch(receiveAllEvents(success)));
+
+export const GetBookmarked = () => dispatch => EventAPI.fetchBookmarked()
+    .then((success) => dispatch(receiveAllEvents(success)));
+export const GetRegistered = () => dispatch => EventAPI.fetchRegistered()
+    .then((success) => dispatch(receiveAllEvents(success)));
+export const GetMyEvents = () => dispatch => EventAPI.fetchMyEvents()
+    .then((success) => dispatch(receiveAllEvents(success)));
+export const Search =(pattern, catId) => dispatch => EventAPI.fetchbySearch(pattern, catId)
+    .then((success) => dispatch(receiveAllEvents(success)));

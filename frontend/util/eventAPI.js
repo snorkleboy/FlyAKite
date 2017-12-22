@@ -21,16 +21,30 @@
 export const fetchAllEvents = () => $.ajax({
     url: '/api/events'
 });
-export const fetchbyCategory = (id, options) => $.ajax({
-    url: '/api/category',
-    data: { categoryId: id}
-});
-export const fetchbySearch = () => $.ajax({
-    url: '/api/events'
-});
+
 export const fetchEvent = (eventId) => $.ajax({
     url: `api/events/${eventId}`
 });
+
+export const fetchbyCategory = (id) => $.ajax({
+    url: '/api/category',
+    data: { categoryId: id }
+});
+export const fetchBookmarked = (id) => $.ajax({
+    url: '/api/bookmarked',
+});
+export const fetchRegistered = () => $.ajax({
+    url: '/api/registered'
+});
+export const fetchMyEvents = () => $.ajax({
+    url: '/api/myevents'
+});
+export const fetchbySearch = (pattern, catId) => $.ajax({
+    url: '/api/search',
+    data:{pattern, catId}
+});
+
+
 
 
 

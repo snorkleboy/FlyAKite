@@ -6,6 +6,7 @@ if (currentUser)
     registered_ids =  current_user.registered_events.ids
     bookmarked_ids = current_user.bookmarked_events.ids
 end
+
 json.byIDs do 
     @events.each do |event|
         currentUsersEvent = currentUser ?  currentUser.id == event.userId : false
@@ -15,7 +16,7 @@ json.byIDs do
             json.partial! "api/events/event", event: event, currentUsersEvent:currentUsersEvent,registered:registered, bookmarked:bookmarked
         end
     end
-end
+end || json.byIDs({})
 
 json.order do
     json.array! @events.map{|event| event.id}
