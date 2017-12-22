@@ -18,11 +18,7 @@ class SearchBar extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        
-
         const search = this.state;
-
-
         this.props.search(this.state.pattern, this.state.categoryId);
     }
 
@@ -31,8 +27,9 @@ class SearchBar extends React.Component {
         return (
             <div className="searchbar">
                 <label className='cat&pattern'>searchbar
-                    <select value = "category" id="cat-select" onChange={this.update('categoryId')}>
-                        {this.props.categories.map((cat)=><option id={cat.id}> {cat.name}</option>)} 
+                    <select id="cat-select" onChange={this.update('categoryId')}>
+                        <option id={-1} value={-1}>any</option>
+                        {this.props.categories.map((cat) => <option value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
                     </select>
                     <input className='search-field' onChange={this.update('pattern')}> 
                     </input>
