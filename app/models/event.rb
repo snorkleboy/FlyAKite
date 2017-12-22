@@ -89,8 +89,7 @@ class Event < ApplicationRecord
     belongs_to :author,
     primary_key: :id,
     foreign_key: :userId,
-    class_name: :User,
-    dependent: :destroy
+    class_name: :User
 
     belongs_to :category,
     primary_key: :id,
@@ -101,11 +100,12 @@ class Event < ApplicationRecord
     has_many :registrations,
     primary_key: :id,
     foreign_key: :eventId,
-    class_name: :Registration
+    class_name: :Registration,
+    dependent: :destroy
 
     has_many :registered_users,
-    through: :registrations,
-    source: :user
+    through: :registrations
+    
 
 
 
