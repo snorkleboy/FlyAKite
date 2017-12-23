@@ -69,40 +69,38 @@ class SideBar extends React.Component{
                         to='/MyEvents'
                         onClick={this.props.GetMyEvents}
                     >MY EVENTS </NavLink>
-
-
-                    <NavLink key='45643'
-                        className='profile-sidebar sidebar-button'
-                        activeClassName="sidebar-button-active"
-                        to='/Recent'
-                        onClick={this.props.GetRecent}
-                    >RECENT </NavLink>
-
-                    <NavLink key='23434'
-                        className='profile-sidebar sidebar-button'
-                        activeClassName="sidebar-button-active"
-                        to='/GetUpcoming'
-                        onClick={this.props.GetUpcoming}
-                    >UPCOMING </NavLink>
-
                 </div>
 
             );}
-        cats.unshift({name:"ALL", id:-1});
         
             return(
                 <main id='category-holder' className='sideBar'>
                         <div  id='this' className='SideBar-buttons-list'>
                         {ProfileOptions()}
-                        {cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
+                        <NavLink key='45643'
+                            activeClassName="sidebar-button-active"
+                            className='sidebar-button'
+                            to='/Recent'
+                            onClick={this.props.GetRecent}
+                        >RECENT </NavLink>
+
+                        <NavLink key='23434'
+                            activeClassName="sidebar-button-active"
+                            className='sidebar-button'
+                            to='/GetUpcoming'
+                            onClick={this.props.GetUpcoming}
+                        >UPCOMING </NavLink>
+                        {
+                            cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
                                                     className='sidebar-button' 
                                                     to={`/${category.id}`} 
                                                     key={`${category.id}side-bar-button`}
                                                     onClick={this.newHandle(category.id)}
-                                                    exact='true'
+                                                    exact={true}
                                                     >
                                                     {category.name} 
-                                                    </NavLink> )}
+                                                    </NavLink> )
+                        }
                     </div>
                 </main>
         );
