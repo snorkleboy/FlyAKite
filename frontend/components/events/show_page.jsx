@@ -92,8 +92,6 @@ class ShowPage extends React.Component {
         let button = null;
         if (this.props.event.currentUsersEvent){
             button = <button onClick={this.handleDelete(this.props.event.id).bind(this)}>DELETE</button>;
-        }else{
-            button = <h1> i am cond delete</h1> ;
         }
         return button;
     }
@@ -128,6 +126,7 @@ class ShowPage extends React.Component {
                         </div>
                         <div>
                             <ShowPageComponents.EventDiscription event={this.props.event}/>
+                            
                         </div>
 
 

@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const preloadedState = { 
             session: { 
                  currentUser: window.bootStrap.currentUser,
-                 registrations: window.bootStrap.registrations ,
-                 bookmarks: window.bootStrap.bookmarks
+                //  registrations: window.bootStrap.registrations ,
+                //  bookmarks: window.bootStrap.bookmarks
                 }  
             };
         window.bootStrap = null;
