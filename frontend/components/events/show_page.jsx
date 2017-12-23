@@ -29,6 +29,7 @@ class ShowPage extends React.Component {
         this.handleUnbookmark = this.handleUnbookmark.bind(this);
         this.handleBookmark = this.handleBookmark.bind(this);
         this.redirect = this.redirect.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         
     }
     componentDidMount() {
@@ -51,7 +52,11 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
     }
-
+    handleDelete(id){
+        return function (e){
+            this.props.deleteEventCall(id)
+        }
+    }
     conditionalRegister(){
         if (this.props.currentUser){
             return (this.props.event.registered ? 
@@ -82,7 +87,15 @@ class ShowPage extends React.Component {
         return (<button className="register-button" onClick={this.redirect}>Bookmark</button>);
 
     }
-
+    conditionalDelete(){
+        let button = null;
+        if (this.props.event.currentUsersEvent){
+            button = <button onClick={this.handleDelete(this.props.event.id).bind(this)}>DELETE</button>;
+        }else{
+            button = <h1> i am cond delete</h1> ;
+        }
+        return button;
+    }
     handleUnbookmark(e) {
         e.preventDefault();
         this.props.deleteBookmark(this.props.event.id);
@@ -109,7 +122,7 @@ class ShowPage extends React.Component {
 
                         </div>  
                         <div className='buttonsStrip'>
-                        {this.conditionalEdit()}   {this.conditionalRegister()} {this.conditionalBookmark()}
+                        {this.conditionalEdit()}   {this.conditionalRegister()} {this.conditionalBookmark()} {this.conditionalDelete()}
 
                         </div>
                         <div>

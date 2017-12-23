@@ -21,7 +21,10 @@
 export const fetchAllEvents = () => $.ajax({
     url: '/api/events'
 });
-
+export const deleteEvent = (id) =>  $.ajax({
+    url: `/api/events/${id}`,
+    method: 'DELETE'
+})
 export const fetchEvent = (eventId) => $.ajax({
     url: `api/events/${eventId}`
 });
@@ -41,7 +44,7 @@ export const fetchMyEvents = () => $.ajax({
 });
 export const fetchbySearch = (pattern, categoryId) => $.ajax({
     url: '/api/search',
-    data:{pattern, categoryId}
+    data: { pattern, categoryId}
 });
 
 

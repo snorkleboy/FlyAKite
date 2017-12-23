@@ -42,7 +42,16 @@ class Api::EventsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    event = current_user.events.find([params[:id]])
+    if (event)
+      DeepDeleteEventJob.perform_later(event.id)
+      event.destroy
+      @event = event
+      render "api/events/show"
+    else
+      render json: [event.errors.full_messages], status: 404
+    end
   end
 
     private 

@@ -6,6 +6,7 @@ export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
 export const RECEIVE_CREATED_EVENT = 'RECEIVE_CREATED_EVENT';
 export const RECEIVE_EVENTS_ERROR = 'RECEIVE_EVENT_ERROR';
 export const CLEAR_EVENT_ERRORS = "CLEAR_EVENT_ERRORS";
+export const DELETE_EVENT = "DELETE_EVENT"
 
 export const clearEventErrors = () => ({
     type: CLEAR_EVENT_ERRORS
@@ -17,15 +18,18 @@ export const receiveEventsErrors = (errors) => ({
 
 
 
-
+export const receiveEvent = (event) => ({
+    type: RECEIVE_EVENT,
+    payload: event
+});
 
 export const receiveAllEvents = (events)=>({
     type: RECEIVE_ALL_EVENTS,
     payload: events
 });
 
-export const receiveEvent = (event) => ({
-    type: RECEIVE_EVENT,
+export const deleteEvent = (event) => ({
+    type: DELETE_EVENT,
     payload: event
 });
 
@@ -58,7 +62,9 @@ export const GetAllEvents = ()=> dispatch => EventAPI.fetchAllEvents()
 export const GetEvent = (id) => dispatch => EventAPI.fetchEvent(id)
     .then((success) => dispatch(receiveEvent(success) ),
     (fail) => dispatch(receiveEventsErrors(fail) ) );
-
+export const deleteEventCall = (id) => dispatch => EventAPI.deleteEvent(id)
+    .then((success) => dispatch(deleteEvent(id)),
+            (error) => dispatch(receiveEventsErrors(id)));
 export const GetEventsbyCategory = (categoryId, options) => dispatch => EventAPI.fetchbyCategory(categoryId, options)
     .then((success) => dispatch(receiveAllEvents(success)));
 

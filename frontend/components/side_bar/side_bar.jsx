@@ -8,8 +8,22 @@ class SideBar extends React.Component{
     }
     componentDidMount(){
         if (!this.props.categories.indexLoaded) this.props.getAllCatgories();
-        this.props.GetAllEvents(); 
-        console.log("this", this)
+        const param = parseInt(this.props.location.pathname[1])
+        if (this.props.match.isExact) {
+            this.props.GetAllEvents();
+        } else if (!Number.isNaN(param)){
+            this.props.GetEventsbyCategory(param);
+        } else if (this.props.location.pathname === '/bookmarked'){
+            this.props.GetBookmarked();
+        } else if (this.props.location.pathname === '/registered'){
+            this.props.GetRegistered();
+        } else if (this.props.location.pathname === '/MyEvents'){
+            this.props.GetMyEvents();
+        }
+        console.log("this", this);
+
+
+
     } 
 
     newHandle(id){
@@ -53,7 +67,7 @@ class SideBar extends React.Component{
         
             return(
                 <main id='category-holder' className='sideBar'>
-                        <div  className='SideBar-buttons-list'>
+                        <div  id='this' className='SideBar-buttons-list'>
                         {ProfileOptions()}
                         {cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
                                                     className='sidebar-button' 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ShowPage from './show_page';
-import { GetEvent } from '../../actions/event_actions';
+import { GetEvent, deleteEventCall } from '../../actions/event_actions';
 import { Link, withRouter } from 'react-router-dom';
 import { makeRegistration, deleteRegistration} from '../../actions/registration_actions';
 import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
@@ -19,7 +19,8 @@ const mapDispatchtoProps = (dispatch, ownProps) =>({
         makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),
         deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId)),
         createBookmark: (eventId) => dispatch(createBookmark(eventId)),
-        deleteBookmark: (eventId) => dispatch(deleteBookmark(eventId))
+        deleteBookmark: (eventId) => dispatch(deleteBookmark(eventId)),
+        deleteEventCall: (id) => dispatch(deleteEventCall(id))
 
     });
 
