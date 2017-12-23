@@ -9,7 +9,10 @@ import {
     GetEventsbyCategory,
     GetBookmarked,
     GetRegistered,
-    GetMyEvents 
+    GetMyEvents,
+    GetRecent,
+    GetUpcoming
+
 } from '../../actions/event_actions';
 
 // this.props.currentUsersEvent ? <Link to={this.props.match.url + '/edit'
@@ -32,6 +35,8 @@ const mapDispatchtoProps = (dispatch, ownProps) => ({
     GetBookmarked: () => dispatch(GetBookmarked()),
     GetRegistered: () => dispatch(GetRegistered()),
     GetMyEvents: () => dispatch(GetMyEvents()),
+    GetRecent: () => dispatch(GetRecent()),
+    GetUpcoming: () => dispatch(GetUpcoming())
 });
 
 export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(SideBar));

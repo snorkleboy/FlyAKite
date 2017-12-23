@@ -19,6 +19,10 @@ class SideBar extends React.Component{
             this.props.GetRegistered();
         } else if (this.props.location.pathname === '/MyEvents'){
             this.props.GetMyEvents();
+        } else if (this.props.location.pathname === '/Recent') {
+            this.props.GetRecent();
+        } else if (this.props.location.pathname === '/GetUpcoming') {
+            this.props.GetUpcoming();
         }
         console.log("this", this);
 
@@ -45,25 +49,41 @@ class SideBar extends React.Component{
             ProfileOptions = () =>(
                 <div className='profile-buttons'>
                     <NavLink key='329487293847' 
-                    className='profile-sidebar sidebar-button' 
-                    activeClassName="sidebar-button-active" 
-                    to='/bookmarked'
-                    onClick={this.props.GetBookmarked}
+                        className='profile-sidebar sidebar-button' 
+                        activeClassName="sidebar-button-active" 
+                        to='/bookmarked'
+                        onClick={this.props.GetBookmarked}
                     >BOOKMARKED </NavLink> 
 
+
                     <NavLink key='5432' 
-                    className='profile-sidebar sidebar-button' 
-                    activeClassName="sidebar-button-active" 
-                    to='/registered'
-                    onClick={this.props.GetRegistered}
+                        className='profile-sidebar sidebar-button' 
+                        activeClassName="sidebar-button-active" 
+                        to='/registered'
+                        onClick={this.props.GetRegistered}
                     >REGISTERED </NavLink>
 
                     <NavLink key='6543214' 
-                    className='profile-sidebar sidebar-button' 
-                    activeClassName="sidebar-button-active" 
-                    to='/MyEvents'
-                    onClick={this.props.GetMyEvents}
+                        className='profile-sidebar sidebar-button' 
+                        activeClassName="sidebar-button-active" 
+                        to='/MyEvents'
+                        onClick={this.props.GetMyEvents}
                     >MY EVENTS </NavLink>
+
+
+                    <NavLink key='45643'
+                        className='profile-sidebar sidebar-button'
+                        activeClassName="sidebar-button-active"
+                        to='/Recent'
+                        onClick={this.props.GetRecent}
+                    >RECENT </NavLink>
+
+                    <NavLink key='23434'
+                        className='profile-sidebar sidebar-button'
+                        activeClassName="sidebar-button-active"
+                        to='/GetUpcoming'
+                        onClick={this.props.GetUpcoming}
+                    >UPCOMING </NavLink>
 
                 </div>
 

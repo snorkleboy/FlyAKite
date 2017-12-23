@@ -47,6 +47,14 @@ export const fetchbySearch = (pattern, categoryId) => $.ajax({
     data: { pattern, categoryId}
 });
 
+export const fetchRecent = () => $.ajax({
+    url: '/api/mostrecent'
+});
+
+export const fetchUpcoming = () => $.ajax({
+    url: '/api/upcoming'
+});
+
 
 
 
