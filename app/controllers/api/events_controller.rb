@@ -43,7 +43,7 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    event = current_user.events.find([params[:id]])
+    event = current_user.events.find(params[:id])
     if (event)
       DeepDeleteEventJob.perform_later(event.id)
       event.destroy

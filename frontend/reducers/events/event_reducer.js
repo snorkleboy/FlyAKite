@@ -21,7 +21,10 @@ export default (state = _events, action) => {
     Object.freeze(state);
     var newstate={};
     switch (action.type) {
-        
+        case 'DELETE_EVENT':
+            newstate = Object.assign({}, state);
+            delete newstate.byIDs[action.payload];
+            return newstate;
         case RECEIVE_ALL_EVENTS:
             newstate =  action.payload;
             newstate.indexLoaded = true;

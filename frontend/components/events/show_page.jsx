@@ -54,7 +54,8 @@ class ShowPage extends React.Component {
     }
     handleDelete(id){
         return function (e){
-            this.props.deleteEventCall(id)
+            this.props.deleteEventCall(id);
+            this.props.history.push('/')
         }
     }
     conditionalRegister(){

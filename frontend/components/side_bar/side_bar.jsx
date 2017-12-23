@@ -25,10 +25,15 @@ class SideBar extends React.Component{
 
 
     } 
+    componentWillReceiveProps(props){
+        if (this.props.match.isExact) {
+            this.props.GetAllEvents();
+        }
+    }
 
     newHandle(id){
         return (e) => {
-            this.props.GetEventsbyCategory(id)
+            this.props.GetEventsbyCategory(id);
         };
     }
     
@@ -74,6 +79,7 @@ class SideBar extends React.Component{
                                                     to={`/${category.id}`} 
                                                     key={`${category.id}side-bar-button`}
                                                     onClick={this.newHandle(category.id)}
+                                                    exact='true'
                                                     >
                                                     {category.name} 
                                                     </NavLink> )}
