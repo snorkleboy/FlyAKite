@@ -62,4 +62,5 @@ const _nullEvent = {
     description: "",
     imgURL: "",
     endDate: "",
+    price:0
 };

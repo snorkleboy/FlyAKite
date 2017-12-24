@@ -214,6 +214,18 @@ class CreateEventComp extends React.Component {
                     </label>
                     <br />
 
+                    <label className='signup-label-form'>price
+                                <br />
+
+                        <input value={this.state.price} onChange={this.update('price')} className="signup-input-form" required>
+                            
+                        </input>
+
+                    </label>
+                    <br />
+
+
+
                     <label className='signup-label-form'>header
                                 <br />
                         <textarea

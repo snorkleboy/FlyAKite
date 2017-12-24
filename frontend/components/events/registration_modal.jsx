@@ -37,11 +37,18 @@ class RegistrationModal extends React.Component {
             e.preventDefault();
 
     }
+    conditionalStripe(){
+        if (this.props.event.price>0){
+            return (
+                <button onClick={this.openStripe.bind(this)} id="stripe">pay</button>
+            );
+        }
+    }
     render(){
         return(
             <main id='registrationModel' className='registration-modal'>
                 <h1> I AM A MODAL</h1>
-                <button onClick={this.openStripe.bind(this)} id="stripe">pay</button>
+                {this.conditionalStripe()}
                 <br></br>
                 <button onClick={this.props.close} >close </button>
                 <br ></br>

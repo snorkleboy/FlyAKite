@@ -84,7 +84,7 @@ class Event < ApplicationRecord
 
 
     # user id validation through assocation with user
-    validates :categoryId,:name, :startDate, :header, :description,:areaCode,:imgURL, presence: true
+    validates :categoryId,:name, :startDate, :header, :description,:areaCode,:imgURL, :price, presence: true
 
     belongs_to :author,
     primary_key: :id,
