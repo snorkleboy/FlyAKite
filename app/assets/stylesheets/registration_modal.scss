@@ -1,6 +1,11 @@
-.RegistrationModal{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: bisque;
+.registration-modal{
+    position: fixed;
+    width: 40vw;
+    height: 60vh;
+    top: 20vh;
+
+    background-color: rgb(255, 251, 251);
+    z-index: 100;
+    border: 5px solid grey;
+    border-radius: 10px;
 }

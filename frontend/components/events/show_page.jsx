@@ -43,26 +43,21 @@ class ShowPage extends React.Component {
     
     }
     redirect(e){
-        e.preventDefault();
         this.props.history.push('/signup');
     }
 
     handleUnregister(e){
-        e.preventDefault();
         this.props.deleteRegistration(this.props.event.id);
     }
     handleRegister(e){
-        e.preventDefault();
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser).then((success)=> this.closeRegistration());
     }
 
 
     openRegistration(e){
-        e.preventDefault();
         this.setState({ registrationOpen:true});
     }
     closeRegistration(e){
-        e.preventDefault();
         this.setState({registrationOpen: false});
     }
     handleDelete(id){
