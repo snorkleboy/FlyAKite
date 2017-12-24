@@ -4,7 +4,7 @@
         rgba($color: #fdfdfd, $alpha: .99) 35%,
          rgba($color: #fdfdfd, $alpha: 1.0)
     );
-    width:80vw;
+    width:83vw;
     height: 22vh;
     border-radius: 5px;
     box-shadow: #000000;
@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+        box-shadow: 2px 2px #cfcfcf;
+
 }
 .searchbar label{
     font-size: 60px;

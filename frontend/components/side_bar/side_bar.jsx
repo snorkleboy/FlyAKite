@@ -5,12 +5,15 @@ class SideBar extends React.Component{
     constructor(props){
         super(props);
         this.newHandle = this.newHandle.bind(this);
+        
     }
     componentDidMount(){
         if (!this.props.categories.indexLoaded) this.props.getAllCatgories();
         const param = parseInt(this.props.location.pathname[1])
         if (this.props.match.isExact) {
-            this.props.GetAllEvents();
+            this.props.history.push('/Upcoming')
+            this.props.GetUpcoming();
+            // this.props.GetAllEvents();
         } else if (!Number.isNaN(param)){
             this.props.GetEventsbyCategory(param);
         } else if (this.props.location.pathname === '/bookmarked'){
@@ -21,10 +24,9 @@ class SideBar extends React.Component{
             this.props.GetMyEvents();
         } else if (this.props.location.pathname === '/Recent') {
             this.props.GetRecent();
-        } else if (this.props.location.pathname === '/GetUpcoming') {
-            this.props.GetUpcoming();
+        } else if (this.props.location.pathname === '/Upcoming') {
+            
         }
-        console.log("this", this);
 
 
 
@@ -87,7 +89,7 @@ class SideBar extends React.Component{
                         <NavLink key='23434'
                             activeClassName="sidebar-button-active"
                             className='sidebar-button'
-                            to='/GetUpcoming'
+                            to='/Upcoming'
                             onClick={this.props.GetUpcoming}
                         >UPCOMING </NavLink>
                         {

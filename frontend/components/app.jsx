@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import {
+  withRouter,
   Route,
   Redirect,
   Switch,
@@ -17,7 +18,10 @@ import NavbarContainer from './session/navbar_container';
 import SignUpPageContainer from './session/signup_container';
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
 
+  }
       
 
     render(){
@@ -35,5 +39,5 @@ class App extends React.Component {
 
 
 
-export default App;
+export default withRouter(connect()(App));
 

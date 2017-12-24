@@ -91,11 +91,11 @@
 .event-list-item-image-c{
     /* border-top: 7px solid rgb(167, 177, 176); */
         /* position: relative; */
-    width:100%;
+    /* width:100%; */
     height: 100%;
     border-radius: 0px 0px 0px 0px ;
     /* box-shadow: 1px 1px 3px  rgb(125, 161, 179); */
-    object-fit: fill;
+    object-fit: cover;
     transform: scale(1);  
     transition: all 1s ease;
     overflow: hidden;

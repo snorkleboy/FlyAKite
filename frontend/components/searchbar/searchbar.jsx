@@ -21,6 +21,7 @@ class SearchBar extends React.Component {
         e.preventDefault();
         const search = this.state;
         this.props.search(this.state.pattern, this.state.categoryId, this.state.date);
+        this.props.history.push(`/${this.state.categoryId}`)
     }
 
 

@@ -65,7 +65,10 @@ color: #3d3e41;
     }
 .showImage img{
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    max-height: 850px;
+    border-left: 1px solid grey;
+    
 }
 
 .showHeader{
