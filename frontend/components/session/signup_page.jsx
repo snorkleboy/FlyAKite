@@ -17,7 +17,7 @@ class SignUpPage extends React.Component {
                 this.props.history.push('/');
             }else{
                 this.props.unredirect();    
-                this.props.history.push(this.props.redirectedFrom);
+                this.props.history.back(2);
             }
         }
     }

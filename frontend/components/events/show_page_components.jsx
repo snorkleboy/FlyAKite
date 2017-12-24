@@ -11,13 +11,13 @@ export const EventImage = ({image}) => {
     );
 };
 
-export const EventHeader = ({date, header, name}) => {
+export const EventHeader = ({location,date, header, name}) => {
     return (
         <div className='showHeader'>
             <h2>{date.slice(0,10)}</h2>
             <h1> {name}</h1>
             <p>{header}</p>
-            
+            <Map location={{ areaCode: location.areaCode, city: location.city, state: location.state }} />
         </div>
 
         
@@ -48,7 +48,7 @@ export const EventDiscription = ({event}) => {
                     <br></br>
                     <span>{event.location.state}</span>
                 </div>
-                <Map location={{ areaCode: event.location.areaCode, city: event.location.city, state: event.location.state }}/>
+                
             </div>
         </div>
         
