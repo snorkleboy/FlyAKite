@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as ShowPageComponents from './show_page_components.jsx';
 import setCloudinaryOptions from '../../util/cloudinaryOptionsSetter';
-
+import RegistrationModal from './registration_modal';
 // t.integer "userId", null: false
 
 // t.string "name", null: false
@@ -46,7 +46,7 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.history.push('/signup');
     }
-    
+
     handleUnregister(e){
         e.preventDefault();
         this.props.deleteRegistration(this.props.event.id);
@@ -56,14 +56,6 @@ class ShowPage extends React.Component {
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
     }
 
-    deleteRegistration(){
-        e.preventDefault();
-        this.props.deleteRegistration(this.props.event.id);
-    }
-    sendRegistration(e){
-        e.preventDefault();
-        this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
-    }
 
     openRegistration(e){
         e.preventDefault();
@@ -82,9 +74,9 @@ class ShowPage extends React.Component {
     conditionalRegister(){
         if (this.props.currentUser){
             return (this.props.event.registered ? 
-                <button className="unregister-button" onClick={this.handleUnregister}>REGISTERED</button> 
+                <button className="unregister-button" onClick={this.handleUnregister.bind(this)}>REGISTERED</button> 
             :
-                <button className="register-button" onClick={this.handleRegister}>REGISTER</button>);
+                <button className="register-button" onClick={this.openRegistration.bind(this)}>REGISTER</button>);
         }
         return (<button className="register-button" onClick={this.redirect}>REGISTER</button>)
         
@@ -136,6 +128,7 @@ class ShowPage extends React.Component {
             return (
 
                     <main  className='showpage'>
+                    {this.state.registrationOpen ? <RegistrationModal close={this.closeRegistration.bind(this)} register={this.handleRegister.bind(this)} /> : null}
                         <div className='showpageImage'>
                             <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
                         </div>
