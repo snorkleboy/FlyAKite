@@ -116,22 +116,22 @@ class ShowPage extends React.Component {
 
                     <main  className='showpage'>
                         <div className='showpageImage'>
-                        <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_20')}/>
+                            <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_20')}/>
                         </div>
                         <div className='imgheader'>
-
-                        <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header}/>
-
+                            <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> 
+                            <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header} />
                         </div>  
                         <div className='buttonsStrip'>
-                        {this.conditionalEdit()}   {this.conditionalRegister()} {this.conditionalBookmark()} {this.conditionalDelete()}
-
+                            {this.conditionalEdit()}
+                            {this.conditionalRegister()}
+                            {this.conditionalBookmark()}
+                            {this.conditionalDelete()}
                         </div>
                         <div>
-                            <ShowPageComponents.EventDiscription event={this.props.event}/>
-                            
+                            <ShowPageComponents.EventDiscription event={this.props.event}/>     
                         </div>
-
+                    
 
                     </main>
             );
@@ -142,4 +142,4 @@ class ShowPage extends React.Component {
 {/* <div style={{ backgroundImage: `url(${this.props.event.imgURL})` }}></div> */}
 export default ShowPage;
 
-// 
+//                         

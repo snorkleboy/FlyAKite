@@ -59,16 +59,11 @@ color: #3d3e41;
         
     }
 .showImage{
-        // z-index: 1;
-    box-sizing: border-box;
-    width: 55%;
-    // height: 100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+
+     height: 100%;
+     width: 145%;
     }
-    .showImage img{
-    width: fit-content;
+.showImage img{
     height: 100%;
     object-fit: fill;
 }
@@ -78,96 +73,116 @@ color: #3d3e41;
         background-color:  #f7f7f7;
         padding: 10px;
         align-items: center;
+        align-content: center;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
     }
 .showHeader > *{
         // z-index: 1;
         background-color:  #f7f7f7;
         padding: 15px;
+        text-align: center;
     }
 .showHeader > h1{
-       font-size: 32px;
+       font-size: 50px;
        color: rgb(129, 129, 129);
        font-weight: 700;
     }
 .showHeader > p{
     color: rgba(85, 85, 85, 0.829);
-    font-weight: 400;
+    font-weight: 700;
+    font-size: 20px;
 }
 .showHeader >h2{
     color: rgba(172, 172, 172, 0.616);
     font-weight: 400;
 }
-    .description{
-        
-        // z-index: 1;
-        box-sizing: border-box;
-        justify-content: space-between;
-        background-color: #f1f1f1;
+.description{
+    
+    // z-index: 1;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    width: 67vw;
+    height: 100%;
+    padding: 45px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.description >*{
+    padding: 45px;
+    // width: 45%;
+}
+.description > p{
+    font-size: 20px;
+    color : rgba(172, 172, 172, 0.616);
+}
+.buttonsStrip{
+    // z-index: 1;
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    height:55px;
         width: 67vw;
-        height: 500px;
-        padding: 45px;
-        display: inline-flex;
-        text-align: center;
-        
-    }
-    .description >*{
-        padding: 45px;
-        // width: 45%;
-    }
-    .buttonsStrip{
-        // z-index: 1;
-        background-color: #ebebeb;
-        display: flex;
-        justify-content: flex-end;
-        box-sizing: border-box;
-        padding: 15px;
-        width: 100%;
-        height:55px;
-         width: 67vw;
 
-        border: 1px solid rgba(197, 197, 197, 0.726)
+    border: 1px solid rgba(197, 197, 197, 0.726)
 
 
-    }
-    .buttonsStrip > button{
-        padding: 0 10px 0 10px;
-        margin-left: 10px;
-        margin-right: 5px;
-        box-sizing: border-box;
-    }
+}
+.buttonsStrip > button{
+    padding: 0 10px 0 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
 
-    .edit-event-link{
-        justify-self: flex-start;
-    }
-    .description{
-        font-size: 20px;
-        display: flex;
-        // flex-direction: column; 
-    }
-    .description > p{
-        font-size: 20px;
-        color : rgba(172, 172, 172, 0.616);
-    }
+.edit-event-link{
+    justify-self: flex-start;
+}
 
 
 
-    .show-header-desc > *{
-        padding: 25px;
-    }
-    .datelocation{
-        // width: 30%;
-        padding: 10px;
-        margin: 10px 0 10px 0;
-    }
-    .datelocation > *{
-        // width: 30%;
-        padding: 10px;
-        // margin: 10px 0 10px 0;
-    }
-    .showdate > h1{
-        // width: 30%;
-        font-size: 15px;
-        padding: 10px;
-        // margin: 10px 0 10px 0;
-    }
+
+.show-header-desc > *{
+    padding: 25px;
+}
+.datelocation{
+    // width: 30%;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border-left: 1px solid #f3f3f3; 
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    box-sizing: border-box;
+}
+.datelocation > *{
+    // width: 30%;
+    font-weight: 700;
+    padding: 10px;
+    // margin: 10px 0 10px 0;
+}
+.showdate > h1{
+    // width: 30%;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: 700;
+    // margin: 10px 0 10px 0;
+}
+
+.showHeader-flex{
+    display: flex;
+    margin-top: 25px;
+
+}

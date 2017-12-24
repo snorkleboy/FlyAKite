@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import setCloudinaryOptions from '../../util/cloudinaryOptionsSetter';
 const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler, bookmarked}) =>{
-    const imgURL = setCloudinaryOptions(event.imgURL, 'q_60')
+    const imgURL = setCloudinaryOptions(event.imgURL, 'w_375,h_220,c_fill,q_60')
     return(
         <li className='event-list-item-li'> 
             <div className='event-image-container'>
