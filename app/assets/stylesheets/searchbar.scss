@@ -50,20 +50,23 @@
 }
 .search-button{
     
-        box-sizing: border-box;
-        height: 100%;
-        width: fit-content;
-        padding: 5px;
-        border-radius: 0 5px 5px 0;
-        text-align: center;      
-        border-bottom: 1px solid lightblue;
-        font-weight: 700;
-        font-size: 20px;
-        transition: .6s background-color, .3s border-radius;
-        background-color:  rgb(255, 166, 0);
-        color:  white;
-        border-left: 0px;
-        border: 1px solid lightgrey;
-        min-height: 50px;
+    box-sizing: border-box;
+    height: 100%;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    text-align: center;      
+    border-bottom: 1px solid lightblue;
+    font-weight: 700;
+    font-size: 20px;
+    transition: .6s background-color, .3s border-radius;
+    background-color:  rgb(255, 166, 0);
+    color:  white;
+    border-left: 0px;
+    border: 1px solid lightgrey;
+    min-height: 50px;
 }
 
+.search-button:hover{
+    background-color:  rgb(240, 116, 0);
+}

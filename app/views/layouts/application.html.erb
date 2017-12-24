@@ -30,12 +30,9 @@
     upload_preset: '<%= ENV['UPLOAD_PRESET'] %>'
   }
 </script>
-
+<%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-      <%= javascript_include_tag 'application' %>
     <%= yield %>
-
   </body>
 </html>

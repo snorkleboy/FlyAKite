@@ -31,6 +31,7 @@ class ShowPage extends React.Component {
         this.handleBookmark = this.handleBookmark.bind(this);
         this.redirect = this.redirect.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.state = {registrationOpen: false};
         
     }
     componentDidMount() {
@@ -45,6 +46,7 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.history.push('/signup');
     }
+    
     handleUnregister(e){
         e.preventDefault();
         this.props.deleteRegistration(this.props.event.id);
@@ -52,6 +54,24 @@ class ShowPage extends React.Component {
     handleRegister(e){
         e.preventDefault();
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
+    }
+
+    deleteRegistration(){
+        e.preventDefault();
+        this.props.deleteRegistration(this.props.event.id);
+    }
+    sendRegistration(e){
+        e.preventDefault();
+        this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
+    }
+
+    openRegistration(e){
+        e.preventDefault();
+        this.setState({ registrationOpen:true});
+    }
+    closeRegistration(e){
+        e.preventDefault();
+        this.setState({registrationOpen: false});
     }
     handleDelete(id){
         return function (e){
