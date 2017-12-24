@@ -131,7 +131,7 @@
     box-sizing: border-box;
     /* line-height: 0; */
     /* width: 167px; */
-    color: #24afff;
+    color: rgb(245, 163, 10);
     font-weight: 700;
     text-align: center;
     line-height: 60px;
@@ -150,25 +150,7 @@
     display:flex;
 }
 
-.navbar-img-container{
-    background-image: url('http://ak5.picdn.net/shutterstock/videos/2590475/thumb/1.jpg');
-    
 
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
-
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    /* z-index: -100; */
-
-
-    /* background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
 
 .create-event-nb{
     color: rgb(255, 166, 0);

@@ -7,7 +7,8 @@ class SearchBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.state = {
             pattern:"",
-            categoryId: -1
+            categoryId: -1,
+            date:""
         };
     }
 
@@ -19,22 +20,23 @@ class SearchBar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const search = this.state;
-        this.props.search(this.state.pattern, this.state.categoryId);
+        this.props.search(this.state.pattern, this.state.categoryId, this.state.date);
     }
 
 
     render(){
         return (
             <div className="searchbar">
-                <label className='cat&pattern'>searchbar
-                    <select id="cat-select" onChange={this.update('categoryId')}>
+                <label>Find your next experience</label>
+                <div className='cat-pattern'>
+                    <input className='search-field' onChange={this.update('pattern')}></input>
+                    <select className='search-cat' id="cat-select" onChange={this.update('categoryId')}>
                         <option id={-1} value={-1}>any</option>
                         {this.props.categories.map((cat) => <option value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
                     </select>
-                    <input className='search-field' onChange={this.update('pattern')}> 
-                    </input>
-                    <input className='signup-button' onClick={this.handleSubmit.bind(this)} type="submit" value="Search" />
-                </label>
+                    
+                    <input className='search-button' onClick={this.handleSubmit.bind(this)} type="submit" value="Search" />
+                </div>
             </div>
         )
     }

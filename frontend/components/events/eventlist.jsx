@@ -60,11 +60,13 @@ class EventList extends React.Component{
         return(
             <main className='eventlist'>
                 <div className='navbar-img-container'>
-                <div className='splashlogo'>
-                        <h2> Make memories, find friends</h2>
-                        <h1> FlyaKite</h1>
-                        <SearchBar/>
+                    <div className='splashlogo'>
+                        <div>
+                                <h2> Make memories, find friends</h2>
+                                <h1> FlyaKite</h1>
                         </div>
+                        <SearchBar/>
+                    </div>
                 </div>
                 <div className="indexbar">
 

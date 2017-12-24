@@ -243,7 +243,7 @@ class CreateEventComp extends React.Component {
 
                     <label className='signup-label-form location-holder'>Location
                                 <br />
-                        <label> area code
+                        <label> ZipCode
                             <input type="text"
                                 value={this.state.areaCode}
                                 onChange={this.update('areaCode')}
