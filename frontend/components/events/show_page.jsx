@@ -53,7 +53,7 @@ class ShowPage extends React.Component {
     }
     handleRegister(e){
         e.preventDefault();
-        this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser);
+        this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser).then((success)=> this.closeRegistration());
     }
 
 
