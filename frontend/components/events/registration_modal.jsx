@@ -13,7 +13,7 @@ class RegistrationModal extends React.Component {
     componentDidMount(){
         this.handler = StripeCheckout.configure({
             key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-            image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+            image: this.props.event.imgURL,
             locale: 'auto',
             token: function (token) {
                 console.log(token);
@@ -29,10 +29,10 @@ class RegistrationModal extends React.Component {
     openStripe(e){
             // Open Checkout with further options:
             this.handler.open({
-                name: 'Stripe.com',
-                description: '2 widgets',
+                name: this.props.event.name,
+                description: this.props.event.header,
                 zipCode: true,
-                amount: 2000
+                amount: this.props.event.price || 2000
             });
             e.preventDefault();
 
@@ -41,11 +41,11 @@ class RegistrationModal extends React.Component {
         return(
             <main id='registrationModel' className='registration-modal'>
                 <h1> I AM A MODAL</h1>
-                <button onClick={this.openStripe.bind(this)} id="stripe">registerSTRIPE</button>
+                <button onClick={this.openStripe.bind(this)} id="stripe">pay</button>
                 <br></br>
                 <button onClick={this.props.close} >close </button>
                 <br ></br>
-                <button onClick={this.props.register} >register </button>
+                <button onClick={this.props.register} >Free Register </button>
             </main>
         );
     }

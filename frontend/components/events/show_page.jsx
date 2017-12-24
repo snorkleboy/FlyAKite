@@ -123,7 +123,13 @@ class ShowPage extends React.Component {
             return (
 
                     <main  className='showpage'>
-                    {this.state.registrationOpen ? <RegistrationModal close={this.closeRegistration.bind(this)} register={this.handleRegister.bind(this)} /> : null}
+                    {!this.state.registrationOpen ? 
+                        null :
+                        <RegistrationModal 
+                            close={this.closeRegistration.bind(this)} 
+                            register={this.handleRegister.bind(this)} 
+                            event={this.props.event}
+                            /> }
                         <div className='showpageImage'>
                             <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
                         </div>

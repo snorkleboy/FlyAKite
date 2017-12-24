@@ -33,7 +33,8 @@ event1 = Event.create!(
     areaCode: 925,
     categoryId: 1,
     city: "Sacremento",
-    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107132/4507582475_3b4abbb78c_o_scma4l.jpg"
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107132/4507582475_3b4abbb78c_o_scma4l.jpg",
+    price: 1999
     )   
 
 
@@ -49,8 +50,8 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "Friessland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg"
-
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg",
+    price: 5000
  )
 
  event4 = Event.create!(
@@ -64,7 +65,8 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "Burgandy",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg",
+    price: 1234
 
  )
 
@@ -79,8 +81,9 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "Oakland",
     state: "CA",
-    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107679/14378441-Happy-little-boy-flies-a-kite-in-the-sunny-sky-Stock-Photo_1_e9phrn.jpg"
-  )
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107679/14378441-Happy-little-boy-flies-a-kite-in-the-sunny-sky-Stock-Photo_1_e9phrn.jpg",
+    price: 999
+    )
 
     event6 = Event.create!(
      categoryId: 7,
@@ -93,7 +96,8 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg",
+    price: 299
   )
 
       event6 = Event.create!(
@@ -121,7 +125,8 @@ event1 = Event.create!(
     areaCode: 94618,
     city: "Piedmont",
     state: "CA",
-    imgURL: 'http://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg'
+    imgURL: 'http://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg',
+    price: 59
   )
 
         event7 = Event.create!(
@@ -135,7 +140,8 @@ event1 = Event.create!(
     areaCode: 94618,
     city: "Piedmont",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg",
+    price: 1
   )
 
 event7 = Event.create!(
@@ -149,7 +155,8 @@ event7 = Event.create!(
     areaCode: 95122,
     city: "San pablo",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg",
+    price: 99999
   )
 
   event7 = Event.create!(
@@ -163,7 +170,8 @@ event7 = Event.create!(
     areaCode: 94608,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg",
+    price: 10000
   )
 
    event7 = Event.create!(
@@ -177,7 +185,8 @@ event7 = Event.create!(
     areaCode: 94608,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg",
+    price: 599
   )
 
     event7 = Event.create!(
@@ -191,7 +200,8 @@ event7 = Event.create!(
     areaCode: 94134,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg",
+    price: 1299
   )
 
   event7 = Event.create!(
@@ -205,7 +215,8 @@ event7 = Event.create!(
     areaCode: 94144,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg",
+    price: 30000
   )
 
  event7 = Event.create!(
@@ -219,7 +230,8 @@ event7 = Event.create!(
     areaCode: 94142,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg",
+    price: 67777
   )
 
 
@@ -234,7 +246,8 @@ event7 = Event.create!(
     areaCode: 94134,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg",
+    price: 199999
   )
   
 event7 = Event.create!(
@@ -248,7 +261,8 @@ event7 = Event.create!(
     areaCode: 94117,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg",
+    price: 199
   )
 
 
@@ -263,7 +277,8 @@ event7 = Event.create!(
     areaCode: 94102,
     city: "Sacremento",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
+    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg",
+    price: 2999
 
  )
   

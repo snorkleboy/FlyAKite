@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129170754) do
+ActiveRecord::Schema.define(version: 20171224224058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171129170754) do
     t.integer "areaCode", null: false
     t.string "state"
     t.integer "categoryId", null: false
+    t.integer "price"
     t.index ["userId"], name: "index_events_on_userId"
   end
 

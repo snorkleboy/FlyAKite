@@ -1,5 +1,5 @@
 
-json.extract! event, :id, :categoryId , :userId, :name, :startDate, :endDate, :header, :description, :imgURL
+json.extract! event, :id, :categoryId , :userId, :name, :startDate, :endDate, :header, :description, :imgURL, :price
 
 json.currentUsersEvent currentUsersEvent
 json.registered registered

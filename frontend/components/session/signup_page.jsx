@@ -17,7 +17,7 @@ class SignUpPage extends React.Component {
                 this.props.history.push('/');
             }else{
                 this.props.unredirect();    
-                this.props.history.back(2);
+                this.props.history.back(4);
             }
         }
     }
@@ -79,8 +79,6 @@ class SignUpPage extends React.Component {
                         <form onSubmit={this.handleSubmit} className="signup-form-box">
 
                             <br />
-                        
-                            
                             <div className="signup-form">
                                 <h3 className='getstarted'>Get Started</h3> 
                                 <label className='signup-label'>Username
