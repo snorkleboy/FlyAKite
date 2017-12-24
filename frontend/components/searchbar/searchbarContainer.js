@@ -7,7 +7,7 @@ import { GetAllEvents } from '../../actions/event_actions';
 import SearchBar from './searchbar';
 export const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        search: (pattern, catId) => dispatch(EventActions.Search(pattern, catId))
+        search: (pattern, catId, time) => dispatch(EventActions.Search(pattern, catId, time))
     }
 }
 

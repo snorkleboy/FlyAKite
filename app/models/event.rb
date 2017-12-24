@@ -147,13 +147,13 @@ class Event < ApplicationRecord
 
     def self.find_by_category_string_and_time(time,categoryId,pattern='')
         now = DateTime.now
-        later = now+time
+        later = now+time.to_i
         Event.where('"startDate" > ? AND "startDate" <= ? AND "categoryId" = ? AND lower(name) LIKE lower(?)',now,later, categoryId,"%#{pattern}%" )
     end
 
     def self.find_by_string_and_time(time,pattern='')
         now = DateTime.now
-        later = now+time
+        later = now+time.to_i
         Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
     end
 

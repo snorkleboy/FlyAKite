@@ -42,9 +42,9 @@ export const fetchRegistered = () => $.ajax({
 export const fetchMyEvents = () => $.ajax({
     url: '/api/myevents'
 });
-export const fetchbySearch = (pattern, categoryId) => $.ajax({
+export const fetchbySearch = (pattern, categoryId, time) => $.ajax({
     url: '/api/search',
-    data: { pattern, categoryId}
+    data: { pattern, categoryId, time}
 });
 
 export const fetchRecent = () => $.ajax({

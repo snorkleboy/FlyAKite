@@ -74,7 +74,7 @@ export const GetRegistered = () => dispatch => EventAPI.fetchRegistered()
     .then((success) => dispatch(receiveAllEvents(success)));
 export const GetMyEvents = () => dispatch => EventAPI.fetchMyEvents()
     .then((success) => dispatch(receiveAllEvents(success)));
-export const Search =(pattern, catId) => dispatch => EventAPI.fetchbySearch(pattern, catId)
+export const Search =(pattern, catId, time) => dispatch => EventAPI.fetchbySearch(pattern, catId, time)
     .then((success) => dispatch(receiveAllEvents(success)));
 export const GetRecent = () => dispatch => EventAPI.fetchRecent()
     .then((success) => dispatch(receiveAllEvents(success)));

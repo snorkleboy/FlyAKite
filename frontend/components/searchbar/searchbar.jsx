@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
         this.state = {
             pattern:"",
             categoryId: -1,
-            date:""
+            time:-1
         };
     }
 
@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const search = this.state;
-        this.props.search(this.state.pattern, this.state.categoryId, this.state.date);
+        this.props.search(this.state.pattern, this.state.categoryId, this.state.time);
         this.props.history.push(`/${this.state.categoryId}`)
     }
 
@@ -34,6 +34,12 @@ class SearchBar extends React.Component {
                     <select className='search-cat' id="cat-select" onChange={this.update('categoryId')}>
                         <option id={-1} value={-1}>Category</option>
                         {this.props.categories.map((cat) => <option value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
+                    </select>
+                    <select className='search-cat date' id="cat-select" onChange={this.update('time')}>
+                        <option value={-1}>time</option>
+                        <option value={7}>week</option>
+                        <option value={30}>month</option>
+                        <option value={360}>year</option>
                     </select>
                     
                     <input className='search-button' onClick={this.handleSubmit.bind(this)} type="submit" value="Search" />
