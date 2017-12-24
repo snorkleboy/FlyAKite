@@ -79,14 +79,15 @@ class ShowPage extends React.Component {
     }
 
     conditionalBookmark() {
+        const bookmarked = this.props.event.bookmarked;
         if (this.props.currentUser) {
-            return (this.props.event.bookmarked ?
-                <button className="unbookmark-button" onClick={this.handleUnbookmark}>BOOKMARKED</button> 
+            return (bookmarked ?
+                <button className="unbookmark-button floatbutton" onClick={this.handleUnbookmark}><i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i></button> 
             : 
-                <button className="bookmark-button" onClick={this.handleBookmark}>BOOKMARK</button>
+                <button className="bookmark-button floatbutton" onClick={this.handleBookmark}><i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i></button>
             );
         }
-        return (<button className="register-button" onClick={this.redirect}>Bookmark</button>);
+        return (<button className="bookmark-button floatbutton" onClick={this.redirect}><i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i></button>);
 
     }
     conditionalDelete(){
@@ -121,11 +122,14 @@ class ShowPage extends React.Component {
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> 
                             <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header} />
+                        
+                        </div>
+                        <div className='BOOKMARK'>
+                            {this.conditionalBookmark()}
                         </div>  
                         <div className='buttonsStrip'>
                             {this.conditionalEdit()}
                             {this.conditionalRegister()}
-                            {this.conditionalBookmark()}
                             {this.conditionalDelete()}
                         </div>
                         <div>

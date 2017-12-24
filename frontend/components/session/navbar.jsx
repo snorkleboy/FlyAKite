@@ -51,7 +51,7 @@ class Navbar extends React.Component{
         return(
             <main>
                 <div className='navbar'>
-                    <Link to='/' ><h1 className="logo"> FlyaKite</h1></Link>
+                    <Link to='/Upcoming' onClick={this.props.getUpcoming} ><h1 className="logo"> FlyaKite</h1></Link>
                     <div className="navbar-options">
                         <div >{this.renderOptions()}</div>
                         <Link to='/create' className="navbar-button create-event-nb">CREATE EVENT</Link>

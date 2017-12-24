@@ -119,15 +119,42 @@ class Event < ApplicationRecord
     source: :user
 
 
-    def self.find_by_string(pattern)
-        p ' by pattern'
+
+    def self.search(fields)
+        if (fields[:time] && fields[:time].to_i > -1)
+            if ( fields[:categoryId] && fields[:categoryId].to_i > -1 )
+                find_by_category_string_and_time(fields[:time],fields[:categoryId],fields[:pattern])
+            else
+                find_by_string_and_time(fields[:time],fields[:pattern])
+            end
+        elsif( fields[:categoryId] && fields[:categoryId].to_i > -1 )
+            find_by_category_and_string( fields[:categoryId],fields[:pattern])
+        else
+            find_by_string(fields[:pattern] || '')
+        end
+    end
+
+
+
+
+    def self.find_by_string(pattern='')
         Event.where("lower(name) LIKE lower(?)", "%#{pattern}%")
     end
 
-    def self.find_by_category_and_string( categoryId, pattern)
-        p 'by cat and pattern'
-        # Category.find(categoryId).events.where("name LIKE ?", "%#{pattern}%")
+    def self.find_by_category_and_string( categoryId, pattern='')
         Event.where('"categoryId" = ? AND lower(name) LIKE lower(?)',categoryId,"%#{pattern}%" )
+    end
+
+    def self.find_by_category_string_and_time(time,categoryId,pattern='')
+        now = DateTime.now
+        later = now+time
+        Event.where('"startDate" > ? AND "startDate" <= ? AND "categoryId" = ? AND lower(name) LIKE lower(?)',now,later, categoryId,"%#{pattern}%" )
+    end
+
+    def self.find_by_string_and_time(time,pattern='')
+        now = DateTime.now
+        later = now+time
+        Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
     end
 
 

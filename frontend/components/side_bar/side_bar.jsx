@@ -15,7 +15,8 @@ class SideBar extends React.Component{
             this.props.GetUpcoming();
             // this.props.GetAllEvents();
         } else if (!Number.isNaN(param)){
-            this.props.GetEventsbyCategory(param);
+            this.props.GetUpcoming();
+            param === -1 ? this.props.GetEventsbyCategory(param) : this.props.GetUpcoming();
         } else if (this.props.location.pathname === '/bookmarked'){
             this.props.GetBookmarked();
         } else if (this.props.location.pathname === '/registered'){
@@ -25,11 +26,8 @@ class SideBar extends React.Component{
         } else if (this.props.location.pathname === '/Recent') {
             this.props.GetRecent();
         } else if (this.props.location.pathname === '/Upcoming') {
-            
+            this.props.GetUpcoming();
         }
-
-
-
     } 
     componentWillReceiveProps(props){
         if (this.props.match.isExact) {

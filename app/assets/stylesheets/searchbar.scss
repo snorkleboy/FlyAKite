@@ -5,7 +5,7 @@
          rgba($color: #fdfdfd, $alpha: 1.0)
     );
     width:83vw;
-    height: 22vh;
+    // height: 22vh;
     border-radius: 5px;
     box-shadow: #000000;
 
@@ -24,15 +24,16 @@
 .cat-pattern{
     display: flex;
     width: 50%;
-    height: 80%;
+    height: 100%;
     padding: 5px;
     margin: 25px;
+    min-height: 50px;
+    font-weight: 700;
 
 }
 .search-field{
     box-sizing: content-box;
     width: 100%;
-    height: 80%;
     border: 1px solid lightgrey;
     border-right: 0px;
     border-radius: 5px 0 0 5px;
@@ -42,7 +43,6 @@
 }
 .search-cat{
     width: 20%;
-    height: 80%;
      border: 1px solid lightgrey;
      border-right: 0px;
      text-align: center;
@@ -51,7 +51,7 @@
 .search-button{
     
         box-sizing: border-box;
-        height: 80%;
+        height: 100%;
         width: fit-content;
         padding: 5px;
         border-radius: 0 5px 5px 0;
@@ -64,5 +64,6 @@
         color:  white;
         border-left: 0px;
         border: 1px solid lightgrey;
+        min-height: 50px;
 }
 
