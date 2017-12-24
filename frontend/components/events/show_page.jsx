@@ -112,12 +112,12 @@ class ShowPage extends React.Component {
 
     render() {
         if (this.props.event !== null){
-            const cloudinaryImageUrl = setCloudinaryOptions(this.props.event.imgURL, 'q_60,w_600,h_700,c_fit');
+            const cloudinaryImageUrl = setCloudinaryOptions(this.props.event.imgURL, 'q_60');
             return (
 
                     <main  className='showpage'>
                         <div className='showpageImage'>
-                            <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_20')}/>
+                            <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
                         </div>
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> 
