@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+import setCloudinaryOptions from '../../util/cloudinaryOptionsSetter';
 const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler, bookmarked}) =>{
-  
+    const imgURL = setCloudinaryOptions(event.imgURL, 'q_60')
     return(
         <li className='event-list-item-li'> 
             <div className='event-image-container'>
             <Link to={`/events/${event.id}`} >
-                <img className='event-list-item-image-c' src={event.imgURL} />
+                <img className='event-list-item-image-c' src={imgURL} />
             
             </Link>
             </div> 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as ShowPageComponents from './show_page_components.jsx';
+import setCloudinaryOptions from '../../util/cloudinaryOptionsSetter';
 
 // t.integer "userId", null: false
 
@@ -107,17 +108,19 @@ class ShowPage extends React.Component {
     componentWillReceiveProps(newProps){
 
     }
-    
+
     render() {
         if (this.props.event !== null){
+            const cloudinaryImageUrl = setCloudinaryOptions(this.props.event.imgURL, 'q_60,w_600,h_700,c_fit');
             return (
 
                     <main  className='showpage'>
                         <div className='showpageImage'>
-                            <img src={this.props.event.imgURL}/>
+                        <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_20')}/>
                         </div>
                         <div className='imgheader'>
-                        <ShowPageComponents.EventImage image={this.props.event.imgURL} /> <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header}/>
+
+                        <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header}/>
 
                         </div>  
                         <div className='buttonsStrip'>

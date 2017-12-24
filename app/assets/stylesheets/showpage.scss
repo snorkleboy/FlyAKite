@@ -10,7 +10,7 @@
     overflow: hidden;
     position: absolute;
 
-    height :66vh;
+    height :60vh;
     width: 99vw;
  
     border-bottom: 1px solid lightcyan;
@@ -24,9 +24,9 @@
 
     z-index: -1;
 
-    filter: zoom 150%;    
+    filter: zoom 200%;    
     // background-size: initial; 
-    filter: blur(7px);
+    filter: blur(15px);
     // border-bottom: 1px solid lightcyan;
     
 }
@@ -45,6 +45,7 @@ color: #3d3e41;
     align-content: space-around;
 }
 
+
 .imgheader{
     // z-index: 1;
     border-radius: 10px 10px 0 0;
@@ -60,12 +61,18 @@ color: #3d3e41;
 .showImage{
         // z-index: 1;
     box-sizing: border-box;
-    // width: 45vw;
-    height: 100%;
+    width: 55%;
+    // height: 100%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     }
+    .showImage img{
+    width: fit-content;
+    height: 100%;
+    object-fit: fill;
+}
+
 .showHeader{
         // z-index: 1;
         background-color:  #f7f7f7;

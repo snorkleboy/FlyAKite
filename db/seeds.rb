@@ -222,6 +222,7 @@ event7 = Event.create!(
     imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg"
   )
 
+
   event7 = Event.create!(
      categoryId: 2,
     userId: User.all[3].id,
