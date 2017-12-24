@@ -2,12 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// just a normal react component class :)
-    // const mapCenter = (city, state) => $.ajax({
-    //   url: `https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBtx5KlexIEYN2Jk6GFFpe8fqOHJm_XM6M`
-    // });
 const mapCenter = ({city, state, areaCode}) => $.ajax({
-  url: `https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state},${areaCode}&key=AIzaSyBtx5KlexIEYN2Jk6GFFpe8fqOHJm_XM6M`
+  url: `https://maps.googleapis.com/maps/api/geocode/json?address=,+${areaCode}&key=AIzaSyBtx5KlexIEYN2Jk6GFFpe8fqOHJm_XM6M`
 });
 
 class Map extends React.Component {
@@ -35,7 +31,6 @@ class Map extends React.Component {
   render() {
     return (
       <div>
-        <span>MAP DEMO</span>
         <div id='map' ref='map'/>
       </div>
     );
