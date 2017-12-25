@@ -23,6 +23,7 @@ AQUATIC= Category.create(name:"AQUATIC")
 OUDOOR= Category.create(name:"OUDOOR")
 
 
+
 event1 = Event.create!(
     userId: User.first.id,
     name: "Kid Towners Presents: a night with kites",
@@ -111,8 +112,9 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
   )
+  
 
       event7 = Event.create!(
      categoryId: 4,
@@ -174,7 +176,7 @@ event7 = Event.create!(
     price: 10000
   )
 
-   event7 = Event.create!(
+   event22 = Event.create!(
      categoryId: 4,
     userId: User.all[3].id,
     name: "Winnie the Poo: Disney kite",
@@ -278,12 +280,7 @@ event7 = Event.create!(
     city: "Sacremento",
     state: "CA",
     imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg",
-    price: 2999
+    price: 2999e/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
 
  )
-  
-
-
-
-
   
