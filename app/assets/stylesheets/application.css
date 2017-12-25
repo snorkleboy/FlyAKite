@@ -43,6 +43,9 @@ span, article, footer, time, small,select {
     font-family: Lato, sans-serif;
 
 }
+#other{
+  height: 200px;
+}
 #root{
   position: relative;
   top: -2vh;

@@ -54,6 +54,10 @@ export const EventDiscription = ({event}) => {
                         <br></br>
                         <span>{event.location.state}</span>
                     </div>
+                    <div className='show-date'>
+                        <h1>PRICE</h1>
+                        <h1>${event.price/100}</h1>
+                    </div>
                 </div>
                 
             </div>

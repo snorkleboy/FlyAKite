@@ -129,6 +129,7 @@ class ShowPage extends React.Component {
                             close={this.closeRegistration.bind(this)} 
                             register={this.handleRegister.bind(this)} 
                             event={this.props.event}
+                            bookmarkHandler={this.conditionalBookmark}
                             /> }
                         <div className='showpageImage'>
                             <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
