@@ -112,7 +112,8 @@ event1 = Event.create!(
     areaCode: 94110,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg "
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/prism-kites-synapse-p5-flying-sky-mango_z2jhwc.jpg ",
+    price: 1250
   )
   
 
