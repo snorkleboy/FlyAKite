@@ -280,7 +280,7 @@ event7 = Event.create!(
     city: "Sacremento",
     state: "CA",
     imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg",
-    price: 2999e/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg"
+    price: 2999
 
  )
   
