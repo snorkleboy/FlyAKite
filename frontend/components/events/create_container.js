@@ -51,7 +51,7 @@ export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
 const _nullEvent = {
     // userId: this.props.userId,
     location: {
-        areaCode: "415",
+        areaCode: "94016",
         state: "CA",
         city: "San Fransisco",
     },
@@ -62,5 +62,6 @@ const _nullEvent = {
     description: "",
     imgURL: "",
     endDate: "",
-    price:0
+    price:'0',
+    stripeKey:""
 };

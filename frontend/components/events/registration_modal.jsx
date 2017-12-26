@@ -11,13 +11,21 @@ class RegistrationModal extends React.Component {
     }
 
     componentDidMount(){
+        let Skey = 'pk_test_6pRNASCoBOKtIshFeQd4XMUh';
+        if ( this.props.event.stripeKey &&  this.props.event.stripeKey !== ""){
+            Skey = this.props.event.stripeKey;
+        }
+        let handleToken = function (token) {
+            console.log(token);
+            this.props.register().then((suc)=> this.props.close());
+        };
+        handleToken = handleToken.bind(this);
+
         this.handler = StripeCheckout.configure({
-            key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+            key: Skey,
             image: this.props.event.imgURL,
             locale: 'auto',
-            token: function (token) {
-                console.log(token);
-            }
+            token: handleToken
         });
 
 
@@ -49,7 +57,7 @@ class RegistrationModal extends React.Component {
     conditionalStripe(){
         if (this.props.event.price>0){
             return (
-                <button onClick={this.openStripe.bind(this)} className='navbar-button create-event-nb' id="stripe">pay</button>
+                <button onClick={this.openStripe.bind(this)} className='navbar-button create-event-nb' id="stripe">pay with Stripe</button>
             );
         }
     }

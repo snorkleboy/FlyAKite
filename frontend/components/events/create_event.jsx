@@ -21,7 +21,7 @@ class CreateEventComp extends React.Component {
         // renderForm
 
         this.upload = this.upload.bind(this);
-        this.state = event  ;
+        this.state = event;
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
@@ -34,7 +34,7 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-   
+        console.log("ubpdate:", this.state);
         if( nextProps.event && this.props.formType !=="create"){
             const event = nextProps.event;
             
@@ -50,6 +50,7 @@ class CreateEventComp extends React.Component {
             event.startDate = event.startDate.slice(0, -2);
             event.endDate = event.startDate.slice(0, -2);
             this.setState(event);
+            
         }
 
     }
@@ -58,7 +59,7 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        
+        console.log("sunmit:",this.state);
         
 
         let successCB = (success) => {
@@ -216,13 +217,14 @@ class CreateEventComp extends React.Component {
 
                     <label className='signup-label-form'>price
                                 <br />
-
-                        <input value={this.state.price} onChange={this.update('price')} className="signup-input-form" required>
-                            
-                        </input>
-
+                            <input value={this.state.price} onChange={this.update('price')} className="signup-input-form" required></input>     
                     </label>
                     <br />
+                        {this.state.price > 0 ?
+                            <label>Stripe Key <input value={this.state.stripeKey} onChange={this.update('stripeKey')} className="signup-input-form" required></input></label>
+                        :
+                            null                        
+                        }
 
 
 
@@ -260,7 +262,8 @@ class CreateEventComp extends React.Component {
                                 value={this.state.areaCode}
                                 onChange={this.update('areaCode')}
                                 className="signup-input-form"
-                                maxLength='3'
+                                maxLength='5'
+                                minLength='5'
                                 required
                                 
                             />

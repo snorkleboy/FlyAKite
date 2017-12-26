@@ -86,6 +86,10 @@ class Event < ApplicationRecord
     # user id validation through assocation with user
     validates :categoryId,:name, :startDate, :header, :description,:areaCode,:imgURL, :price, presence: true
 
+
+    before_validation :ensure_stripe_key
+
+
     belongs_to :author,
     primary_key: :id,
     foreign_key: :userId,
@@ -118,7 +122,12 @@ class Event < ApplicationRecord
     through: :book_markings,
     source: :user
 
-
+    def ensure_stripe_key()
+        if !self.stripeKey
+            self.stripeKey = ""
+            self.save
+        end
+    end
 
     def self.search(fields)
         if (fields[:time] && fields[:time].to_i > -1)

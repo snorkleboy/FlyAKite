@@ -72,7 +72,9 @@ class Api::EventsController < ApplicationController
       :description, 
       :city,
       :limit,
-      :offset
+      :offset,
+      :stripeKey,
+      :price
     )
   end
 end
