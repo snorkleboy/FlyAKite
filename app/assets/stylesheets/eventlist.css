@@ -13,7 +13,7 @@
     background-color: rgb(241, 241, 241);
     border-radius: 5px;
     margin: 0 auto;
-    margin-top: -150px;
+    margin-top: -70px;
     /* display: flex; */
     /* align-content: center; */
     /* align-items: center; */
@@ -32,7 +32,7 @@
    flex-wrap: wrap;
    /* flex-flow: column wrap; */
    align-content: center;
-   margin-top: 210px;
+   margin-top: 40px;
 }
 
 
@@ -147,7 +147,7 @@
 
 .splashlogo{
     position: relative;
-    top: 100px;
+    top: 80px;
     text-align: center;
 }
 

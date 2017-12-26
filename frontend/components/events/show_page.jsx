@@ -43,6 +43,7 @@ class ShowPage extends React.Component {
     
     }
     redirect(e){
+        this.props.redirected(this.props.location.pathname);
         this.props.history.push('/signup');
     }
 

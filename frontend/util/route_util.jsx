@@ -44,13 +44,16 @@ const AAProtected = ({ component: Component, path, loggedIn }) => (
 
 const Protected = ({history , component: Component, path,location, match, loggedIn, saveRedirected }) => {
 
+    const saveAndRedirect = function(){
+        saveRedirected(path);
+        return (<Redirect to="/signup" />);
+    }
     
     const renderAction = (props) => {
         if (loggedIn) {
             return (<Component {...props} />);
         } else {
-            saveRedirected(path);
-            return (<Redirect to="/signup" />);
+            saveAndRedirect();
         }
     };
 

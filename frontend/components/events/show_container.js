@@ -5,6 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { makeRegistration, deleteRegistration} from '../../actions/registration_actions';
 import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
 
+import { redirected } from '../../actions/navbar_ui_actions';
 
 const mapStatetoProps = (state, ownProps) =>{
         return({
@@ -20,7 +21,8 @@ const mapDispatchtoProps = (dispatch, ownProps) =>({
         deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId)),
         createBookmark: (eventId) => dispatch(createBookmark(eventId)),
         deleteBookmark: (eventId) => dispatch(deleteBookmark(eventId)),
-        deleteEventCall: (id) => dispatch(deleteEventCall(id))
+        deleteEventCall: (id) => dispatch(deleteEventCall(id)),
+        redirected: (path) => dispatch(redirected(path))
 
     });
 
