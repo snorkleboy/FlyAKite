@@ -7,31 +7,31 @@
 
 
 ### Searching and Filtering on Custom routing
-  I created a controller to handle a variety of fetching and sorting requests, all defined with optional parameters to define how many to fetch and at what offset.
+  I created a controller to handle a variety of searching, fetching and sorting requests, all defined with optional parameters to define how many to fetch and at what offset.
+  
+    the user can put in any of these fields:
+  ![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
+  
+  which sends to this route
   ```
   namespace :api
-    match 'upcoming(/:limit/:offset)', to: 'sort#upcoming', via: [:get]
+   match 'search(/:limit/:offset)', to: 'sort#search', via: [:get]
+   
+    ///can come in with these parameters
+  Parameters: {"pattern"=>"pattern", "categoryId"=>"1", "time"=>"30"}
   ```
   
-  the Sort controller has methods which either take a limit and an offset or use defaults. This is the controller action which the previous route matches to. with no parameters it returns the 10 events closest upcoming events in order. 
+    hitting the search route with any of those parameters will call Event.search which calls or makes smaller where calls if the parameters arent presnt
+  ```
+  Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
+  ```
+  
+  the Sort controllers methods optionally take a limit and an offset or use defaults. This is the controller action which the previous route matches to. with no parameters it returns the 10 events closest upcoming events in order. 
   ```
   @events = Event.where('"startDate" > ?',DateTime.now).order('"startDate"').limit(params[:limit] || 10).offset(params[:offset] || 0)
   ```
   
-  there are also routes to search, where you can optionally pass in a pattern to match against, a category id, and/or a 'time until' and as wildcards you can always send a limit and offset
-  
-  ```
-   match 'search(/:limit/:offset)', to: 'sort#search', via: [:get]
-  Parameters: {"pattern"=>"kites", "categoryId"=>"1", "time"=>"30"}
-  
-  ```
-  
-  hitting the search route with any of those parameters will call Event.search which calls or makes smaller where calls if the parameters arent presnt
-  ```
-  Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
-  ```
-  the user can put in any of these fields:
-  ![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
+
  ### Google Maps integration
  
  when creating a site just put in the address. I use google's geocoder api to turn adresses into latitudes and longitudes and then use that to display google maps
