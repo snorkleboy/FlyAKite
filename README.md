@@ -9,8 +9,8 @@
 ### Searching and Filtering on Custom routing
   I created a controller to handle a variety of searching, fetching and sorting requests, all defined with optional parameters to define how many to fetch and at what offset.
   
-    the user can put in any of these fields:
-  ![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
+the user can put in any of these fields:
+![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
   
   which sends to this route
   ```
