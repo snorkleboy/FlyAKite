@@ -16,9 +16,9 @@ import * as Selectors from '../../reducers/selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-
+    
         return ({
-        eventsList: Object.values(state.events.byIDs),
+        eventsList: Selectors.SelectEntityInOrder(state.events),
         loggedIn: state.session.currentUser
     });
 };
