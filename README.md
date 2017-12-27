@@ -59,25 +59,41 @@ events have bookmarkings and registrations which need to be deleted when the eve
 
 ##### I used higher order componets to protect various routes within my site. The main part of the site that is protected in such a way is the create event page which redirects unsigned in users to the sign up page. I implimented it in such a way that if the user was redirected, after they sign up they are redirected back to the page they were trying to visit in the first place
 
+these are components defined like:
+```
+const Protected = ({component: Component, path, loggedIn, saveRedirected }) =>
+```
 
-### Clear and Easy Navigation
-![navigation](http://res.cloudinary.com/flyakite/image/upload/v1512163917/navigationDemo_fbamfq.gif)
-
-##### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. along with intitive and easy to use search functionality. 
-
-
+and render the component passed in like:
+```
+    return (
+        <Route
+            path={path}
+            render={props => (renderAction(props))}
+        />
+    );
+```
+where render action either returns a component to render or redirects and dispatches an action which uses the global store to set a value for the signup page to know whether to route you back in history or to the index page. 
+```
+    const renderAction = (props) => {
+        if (loggedIn) {
+            return (<Component {...props} />);
+        } else {
+            saveAndRedirect();
+            null
+        }
+    };
+ ```
 
 
 ## Ideas for impovements
 
-##### rework the fetching system to rely on more api calls for less data. For example only fetch 10 events on the index page.
-
 ##### make the index page into a infinite scroll page once its only fetching a few at a time. 
-
-##### implement search to allow users to find events by name or author
-
-##### add google maps functionality 
 
 ##### make a most-recent list of events which are updated in realtime using websocket. 
 
-##### integrate registration with a call to some payment system
+##### flesh out searching and sorting
+
+##### add a user account page where you could handle your account details, add a stripe key for all your events, and see information about your events such as total number of registrations, bookmarks, $sold, etc.
+
+##### add comments
