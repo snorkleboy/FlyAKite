@@ -30,7 +30,8 @@
   ```
   Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
   ```
-  
+  the user can put in any of these fields:
+  ![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
  ### Google Maps integration
  
  when creating a site just put in the address. I use google's geocoder api to turn adresses into latitudes and longitudes and then use that to display google maps
@@ -62,7 +63,7 @@ events have bookmarkings and registrations which need to be deleted when the eve
 ### Clear and Easy Navigation
 ![navigation](http://res.cloudinary.com/flyakite/image/upload/v1512163917/navigationDemo_fbamfq.gif)
 
-##### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. f. 
+##### I created and styled a good looking sidebar for easy navigation across the site. It allows users to get back to the index or specific category from anywhere on the site. along with intitive and easy to use search functionality. 
 
 
 
