@@ -6,7 +6,7 @@
 ## Features & Implementation
 
 
-### Searching and Filtering on Custom routing
+### Searching and filtering through custom routes
   I created a controller to handle a variety of searching, fetching and sorting requests, all defined with optional parameters to define how many to fetch and at what offset.
   
 the user can put in any of these fields:
@@ -21,14 +21,15 @@ the user can put in any of these fields:
   Parameters: {"pattern"=>"pattern", "categoryId"=>"1", "time"=>"30"}
   ```
   
-hitting the search route with any of those parameters will call Event.search which calls or makes smaller where calls if the parameters arent presnt
+hitting the search route with any of those parameters will call Event.search which calls or makes smaller where calls if the parameters arent present
   ```
   Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
   ```
   
 the Sort controllers methods optionally take a limit and an offset or use defaults. This is the controller action which the previous route matches to. with no parameters it returns the 10 events closest upcoming events in order. 
   ```
-  @events = Event.where('"startDate" > ?',DateTime.now).order('"startDate"').limit(params[:limit] || 10).offset(params[:offset] || 0)
+  @events = Event.where('"startDate" > ?',DateTime.now).order('"startDate"')
+  .limit(params[:limit] || 10).offset(params[:offset] || 0)
   ```
   
 
