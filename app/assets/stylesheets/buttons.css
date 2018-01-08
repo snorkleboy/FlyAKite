@@ -53,21 +53,21 @@
     transition: .2s background-color, .2s color;
    /* font-size: x-large; */
     /* background-color: rgba(36, 255, 91, 0.712); */
-    color: rgba(255, 248, 242, 0.795);
+    color: rgba(88, 88, 88, 0.795);
     font-weight: 700;
 }
 
 .unregister-button:hover, .unbookmark-button:hover{
     background-color: transparent;
     /* background-color: rgba(255, 114, 71, 0.863); */
-    color: rgba(255, 146, 21, 0.8);
+    color: rgba(255, 76, 21, 0.8);
 font-weight: 700;
 }
 
 .register-button:hover, .bookmark-button:hover{
     background-color: transparent;
     /* background-color: rgba(71, 255, 126, 0.863); */
-    color: rgba(250, 253, 32, 0.8);
+    color: rgba(168, 253, 32, 0.8);
     font-weight: 700;
 
 }

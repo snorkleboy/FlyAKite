@@ -64,17 +64,21 @@ class ShowPage extends React.Component {
     handleDelete(id){
         return function (e){
             this.props.deleteEventCall(id);
-            this.props.history.push('/Upcoming')
-        }
+            this.props.history.push('/Upcoming');
+        };
     }
     conditionalRegister(){
         if (this.props.currentUser){
             return (this.props.event.registered ? 
                 <button className="unregister-button" onClick={this.handleUnregister.bind(this)}>REGISTERED</button> 
             :
-                <button className="register-button" onClick={this.openRegistration.bind(this)}>REGISTER</button>);
+                this.props.event.price>0 ?
+                    <button className="register-button" onClick={this.openRegistration.bind(this)}>REGISTER</button>
+                : 
+                    <button className="register-button" onClick={this.handleRegister} >FREE REGISTRATION </button>
+            );
         }
-        return (<button className="register-button" onClick={this.redirect}>REGISTER</button>)
+        return (<button className="register-button" onClick={this.redirect}>REGISTER</button>);
         
     }
 
@@ -131,7 +135,8 @@ class ShowPage extends React.Component {
                             register={this.handleRegister.bind(this)} 
                             event={this.props.event}
                             bookmarkHandler={this.conditionalBookmark}
-                            /> }
+                            /> 
+                    }
                         <div className='showpageImage'>
                             <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
                         </div>

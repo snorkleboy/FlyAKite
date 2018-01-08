@@ -17,7 +17,7 @@ export const EventHeader = ({ location, date, header, name }) => {
         <div className='showHeader'>
             <h1> {name}</h1>
             <h2>{date.slice(0, 10)}</h2>
-
+            <h3>{header}</h3>
         </div>
 
 

@@ -52,7 +52,7 @@ event1 = Event.create!(
     city: "Friessland",
     state: "CA",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg",
-    price: 5000
+    price: 0
  )
 
  event4 = Event.create!(
@@ -144,7 +144,7 @@ event1 = Event.create!(
     city: "Piedmont",
     state: "CA",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg",
-    price: 1
+    price: 0
   )
 
 event7 = Event.create!(
@@ -265,7 +265,7 @@ event7 = Event.create!(
     city: "San Fransisco",
     state: "CA",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg",
-    price: 199
+    price: 0
   )
 
 

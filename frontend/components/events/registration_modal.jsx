@@ -59,6 +59,8 @@ class RegistrationModal extends React.Component {
             return (
                 <button onClick={this.openStripe.bind(this)} className='navbar-button create-event-nb' id="stripe">pay with Stripe</button>
             );
+        }else{
+            <button className='navbar-button create-event-nb' onClick={this.props.register} >Free </button>
         }
     }
     render(){
@@ -75,9 +77,9 @@ class RegistrationModal extends React.Component {
                 <div className='reg-buttons'>
                 {this.conditionalStripe()}
                     <br></br>
-                    <button className='navbar-button create-event-nb' onClick={this.props.close} >close</button>
+                    <button className='navbar-button create-event-nb' onClick={this.props.close} >Close</button>
                     <br ></br>
-                    <button className='navbar-button create-event-nb' onClick={this.props.register} >Free (Register) </button>
+                    <button className='navbar-button create-event-nb' onClick={this.props.register} >Demo (Register) </button>
                 </div>
             </main>
         );
