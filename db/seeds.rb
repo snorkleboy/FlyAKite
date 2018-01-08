@@ -30,7 +30,7 @@ event1 = Event.create!(
     startDate: DateTime.new(2018,3,18,7,30 ),
     endDate: DateTime.new(2018,4,18,8,30),
     header: "Kite Surfing with the stars",
-    description:" late night kite surfing for the bold and the adventurous. Must sign liability forms in duplicate. We will meet up at point reyes at the start time and head out to a secret beach location to get some sweet winds",
+    description:" Late night kite surfing for the bold and the adventurous. Must sign liability forms in duplicate. We will meet up at point reyes at the start time and head out to a secret beach location to get some sweet winds",
     areaCode: 925,
     categoryId: 1,
     city: "Sacremento",
@@ -46,12 +46,12 @@ event1 = Event.create!(
     name: "Learn to draw: kites and kites",
     startDate: DateTime.new(2018,3,18,7,30 ),
     endDate: DateTime.new(2018,2,18,8,30),
-    header: "learn photoshop by drawing kites",
-    description:"this will be a multi day course in the intricacies and subtleties of kites and drawing them. although this is open to he public it is advised to have atleast 20 years entry level experience in professional level photoshop.  ",  
+    header: "Learn photoshop by drawing kites",
+    description:"This will be a multi day course in the intricacies and subtleties of kites and drawing them. Although this is open to he public it is advised to have atleast 20 years entry level experience in professional level photoshop.  ",  
     areaCode: 94110,
     city: "Friessland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107581/12979-colorful-kites-1680x1050-digital-art-wallpaper_ftlbnl.jpg",
     price: 5000
  )
 
@@ -61,12 +61,12 @@ event1 = Event.create!(
     name: "Save The Children kite drive",
     startDate: DateTime.new(2018,9,18,7,30 ),
     endDate: DateTime.new(2018,11,18,8,30),
-    header: "a charity drive for our kids",
-    description:"we are collecting donations and kites to help get kids off of drugs. Kiteing is a safe, communal, and drug free hobby everyone enjoys. Help us help the community and give back. Every Donation is rewarded with a free kite. ",  
+    header: "A charity drive for our kids",
+    description:"We are collecting donations and kites to help get kids off of drugs. Kiteing is a safe, communal, and drug free hobby everyone enjoys. Help us help the community and give back. Every Donation is rewarded with a free kite. ",  
     areaCode: 94110,
     city: "Burgandy",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/10268473_kite_xfylfx.jpg",
     price: 1234
 
  )
@@ -77,8 +77,8 @@ event1 = Event.create!(
     name: "GCKC presents father son Kite day",
     startDate: DateTime.new(2018,3,28,2,30 ),
     endDate: DateTime.new(2018,3,28,8,30),
-    header: "a day at the beach for families",
-    description:"reconnect and untether with a fun day on the beach with kites and family. An all day kite-a-thon on the beach be prepared to get wet and salty and catch some nice winds. Get sandy and bring sandy too.  ",  
+    header: "A day at the beach for families",
+    description:"Reconnect and untether with a fun day on the beach with kites and family. An all day kite-a-thon on the beach be prepared to get wet and salty and catch some nice winds. Get sandy and bring sandy too.  ",  
     areaCode: 94110,
     city: "Oakland",
     state: "CA",
@@ -92,12 +92,12 @@ event1 = Event.create!(
     name: "Octopus Kite: the gathering",
     startDate: DateTime.new(2018,1,28,2,30 ),
     endDate: DateTime.new(2018,2,28,8,30),
-    header: "an informal gathering for octipus kite owners",
-    description:"too long have octopus having kite owners been held back and brought down by the community at large. Our reach may not be long, but its multi tenticaled. Octopus kites are a special of breed of kites and as their stewards its up to us to see that they are accepted for thier inehrent superiority.",  
+    header: "An informal gathering for octipus kite owners",
+    description:"Too long have octopus having kite owners been held back and brought down by the community at large. Our reach may not be long, but its multi tenticaled. Octopus kites are a special of breed of kites and as their stewards its up to us to see that they are accepted for thier inehrent superiority.",  
     areaCode: 94110,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg",
     price: 299
   )
 
@@ -107,8 +107,8 @@ event1 = Event.create!(
     name: "synapse presents: flight",
     startDate: DateTime.new(2018,1,28,2,30 ),
     endDate: DateTime.new(2018,2,28,8,30),
-    header: "a class on kite aurodynamics",
-    description:"a rare public lecure from Dr Ph.D Professor Dumbledum on the advanced quantum aurodynamics of post aligned kites. Professor Dumbledum has long been regarded as the foremost export on kites and astrophysics, his new lecture tour focus' on kites interaction with the medium through which it moves and exlains the startling revelation that as far as the most presice equipment can measure, kites do not experience time or space dilation even at speds approaching 10m/s",  
+    header: "A class on kite aurodynamics",
+    description:"A rare public lecure from Dr. PhD Professor Dumbledum on the advanced quantum aurodynamics of post aligned kites. Professor Dumbledum has long been regarded as the foremost export on kites and astrophysics, his new lecture tour focus' on kites interaction with the medium through which it moves and exlains the startling revelation that as far as the most presice equipment can measure, kites do not experience time or space dilation even at speds approaching 10m/s",  
     areaCode: 94110,
     city: "San Fransisco",
     state: "CA",
@@ -123,12 +123,12 @@ event1 = Event.create!(
     name: "Dheli Kite chain",
     startDate: DateTime.new(2018,2,28,2,30 ),
     endDate: DateTime.new(2018,3,12,8,30),
-    header: "the worlds longest running kite chain",
-    description:"back in 1202 bc Aburghbal the Chainer chained the first kites together, starting an irreversble chain reaction which has lead to the modern Kite chain. Come add your kite to the Delhi kite chain and channel the cosmic energy that will come your way",  
+    header: "The worlds longest running kite chain",
+    description:"Back in 1202 bc Aburghbal the Chainer chained the first kites together, starting an irreversble chain reaction which has lead to the modern Kite chain. Come add your kite to the Delhi kite chain and channel the cosmic energy that will come your way",  
     areaCode: 94618,
     city: "Piedmont",
     state: "CA",
-    imgURL: 'http://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg',
+    imgURL: 'https://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg',
     price: 59
   )
 
@@ -143,7 +143,7 @@ event1 = Event.create!(
     areaCode: 94618,
     city: "Piedmont",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/scr_070624-A-2013C-047a_kbo8zh.jpg",
     price: 1
   )
 
@@ -158,7 +158,7 @@ event7 = Event.create!(
     areaCode: 95122,
     city: "San pablo",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107679/Scheveningen-Kite-Festival-Title_waybwl.jpg",
     price: 99999
   )
 
@@ -173,7 +173,7 @@ event7 = Event.create!(
     areaCode: 94608,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112167/kite-fest-1_tz3w07.jpg",
     price: 10000
   )
 
@@ -183,12 +183,12 @@ event7 = Event.create!(
     name: "Winnie the Poo: Disney kite",
     startDate: DateTime.new(2018,5,11,2,30 ),
     endDate: DateTime.new(2018,5,12,8,30),
-    header: "an annual gathering of disney lovers",
+    header: "An annual gathering of disney lovers",
     description:"Come show your love for any story that has been taken over by disney. Mulan, starwars, winnie the pooh, all are welcome. No ocotpus kites",  
     areaCode: 94608,
     city: "Oakland",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112168/21587410_1581520921870929_551166205825518593_o_k9nizy.jpg",
     price: 599
   )
 
@@ -199,11 +199,11 @@ event7 = Event.create!(
     startDate: DateTime.new(2018,5,11,2,30 ),
     endDate: DateTime.new(2018,5,12,8,30),
     header: "Close your eyes and Open your mind",
-    description:"A consciousness expansion festival aimed at getting your mind be as free as a kite. let nothingness be the wind that carries you forward. Greb your true self and fix the packet loss from being to far from the higher power.",  
+    description:"A consciousness expansion festival aimed at getting your mind be as free as a kite. Let nothingness be the wind that carries you forward. Greb your true self and fix the packet loss from being to far from the higher power.",  
     areaCode: 94134,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112170/BASANT_ypd6gk.jpg",
     price: 1299
   )
 
@@ -213,12 +213,12 @@ event7 = Event.create!(
     name: "Octopus Beach beach Kiting",
     startDate: DateTime.new(2018,5,11,2,30 ),
     endDate: DateTime.new(2018,5,12,8,30),
-    header: "a full day of Ocopus Kiting at historic octopus beach",
-    description:"a day at the beach and a beach a day. Thats the motto of the octopus kite. All we can do is do our best to abide. ",  
+    header: "A full day of Ocopus Kiting at historic octopus beach",
+    description:"A day at the beach and a beach a day. Thats the motto of the octopus kite. All we can do is do our best to abide. ",  
     areaCode: 94144,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512112171/12979-colorful-kites-1680x1050-digital-art-wallpaper_q7csr6.jpg",
     price: 30000
   )
 
@@ -233,7 +233,7 @@ event7 = Event.create!(
     areaCode: 94142,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107681/OKLMHLMF_banner_x1pvtt.jpg",
     price: 67777
   )
 
@@ -245,11 +245,11 @@ event7 = Event.create!(
     startDate: DateTime.new(2018,6,23,2,30 ),
     endDate: DateTime.new(2018,6,25,8,30),
     header: "A Noke Sneaker drink sponsored 300k kite run",
-    description:"it has been called 'the most' grueling competition in the world. A 300k kite run. Standard rules apply, no octopus kites and a kite touching the ground is immediate disqualification.",  
+    description:"It has been called 'the most' grueling competition in the world. A 300k kite run. Standard rules apply, no octopus kites and a kite touching the ground is immediate disqualification.",  
     areaCode: 94134,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107681/kite-festival-berck-sur-mer-3_kj0woo.jpg",
     price: 199999
   )
   
@@ -259,12 +259,12 @@ event7 = Event.create!(
     name: "Tuscan nights Roman Kites",
     startDate: DateTime.new(2018,6,23,2,30 ),
     endDate: DateTime.new(2018,7,25,8,30),
-    header: "a gathering for history and kite buggs",
+    header: "A gathering for history and kite buggs",
     description:"While most people know that kites have been the main driving force behind human history, few know that it was also the foundation upon which rome was built. This talk will focus on how Emperor DeNiro used the famous preteorian Eagle Kite to instill fear and wonder in the common folk and will explore both the fearsome and wholesome nature of the ancient Kite",  
     areaCode: 94117,
     city: "San Fransisco",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107680/kites_in_the_sky_of_Tuscany_02_scdrzj.jpg",
     price: 199
   )
 
@@ -276,11 +276,11 @@ event7 = Event.create!(
     startDate: DateTime.new(2018,9,18,7,30 ),
     endDate: DateTime.new(2018,11,18,8,30),
     header: 'A community centered event for everyone',
-    description:"the return of the world famous Annual oakley fields comunity kite-a-thon. Bring your kids, bring your wife, no need to to hide. we will have high flying kites and slow cooked ribs. Bring a kite or bring a friend",  
+    description:"The return of the world famous Annual Oakley Fields Comunity Kite-a-Thon. Bring your kids, bring your wife, no need to to hide. We will have high flying kites and slow cooked ribs. Bring a kite or bring a friend",  
     areaCode: 94102,
     city: "Sacremento",
     state: "CA",
-    imgURL: "http://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg",
+    imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107545/4508220980_8f351f254e_o_bez5rn.jpg",
     price: 2999
 
  )
