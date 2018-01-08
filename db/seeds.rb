@@ -98,7 +98,7 @@ event1 = Event.create!(
     city: "San Fransisco",
     state: "CA",
     imgURL: "https://res.cloudinary.com/flyakite/image/upload/v1512107570/kites_in_the_sky_16_x76aps.jpg",
-    price: 299
+    price: 0
   )
 
       event6 = Event.create!(
@@ -129,7 +129,7 @@ event1 = Event.create!(
     city: "Piedmont",
     state: "CA",
     imgURL: 'https://res.cloudinary.com/flyakite/image/upload/v1512107680/304717b2481ab8c8972d21e42337337b_1_ehvzz1.jpg',
-    price: 59
+    price: 0
   )
 
         event7 = Event.create!(

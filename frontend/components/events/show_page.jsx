@@ -150,6 +150,7 @@ class ShowPage extends React.Component {
                         </div>  
                         <div className='buttonsStrip'>
                             {this.conditionalEdit()}
+                            {this.props.event.price>0? `$${this.props.event.price/100}` : "free"}
                             {this.conditionalRegister()}
                             {this.conditionalDelete()}
                         </div>
