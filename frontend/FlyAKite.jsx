@@ -34,3 +34,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
     
     ReactDOM.render(<Root store={store}/>, root);
 });
+
+console.log(`
+ _____  _            _____  _  _        
+|   __|| | _ _  ___ |  |  ||_|| |_  ___ 
+|   __|| || | || .'||    -|| ||  _|| -_|
+|__|   |_||_  ||__,||__|__||_||_|  |___|
+          |___|                         
+
+`)
