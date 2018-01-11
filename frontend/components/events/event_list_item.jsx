@@ -10,15 +10,16 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
                 <Link to={`/events/${event.id}`} >
                     <img className='event-list-item-image-c' src={imgURL} />
                 </Link>
+                <div className='BOOKMARK'>
+                    <button
+                        className={(bookmarked ? 'un' : '') + 'bookmark-button' + ' floatbutton'}
+                        onClick={bookmarkHandler}
+                    >
+                        <i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i>
+                    </button>
+                </div>
             </div> 
-            <div  className='BOOKMARK'>
-                <button
-                    className={(bookmarked ? 'un' : '') + 'bookmark-button' + ' floatbutton'}
-                    onClick={bookmarkHandler}
-                >
-                    <i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i>
-                </button>
-            </div>
+            
             <div className='event-list-item-header-c'>
                 
                 <span className='header-date-el'>{event.location.city}</span> 

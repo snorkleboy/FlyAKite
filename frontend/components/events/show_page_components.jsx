@@ -31,7 +31,7 @@ export const EventDiscription = ({event}) => {
                 <div>
                     <div className='show-header-desc'>
 
-
+                        
                         <p>{event.description}</p>
                         <div className='showHeader'>
                             <h1> {event.name}</h1>

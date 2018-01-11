@@ -36,10 +36,10 @@ class SearchBar extends React.Component {
                         {this.props.categories.map((cat) => <option value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
                     </select>
                     <select className='search-cat date' id="cat-select" onChange={this.update('time')}>
-                        <option value={-1}>time</option>
-                        <option value={7}>week</option>
-                        <option value={30}>month</option>
-                        <option value={360}>year</option>
+                        <option value={-1}>Time</option>
+                        <option value={7}>Week</option>
+                        <option value={30}>Month</option>
+                        <option value={360}>Year</option>
                     </select>
                     
                     <input className='search-button' onClick={this.handleSubmit.bind(this)} type="submit" value="Search" />

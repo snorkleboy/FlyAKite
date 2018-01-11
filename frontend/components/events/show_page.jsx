@@ -134,7 +134,6 @@ class ShowPage extends React.Component {
                             close={this.closeRegistration.bind(this)} 
                             register={this.handleRegister.bind(this)} 
                             event={this.props.event}
-                            bookmarkHandler={this.conditionalBookmark}
                             /> 
                     }
                         <div className='showpageImage'>
@@ -143,11 +142,11 @@ class ShowPage extends React.Component {
                         <div className='imgheader'>
                             <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> 
                             <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header} />
-                        
+                            <div>
+                                {this.conditionalBookmark()}
+                            </div>  
                         </div>
-                        <div className='BOOKMARK'>
-                            {this.conditionalBookmark()}
-                        </div>  
+                        
                         <div className='buttonsStrip'>
                             {this.conditionalEdit()}
                             {this.props.event.price>0? `$${this.props.event.price/100}` : "free"}

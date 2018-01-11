@@ -56,11 +56,12 @@ color: #3d3e41;
     display: flex;
     flex-direction: row;
     border-bottom:1p solid  rgba(239, 242, 245, 0.534);
+    position: relative;
         
     }
 .showImage{
 
-     height: 100%;
+    //  height: 100%;
      width: 145%;
     }
 .showImage img{
@@ -75,8 +76,8 @@ color: #3d3e41;
         // z-index: 1;
         background-color:  #f7f7f7;
         padding: 10px;
-        align-items: center;
-        align-content: center;
+        align-items: left;
+        align-content: left;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -86,7 +87,7 @@ color: #3d3e41;
         // z-index: 1;
         background-color:  #f7f7f7;
         padding: 15px;
-        text-align: center;
+        text-align: left;
         margin: 0;
     }
 .showHeader > h1{
@@ -112,7 +113,7 @@ color: #3d3e41;
     width: 67vw;
     height: 100%;
     padding: 45px;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     display: flex;
     flex-direction: column;
