@@ -34,7 +34,7 @@ class CreateEventComp extends React.Component {
         if (this.props.errors.length > 0)  this.props.clearEventErrors();
     }
     componentWillReceiveProps(nextProps) {
-        console.log("ubpdate:", this.state);
+        // console.log("ubpdate:", this.state);
         if( nextProps.event && this.props.formType !=="create"){
             const event = nextProps.event;
             
@@ -59,7 +59,7 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        console.log("sunmit:",this.state);
+        // console.log("sunmit:",this.state);
         
 
         let successCB = (success) => {

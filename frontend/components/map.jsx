@@ -9,7 +9,7 @@ const mapCenter = ({city, state, areaCode}) => $.ajax({
 class Map extends React.Component {
   constructor(props) {
     super(props)
-    console.log('props', this.props)
+    // console.log('props', this.props)
   }
   componentDidMount() {
     mapCenter(this.props.location).then((response) => {

@@ -25,7 +25,7 @@
      border-right: none;
     /* font-size: x-large; */
     background-color: transparent;
-    color: rgb(255, 167, 36);
+    color: rgb(235, 174, 84);
     font-weight: 700;
     transition: .2s background-color, .2s color;
     padding: 0px 3px 0px 3px;
@@ -60,14 +60,14 @@
 .unregister-button:hover, .unbookmark-button:hover{
     background-color: transparent;
     /* background-color: rgba(255, 114, 71, 0.863); */
-    color: rgba(255, 76, 21, 0.8);
+    color: rgba(247, 120, 2, 0.8);
 font-weight: 700;
 }
 
 .register-button:hover, .bookmark-button:hover{
     background-color: transparent;
     /* background-color: rgba(71, 255, 126, 0.863); */
-    color: rgba(168, 253, 32, 0.8);
+    color: rgb(255, 174, 0);
     font-weight: 700;
 
 }

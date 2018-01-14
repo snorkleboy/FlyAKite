@@ -16,7 +16,7 @@ class RegistrationModal extends React.Component {
             Skey = this.props.event.stripeKey;
         }
         let handleToken = function (token) {
-            console.log(token);
+            // console.log(token);
             this.props.register().then((suc)=> this.props.close());
         };
         handleToken = handleToken.bind(this);
@@ -31,10 +31,11 @@ class RegistrationModal extends React.Component {
 
         // Close Checkout on page navigation:
         window.addEventListener('popstate', function () {
-            this.handler.close();
+            if (this.handler) this.handler.close();
+
+            
         });
-        // const clickClose = function (event) {
-        //     //if you click on anything except the modal itself or the "open modal" link, close the modal
+        // const clickClose = function (evpexcept the modal itself or the "open modal" link, close the modal
         //     if (!$(event.target).closest("registration-modal").length) {
         //         this.props.close();
         //     }
