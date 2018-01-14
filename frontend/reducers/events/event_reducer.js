@@ -1,7 +1,11 @@
 import {
     RECEIVE_ALL_EVENTS,
     RECEIVE_EVENT,
-    RECEIVE_CREATED_EVENT
+    RECEIVE_CREATED_EVENT,
+    DELETE_REGISTRATION,
+    DELETE_BOOKMARKS,
+    RECEIVE_REGISTRATION,
+    RECEIVE_BOOKMARKS
 } from '../../actions/event_actions';
 
 import { SET_SORT} from '../../actions/sort_actions'
@@ -29,14 +33,14 @@ export default (state = _events, action) => {
             newstate =  action.payload;
             newstate.indexLoaded = true;
             return newstate;
-        case 'RECEIVE_BOOKMARKS':
-        case 'RECEIVE_REGISTRATION':
-        case 'DELETE_BOOKMARKS':
-        case 'DELETE_REGISTRATION':
+        case RECEIVE_BOOKMARKS:
+        case RECEIVE_REGISTRATION:
+        case DELETE_BOOKMARKS:
+        case DELETE_REGISTRATION:
         case RECEIVE_CREATED_EVENT:
         case RECEIVE_EVENT:
+
             newstate = merge({}, state, action.payload);
-            newstate.order.unshift(parseInt(Object.keys(action.payload.byIDs)[0]));
             return newstate;
         case SET_SORT:
             newstate = merge({}, state);

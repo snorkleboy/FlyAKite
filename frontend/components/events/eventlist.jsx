@@ -76,9 +76,9 @@ class EventList extends React.Component{
                     <div className="eventListItem-container"> 
                         <ul className='event-list-ul'>
                             {this.props.eventsList.map ( (event, index) => (                        
-                                <div key={`eventlistitemdiv-${event.id}`} className='event-item-anchor'>                                    
+                                <div key={`${event.startDate + event.id}`} className='event-item-anchor'>                                    
                                     <EventListItem
-                                        key={`eventlistitem-${event.id}`}
+                                        key={`${event.id * new Date().getMilliseconds()}`}
                                         event={event}
                                         registered={event.registered}
                                         bookmarked={event.bookmarked}

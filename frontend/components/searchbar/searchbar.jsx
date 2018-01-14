@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
                     <input className='search-field' onChange={this.update('pattern')}></input>
                     <select className='search-cat' id="cat-select" onChange={this.update('categoryId')}>
                         <option id={-1} value={-1}>Category</option>
-                        {this.props.categories.map((cat) => <option value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
+                        {this.props.categories.map((cat) => <option key={cat.id} value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
                     </select>
                     <select className='search-cat date' id="cat-select" onChange={this.update('time')}>
                         <option value={-1}>Time</option>
