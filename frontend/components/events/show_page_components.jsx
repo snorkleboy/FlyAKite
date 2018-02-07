@@ -30,7 +30,7 @@ export const EventDiscription = ({event}) => {
             <div className='showHeader-flex'>
                 <div>
                     <div className='show-header-desc'>
-
+                        <h1>Description</h1>
                         
                         <p>{event.description}</p>
                         <div className='showHeader'>

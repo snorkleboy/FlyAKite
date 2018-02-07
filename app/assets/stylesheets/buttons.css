@@ -24,11 +24,13 @@
      border-left: none;
      border-right: none;
     /* font-size: x-large; */
-    background-color: transparent;
-    color: rgb(235, 174, 84);
+    background-color: green;
+    color: rgb(255, 255, 255);
     font-weight: 700;
     transition: .2s background-color, .2s color;
-    padding: 0px 3px 0px 3px;
+    padding: 10px 60px;
+    border-radius: 2px;
+    box-sizing: border-box;
 }
 
 
@@ -45,29 +47,28 @@
 }
 
 .unregister-button{
-    background-color: transparent;
-    padding: 0px 3px 0px 3px;
+    box-sizing: border-box;
+background-color: rgb(8, 228, 8);
           border: 1px;
      border-left: none;
      border-right: none;
-    transition: .2s background-color, .2s color;
-   /* font-size: x-large; */
-    /* background-color: rgba(36, 255, 91, 0.712); */
-    color: rgba(88, 88, 88, 0.795);
+    color: rgb(255, 255, 255);
     font-weight: 700;
+    transition: .2s background-color,
+    .2s color;
+    padding: 10px 60px;
+    border-radius: 2px;
 }
 
 .unregister-button:hover, .unbookmark-button:hover{
-    background-color: transparent;
+    background-color: rgb(110, 143, 20);
     /* background-color: rgba(255, 114, 71, 0.863); */
-    color: rgba(247, 120, 2, 0.8);
 font-weight: 700;
 }
 
 .register-button:hover, .bookmark-button:hover{
-    background-color: transparent;
+    background-color: rgb(49, 212, 49);
     /* background-color: rgba(71, 255, 126, 0.863); */
-    color: rgb(255, 174, 0);
     font-weight: 700;
 
 }
