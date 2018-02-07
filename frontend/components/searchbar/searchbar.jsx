@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
             <div className="searchbar">
                 <label>Find your next experience</label>
                 <div className='cat-pattern'>
-                    <input className='search-field' onChange={this.update('pattern')}></input>
+                    <input className='search-field' placeholder='search for events' onChange={this.update('pattern')}></input>
                     <select className='search-cat' id="cat-select" onChange={this.update('categoryId')}>
                         <option id={-1} value={-1}>Category</option>
                         {this.props.categories.map((cat) => <option key={cat.id} value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 

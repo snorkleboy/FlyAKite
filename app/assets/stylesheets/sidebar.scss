@@ -7,7 +7,7 @@
 
 .sideBar{
     
-    padding-top: 150px;
+    // padding-top: 150px;
     // position: relative;
     // left: 0px;
     // z-index: 999999;
@@ -37,15 +37,16 @@
     flex-direction: column;
     width: 100%;
     text-align: left;
-    position: relative;
-    bottom: 100px;
+    // position: relative;
+    // bottom: 100px;
 }
 .sidebar-button{
     line-height: 60px;
     color: #3d3e41;
     text-align: left;
-    padding-left: 6px;
+    padding-left: 51px;
     vertical-align: center;
+    border-bottom: 1px solid rgb(235, 235, 235);
     width: 100%;
     height: 60px;
     background-color: #fbfbfb;
@@ -55,7 +56,6 @@
 .profile-sidebar{
 
     text-align: left;
-    padding-left: 15px;
 }
 
 .SideBar-buttons-list >.sidebar-button:nth-child(3n+1){
@@ -70,4 +70,8 @@ color: white;
 .sidebar-button-active{
     color: white;
     background-color: #24afff;
+}
+
+.profile-buttons{
+    border-bottom: 3px solid rgb(204, 204, 204);
 }

@@ -130,14 +130,13 @@
 .logo{
     box-sizing: border-box;
     /* line-height: 0; */
-    /* width: 167px; */
+    width: 240px;
     color: rgb(245, 163, 10);
     font-weight: 700;
     text-align: center;
     line-height: 60px;
-    padding-left: 25px;
-    /* border-right: 1px solid #EFF2F5; */
-    border-left: 1px solid #EFF2F5;
+    /* padding-left: 25px; */
+    border-right: 1px solid #EFF2F5;
     background-color:#fbfbfb;
     /* padding: 35px 20px 20px 48px; */
     letter-spacing: 0.2px;

@@ -4,7 +4,7 @@
         rgba($color: #fdfdfd, $alpha: .99) 35%,
          rgba($color: #fdfdfd, $alpha: 1.0)
     );
-    width:83vw;
+    width:91%;
     // height: 22vh;
     border-radius: 5px;
     box-shadow: #000000;
@@ -20,13 +20,14 @@
     color:rgb(253, 171, 19);
         padding: 5px;
     margin: 25px;
+    text-align: center;
 }
 .cat-pattern{
     display: flex;
-    width: 50%;
+    width: 80%;
     height: 100%;
     padding: 5px;
-    margin: 25px;
+    margin: 0 25px 25px 25px;
     min-height: 50px;
     font-weight: 700;
 
@@ -38,7 +39,7 @@
     border-right: 0px;
     border-radius: 5px 0 0 5px;
     text-align: left;
-    padding: 2px 0 2px 5px;
+    padding: 2px 0 2px 15px;
     margin: 0px 2px 0px 2px
 }
 .search-cat{
@@ -53,18 +54,18 @@
     box-sizing: border-box;
     height: 100%;
     width: fit-content;
-    padding: 5px;
+    padding: 5px 12px;
     border-radius: 0 5px 5px 0;
     text-align: center;      
     border-bottom: 1px solid lightblue;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     transition: .6s background-color, .3s border-radius;
     background-color:  rgb(255, 166, 0);
     color:  white;
     border-left: 0px;
     border: 1px solid lightgrey;
-    min-height: 50px;
+    min-height: 40px;
 }
 
 .search-button:hover{

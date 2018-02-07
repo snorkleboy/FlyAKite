@@ -65,7 +65,6 @@ class EventList extends React.Component{
                                 <h2> Make memories, find friends</h2>
                                 <h1> FlyaKite</h1>
                         </div>
-                        <SearchBar/>
                     </div>
                 </div>
                 <div className="indexbar">
@@ -73,6 +72,7 @@ class EventList extends React.Component{
                 
                 </div> 
                 <div className="eventList-container">
+                    <SearchBar />
                     <div className="eventListItem-container"> 
                         <ul className='event-list-ul'>
                             {this.props.eventsList.map ( (event, index) => (                        
