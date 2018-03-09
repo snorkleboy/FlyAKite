@@ -1,24 +1,23 @@
 require 'test_helper'
 
 class Api::SessionsControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
+  test 'should get create' do
     get api_sessions_create_url
     assert_response :success
   end
 
-  test "should get show" do
+  test 'should get show' do
     get api_sessions_show_url
     assert_response :success
   end
 
-  test "should get update" do
+  test 'should get update' do
     get api_sessions_update_url
     assert_response :success
   end
 
-  test "should get destroy" do
+  test 'should get destroy' do
     get api_sessions_destroy_url
     assert_response :success
   end
-
 end

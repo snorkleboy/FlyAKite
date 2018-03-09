@@ -1,24 +1,23 @@
 require 'test_helper'
 
 class Api::UsersControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
+  test 'should get create' do
     get api_users_create_url
     assert_response :success
   end
 
-  test "should get show" do
+  test 'should get show' do
     get api_users_show_url
     assert_response :success
   end
 
-  test "should get update" do
+  test 'should get update' do
     get api_users_update_url
     assert_response :success
   end
 
-  test "should get destroy" do
+  test 'should get destroy' do
     get api_users_destroy_url
     assert_response :success
   end
-
 end

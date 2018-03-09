@@ -18,26 +18,20 @@ import NavbarContainer from './session/navbar_container';
 import SignUpPageContainer from './session/signup_container';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-
   }
-      
-
-    render(){
-      return(
+  render() {
+    return (
       <div className="Router-level-div">
         <Switch>
           <Route exact path='/signup' component={SignUpPageContainer} />
           <Route path='/' component={NavbarContainer} />
         </Switch>
-
       </div>
     );
   }
 }
-
-
 
 export default withRouter(connect()(App));
 

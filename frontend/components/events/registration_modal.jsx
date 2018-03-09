@@ -4,47 +4,30 @@ import * as ShowPageComponents from './show_page_components.jsx';
 import setCloudinaryOptions from '../../util/cloudinaryOptionsSetter';
 import EventListItem from './event_list_item.jsx';
 class RegistrationModal extends React.Component {
-
     constructor(props) {
         super(props);
         this.openStripe = this.openStripe.bind(this);
     }
-
     componentDidMount(){
         let Skey = 'pk_test_6pRNASCoBOKtIshFeQd4XMUh';
         if ( this.props.event.stripeKey &&  this.props.event.stripeKey !== ""){
             Skey = this.props.event.stripeKey;
         }
-        console.log("STRIPE KEY",Skey, this.props.event.stripeKey)
-
         let handleToken = function (token) {
             // console.log(token);
             this.props.register().then((suc)=> this.props.close());
         };
         handleToken = handleToken.bind(this);
-
         this.handler = StripeCheckout.configure({
             key: Skey,
             image: this.props.event.imgURL,
             locale: 'auto',
             token: handleToken
         });
-
-
         // Close Checkout on page navigation:
         window.addEventListener('popstate', function () {
-            if (this.handler) this.handler.close();
-
-            
+            if (this.handler) this.handler.close();       
         });
-        // const clickClose = function (evpexcept the modal itself or the "open modal" link, close the modal
-        //     if (!$(event.target).closest("registration-modal").length) {
-        //         this.props.close();
-        //     }
-        // }
-        // document.addEventListener('click', clickClose.bind(this));
-
-
     }
     openStripe(e){
             // Open Checkout with further options:
@@ -55,7 +38,6 @@ class RegistrationModal extends React.Component {
                 amount: this.props.event.price || 2000
             });
             e.preventDefault();
-
     }
     conditionalStripe(){
         if (this.props.event.price>0){

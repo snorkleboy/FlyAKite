@@ -11,7 +11,6 @@ class SignUpPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
             const redirectedFrom = this.props.location.state.redirectedFrom
@@ -23,7 +22,6 @@ class SignUpPage extends React.Component {
             }
         }
     }
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -41,9 +39,7 @@ class SignUpPage extends React.Component {
         e.preventDefault();
         this.props.loginGuest();
     }
-
     renderErrors(){
-
         if (this.props.errors.length > 0){
             return (
                 <ul className='error-list'>
@@ -56,17 +52,13 @@ class SignUpPage extends React.Component {
             );
         }
     }
-
     componentDidMount() {
         if(this.props.errors.length>0)  this.props.clearSessionErrors();
         this.props.closeAll();
     }
     render() {
-        return (
-            
-            <main className='signup-page'>  
-              
-               
+        return (         
+            <main className='signup-page'>             
                 <div className="signup-form-container">
                     <Link className='signup-close' to='/'>&#x274c; </Link>
 
@@ -75,42 +67,36 @@ class SignUpPage extends React.Component {
                         <div className="signup-line2"></div>
 
                         <div className="signup-line3"></div>
-
-                    </div>
-                    
-                        <form onSubmit={this.handleSubmit} className="signup-form-box">
-
+                    </div>               
+                    <form onSubmit={this.handleSubmit} className="signup-form-box">
+                        <br />
+                        <div className="signup-form">
+                            <h3 className='getstarted'>Get Started</h3> 
+                            <label className='signup-label'>Username
                             <br />
-                            <div className="signup-form">
-                                <h3 className='getstarted'>Get Started</h3> 
-                                <label className='signup-label'>Username
-                                <br />
-                                    <input type="text"
-                                        value={this.state.username}
-                                        onChange={this.update('username')}
-                                        className="signup-input"
-                                    />
-                                </label>
-                                <br />
-                                <label className='signup-label'>Password
-                                <br />
-                                    <input type="password"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        className="signup-input"
-                                    />
-                                </label>
-                                <br />
-                                <div className='button-holder'>
-                                    <input className='signup-button' type="submit" value="Signup" />
-                                    <button className='signup-button' onClick={this.handleDemoLogin}>Guest</button>
-                                                                    
-                                    
-                                </div>
-                            {this.renderErrors()}
+                                <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className="signup-input"
+                                />
+                            </label>
+                            <br />
+                            <label className='signup-label'>Password
+                            <br />
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="signup-input"
+                                />
+                            </label>
+                            <br />
+                            <div className='button-holder'>
+                                <input className='signup-button' type="submit" value="Signup" />
+                                <button className='signup-button' onClick={this.handleDemoLogin}>Guest</button>                                  
                             </div>
-                        
-                        </form>
+                        {this.renderErrors()}
+                        </div>                     
+                    </form>
                 </div>
             </main>
         );

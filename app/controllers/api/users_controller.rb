@@ -1,30 +1,28 @@
 class Api::UsersController < ApplicationController
-  
   def create
     @user = User.new(user_params)
-    if (@user.save)   
+    if @user.save
       @registrations = @user.registrations
       @bookmarks = @user.bookmarks
-      login(@user)   
-      render "api/users/show"
+      login(@user)
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
-
   end
-#/////////////////////////////
-    def show
-      if (params[:id] === current_user.id)
-        @user = current_user
-        @registered_events = @user.registered_events
-        render "api/users/show"
-      end
+
+  def show
+    if params[:id] === current_user.id
+      @user = current_user
+      @registered_events = @user.registered_events
+      render 'api/users/show'
     end
-#//////////////////////////////
+  end
+
   def update
     @user = User.new(user_params)
-    if (@user.save)      
-      render "api/users/show"
+    if @user.save
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -32,11 +30,11 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = Users.all
-    render "api/user/index"
+    render 'api/user/index'
   end
 
-  private 
-  
+  private
+
   def user_params
     params.require(:user).permit(:username, :password)
   end

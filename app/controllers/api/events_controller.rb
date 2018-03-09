@@ -1,30 +1,26 @@
 class Api::EventsController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-  
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+
   def render_404
     render json: [@event.errors.full_messages], status: 404
   end
 
   def index
-      @events = Event.all
-      .limit(params[:limit] || 10).offset(params[:offset] || 0)
-  end    
+    @events = Event.all
+                   .limit(params[:limit] || 10).offset(params[:offset] || 0)
+  end
 
   def show
     @event = Event.find(params[:id])
-    unless(@event)
-      render json: ["couldnt find that event"]
-    end
+    render json: ['couldnt find that event'] unless @event
   end
 
-  def new
-  end
+  def new; end
 
   def create
-    p ["HERE",event_params]
     @event = Event.new(event_params)
-    if (@event.save)
-      render "api/events/show"
+    if @event.save
+      render 'api/events/show'
     else
       render json: [@event.errors.full_messages], status: 404
     end
@@ -36,8 +32,8 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = current_user.events.find(event_params[:id])
-    if @event.update_attributes!(event_params)
-      render "api/events/show"
+    if @event.update!(event_params)
+      render 'api/events/show'
     else
       render json: [event.errors.full_messages], status: 404
     end
@@ -45,18 +41,18 @@ class Api::EventsController < ApplicationController
 
   def destroy
     event = current_user.events.find(params[:id])
-    if (event)
+    if event
       DeepDeleteEventJob.perform_later(event.id)
       event.destroy
       @event = event
-      render "api/events/show"
+      render 'api/events/show'
     else
       render json: [event.errors.full_messages], status: 404
     end
   end
 
-    private 
-  
+  private
+
   def event_params
     params.require(:event).permit(
       :categoryId,
@@ -70,7 +66,7 @@ class Api::EventsController < ApplicationController
       :areaCode,
       :state,
       :endDate,
-      :description, 
+      :description,
       :city,
       :limit,
       :offset,
@@ -79,4 +75,3 @@ class Api::EventsController < ApplicationController
     )
   end
 end
-

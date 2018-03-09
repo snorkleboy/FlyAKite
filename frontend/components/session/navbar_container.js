@@ -12,18 +12,13 @@ import {
     GetUpcoming
 
 } from '../../actions/event_actions';
-
 const demoUser={user:{username:"guest", password:"password"}};
-
-
-
 const mapStateToProps = (state, ownProps)=>({
     currentUser: state.session.currentUser,
     showLogin: state.ui.showLogin,
     showProfile: state.ui.showProfile,
     errors: state.errors.session,
 });
-
 const mapDispatchToProps = (dispatch, ownProps)=> ({
     logout: ()=>dispatch(logout()),
     login: (user)=> dispatch(login(user)),

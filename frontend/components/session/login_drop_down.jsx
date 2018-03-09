@@ -11,22 +11,17 @@ class LoginDropDown extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
     }
-
     handleSubmit(e) {
         e.preventDefault();
         const user = this.state;
         this.props.login({ user });
     }
     renderErrors() {
-
         if (this.props.errors.length > 0) {
             return (
                 <ul className='error-list'>
@@ -47,23 +42,20 @@ class LoginDropDown extends React.Component {
         return (
             <div className="login-form-container login-modal">
                 <form id="loginForm" className='login-form' onSubmit={this.handleSubmit}>
-                    <div className="login-form">
-                        
+                    <div className="login-form">        
                         Username
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
-                            />
-                        
+                            />               
                         <br />
                         Password
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
-                            />
-                        
+                            />       
                         <br />
                         <input className='login-submit' type="submit" value="Submit" />
                         {this.renderErrors()}

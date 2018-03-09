@@ -13,7 +13,6 @@ import * as BookmarkActions from './actions/bookmark_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById('root');
-
     var store ={};
     if (window.bootStrap) {
         const preloadedState = { 
@@ -24,13 +23,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 }  
             };
         window.bootStrap = null;
-        store = configureStore(preloadedState);
-        
+        store = configureStore(preloadedState);   
     } else {
         store = configureStore();
-    }
-
-
-    
+    } 
     ReactDOM.render(<Root store={store}/>, root);
 });

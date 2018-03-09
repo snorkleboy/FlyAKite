@@ -6,6 +6,5 @@ class CreateCategories < ActiveRecord::Migration[5.1]
     end
 
     add_column :events, :categoryId, :integer, null: false
-
   end
 end

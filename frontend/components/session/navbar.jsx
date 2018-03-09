@@ -8,7 +8,6 @@ import EventListContainer from '../events/eventlist_container';
 import ShowPageContainer from '../events/show_container';
 import CreateEventContainer from '../events/create_container';
 import SideBarContainer from '../side_bar/sidebar_container';
-
 import {
   Route,
   Redirect,
@@ -22,20 +21,15 @@ import {
     AuthorsRoute
 } from '../../util/route_util.jsx';
 
-
-
 class Navbar extends React.Component{
     constructor(props){
         super(props);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
-
     handleDemoLogin(e) {
         e.preventDefault();
         this.props.loginGuest();
     }
-
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser && nextProps.showLogin) {
             this.props.toggleForm();
@@ -43,10 +37,8 @@ class Navbar extends React.Component{
     }
     componentWillUnmount(){
         this.props.closeAll();
-    }
-    
-    render(){
-        
+    } 
+    render(){   
         return(
             <main>
                 <div className='navbar'>
@@ -56,8 +48,6 @@ class Navbar extends React.Component{
                         <Link to='/create' className="navbar-button create-event-nb">CREATE EVENT</Link>
                     </div>
                 </div>
-
-
                 <div className="wrapper">
                     <SideBarContainer />
                     <Switch>
@@ -71,7 +61,6 @@ class Navbar extends React.Component{
             </main>
         );
     }
- 
     renderOptions(){
         return (this.props.currentUser ? 
                 <LoggedInOptions
@@ -92,14 +81,9 @@ class Navbar extends React.Component{
                 />
         );
     }
-
 }
-
 export default Navbar;
-
-
 const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
-
     let modal = showProfile === true ? null: null;   
     return (
             <ul className='nav-buttons'>
@@ -108,11 +92,8 @@ const LoggedInOptions = ({ logout, toggleProfile, showProfile, username }) => {
         
             </ul>
         );
-
 };
-
 const LoggedOutOptions = ({ login, toggleLogin, showForm, errors, clearSessionErrors, handleDemoLogin    }) => {
-    
     const poppedUp = ()=>(
         <LoginDropDown login={login} toggleLogin={toggleLogin} errors={errors} clearSessionErrors={clearSessionErrors} />
     );

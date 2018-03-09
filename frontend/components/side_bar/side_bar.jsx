@@ -34,13 +34,11 @@ class SideBar extends React.Component{
             this.props.GetAllEvents();
         }
     }
-
     newHandle(id){
         return (e) => {
             this.props.GetEventsbyCategory(id);
         };
     }
-    
     render(){
 
         const cats = (SelectEntityInOrder(this.props.categories));
@@ -54,15 +52,12 @@ class SideBar extends React.Component{
                         to='/bookmarked'
                         onClick={this.props.GetBookmarked}
                     >BOOKMARKED </NavLink> 
-
-
                     <NavLink key='5432' 
                         className='profile-sidebar sidebar-button' 
                         activeClassName="sidebar-button-active" 
                         to='/registered'
                         onClick={this.props.GetRegistered}
                     >REGISTERED </NavLink>
-
                     <NavLink key='6543214' 
                         className='profile-sidebar sidebar-button' 
                         activeClassName="sidebar-button-active" 
@@ -70,36 +65,41 @@ class SideBar extends React.Component{
                         onClick={this.props.GetMyEvents}
                     >MY EVENTS </NavLink>
                 </div>
-
-            );}
-        
+            );
+        }      
             return(
                 <main id='category-holder' className='sideBar'>
                         <div  id='this' className='SideBar-buttons-list'>
-                        {ProfileOptions()}
+                            {ProfileOptions()}
                         <NavLink key='45643'
                             activeClassName="sidebar-button-active"
                             className='sidebar-button'
                             to='/Recent'
                             onClick={this.props.GetRecent}
-                        >RECENT </NavLink>
+                        >
+                            RECENT 
+                        </NavLink>
 
                         <NavLink key='23434'
                             activeClassName="sidebar-button-active"
                             className='sidebar-button'
                             to='/Upcoming'
                             onClick={this.props.GetUpcoming}
-                        >UPCOMING </NavLink>
+                        >
+                            UPCOMING 
+                        </NavLink>
                         {
-                            cats.map((category, i) => <NavLink activeClassName="sidebar-button-active" 
-                                                    className='sidebar-button' 
-                                                    to={`/${category.id}`} 
-                                                    key={`${category.id}side-bar-button`}
-                                                    onClick={this.newHandle(category.id)}
-                                                    exact={true}
-                                                    >
-                                                    {category.name} 
-                                                    </NavLink> )
+                            cats.map((category, i) => 
+                                <NavLink 
+                                activeClassName="sidebar-button-active" 
+                                className='sidebar-button' 
+                                to={`/${category.id}`} 
+                                key={`${category.id}side-bar-button`}
+                                onClick={this.newHandle(category.id)}
+                                exact={true}
+                            >
+                                {category.name} 
+                            </NavLink> )
                         }
                     </div>
                 </main>

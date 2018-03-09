@@ -4,8 +4,6 @@ import EventListItem from './event_list_item.jsx';
 import SearchBar from '../searchbar/searchbarContainer'
 // import {SelectEventsInOrder} from '../../reducers/selectors/selectors.js';
 // import * as Sorts from '../../reducers/selectors/sorts';
-
-
 class EventList extends React.Component{
     constructor(props){
         super(props);
@@ -18,7 +16,6 @@ class EventList extends React.Component{
             this.props.history.push('/signup');
         };
         if (this.props.loggedIn) {
-
             const handleUnbookmark = (e) => {
                 e.preventDefault();
                 this.props.deleteBookmark(event.id);
@@ -28,7 +25,6 @@ class EventList extends React.Component{
                 this.props.createBookmark(event.id);
             };
             let BookmarkHandler = event.bookmarked ? handleUnbookmark : handleBookmark;
-
             return (BookmarkHandler.bind(this));
         }
         return redirect;
@@ -47,9 +43,7 @@ class EventList extends React.Component{
                 e.preventDefault();
                 this.props.makeRegistration(event.id, this.props.currentUser);
             };
-
             let registrationhandler = event.registered ? handleUnregister : handleRegister;
-
             return (registrationhandler.bind(this));
         }
         return redirect;
@@ -67,27 +61,26 @@ class EventList extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="indexbar">
-
-                
+                <div className="indexbar">          
                 </div> 
                 <div className="eventList-container">
                     <SearchBar />
                     <div className="eventListItem-container"> 
                         <ul className='event-list-ul'>
-                            {this.props.eventsList.map ( (event, index) => (                        
-                                <div key={`${event.startDate + event.id}`} className='event-item-anchor'>                                    
-                                    <EventListItem
-                                        key={`${event.id * new Date().getMilliseconds()}`}
-                                        event={event}
-                                        registered={event.registered}
-                                        bookmarked={event.bookmarked}
-                                        bookmarkHandler={this.bookmarkHandler(event)}
-                                        registrationHandler={this.registrationHandler(event)}
-                                      />
-                                </div>
-                            )
-                        )}
+                            {
+                                this.props.eventsList.map ( (event, index) => (                        
+                                    <div key={`${event.startDate + event.id}`} className='event-item-anchor'>                                    
+                                        <EventListItem
+                                            key={`${event.id * new Date().getMilliseconds()}`}
+                                            event={event}
+                                            registered={event.registered}
+                                            bookmarked={event.bookmarked}
+                                            bookmarkHandler={this.bookmarkHandler(event)}
+                                            registrationHandler={this.registrationHandler(event)}
+                                        />
+                                    </div>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Map from '../map';
 
-
 export const EventImage = ({image, event}) => {
     return (
         <div className='showImage'>
@@ -10,8 +9,6 @@ export const EventImage = ({image, event}) => {
         </div>
     );
 };
-
-
 export const EventHeader = ({ location, date, header, name }) => {
     return (
         <div className='showHeader'>
@@ -31,7 +28,6 @@ export const EventDiscription = ({event}) => {
                 <div>
                     <div className='show-header-desc'>
                         <h1>Description</h1>
-                        
                         <p>{event.description}</p>
                         <div className='showHeader'>
                             <h1> {event.name}</h1>
@@ -39,9 +35,7 @@ export const EventDiscription = ({event}) => {
                         </div>
                     </div>
                 </div>
-
-                <div className='datelocation'>             
-                    
+                <div className='datelocation'>                          
                     <div className='show-date'><h1>DATES</h1>
                         <span>{event.startDate.slice(0,10)}</span> 
                         <br></br>
@@ -58,11 +52,8 @@ export const EventDiscription = ({event}) => {
                         <h1>PRICE</h1>
                         <h1>${event.price/100}</h1>
                     </div>
-                </div>
-                
-            </div>
-            
-        </div>
-        
+                </div>  
+            </div>        
+        </div>      
     );
 };

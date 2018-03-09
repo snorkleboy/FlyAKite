@@ -13,8 +13,6 @@ const mapStatetoProps = (state, ownProps) =>{
                 currentUser: state.session.currentUser ? state.session.currentUser.id : null
         });
 };
-
-
 const mapDispatchtoProps = (dispatch, ownProps) =>({
         getEvent: (id) => dispatch(GetEvent(id) ),
         makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),

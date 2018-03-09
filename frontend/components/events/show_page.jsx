@@ -19,7 +19,6 @@ import RegistrationModal from './registration_modal';
 // t.integer "categoryId", null: false
 // t.index["userId"], name: "index_events_on_userId"
 class ShowPage extends React.Component {
-
     constructor(props){
         super(props);
         this.handleRegister = this.handleRegister.bind(this);
@@ -39,22 +38,17 @@ class ShowPage extends React.Component {
         if (this.props.event === null) {
             this.props.getEvent(this.props.match.params.eventId);
         }
-
-    
     }
     redirect(e){
         this.props.redirected(this.props.location.pathname);
         this.props.history.push('/signup');
     }
-
     handleUnregister(e){
         this.props.deleteRegistration(this.props.event.id);
     }
     handleRegister(e){
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser).then((success)=> this.closeRegistration());
     }
-
-
     openRegistration(e){
         this.setState({ registrationOpen:true});
     }
@@ -78,10 +72,8 @@ class ShowPage extends React.Component {
                     <button className="register-button" onClick={this.handleRegister} >FREE REGISTRATION </button>
             );
         }
-        return (<button className="register-button" onClick={this.redirect}>REGISTER</button>);
-        
+        return (<button className="register-button" onClick={this.redirect}>REGISTER</button>);   
     }
-
     conditionalEdit(){
         return (this.props.currentUsersEvent ?
                 <Link to={this.props.match.url + '/edit'} className='edit-event-link'>EDIT</Link> 
@@ -89,7 +81,6 @@ class ShowPage extends React.Component {
                  null
             );
     }
-
     conditionalBookmark() {
         const bookmarked = this.props.event.bookmarked;
         if (this.props.currentUser) {
@@ -100,7 +91,6 @@ class ShowPage extends React.Component {
             );
         }
         return (<button className="bookmark-button floatbutton" onClick={this.redirect}><i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i></button>);
-
     }
     conditionalDelete(){
         let button = null;
@@ -117,25 +107,20 @@ class ShowPage extends React.Component {
         e.preventDefault();
         this.props.createBookmark(this.props.match.params.eventId);
     }
-
-    componentWillReceiveProps(newProps){
-
-    }
-
     render() {
         if (this.props.event !== null){
             const cloudinaryImageUrl = setCloudinaryOptions(this.props.event.imgURL, 'q_60');
             return (
-
                     <main  className='showpage'>
-                    {!this.state.registrationOpen ? 
-                        null :
-                        <RegistrationModal 
-                            close={this.closeRegistration.bind(this)} 
-                            register={this.handleRegister.bind(this)} 
-                            event={this.props.event}
+                        {
+                            !this.state.registrationOpen ? 
+                            null :
+                            <RegistrationModal 
+                                close={this.closeRegistration.bind(this)} 
+                                register={this.handleRegister.bind(this)} 
+                                event={this.props.event}
                             /> 
-                    }
+                        }
                         <div className='showpageImage'>
                             <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
                         </div>
@@ -156,15 +141,12 @@ class ShowPage extends React.Component {
                         <div>
                             <ShowPageComponents.EventDiscription event={this.props.event}/>     
                         </div>
-                    
-
                     </main>
             );
         }else { return null;}
     
     }
 }
-{/* <div style={{ backgroundImage: `url(${this.props.event.imgURL})` }}></div> */}
 export default ShowPage;
 
 //                         
