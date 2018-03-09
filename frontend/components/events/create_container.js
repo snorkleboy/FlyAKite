@@ -46,22 +46,45 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 export default connect(mapStatetoProps, mapDispatchToProps)(CreateEventComp);
+// yyyy - MM - ddThh: mm
 
 
-const _nullEvent = {
-    // userId: this.props.userId,
-    location: {
-        areaCode: "94016",
-        state: "CA",
-        city: "San Fransisco",
-    },
-    categoryId:1,
-    name: '',
-    startDate: '',
-    header: "",
-    description: "",
-    imgURL: "",
-    endDate: "",
-    price:'0',
-    stripeKey:""
-};
+var _nullEvent;
+if (process.env.NODE_ENV === 'production') {
+    _nullEvent = {
+        // userId: this.props.userId,
+        location: {
+            areaCode: "94016",
+            state: "CA",
+            city: "San Fransisco",
+        },
+        categoryId: 1,
+        name: '',
+        startDate: new Date().toISOString().slice(0, 16),
+        header: "",
+        description: "",
+        imgURL: "",
+        endDate: "",
+        price: '0',
+        stripeKey: ""
+    };
+}else{
+    _nullEvent = {
+        // userId: this.props.userId,
+        location: {
+            areaCode: "94016",
+            state: "CA",
+            city: "San Fransisco",
+        },
+        categoryId: 1,
+        name: 'NULLNAME',
+        startDate: new Date().toISOString().slice(0, 16),
+        header: "sdfsdfdfsdsfdf",
+        description: "dfsdfsdvsdvsd",
+        imgURL: "www.testurdfgl.com",
+        endDate: new Date().toISOString().slice(0, 16),
+        price: '0',
+        stripeKey: ""
+    };
+}
+

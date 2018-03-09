@@ -67,6 +67,9 @@ class CreateEventComp extends React.Component {
             this.props.history.push(`/events/${key}`);
         };
         event.state && event.state.toUpperCase();
+        if (event.price === '0'){
+            event.stripeKey = '';
+        }
         successCB = successCB.bind(this);
         this.props.actionType(event , successCB);
         this.props.clearEventErrors();
@@ -107,7 +110,7 @@ class CreateEventComp extends React.Component {
         );
     }
 
-        update(field) {
+    update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -217,14 +220,18 @@ class CreateEventComp extends React.Component {
 
                     <label className='signup-label-form'>price
                                 <br />
-                            <input value={this.state.price} onChange={this.update('price')} className="signup-input-form" required></input>     
+                            <input value={this.state.price} onChange={this.update('price')} className="signup-input-form" pattern="^[0-9]+$" required></input>   
+                            {
+                                this.state.price !== '0' ?
+                                    <label className='signup-label-form'> Please Enter Your Strike Key
+                                        <input value={this.state.stripeKey} onChange={this.update("stripeKey")} required  className='signup-input-form'/>
+                                    </label>
+                                :
+                                    null
+                            }  
                     </label>
                     <br />
-                        {this.state.price > 0 ?
-                            <label>Stripe Key <input value={this.state.stripeKey} onChange={this.update('stripeKey')} className="signup-input-form" required></input></label>
-                        :
-                            null                        
-                        }
+
 
 
 

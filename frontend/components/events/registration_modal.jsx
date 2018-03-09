@@ -15,6 +15,8 @@ class RegistrationModal extends React.Component {
         if ( this.props.event.stripeKey &&  this.props.event.stripeKey !== ""){
             Skey = this.props.event.stripeKey;
         }
+        console.log("STRIPE KEY",Skey, this.props.event.stripeKey)
+
         let handleToken = function (token) {
             // console.log(token);
             this.props.register().then((suc)=> this.props.close());

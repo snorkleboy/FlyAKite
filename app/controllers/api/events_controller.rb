@@ -21,6 +21,7 @@ class Api::EventsController < ApplicationController
   end
 
   def create
+    p ["HERE",event_params]
     @event = Event.new(event_params)
     if (@event.save)
       render "api/events/show"

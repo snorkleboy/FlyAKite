@@ -50,7 +50,9 @@
     // font-size: xx-large;
 }
 
-
+input:invalid {
+    border: 2px dashed red;
+}
 
 
 .signup-label-form{
