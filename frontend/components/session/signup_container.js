@@ -8,6 +8,7 @@ const demoUser={user:{username:"guest", password:"password"}};
 
 
 const mapStateToProps = (state, ownProps)=>({
+    allprops: [state,ownProps],
     errors: state.errors.session,
     loggedIn: Boolean(state.session.currentUser),
     redirectedFrom: state.ui.redirectFrom

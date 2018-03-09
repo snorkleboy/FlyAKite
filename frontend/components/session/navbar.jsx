@@ -17,7 +17,6 @@ import {
   HashRouter
 } from 'react-router-dom';
 import {
-    AAProtectedRoute,
   AuthRoute,
   ProtectedRoute,
     AuthorsRoute

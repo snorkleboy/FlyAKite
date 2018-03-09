@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 import { redirected} from '../actions/navbar_ui_actions';
-
+import Signup from '../components/session/signup_container'
 
 
 
@@ -32,38 +32,22 @@ const Auth = ({ component: Component, path, loggedIn }) => (
     />
 );
 
-const AAProtected = ({ component: Component, path, loggedIn }) => (
+const Protected = ({ component: Component, path, loggedIn }) =>{ console.log(path);return(
     <Route
         path={path}
         render={props => (
-            loggedIn ? <Component {...props} /> : <Redirect to="/signup" />
+            loggedIn ? 
+                <Component {...props} path={path} />
+            : 
+                <Redirect push to={{
+                    pathname: '/signup',
+                    state: { redirectedFrom: path }
+            }} />
         )}
     />
-);
+);}
 
 
-const Protected = ({history , component: Component, path,location, match, loggedIn, saveRedirected }) => {
-
-    const saveAndRedirect = function(){
-        saveRedirected(path);
-        return (<Redirect to="/signup" />);
-    }
-    
-    const renderAction = (props) => {
-        if (loggedIn) {
-            return (<Component {...props} />);
-        } else {
-            saveAndRedirect();
-        }
-    };
-
-    return (
-        <Route
-            path={path}
-            render={props => (renderAction(props))}
-        />
-    );
-};
 
 
 
@@ -84,7 +68,6 @@ const Authors = ({ component: Component, path, match, session, events, loggedIn}
         />
     );
 };
-export const AAProtectedRoute = withRouter(connect(mapStateToProps, mapDispatchToProps)(AAProtected));
 export const AuthorsRoute = withRouter(connect(mapAuthorStateToProps)(Authors));
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, mapDispatchToProps)(Protected));

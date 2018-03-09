@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 class SignUpPage extends React.Component {
     constructor(props) {
+        console.log(props);
         super(props);
         this.state = {
             username: '',
@@ -13,12 +14,12 @@ class SignUpPage extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
-            if (this.props.redirectedFrom === null){
+            const redirectedFrom = this.props.location.state.redirectedFrom
+            if (!redirectedFrom){
                 this.props.history.push('/');
             }else{
                 // console.log(this.props);
-                this.props.unredirect();    
-                this.props.history.push(this.props.redirectedFrom);
+                this.props.history.push(redirectedFrom);
             }
         }
     }

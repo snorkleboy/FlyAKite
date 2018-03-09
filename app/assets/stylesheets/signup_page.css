@@ -1,6 +1,6 @@
 
     .signup-page{
-        background-image: '/app/assets/images/signup.jpg';
+        background-image: url('http://res.cloudinary.com/flyakite/image/upload/q_60/v1512087159/vukzzqjquon0tkkqhjwx.jpg');
         background-repeat: no-repeat;
         background-size: cover; 
         height:  100vh;
