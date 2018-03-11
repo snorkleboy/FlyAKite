@@ -2,12 +2,12 @@
 ### FlyaKite is a full-stack web application inspired by EventBrite. It is a React/Redux frontend paired with a Ruby on Rails backend. The purpose of the site is to allow users to create events and see events created by other users organized into a variety of categories. Users can also bookmark and register for events and search for them in a variety of ways.
 
 
-### contents
+#### table of contents
 * [Google Maps integration](#cloudinary-integration)
 * [Stripe Integration](#stripe-integration)
 * [Cloudinary integration](#cloudinary-integration)
 * [Redirecting and Route control](#redirecting-and-route-control)
-* [RESTFUL API](#restful-api)
+* [RESTFful API](#restful-api)
 * * [Events](events#)
 * * [User Authentication](#)
 * * [Search, sort, and categories on custom routes](search-sort-and-categories-on-custom-routes#)
