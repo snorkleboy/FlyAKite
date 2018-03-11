@@ -1,29 +1,45 @@
 
-.bookmark-button{
-
-    /* padding: 0px; */
-         border: 1px;
-     border-left: none;
-     border-right: none;
-    /* font-size: x-large; */
-    font-weight: 700;
-    background-color: transparent;
-    color: rgba(255, 201, 22,.8);
-    transition: .2s background-color, .2s color;
-    padding: 0px 3px 0px 3px;
-}
 .floatbutton{
     position: absolute;
     left: 0px;
     top: 0px;
-
     font-size: 60px;
 }
+
+.bookmark-button{
+
+    border: 1px;
+    border-left: none;
+    border-right: none;
+    font-weight: 700;
+    background-color: transparent;
+    color: rgba(255, 201, 22,.8);
+    transition: all, .4s;
+    padding: 0px 3px 0px 3px;
+}
+
+.unbookmark-button{
+
+    color: rgba(219, 172, 18, 0.8);
+    padding: 0px 3px 0px 3px;
+    border: 1px;
+    border-left: none;
+    border-right: none;
+    transition: all, .4s;
+    font-weight: 700;
+    padding: 0px 3px 0px 3px;
+}
+.unbookmark-button:hover{
+    color: rgba(219, 125, 18, 0.8);
+}
+.bookmark-button:hover{
+    color: rgba(238, 255, 83, 0.8);
+}
+
 .register-button{
-         border: 1px;
-     border-left: none;
-     border-right: none;
-    /* font-size: x-large; */
+    border: 1px;
+    border-left: none;
+    border-right: none;
     background-color: green;
     color: rgb(255, 255, 255);
     font-weight: 700;
@@ -33,22 +49,9 @@
     box-sizing: border-box;
 }
 
-
-.unbookmark-button{
-
-    color: rgba(255, 201, 22,.8);
-    padding: 0px 3px 0px 3px;
-     border: 1px;
-     border-left: none;
-     border-right: none;
-    transition: .2s background-color, .2s color;
-    font-weight: 700;
-    padding: 0px 3px 0px 3px;
-}
-
 .unregister-button{
     box-sizing: border-box;
-background-color: rgb(8, 228, 8);
+    background-color: rgb(8, 228, 8);
           border: 1px;
      border-left: none;
      border-right: none;
@@ -60,13 +63,13 @@ background-color: rgb(8, 228, 8);
     border-radius: 2px;
 }
 
-.unregister-button:hover, .unbookmark-button:hover{
+.unregister-button:hover{
     background-color: rgb(110, 143, 20);
     /* background-color: rgba(255, 114, 71, 0.863); */
-font-weight: 700;
+    font-weight: 700;
 }
 
-.register-button:hover, .bookmark-button:hover{
+.register-button:hover{
     background-color: rgb(49, 212, 49);
     /* background-color: rgba(71, 255, 126, 0.863); */
     font-weight: 700;
