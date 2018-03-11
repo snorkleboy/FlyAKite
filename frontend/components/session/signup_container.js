@@ -3,7 +3,7 @@ import { login, signup, clearSessionErrors } from '../../actions/session_actions
 import SignupPage from './signup_page';
 import {unredirect,closeAll} from '../../actions/navbar_ui_actions.js';
 import {redirected} from '../../actions/navbar_ui_actions';
-
+import { Link, withRouter } from "react-router-dom";
 const demoUser={user:{username:"guest", password:"password"}};
 
 
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch, ownProps)=> ({
     unredirect: () => dispatch(unredirect())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignupPage));

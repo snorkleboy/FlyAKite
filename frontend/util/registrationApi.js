@@ -1,6 +1,7 @@
-export const createRegistration = (eventId, userId) => $.ajax({
+export const createRegistration = (eventId, userId, stripeDet) => $.ajax({
     url: `api/registration/${eventId}/${userId}`,
-    method: "POST"
+    method: "POST",
+    data:{stripeKey: stripeDet.id, stripeEmail: stripeDet.email}
 });
 
 export const deleteRegistration = (eventId) => $.ajax({

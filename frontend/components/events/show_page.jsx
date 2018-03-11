@@ -40,14 +40,25 @@ class ShowPage extends React.Component {
         }
     }
     redirect(e){
-        this.props.redirected(this.props.location.pathname);
-        this.props.history.push('/signup');
+        const location = {
+            pathname: '/signup',
+            state: { redirectedFrom : this.props.location.pathname }
+        }
+        this.props.history.push(location);
     }
     handleUnregister(e){
         this.props.deleteRegistration(this.props.event.id);
     }
     handleRegister(e){
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser).then((success)=> this.closeRegistration());
+    }
+    handleStripeRegistration(token,args){
+        console.log("HANDLE STRIPE", token,args);
+        this.props.makeRegistration(
+            this.props.match.params.eventId,
+            this.props.currentUser,
+            token
+           ).then(success => this.closeRegistration());
     }
     openRegistration(e){
         this.setState({ registrationOpen:true});
@@ -110,39 +121,36 @@ class ShowPage extends React.Component {
     render() {
         if (this.props.event !== null){
             const cloudinaryImageUrl = setCloudinaryOptions(this.props.event.imgURL, 'q_60');
-            return (
-                    <main  className='showpage'>
-                        {
-                            !this.state.registrationOpen ? 
-                            null :
-                            <RegistrationModal 
-                                close={this.closeRegistration.bind(this)} 
-                                register={this.handleRegister.bind(this)} 
-                                event={this.props.event}
-                            /> 
-                        }
-                        <div className='showpageImage'>
-                            <img src={setCloudinaryOptions(this.props.event.imgURL, 'q_60')}/>
-                        </div>
-                        <div className='imgheader'>
-                            <ShowPageComponents.EventImage image={cloudinaryImageUrl} /> 
-                            <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header} />
-                            <div>
-                                {this.conditionalBookmark()}
-                            </div>  
-                        </div>
-                        
-                        <div className='buttonsStrip'>
-                            {this.conditionalEdit()}
-                            {this.props.event.price>0? `$${this.props.event.price/100}` : "free"}
-                            {this.conditionalRegister()}
-                            {this.conditionalDelete()}
-                        </div>
-                        <div>
-                            <ShowPageComponents.EventDiscription event={this.props.event}/>     
-                        </div>
-                    </main>
-            );
+            return <main className="showpage">
+                {
+                    this.state.registrationOpen ? 
+                        <RegistrationModal 
+                            close={this.closeRegistration.bind(this)} 
+                            register={this.handleStripeRegistration.bind(this)} 
+                            event={this.props.event} 
+                        />
+                    :
+                        null
+                }
+                <div className="showpageImage">
+                  <img src={setCloudinaryOptions(this.props.event.imgURL, "q_60")} />
+                </div>
+                <div className="imgheader">
+                  <ShowPageComponents.EventImage image={cloudinaryImageUrl} />
+                  <ShowPageComponents.EventHeader location={this.props.event.location} name={this.props.event.name} date={this.props.event.startDate} header={this.props.event.header} />
+                  <div>{this.conditionalBookmark()}</div>
+                </div>
+
+                <div className="buttonsStrip">
+                  {this.conditionalEdit()}
+                  {this.props.event.price > 0 ? `$${this.props.event.price / 100}` : "free"}
+                  {this.conditionalRegister()}
+                  {this.conditionalDelete()}
+                </div>
+                <div>
+                  <ShowPageComponents.EventDiscription event={this.props.event} />
+                </div>
+              </main>;
         }else { return null;}
     
     }

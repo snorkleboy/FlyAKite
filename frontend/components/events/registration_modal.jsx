@@ -13,16 +13,10 @@ class RegistrationModal extends React.Component {
         if ( this.props.event.stripeKey &&  this.props.event.stripeKey !== ""){
             Skey = this.props.event.stripeKey;
         }
-        let handleToken = function (token) {
-            // console.log(token);
-            this.props.register().then((suc)=> this.props.close());
-        };
-        handleToken = handleToken.bind(this);
         this.handler = StripeCheckout.configure({
             key: Skey,
             image: this.props.event.imgURL,
-            locale: 'auto',
-            token: handleToken
+            locale: 'auto'
         });
         // Close Checkout on page navigation:
         window.addEventListener('popstate', function () {
@@ -35,7 +29,8 @@ class RegistrationModal extends React.Component {
                 name: this.props.event.name,
                 description: this.props.event.header,
                 zipCode: true,
-                amount: this.props.event.price || 2000
+                amount: this.props.event.price,
+                token: this.props.register,
             });
             e.preventDefault();
     }
@@ -53,7 +48,6 @@ class RegistrationModal extends React.Component {
             <main id='registration-modal' className='registration-modal'>
                 <img className='registration-image' src={setCloudinaryOptions(this.props.event.imgURL,'q_60')} />
                 <div className='registration-header'>
-
                     <span className='header-date-el'>{this.props.event.location.city}</span>
                     <span className='header-name-el'>{this.props.event.name}</span>
                     <span className='header-location-el'>${this.props.event.price / 100} {this.props.event.startDate.slice(0, 10)}</span>
@@ -64,7 +58,7 @@ class RegistrationModal extends React.Component {
                     <br></br>
                     <button className='navbar-button create-event-nb' onClick={this.props.close} >Close</button>
                     <br ></br>
-                    <button className='navbar-button create-event-nb' onClick={this.props.register} >Demo (Register) </button>
+                    <button className='navbar-button create-event-nb' onClick={this.props.register} >Demo (Register without Stripe) </button>
                 </div>
             </main>
         );

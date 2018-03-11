@@ -13,15 +13,14 @@ const mapStatetoProps = (state, ownProps) =>{
                 currentUser: state.session.currentUser ? state.session.currentUser.id : null
         });
 };
-const mapDispatchtoProps = (dispatch, ownProps) =>({
-        getEvent: (id) => dispatch(GetEvent(id) ),
-        makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),
-        deleteRegistration: (eventId) => dispatch(deleteRegistration(eventId)),
-        createBookmark: (eventId) => dispatch(createBookmark(eventId)),
-        deleteBookmark: (eventId) => dispatch(deleteBookmark(eventId)),
-        deleteEventCall: (id) => dispatch(deleteEventCall(id)),
-        redirected: (path) => dispatch(redirected(path))
-
-    });
+const mapDispatchtoProps = (dispatch, ownProps) => ({
+  getEvent: id => dispatch(GetEvent(id)),
+  makeRegistration: (eventId, userId, stripeDet) =>dispatch(makeRegistration(eventId, userId, stripeDet)),
+  deleteRegistration: eventId => dispatch(deleteRegistration(eventId)),
+  createBookmark: eventId => dispatch(createBookmark(eventId)),
+  deleteBookmark: eventId => dispatch(deleteBookmark(eventId)),
+  deleteEventCall: id => dispatch(deleteEventCall(id)),
+  redirected: path => dispatch(redirected(path))
+});
 
 export default withRouter(connect(mapStatetoProps, mapDispatchtoProps)(ShowPage));

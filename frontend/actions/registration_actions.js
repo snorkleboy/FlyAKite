@@ -9,8 +9,9 @@ export const removeRegistration = (eventId) =>({
     type: DELETE_REGISTRATION,
     payload: eventId
 });
-export const makeRegistration = (eventId, userId) => dispatch => RegActions.createRegistration(eventId, userId)
-    .then((success) => dispatch(receiveRegistration(success)) ); 
+export const makeRegistration = (eventId, userId, stripeDet) => dispatch => RegActions.createRegistration(eventId, userId, stripeDet).then(
+           success => dispatch(receiveRegistration(success))
+         ); 
 
 export const deleteRegistration = (eventId) => dispatch => RegActions.deleteRegistration(eventId)
     .then((success) => dispatch(removeRegistration(success))); 

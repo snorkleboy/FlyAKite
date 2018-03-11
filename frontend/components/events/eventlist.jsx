@@ -9,12 +9,17 @@ class EventList extends React.Component{
         super(props);
         this.registrationHandler = this.registrationHandler.bind(this);
         this.bookmarkHandler = this.bookmarkHandler.bind(this);
+        this.redirect = this.redirect.bind(this);
+    }
+    redirect(e) {
+            e.preventDefault();
+            const location = {
+                pathname: '/signup',
+                state: { redirectedFrom : this.props.location.pathname }
+            }
+            this.props.history.push(location);
     }
     bookmarkHandler(event) {
-        const redirect = (e) => {
-            e.preventDefault();
-            this.props.history.push('/signup');
-        };
         if (this.props.loggedIn) {
             const handleUnbookmark = (e) => {
                 e.preventDefault();
@@ -26,14 +31,12 @@ class EventList extends React.Component{
             };
             let BookmarkHandler = event.bookmarked ? handleUnbookmark : handleBookmark;
             return (BookmarkHandler.bind(this));
+        }else{
+            return this.redirect;
         }
-        return redirect;
+        
     }
     registrationHandler(event) {
-        const redirect = (e) => {
-            e.preventDefault();
-            this.props.history.push('/signup');
-        };
         if (this.props.loggedIn ){
             const handleUnregister = (e)=>{
                 e.preventDefault();
@@ -45,8 +48,9 @@ class EventList extends React.Component{
             };
             let registrationhandler = event.registered ? handleUnregister : handleRegister;
             return (registrationhandler.bind(this));
-        }
-        return redirect;
+        }else{
+            return this.redirect;
+        } 
     }
     componentDidMount() {
     }

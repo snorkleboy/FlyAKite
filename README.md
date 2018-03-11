@@ -1,15 +1,15 @@
 # [FlyaKite](https://flyakite.herokuapp.com)
-### FlyaKite is a full-stack web application inspired by EventBrite. It is a react/redux front end paired with a Ruby on Rails backend. The purpose of the site is to allow users to create events and see events created by other users organized into a variety of categories. Users can also bookmark and register for events to consider later. 
+### FlyaKite is a full-stack web application inspired by EventBrite. It is a react/redux front end paired with a Ruby on Rails backend. The purpose of the site is to allow users to create events and see events created by other users organized into a variety of categories. Users can also bookmark and register for events and search for them in a variety of ways.
 
 
 
-## Features & Implementation
+# Features & Implementation
 
 
-# RESTFUL API
+## RESTFUL API
   most of the interactions with the database are mediated through a restful API, with slight deviations for user authentication and searching and sorting. All these routes return json. 
   
-## Events
+### Events
 Events are created, updated and fetched through a restful API
 ```
 method route                              contoller#method
@@ -30,7 +30,7 @@ DELETE /api/registration/:eventId         api/registrations#destroy
 POST   /api/bookmarks/:eventId            api/bookmarks#create 
 DELETE /api/bookmarks/:eventId            api/bookmarks#destroy 
 ```
-## User Authentication
+### User Authentication
 User authentication is handled through these routes. A Post request for api/users as or api/session with proper parameters results in signing up and logging in, or just logging in. When being logged in a you are sent back a token that is to store in your session cookies that is also stored in the database.
 ```
 method route                              contoller#method
@@ -63,7 +63,7 @@ Users can then be looked up with a username and password to be authenticated.
   end
 ```
 
-##### Search, sort, and categories on custom routes
+### Search, sort, and categories on custom routes
 search and sort is a bit less restful. The following are for general groupings like most recent events or events that match a specific category. each route comes with optional wildcard parameters to set the limit and offset of the data to make it easy to scroll through data. All of them are handled by thier own controller.  
 ```
 method route                              contoller#method
@@ -95,9 +95,32 @@ allowing the search controller method is simply
 ```
   
  ### Google Maps integration
- 
- when creating a site just put in the address. I use google's geocoder api to turn adresses into latitudes and longitudes and then use that to display google maps
- ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
+  ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
+I abstracted Google maps into its own more or less presentational component. Ir renders simply a div with a ref, the onMount I let google scripts take over
+
+ ```
+   componentDidMount() {
+    mapCenter(this.props.location).then((response) => {
+      const map = ReactDOM.findDOMNode(this.refs.map);
+      const LatLng = response.results[0].geometry.location;
+      const options = {
+        center: LatLng,
+        zoom: 13
+      };
+      this.map = new google.maps.Map(map, options);
+      const pos = new google.maps.LatLng(LatLng.lat, LatLng.lng);
+      const marker = new google.maps.Marker({
+        position: pos,
+        map: this.map
+      });
+
+    });
+  }
+
+```
+
+You put in the adress of an event when you create it, and I use google GeoCoder API to turn it into a latitude and longitude and Google Maps script to display the map on Component mount.
+
  ### Stripe Integration
  when creating an event, if the price isnt free you are prompted to enter a stripe key which will be used when calling stripes checkout api when users click to register. Seed data sites have Stripe Test keys which allow you to put in any of [these](https://stripe.com/docs/testing#cards) cards to test it out. A positive response returns a transaction token which I could then use to send back to stripe to actually initiate the transaction.
  ![Stripe](http://res.cloudinary.com/flyakite/image/upload/v1514410484/stripe_qrohsj.png)

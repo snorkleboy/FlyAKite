@@ -13,12 +13,12 @@ class SignUpPage extends React.Component {
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn) {
-            const redirectedFrom = this.props.location.state.redirectedFrom
-            if (!redirectedFrom){
-                this.props.history.push('/');
-            }else{
-                // console.log(this.props);
+            console.log(this.props)
+            const redirectedFrom = this.props.location.state ? this.props.location.state.redirectedFrom : false;
+            if (redirectedFrom){ 
                 this.props.history.push(redirectedFrom);
+            }else{
+                this.props.history.push('/');
             }
         }
     }

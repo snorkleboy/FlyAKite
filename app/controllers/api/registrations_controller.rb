@@ -1,6 +1,7 @@
 class Api::RegistrationsController < ApplicationController
   def create
-    @registration = Registration.new(userId: current_user.id, eventId: params[:eventId])
+    p [params,params[:stripe]]
+    @registration = Registration.new(userId: current_user.id, eventId: params[:eventId], stripeKey: params[:stripeKey], stripeEmail: params[:stripeEmail])
     if @registration.save!
       @event = @registration.event
       render 'api/events/show'
