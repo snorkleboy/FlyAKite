@@ -2,9 +2,14 @@
 ### FlyaKite is a full-stack web application inspired by EventBrite. It is a react/redux front end paired with a Ruby on Rails backend. The purpose of the site is to allow users to create events and see events created by other users organized into a variety of categories. Users can also bookmark and register for events and search for them in a variety of ways.
 
 
-
-# Features & Implementation
-
+* [Google Maps integration](#cloudinary-integration)
+* [Stripe Integration](#stripe-integration)
+* [Cloudinary integration](#cloudinary-integration)
+* [Redirecting and Route control](#redirecting-and-route-control)
+* [RESTFUL API](#restful-api)
+* * [Events](events#)
+* * [User Authentication](#)
+* * [Search, sort, and categories on custom routes](search-sort-and-categories-on-custom-routes#)
 ## Google Maps integration
   ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
 
@@ -127,24 +132,21 @@ this Protected components purpose is to generate a route or a redirect depending
 
 A pattern I follow is to always redirect with a location state object to allow me to redirect back. 
 ```
-const Protected = ({ component: Component, path, loggedIn }) =>{
-  const renderFunction = (props) => (
-    loggedIn ? 
-        <Component {...props} path={path} />
-    : 
-        <Redirect push to={{
-            pathname: '/signup',
-            state: { redirectedFrom: path }
-          }} 
-        />
-    )
-  return (
+const Protected = ({ component: Component, path, loggedIn }) =>(
     <Route
         path={path}
-        render={renderFunction}
+        render={(props) => (
+            loggedIn ? 
+                <Component {...props} path={path} />
+            : 
+                <Redirect push to={{
+                    pathname: '/signup',
+                    state: { redirectedFrom: path }
+                  }} 
+                />
+            )}
     />
-  )
-};
+);
 
 ```
 
