@@ -3,44 +3,17 @@
 
 
 #### table of contents
-* [Google Maps integration](#cloudinary-integration)
 * [Stripe Integration](#stripe-integration)
 * [Cloudinary integration](#cloudinary-integration)
 * [Redirecting and Route control](#redirecting-and-route-control)
+* [Google Maps integration](#cloudinary-integration)
 * [RESTFful API](#restful-api)
 * * [Events](events#)
 * * [User Authentication](#)
 * * [Search, sort, and categories on custom routes](search-sort-and-categories-on-custom-routes#)
 [thingname](#redirecting and Route control)
 
-## Google Maps integration
-  ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
 
-
-I abstracted Google maps into its own more or less presentational component that takes in a location. It only renders a div with a ref and then onMount I let google scripts take over.
-
-You put in the address of an event when you create it and I use Google Geo Coder API to turn the adress into a latitude and longitude. Then I use Google Maps Script to display the map on component mount.
-
- ```
-  componentDidMount() {
-    mapCenter(this.props.location).then((response) => {
-      const map = ReactDOM.findDOMNode(this.refs.map);
-      const LatLng = response.results[0].geometry.location;
-      const options = {
-        center: LatLng,
-        zoom: 13
-      };
-      this.map = new google.maps.Map(map, options);
-      const pos = new google.maps.LatLng(LatLng.lat, LatLng.lng);
-      const marker = new google.maps.Marker({
-        position: pos,
-        map: this.map
-      });
-
-    });
-  }
-
-```
 
  ## Stripe Integration
   ![Stripe](http://res.cloudinary.com/flyakite/image/upload/v1514410484/stripe_qrohsj.png)
@@ -174,7 +147,32 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
+## Google Maps integration
+  ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
 
+
+I abstracted Google maps into its own more or less presentational component. It takes in a address and renders a div. OnMount I use Google Geo Coder API to turn the address into a latitude and longitude and otherwise let google scripts do their thing.
+
+ ```
+  componentDidMount() {
+    mapCenter(this.props.location).then((response) => {
+      const map = ReactDOM.findDOMNode(this.refs.map);
+      const LatLng = response.results[0].geometry.location;
+      const options = {
+        center: LatLng,
+        zoom: 13
+      };
+      this.map = new google.maps.Map(map, options);
+      const pos = new google.maps.LatLng(LatLng.lat, LatLng.lng);
+      const marker = new google.maps.Marker({
+        position: pos,
+        map: this.map
+      });
+
+    });
+  }
+
+```
 ## RESTFUL API
   most of the interactions with the database are mediated through a restful API, with slight deviations for user authentication and searching and sorting. All these routes return json. 
   
