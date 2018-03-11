@@ -2,7 +2,7 @@
 ### FlyaKite is a full-stack web application inspired by EventBrite. It is a react/redux front end paired with a Ruby on Rails backend. The purpose of the site is to allow users to create events and see events created by other users organized into a variety of categories. Users can also bookmark and register for events and search for them in a variety of ways.
 
 
-[thing name](#redirecting and Route contron)
+[thingname](#redirecting-and-Route-control)
 # Features & Implementation
 
 ## Google Maps integration
