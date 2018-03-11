@@ -32,7 +32,7 @@ const Auth = ({ component: Component, path, loggedIn }) => (
     />
 );
 
-const Protected = ({ component: Component, path, loggedIn }) =>{ console.log(path);return(
+const Protected = ({ component: Component, path, loggedIn }) =>{ return(
     <Route
         path={path}
         render={props => (

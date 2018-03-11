@@ -53,7 +53,6 @@ class ShowPage extends React.Component {
         this.props.makeRegistration(this.props.match.params.eventId, this.props.currentUser).then((success)=> this.closeRegistration());
     }
     handleStripeRegistration(token,args){
-        console.log("HANDLE STRIPE", token,args);
         this.props.makeRegistration(
             this.props.match.params.eventId,
             this.props.currentUser,

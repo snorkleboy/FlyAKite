@@ -41,7 +41,6 @@ class CreateEventComp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const event = this.state;
-        // console.log("sunmit:",this.state);
         let successCB = (success) => {
             let key = Object.keys(success.byIDs)[0];
             this.props.history.push(`/events/${key}`);

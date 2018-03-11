@@ -18,19 +18,27 @@ class SearchBar extends React.Component {
         });
     }
     handleSubmit(e) {
-        e.preventDefault();
         const search = this.state;
         this.props.search(this.state.pattern, this.state.categoryId, this.state.time);
         this.props.history.push(`/${this.state.categoryId}`)
     }
 
-
+    handleKeyPress(e){
+        if (e.key === "Enter"){
+            this.handleSubmit();
+        }
+    }
     render(){
         return (
             <div className="searchbar">
                 <label>Find your next experience</label>
                 <div className='cat-pattern'>
-                    <input className='search-field' placeholder='search for events' onChange={this.update('pattern')}></input>
+                    <input 
+                        className='search-field' 
+                        onKeyDown={this.handleKeyPress.bind(this)} 
+                        placeholder='search for events' 
+                        onChange={this.update('pattern')}
+                    />
                     <select className='search-cat' id="cat-select" onChange={this.update('categoryId')}>
                         <option id={-1} value={-1}>Category</option>
                         {this.props.categories.map((cat) => <option key={cat.id} value={cat.id} id='{cat.id}'> {cat.name.toLowerCase()}</option>)} 
@@ -41,8 +49,12 @@ class SearchBar extends React.Component {
                         <option value={30}>Month</option>
                         <option value={360}>Year</option>
                     </select>
-                    
-                    <input className='search-button' onClick={this.handleSubmit.bind(this)} type="submit" value="Search" />
+                    <input 
+                        className='search-button'                          
+                        onClick={this.handleSubmit.bind(this)} 
+                        type="submit" 
+                        value="Search" 
+                    />
                 </div>
             </div>
         )
