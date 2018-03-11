@@ -11,6 +11,8 @@
 * * [Events](events#)
 * * [User Authentication](#)
 * * [Search, sort, and categories on custom routes](search-sort-and-categories-on-custom-routes#)
+[thingname](#redirecting and Route control)
+
 ## Google Maps integration
   ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
 
