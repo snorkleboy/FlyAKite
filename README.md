@@ -7,9 +7,11 @@
 
 ## Google Maps integration
   ![google maps](http://res.cloudinary.com/flyakite/image/upload/v1514410484/gMaps_pxgdi4.png)
-You put in the address of an event when you create it, and I use Google Geo Coder API to turn it into a latitude and longitude and Google Maps script to display the map on Component mount.
+
 
 I abstracted Google maps into its own more or less presentational component that takes in a location. It only renders a div with a ref and then onMount I let google scripts take over.
+
+You put in the address of an event when you create it and I use Google Geo Coder API to turn the adress into a latitude and longitude. Then I use Google Maps Script to display the map on component mount.
 
  ```
   componentDidMount() {
@@ -36,16 +38,6 @@ I abstracted Google maps into its own more or less presentational component that
  when creating an event, if the price isnt free you are prompted to enter a stripe key which will be used when calling stripes checkout api when users click to register. 
 
   The event handler for registration buttons looks at the price and returns either a free registration handler or a handler which opens a modal component to handle paid registration. It is given a close() callback which closes the modal, a register() callback which takes in user,event, and stripe data and sends it to the backend, and the event data itself, like so;
- ```
-  this.state.registrationOpen ? 
-      <RegistrationModal 
-          close={this.closeRegistrationModal} 
-          register={this.handleStripeRegistration} 
-          event={this.props.event} 
-      />
-  :
-      null
-```
 
 then inside the registration Modal I setup stripe on mount
 
@@ -135,21 +127,24 @@ this Protected components purpose is to generate a route or a redirect depending
 
 A pattern I follow is to always redirect with a location state object to allow me to redirect back. 
 ```
-const Protected = ({ component: Component, path, loggedIn }) =>(
+const Protected = ({ component: Component, path, loggedIn }) =>{
+  const renderFunction = (props) => (
+    loggedIn ? 
+        <Component {...props} path={path} />
+    : 
+        <Redirect push to={{
+            pathname: '/signup',
+            state: { redirectedFrom: path }
+          }} 
+        />
+    )
+  return (
     <Route
         path={path}
-        render={(props) => (
-            loggedIn ? 
-                <Component {...props} path={path} />
-            : 
-                <Redirect push to={{
-                    pathname: '/signup',
-                    state: { redirectedFrom: path }
-                  }} 
-                />
-            )}
+        render={renderFunction}
     />
-);
+  )
+};
 
 ```
 
