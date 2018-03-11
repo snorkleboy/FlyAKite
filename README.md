@@ -43,6 +43,7 @@ You put in the address of an event when you create it and I use Google Geo Coder
 ```
 
  ## Stripe Integration
+  ![Stripe](http://res.cloudinary.com/flyakite/image/upload/v1514410484/stripe_qrohsj.png)
  when creating an event, if the price isnt free you are prompted to enter a stripe key which will be used when calling stripes checkout api when users click to register. 
 
   The event handler for registration buttons looks at the price and returns either a free registration handler or a handler which opens a modal component to handle paid registration. It is given a close() callback which closes the modal, a register() callback which takes in user,event, and stripe data and sends it to the backend, and the event data itself, like so;
@@ -108,7 +109,7 @@ conditionalRegister(){
 }
 ```
  Seed data sites have Stripe Test keys which allow you to put in any of [these](https://stripe.com/docs/testing#cards) cards to test it out. A positive response returns a transaction token which I store in the backend. I do not actually finalize transaction and send those token back to stripe. 
- ![Stripe](http://res.cloudinary.com/flyakite/image/upload/v1514410484/stripe_qrohsj.png)
+
 ## cloudinary integration
 ![cloudinary demo](http://res.cloudinary.com/flyakite/image/upload/v1512163911/cloudinarydemo_fz6q2b.gif)
 
