@@ -19,8 +19,6 @@ export const receiveEventsErrors = (errors) => ({
     payload: errors.responseText
 });
 
-
-
 export const receiveEvent = (event) => ({
     type: RECEIVE_EVENT,
     payload: event

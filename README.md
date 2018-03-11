@@ -6,33 +6,94 @@
 ## Features & Implementation
 
 
-### Searching and filtering through custom routes
-  I created a controller to handle a variety of searching, fetching and sorting requests, all defined with optional parameters to define how many to fetch and at what offset.
+# RESTFUL API
+  most of the interactions with the database are mediated through a restful API, with slight deviations for user authentication and searching and sorting. All these routes return json. 
   
-the user can put in any of these fields:
-![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
-  
-  which sends to this route
-  ```
-  namespace :api
-   match 'search(/:limit/:offset)', to: 'sort#search', via: [:get]
-   
-    ///can come in with these parameters
-  Parameters: {"pattern"=>"pattern", "categoryId"=>"1", "time"=>"30"}
-  ```
-  
-hitting the search route with any of those parameters will call Event.search which calls or makes smaller where calls if the parameters arent present
-  ```
-  Event.where('"startDate" > ? AND "startDate" <= ? AND lower(name) LIKE lower(?)',now,later, "%#{pattern}%" )
-  ```
-  
-the Sort controllers methods optionally take a limit and an offset or use defaults. This is the controller action which the previous route matches to. with no parameters it returns the 10 events closest upcoming events in order. 
-  ```
-  @events = Event.where('"startDate" > ?',DateTime.now).order('"startDate"')
-  .limit(params[:limit] || 10).offset(params[:offset] || 0)
-  ```
-  
+## Events
+Events are created, updated and fetched through a restful API
+```
+method route                              contoller#method
+GET    /api/events                        api/events#index 
+POST   /api/events                        api/events#create 
+GET    /api/events/:id                    api/events#show 
+PATCH  /api/events/:id                    api/events#update 
+PUT    /api/events/:id                    api/events#update 
+DELETE /api/events/:id                    api/events#destroy 
+```
 
+Registration and Bookmarking is similarly restful, but event and registration data is sent over with events and user data so there is no separate get request for it. 
+
+```
+method route                              contoller#method
+POST   /api/registration/:eventId/:userId api/registrations#create 
+DELETE /api/registration/:eventId         api/registrations#destroy 
+POST   /api/bookmarks/:eventId            api/bookmarks#create 
+DELETE /api/bookmarks/:eventId            api/bookmarks#destroy 
+```
+## User Authentication
+User authentication is handled through these routes. A Post request for api/users as or api/session with proper parameters results in signing up and logging in, or just logging in. When being logged in a you are sent back a token that is to store in your session cookies that is also stored in the database.
+```
+method route                              contoller#method
+GET    /api/users                         api/users#index 
+POST   /api/users                         api/users#create 
+GET    /api/users/:id                     api/users#show 
+PATCH  /api/users/:id                     api/users#update 
+PUT    /api/users/:id                     api/users#update 
+GET    /api/session                       api/sessions#show 
+DELETE /api/session                       api/sessions#destroy 
+POST   /api/session                       api/sessions#create 
+```
+Most of the code for authentication is on the User model. Raw passwords are not actually saved to the database. I overwrite the password asignment method so that when I instantiate a new User with a password, it is automatically converted into a hashed and salted password_digest, and the password field itself is not part of the database schema. 
+```
+  def password=(password)
+    self.password_digest = BCrypt::Password.create(password)
+  end
+  
+  def is_password?(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
+  end
+```
+
+Users can then be looked up with a username and password to be authenticated. 
+```
+  def self.find_by_cred(username, password)
+    user = User.find_by(username: username)
+    return user if user && user.is_password?(password)
+    nil
+  end
+```
+
+##### Search, sort, and categories on custom routes
+search and sort is a bit less restful. The following are for general groupings like most recent events or events that match a specific category. each route comes with optional wildcard parameters to set the limit and offset of the data to make it easy to scroll through data. All of them are handled by thier own controller.  
+```
+method route                              contoller#method
+GET    /api/mostrecent(/:limit/:offset)   api/sort#most_recent 
+GET    /api/bookmarked(/:limit/:offset)   api/sort#bookmarked 
+GET    /api/registered(/:limit/:offset)   api/sort#registered 
+GET    /api/upcoming(/:limit/:offset)     api/sort#upcoming 
+GET    /api/myevents(/:limit/:offset)     api/sort#my_events 
+GET    /api/category(/:limit/:offset)     api/sort#category 
+```
+![searchbar](http://res.cloudinary.com/flyakite/image/upload/v1514414844/search_rifri5.png)
+actual searching is done through the sort route. It takes any combination of body parameters of a string pattern to match, a category, and/or a date to be within. 
+```
+method route                              contoller#method
+GET    /api/search(/:limit/:offset)       api/sort#search
+
+parameters: {"pattern"=>"pattern", "categoryId"=>"1", "time"=>"30"}
+```
+most of the actual searching work is done in the Event model, whose search method calls different searches depending on parameters, such as
+```
+Event.where('"categoryId" = ? AND lower(name) LIKE lower(?)', categoryId, "%#{pattern}%")
+```
+allowing the search controller method is simply
+```
+  def search
+    @events = Event.search(params)
+    indexRender
+  end
+```
+  
  ### Google Maps integration
  
  when creating a site just put in the address. I use google's geocoder api to turn adresses into latitudes and longitudes and then use that to display google maps

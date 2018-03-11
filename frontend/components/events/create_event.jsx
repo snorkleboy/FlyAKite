@@ -3,8 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { SelectEntityInOrder } from '../../reducers/selectors/selectors';
 import merge from 'lodash/merge';
 
-
-
 class CreateEventComp extends React.Component {
     constructor(props) {
         super(props);

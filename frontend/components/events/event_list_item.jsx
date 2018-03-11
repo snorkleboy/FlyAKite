@@ -18,10 +18,8 @@ const EventListItem = ({ event, registrationHandler, registered, bookmarkHandler
                         <i className={"fa fa-bookmark" + (!bookmarked ? '-o' : '')}></i>
                     </button>
                 </div>
-            </div> 
-            
-            <div className='event-list-item-header-c'>
-                
+            </div>      
+            <div className='event-list-item-header-c'>           
                 <span className='header-date-el'>{event.location.city}</span> 
                 <span className='header-name-el'>{event.name}</span> 
                 <span className='header-location-el'>{event.price>0? `$${event.price/100}` : "free"} {event.startDate.slice(0, 10)}</span>

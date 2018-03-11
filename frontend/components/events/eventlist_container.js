@@ -11,10 +11,6 @@ import { createBookmark, deleteBookmark} from '../../actions/bookmark_actions';
 //selectors
 import * as Selectors from '../../reducers/selectors/selectors';
 
-
-
-
-
 const mapStateToProps = (state, ownProps) => {
     
         return ({
@@ -22,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
         loggedIn: state.session.currentUser
     });
 };
-
 const mapDispatchToProps = (dispatch, ownProps) => ({
     
     makeRegistration: (eventId, userId) => dispatch(makeRegistration(eventId, userId)),

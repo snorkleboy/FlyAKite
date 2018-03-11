@@ -14,6 +14,7 @@ class Api::SortController < ApplicationController
 
   def search
     @events = Event.search(params)
+    p @events
     indexRender
   end
 
