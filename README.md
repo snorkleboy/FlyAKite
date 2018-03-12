@@ -25,59 +25,61 @@
 then inside the registration Modal I setup stripe on mount
 
 ```
-componentDidMount(){
+componentDidMount() {
   let Skey = this.props.event.stripeKey;
 
   this.handler = StripeCheckout.configure({
-      key: Skey,
-      image: this.props.event.imgURL,
-      locale: 'auto'
+    key: Skey,
+    image: this.props.event.imgURL,
+    locale: 'auto'
   });
   // Close Checkout on page navigation:
   window.addEventListener('popstate', function () {
-      if (this.handler) this.handler.close();       
+    if (this.handler) this.handler.close();
   });
 }
 ```
 and define a function to open Stripe populated with data from whatever event was passed in as a prop. This function is then bound to the registration button
 ```
-openStripe(e){
-    // Open Checkout with further options:
-    this.handler.open({
-        name: this.props.event.name,
-        description: this.props.event.header,
-        zipCode: true,
-        amount: this.props.event.price,
-        token: this.props.register,
-    });
-    e.preventDefault();
+openStripe(e) {
+  // Open Checkout with further options:
+  this.handler.open({
+    name: this.props.event.name,
+    description: this.props.event.header,
+    zipCode: true,
+    amount: this.props.event.price,
+    token: this.props.register,
+  });
+  e.preventDefault();
 }
 ```
 
 the token property is a callback which is called with the token that stripe responds with. The callback sends the data to the backend to be registered, then if it was a success the modal is closed. 
 
 ```
-handleStripeRegistration(token,args){
-    this.props.makeRegistration(
-        this.props.match.params.eventId,
-        this.props.currentUser,
-        token
+handleStripeRegistration(token, args) {
+  this.props.makeRegistration(
+      this.props.match.params.eventId,
+      this.props.currentUser,
+      token
     )
-    .then(success =>  this.setState({registrationOpen: false}) );
+    .then(success => this.setState({
+      registrationOpen: false
+    }));
 }
 ```
  
  since registration requires a user to be signed in, and Stripe registration is only for paid events, I assign different handlers depending on if the user is logged in and if the event is paid. 
 
  ```
-conditionalRegister(){
-  if (this.props.currentUser && !this.props.event.registered){ 
-    if (this.props.event.price>0){
+conditionalRegister() {
+  if (this.props.currentUser && !this.props.event.registered) {
+    if (this.props.event.price > 0) {
       return this.openRegistration
-    }else{
+    } else {
       return this.handleRegister
-    }      
-  }else{
+    }
+  } else {
     return this.redirect
   }
 }
@@ -92,12 +94,14 @@ All images on the site are actually hosted by Cloudinary which offers a powerful
 Other than bootstrapping Cloudinary_options (a api key and a account name), its as easy as binding the following function to a button
 
 ```
-    upload(e){    
-        const resultsCallBack = function (error, results) {
-            if (!error) this.setState({ 'imgURL': results[0].url   });
-        }
-        window.cloudinary.openUploadWidget(window.Cloudinary_options, resultsCallBack.bind(this) );
-    }
+upload(e) {
+  const resultsCallBack = function (error, results) {
+    if (!error) this.setState({
+      'imgURL': results[0].url
+    });
+  }
+  window.cloudinary.openUploadWidget(window.Cloudinary_options, resultsCallBack.bind(this));
+}
 
 ```
 
@@ -106,32 +110,39 @@ Other than bootstrapping Cloudinary_options (a api key and a account name), its 
 
 I use higher order components to ensure that users are logged in before visiting certain sections of the site or using some features (such as registration and bookmarking).
 
-this Protected components purpose is to generate a route or a redirect depending on whether or not a logged in user has been put into the Redux Store. 
+this Protected components purpose is to render a Route with a given path and either a component or a redirect, depending on whether or not a logged in user has been put into the Redux Store. 
 
 A pattern I follow is to always redirect with a location state object to allow me to redirect back. 
 ```
-const Protected = ({ component: Component, path, loggedIn }) =>(
-    <Route
-        path={path}
-        render={(props) => (
-            loggedIn ? 
-                <Component {...props} path={path} />
-            : 
-                <Redirect push to={{
-                    pathname: '/signup',
-                    state: { redirectedFrom: path }
-                  }} 
-                />
-            )}
-    />
+const Protected = ({ component: Component, path,  loggedIn}) => ( 
+  < Route 
+    path = { path}
+    render = {
+      (props) =>
+        loggedIn ?
+            <Component { ...props}  path = { path } /> 
+          :
+            < Redirect push to = {{
+                pathname: '/signup',
+                state: {redirectedFrom: path}
+              }}
+            />
+    }
+  />
 );
 
 ```
 
 then this Protected route can be used alongside the regular route system
 ```
-<Route path="/events/:eventId" component={ShowPageContainer} />
-<ProtectedRoute path="/events/:eventId/edit" component={CreateEventContainer} />
+< Route 
+  path = "/events/:eventId"
+  component = { ShowPageContainer}
+/> 
+<ProtectedRoute 
+  path = "/events/:eventId/edit"
+  component = {  CreateEventContainer}
+/>
 
 ```
 
@@ -140,9 +151,9 @@ and in the Signup component, a successful signing up or logging in results in a 
 ```
 componentWillReceiveProps(nextProps) {
   if (nextProps.loggedIn) {
-    if (this.props.location.state){
+    if (this.props.location.state) {
       this.props.history.push(this.props.location.state.redirectedFrom)
-    }else{
+    } else {
       this.props.history.push('/')
     }
   }
@@ -155,23 +166,22 @@ componentWillReceiveProps(nextProps) {
 I abstracted Google maps into its own more or less presentational component. It takes in a address and renders a div. OnMount I use Google Geo Coder API to turn the address into a latitude and longitude and otherwise let google scripts do their thing.
 
  ```
-  componentDidMount() {
-    mapCenter(this.props.location).then((response) => {
-      const map = ReactDOM.findDOMNode(this.refs.map);
-      const LatLng = response.results[0].geometry.location;
-      const options = {
-        center: LatLng,
-        zoom: 13
-      };
-      this.map = new google.maps.Map(map, options);
-      const pos = new google.maps.LatLng(LatLng.lat, LatLng.lng);
-      const marker = new google.maps.Marker({
-        position: pos,
-        map: this.map
-      });
-
+componentDidMount() {
+  mapCenter(this.props.location).then((response) => {
+    const map = ReactDOM.findDOMNode(this.refs.map);
+    const LatLng = response.results[0].geometry.location;
+    const options = {
+      center: LatLng,
+      zoom: 13
+    };
+    this.map = new google.maps.Map(map, options);
+    const pos = new google.maps.LatLng(LatLng.lat, LatLng.lng);
+    const marker = new google.maps.Marker({
+      position: pos,
+      map: this.map
     });
-  }
+  });
+}
 
 ```
 ## RESTFUL API
