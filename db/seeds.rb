@@ -20,7 +20,7 @@ SOCIAL = Category.create(name: 'SOCIAL')
 CASUAL = Category.create(name: 'CASUAL')
 NIGHT = Category.create(name: 'NIGHT LIFE')
 AQUATIC = Category.create(name: 'AQUATIC')
-OUDOOR = Category.create(name: 'OUDOOR')
+OUDOOR = Category.create(name: 'OUTDOOR')
 
 event1 = Event.create!(
   userId: User.first.id,
